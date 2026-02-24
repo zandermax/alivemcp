@@ -9,4 +9,39 @@ automatically — no explicit import needed.
 import sys
 from unittest.mock import MagicMock
 
+import pytest
+
 sys.modules["Live"] = MagicMock()
+
+
+@pytest.fixture
+def song():
+    """A fully-wired mock song with one track, one scene, and one return track."""
+    clip_slot = MagicMock()
+    clip_slot.has_clip = True
+
+    device = MagicMock()
+
+    track = MagicMock()
+    track.clip_slots = [clip_slot]
+    track.devices = [device]
+
+    s = MagicMock()
+    s.tracks = [track]
+    s.scenes = [MagicMock()]
+    s.return_tracks = [MagicMock()]
+    return s
+
+
+@pytest.fixture
+def c_instance():
+    """A mock Ableton ControlSurface instance."""
+    return MagicMock()
+
+
+@pytest.fixture
+def tools(song, c_instance):
+    """A fully-constructed LiveAPITools instance backed by mock objects."""
+    from ClaudeMCP_Remote.liveapi_tools import LiveAPITools
+
+    return LiveAPITools(song, c_instance)

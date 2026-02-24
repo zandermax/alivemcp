@@ -8,6 +8,13 @@ repos:
 
   - repo: local
     hooks:
+      - id: check-file-length
+        name: Check Python file length (max 300 lines)
+        language: python
+        entry: python scripts/check_file_length.py
+        types: [python]
+        exclude: ^(tests/|examples/)
+
       - id: check-version-bump
         name: Check version bump before pushing to main
         language: script
