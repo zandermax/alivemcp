@@ -2,11 +2,11 @@
 
 A comprehensive Python Remote Script for Ableton Live that exposes **220 LiveAPI tools** via a simple TCP socket interface. Control every aspect of your Ableton Live session programmatically - from playback and recording to tracks, clips, devices, MIDI notes, and Max for Live / CV Tools devices.
 
-[![CI](https://github.com/Ziforge/ableton-liveapi-tools/workflows/CI/badge.svg)](https://github.com/Ziforge/ableton-liveapi-tools/actions)
+[![CI](https://github.com/zandermax/alivemcp/workflows/CI/badge.svg)](https://github.com/zandermax/alivemcp/actions)
 [![License: GPL-3.0](https://img.shields.io/badge/License-GPL%203.0-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Ableton Live](https://img.shields.io/badge/Ableton%20Live-11%2F12-blue.svg)](https://www.ableton.com/)
 [![Python](https://img.shields.io/badge/Python-3.7%2B-green.svg)](https://www.python.org/)
-[![Release](https://img.shields.io/github/v/release/Ziforge/ableton-liveapi-tools)](https://github.com/Ziforge/ableton-liveapi-tools/releases)
+[![Release](https://img.shields.io/github/v/release/zandermax/alivemcp)](https://github.com/zandermax/alivemcp/releases)
 
 ## Features
 
@@ -30,6 +30,7 @@ This implementation provides **220 tools across 44 categories** based on:
 - **Live 12 Features**: Based on [Live 12 Release Notes](https://www.ableton.com/en/release-notes/live-12/)
 
 **Coverage includes:**
+
 - Session and arrangement control (14 tools)
 - Track management (13 tools)
 - Clip operations (18 tools)
@@ -40,57 +41,58 @@ This implementation provides **220 tools across 44 categories** based on:
 - 38 additional functional categories
 
 **Known Limitations:**
+
 - Consolidation and some arrangement operations have simplified implementations due to LiveAPI constraints
 - Not all Live Object Model (LOM) properties may be exposed (continuous development)
 
 ## Tool Categories
 
-| Category | Tools | Description |
-|----------|-------|-------------|
-| **Session Control** | 14 | Playback, recording, tempo, time signature, loop, metronome |
-| **Track Management** | 13 | Create/delete tracks, volume, pan, solo, mute, arm, color |
-| **Clip Operations** | 8 | Create, launch, stop, duplicate clips |
-| **Clip Extras** | 10 | Looping, markers, gain, pitch, time signature |
-| **MIDI Notes** | 7 | Add, get, remove, select MIDI notes |
-| **Device Control** | 12 | Add devices, parameters, presets, randomize |
-| **Scene Management** | 6 | Create, launch, duplicate scenes |
-| **Automation** | 6 | Re-enable automation, capture MIDI |
-| **Routing** | 8 | Input/output routing, sends, sub-routing |
-| **Browser** | 4 | Browse devices/plugins, load from browser |
-| **Transport** | 8 | Jump to time, nudge, arrangement overdub |
-| **Groove/Quantize** | 5 | Groove amount, quantize clips/pitch |
-| **Monitoring** | 4 | Monitoring state, available routing |
-| **Loop/Locator** | 6 | Enable loop, create locators, jump by amount |
-| **Project** | 6 | Project root, session record, cue points |
-| **Max for Live** | 5 | Detect M4L devices, control by parameter name, CV Tools support |
-| **Master Track** | 4 | Master volume, pan, devices, info |
-| **Return Tracks** | 3 | Return track info, volume control |
-| **Audio Clips** | 5 | Warp mode, warp markers, file paths, warping control |
-| **Follow Actions** | 3 | Clip follow actions for live performance |
-| **Crossfader** | 3 | DJ-style crossfader control and assignment |
-| **Track Groups** | 4 | Group/ungroup tracks, group management |
-| **View/Navigation** | 4 | Show views, focus tracks, scroll timeline |
-| **Color Utilities** | 2 | Get clip/track colors |
-| **Groove Pool** | 2 | Groove library access and assignment |
-| **Rack/Chains** | 4 | Instrument/effect rack chain control |
-| **Clip Automation** | 6 | Automation envelopes, steps, values |
-| **Track Freeze/Flatten** | 3 | Freeze tracks for CPU, flatten to audio |
-| **Clip Fades** | 4 | Fade in/out for audio clips |
-| **Scene Color** | 2 | Get/set scene colors |
-| **Track Annotations** | 2 | Track annotation text |
-| **Clip Annotations** | 2 | Clip annotation text |
-| **Track Delay** | 2 | Delay compensation in samples |
-| **Arrangement Clips** | 3 | Get/duplicate/consolidate arrangement clips |
-| **Plugin Windows** | 2 | Show/hide plugin windows |
-| **Metronome** | 2 | Metronome volume control |
-| **MIDI Messages** | 2 | Send MIDI CC and Program Change |
-| **Sampler/Simpler** | 3 | Sample length and playback mode |
-| **Clip RAM Mode** | 2 | RAM vs disk streaming |
-| **Device Info** | 2 | Device class name and type |
-| **Take Lanes** | 8 | Create/manage take lanes (Live 12+) |
-| **Application Info** | 4 | Version, variant, build ID, message boxes |
-| **Display Values** | 2 | Get parameter values as shown in UI |
-| **Additional Properties** | 10 | Clip start time, track/scene states, signatures |
+| Category                  | Tools | Description                                                     |
+| ------------------------- | ----- | --------------------------------------------------------------- |
+| **Session Control**       | 14    | Playback, recording, tempo, time signature, loop, metronome     |
+| **Track Management**      | 13    | Create/delete tracks, volume, pan, solo, mute, arm, color       |
+| **Clip Operations**       | 8     | Create, launch, stop, duplicate clips                           |
+| **Clip Extras**           | 10    | Looping, markers, gain, pitch, time signature                   |
+| **MIDI Notes**            | 7     | Add, get, remove, select MIDI notes                             |
+| **Device Control**        | 12    | Add devices, parameters, presets, randomize                     |
+| **Scene Management**      | 6     | Create, launch, duplicate scenes                                |
+| **Automation**            | 6     | Re-enable automation, capture MIDI                              |
+| **Routing**               | 8     | Input/output routing, sends, sub-routing                        |
+| **Browser**               | 4     | Browse devices/plugins, load from browser                       |
+| **Transport**             | 8     | Jump to time, nudge, arrangement overdub                        |
+| **Groove/Quantize**       | 5     | Groove amount, quantize clips/pitch                             |
+| **Monitoring**            | 4     | Monitoring state, available routing                             |
+| **Loop/Locator**          | 6     | Enable loop, create locators, jump by amount                    |
+| **Project**               | 6     | Project root, session record, cue points                        |
+| **Max for Live**          | 5     | Detect M4L devices, control by parameter name, CV Tools support |
+| **Master Track**          | 4     | Master volume, pan, devices, info                               |
+| **Return Tracks**         | 3     | Return track info, volume control                               |
+| **Audio Clips**           | 5     | Warp mode, warp markers, file paths, warping control            |
+| **Follow Actions**        | 3     | Clip follow actions for live performance                        |
+| **Crossfader**            | 3     | DJ-style crossfader control and assignment                      |
+| **Track Groups**          | 4     | Group/ungroup tracks, group management                          |
+| **View/Navigation**       | 4     | Show views, focus tracks, scroll timeline                       |
+| **Color Utilities**       | 2     | Get clip/track colors                                           |
+| **Groove Pool**           | 2     | Groove library access and assignment                            |
+| **Rack/Chains**           | 4     | Instrument/effect rack chain control                            |
+| **Clip Automation**       | 6     | Automation envelopes, steps, values                             |
+| **Track Freeze/Flatten**  | 3     | Freeze tracks for CPU, flatten to audio                         |
+| **Clip Fades**            | 4     | Fade in/out for audio clips                                     |
+| **Scene Color**           | 2     | Get/set scene colors                                            |
+| **Track Annotations**     | 2     | Track annotation text                                           |
+| **Clip Annotations**      | 2     | Clip annotation text                                            |
+| **Track Delay**           | 2     | Delay compensation in samples                                   |
+| **Arrangement Clips**     | 3     | Get/duplicate/consolidate arrangement clips                     |
+| **Plugin Windows**        | 2     | Show/hide plugin windows                                        |
+| **Metronome**             | 2     | Metronome volume control                                        |
+| **MIDI Messages**         | 2     | Send MIDI CC and Program Change                                 |
+| **Sampler/Simpler**       | 3     | Sample length and playback mode                                 |
+| **Clip RAM Mode**         | 2     | RAM vs disk streaming                                           |
+| **Device Info**           | 2     | Device class name and type                                      |
+| **Take Lanes**            | 8     | Create/manage take lanes (Live 12+)                             |
+| **Application Info**      | 4     | Version, variant, build ID, message boxes                       |
+| **Display Values**        | 2     | Get parameter values as shown in UI                             |
+| **Additional Properties** | 10    | Clip start time, track/scene states, signatures                 |
 
 **Total: 220 Tools**
 
@@ -99,17 +101,20 @@ This implementation provides **220 tools across 44 categories** based on:
 ### Installation
 
 1. **Clone this repository:**
+
    ```bash
-   git clone https://github.com/Ziforge/ableton-liveapi-tools.git
-   cd ableton-liveapi-tools
+   git clone https://github.com/zandermax/alivemcp.git
+   cd alivemcp
    ```
 
 2. **Run the installation script:**
+
    ```bash
    bash install.sh
    ```
 
    Or manually copy to Ableton's Remote Scripts folder:
+
    ```bash
    # macOS
    cp -r ALiveMCP_Remote ~/Music/Ableton/User\ Library/Remote\ Scripts/
@@ -199,6 +204,7 @@ This design ensures all LiveAPI calls happen on Ableton's main thread, preventin
 ### Communication Protocol
 
 **Request Format:**
+
 ```json
 {
   "action": "set_tempo",
@@ -207,6 +213,7 @@ This design ensures all LiveAPI calls happen on Ableton's main thread, preventin
 ```
 
 **Response Format:**
+
 ```json
 {
   "ok": true,
@@ -236,6 +243,7 @@ This design ensures all LiveAPI calls happen on Ableton's main thread, preventin
 The Remote Script includes full support for Max for Live (M4L) devices, including Ableton's CV Tools pack:
 
 ### Detect M4L Devices
+
 ```python
 # Get all Max for Live devices on track 0
 response = send_command({"action": "get_m4l_devices", "track_index": 0})
@@ -245,6 +253,7 @@ cv_devices = send_command({"action": "get_cv_tools_devices", "track_index": 0})
 ```
 
 ### Control by Parameter Name
+
 ```python
 # Set CV LFO rate by parameter name (easier than finding param index)
 send_command({
@@ -265,6 +274,7 @@ param = send_command({
 ```
 
 ### Supported M4L Device Types
+
 - **CV LFO** - Control Rate, Shape, Depth
 - **CV Shaper** - Control Drive, Curve, Bias
 - **CV Envelope Follower** - Control Attack, Release, Gain
@@ -291,16 +301,20 @@ This project is licensed under the **GNU General Public License v3.0** - see the
 
 This is a strong copyleft license that requires anyone who distributes your code or a derivative work to make the source available under the same terms. This protects your work while allowing open collaboration.
 
+## Origins
+
+This project was originally forked from [Ziforge/ableton-liveapi-tools](https://github.com/Ziforge/ableton-liveapi-tools). It has since been significantly refactored, modularized, and expanded with tests and documentation.
+
 ## Acknowledgments
 
 - Built with [Ableton Live's Python Remote Script API](https://docs.cycling74.com/max8/vignettes/live_api_overview)
 - Designed for use with [Model Context Protocol (MCP)](https://modelcontextprotocol.io/)
-- Created with assistance from Claude Code
+- Created with assistance from various coding agents
 
 ## Support
 
-- **Issues:** [GitHub Issues](https://github.com/Ziforge/ableton-liveapi-tools/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/Ziforge/ableton-liveapi-tools/discussions)
+- **Issues:** [GitHub Issues](https://github.com/zandermax/alivemcp/issues)
+- **Discussions:** [GitHub Discussions](https://github.com/zandermax/alivemcp/discussions)
 
 ## Roadmap
 

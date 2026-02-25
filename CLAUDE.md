@@ -9,7 +9,7 @@ ALiveMCP Remote Script is an Ableton Live Remote Script (Python) that exposes **
 ## Directory Map
 
 ```
-ableton-liveapi-tools/
+alivemcp/
 ├── ALiveMCP_Remote/          # The Remote Script package — installed into Ableton
 │   ├── __init__.py            # Entry point: ALiveMCP class + create_instance()
 │   ├── liveapi_tools.py       # LiveAPITools: composes all mixin classes

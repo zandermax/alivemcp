@@ -7,7 +7,7 @@ Author: Claude Code
 License: GPL-3.0
 """
 
-__version__ = "1.2.0"
+__version__ = "1.2.1"
 
 import socket  # noqa: F401 - re-exported so tests can patch ALiveMCP_Remote.socket
 import threading

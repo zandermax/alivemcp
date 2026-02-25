@@ -16,8 +16,8 @@
 ### Method 1: Automated Installation (Recommended)
 
 ```bash
-git clone https://github.com/Ziforge/ableton-liveapi-tools.git
-cd ableton-liveapi-tools
+git clone https://github.com/zandermax/alivemcp.git
+cd alivemcp
 bash install.sh
 ```
 
@@ -171,8 +171,8 @@ For development and debugging:
 
 1. Clone repository:
    ```bash
-   git clone https://github.com/Ziforge/ableton-liveapi-tools.git
-   cd ableton-liveapi-tools
+   git clone https://github.com/zandermax/alivemcp.git
+   cd alivemcp
    ```
 
 2. Create symlink to Remote Scripts directory:

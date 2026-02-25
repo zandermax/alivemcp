@@ -77,8 +77,8 @@ Use the feature request template when suggesting features.
 
 ```bash
 # Clone your fork
-git clone https://github.com/YOUR_USERNAME/ableton-liveapi-tools.git
-cd ableton-liveapi-tools
+git clone https://github.com/YOUR_USERNAME/alivemcp.git
+cd alivemcp
 
 # Install dev dependencies
 make install-dev
