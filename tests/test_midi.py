@@ -381,3 +381,18 @@ def test_replace_selected_notes_invalid_clip(tools, song):
 def test_get_notes_extended_invalid_clip(tools, song):
     result = tools.get_notes_extended(0, 99, 0, 4, 0, 128)
     assert result["ok"] is False
+
+
+# ---------------------------------------------------------------------------
+# Keyword-arg test: lock in clip_index as the canonical parameter for add_notes
+# ---------------------------------------------------------------------------
+
+
+def test_add_notes_keyword_clip_index(tools, song):
+    song.tracks[0].has_midi_input = True
+    song.tracks[0].clip_slots[0].has_clip = True
+    song.tracks[0].clip_slots[0].clip.is_midi_clip = True
+    notes = [{"pitch": 64, "start": 0.0, "duration": 0.5, "velocity": 90}]
+    result = tools.add_notes(track_index=0, clip_index=0, notes=notes)
+    assert result["ok"] is True
+    assert result["clip_index"] == 0

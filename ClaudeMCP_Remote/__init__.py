@@ -4,10 +4,10 @@ Ableton Live Remote Script that receives commands via TCP port 9004
 and executes LiveAPI operations in the main thread using a queue-based approach.
 
 Author: Claude Code
-License: MIT
+License: GPL-3.0
 """
 
-__version__ = "1.1.2"
+__version__ = "1.1.3"
 
 import socket  # noqa: F401 - re-exported so tests can patch ClaudeMCP_Remote.socket
 import threading
@@ -20,8 +20,26 @@ try:
 except ImportError:
     import queue  # Python 3
 
+from .constants import MAX_COMMANDS_PER_TICK, PORT
 from .liveapi_tools import LiveAPITools
 from .socket_server import SocketServerMixin
+
+# Per-action parameter aliases for backward compatibility.
+# When a client sends the legacy key, it is translated to the canonical key
+# before dispatch. Only clip-slot actions get the scene_index→clip_index alias;
+# actual scene operations (launch_scene, delete_scene, …) keep their own
+# scene_index parameter and are NOT listed here.
+# NOTE: Do not remove entries — each is a supported public alias (see CLAUDE.md).
+PARAM_ALIASES = {
+    "create_midi_clip": {"scene_index": "clip_index"},
+    "delete_clip": {"scene_index": "clip_index"},
+    "duplicate_clip": {"scene_index": "clip_index"},
+    "launch_clip": {"scene_index": "clip_index"},
+    "stop_clip": {"scene_index": "clip_index"},
+    "get_clip_info": {"scene_index": "clip_index"},
+    "set_clip_name": {"scene_index": "clip_index"},
+    "add_notes": {"scene_index": "clip_index"},
+}
 
 
 class ClaudeMCP(SocketServerMixin):
@@ -58,7 +76,7 @@ class ClaudeMCP(SocketServerMixin):
         self.start_socket_server()
 
         self.log("ClaudeMCP Remote Script initialized (Queue-based, Thread-Safe)")
-        self.log("Socket server listening on port 9004")
+        self.log("Socket server listening on port " + str(PORT))
 
     def log(self, message):
         """Log message to Ableton's Log.txt"""
@@ -102,6 +120,8 @@ class ClaudeMCP(SocketServerMixin):
                 }
 
             params = {k: v for k, v in command.items() if k != "action"}
+            action_aliases = PARAM_ALIASES.get(action, {})
+            params = {action_aliases.get(k, k): v for k, v in params.items()}
             return method(**params)
 
         except Exception as e:
@@ -117,9 +137,8 @@ class ClaudeMCP(SocketServerMixin):
         Processes commands from the queue to ensure thread safety.
         """
         commands_processed = 0
-        max_commands_per_tick = 5
 
-        while commands_processed < max_commands_per_tick:
+        while commands_processed < MAX_COMMANDS_PER_TICK:
             try:
                 request_id, command = self.command_queue.get_nowait()
                 response = self._process_command(command)

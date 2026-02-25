@@ -79,32 +79,8 @@ class M4LDevicesMixin:
         return type_map.get(class_name, "unknown")
 
     def set_device_param_by_name(self, track_index, device_index, param_name, value):
-        """Set device parameter by name (useful for M4L devices with custom parameter names)"""
-        try:
-            if track_index < 0 or track_index >= len(self.song.tracks):
-                return {"ok": False, "error": "Invalid track index"}
-
-            track = self.song.tracks[track_index]
-            if device_index < 0 or device_index >= len(track.devices):
-                return {"ok": False, "error": "Invalid device index"}
-
-            device = track.devices[device_index]
-
-            for i, param in enumerate(device.parameters):
-                if str(param.name) == param_name:
-                    param.value = float(value)
-                    return {
-                        "ok": True,
-                        "track_index": track_index,
-                        "device_index": device_index,
-                        "param_name": param_name,
-                        "param_index": i,
-                        "value": float(param.value),
-                    }
-
-            return {"ok": False, "error": f"Parameter '{param_name}' not found"}
-        except Exception as e:
-            return {"ok": False, "error": str(e)}
+        """Set device parameter by name (delegates to set_device_parameter_by_name)"""
+        return self.set_device_parameter_by_name(track_index, device_index, param_name, value)
 
     def get_m4l_param_by_name(self, track_index, device_index, param_name):
         """Get M4L device parameter value by name"""

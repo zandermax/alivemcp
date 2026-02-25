@@ -115,8 +115,20 @@ def test_delete_clip_exception(tools, song):
 
 
 def test_duplicate_clip_success(tools, song):
+    empty_slot = MagicMock()
+    empty_slot.has_clip = False
+    song.tracks[0].clip_slots = [song.tracks[0].clip_slots[0], empty_slot]
+    song.scenes = [MagicMock(), MagicMock()]
     result = tools.duplicate_clip(0, 0)
     assert result["ok"] is True
+    assert result["destination_clip_index"] == 1
+    song.tracks[0].clip_slots[0].duplicate_clip_to.assert_called_once_with(empty_slot)
+
+
+def test_duplicate_clip_no_empty_slot(tools, song):
+    result = tools.duplicate_clip(0, 0)
+    assert result["ok"] is False
+    assert "No empty slot" in result["error"]
 
 
 def test_duplicate_clip_no_clip(tools, song):
@@ -131,6 +143,10 @@ def test_duplicate_clip_invalid_track(tools):
 
 
 def test_duplicate_clip_exception(tools, song):
+    empty_slot = MagicMock()
+    empty_slot.has_clip = False
+    song.tracks[0].clip_slots = [song.tracks[0].clip_slots[0], empty_slot]
+    song.scenes = [MagicMock(), MagicMock()]
     song.tracks[0].clip_slots[0].duplicate_clip_to.side_effect = Exception("err")
     result = tools.duplicate_clip(0, 0)
     assert result["ok"] is False
@@ -167,7 +183,7 @@ def test_launch_clip_exception(tools, song):
 def test_stop_clip_success(tools, song):
     result = tools.stop_clip(0, 0)
     assert result["ok"] is True
-    song.tracks[0].stop_all_clips.assert_called_once()
+    song.tracks[0].clip_slots[0].stop.assert_called_once()
 
 
 def test_stop_clip_invalid_track(tools):
@@ -175,8 +191,13 @@ def test_stop_clip_invalid_track(tools):
     assert result["ok"] is False
 
 
+def test_stop_clip_invalid_scene(tools, song):
+    result = tools.stop_clip(0, 99)
+    assert result["ok"] is False
+
+
 def test_stop_clip_exception(tools, song):
-    song.tracks[0].stop_all_clips.side_effect = Exception("err")
+    song.tracks[0].clip_slots[0].stop.side_effect = Exception("err")
     result = tools.stop_clip(0, 0)
     assert result["ok"] is False
 
@@ -930,3 +951,41 @@ def test_set_follow_action_time_except_block(tools):
     tools.song = None
     result = tools.set_follow_action_time(0, 0, 2.0)
     assert result["ok"] is False
+
+
+# ---------------------------------------------------------------------------
+# Keyword-arg tests: lock in clip_index as the canonical parameter name
+# ---------------------------------------------------------------------------
+
+
+def test_create_midi_clip_keyword_clip_index(tools, song):
+    song.tracks[0].has_midi_input = True
+    song.tracks[0].clip_slots[0].has_clip = False
+    result = tools.create_midi_clip(track_index=0, clip_index=0, length=2.0)
+    assert result["ok"] is True
+    assert result["clip_index"] == 0
+
+
+def test_delete_clip_keyword_clip_index(tools, song):
+    result = tools.delete_clip(track_index=0, clip_index=0)
+    assert result["ok"] is True
+
+
+def test_launch_clip_keyword_clip_index(tools, song):
+    result = tools.launch_clip(track_index=0, clip_index=0)
+    assert result["ok"] is True
+
+
+def test_stop_clip_keyword_clip_index(tools, song):
+    result = tools.stop_clip(track_index=0, clip_index=0)
+    assert result["ok"] is True
+
+
+def test_get_clip_info_keyword_clip_index(tools, song):
+    result = tools.get_clip_info(track_index=0, clip_index=0)
+    assert result["ok"] is True
+
+
+def test_set_clip_name_keyword_clip_index(tools, song):
+    result = tools.set_clip_name(track_index=0, clip_index=0, name="Test")
+    assert result["ok"] is True

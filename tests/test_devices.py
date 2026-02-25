@@ -353,7 +353,7 @@ def test_randomize_device_parameters_success(tools, song):
     song.tracks[0].devices = [dev]
     result = tools.randomize_device_parameters(0, 0)
     assert result["ok"] is True
-    assert result["randomized_count"] == 1
+    assert result["randomized_parameters"] == 1
 
 
 def test_randomize_device_parameters_skips_quantized(tools, song):
@@ -362,7 +362,7 @@ def test_randomize_device_parameters_skips_quantized(tools, song):
     song.tracks[0].devices = [dev]
     result = tools.randomize_device_parameters(0, 0)
     assert result["ok"] is True
-    assert result["randomized_count"] == 0
+    assert result["randomized_parameters"] == 0
 
 
 def test_randomize_device_parameters_invalid(tools):

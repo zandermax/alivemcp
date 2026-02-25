@@ -8,13 +8,13 @@ class MidiNotesMixin:
     # MIDI NOTE OPERATIONS
     # ========================================================================
 
-    def add_notes(self, track_index, scene_index, notes):
+    def add_notes(self, track_index, clip_index, notes):
         """
         Add MIDI notes to a clip
 
         Args:
             track_index: Track index
-            scene_index: Scene index (or clip_index)
+            clip_index: Clip slot index on the track
             notes: List of note dicts with keys:
                    - pitch: MIDI note number (0-127)
                    - start: Start time in beats
@@ -29,10 +29,10 @@ class MidiNotesMixin:
             if not track.has_midi_input:
                 return {"ok": False, "error": "Track is not a MIDI track"}
 
-            if scene_index < 0 or scene_index >= len(track.clip_slots):
+            if clip_index < 0 or clip_index >= len(track.clip_slots):
                 return {"ok": False, "error": "Invalid scene/clip index"}
 
-            clip_slot = track.clip_slots[scene_index]
+            clip_slot = track.clip_slots[clip_index]
             if not clip_slot.has_clip:
                 return {"ok": False, "error": "No clip in slot"}
 
@@ -59,7 +59,7 @@ class MidiNotesMixin:
                 "ok": True,
                 "message": "Notes added",
                 "track_index": track_index,
-                "scene_index": scene_index,
+                "clip_index": clip_index,
                 "note_count": len(notes),
             }
         except Exception as e:

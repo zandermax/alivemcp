@@ -232,30 +232,8 @@ class DevicesCoreMixin:
             return {"ok": False, "error": str(e)}
 
     def randomize_device_parameters(self, track_index, device_index):
-        """Randomize all device parameters"""
-        try:
-            if track_index < 0 or track_index >= len(self.song.tracks):
-                return {"ok": False, "error": "Invalid track index"}
-
-            track = self.song.tracks[track_index]
-            if device_index < 0 or device_index >= len(track.devices):
-                return {"ok": False, "error": "Invalid device index"}
-
-            device = track.devices[device_index]
-            randomized_count = 0
-
-            for param in device.parameters:
-                if param.is_enabled and not param.is_quantized:
-                    param.value = random.uniform(param.min, param.max)
-                    randomized_count += 1
-
-            return {
-                "ok": True,
-                "message": "Device parameters randomized",
-                "randomized_count": randomized_count,
-            }
-        except Exception as e:
-            return {"ok": False, "error": str(e)}
+        """Randomize all device parameters (delegates to randomize_device)"""
+        return self.randomize_device(track_index, device_index)
 
     def randomize_device(self, track_index, device_index):
         """Randomize all parameters of a device"""

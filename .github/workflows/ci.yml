@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     - name: Check file structure
       run: |
@@ -46,6 +46,8 @@ jobs:
       run: |
         echo "Checking documentation..."
         test -f docs/ARCHITECTURE.md || (echo "Missing docs/ARCHITECTURE.md" && exit 1)
+        test -f docs/API_REFERENCE.md || (echo "Missing docs/API_REFERENCE.md" && exit 1)
+        test -f docs/TROUBLESHOOTING.md || (echo "Missing docs/TROUBLESHOOTING.md" && exit 1)
         test -d examples || (echo "Missing examples directory" && exit 1)
         echo "✓ Documentation structure valid"
 
@@ -88,7 +90,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     - name: Run shellcheck on install.sh
       run: |

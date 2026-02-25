@@ -12,6 +12,8 @@ try:
 except ImportError:
     import queue  # Python 3
 
+from .constants import PORT, RESPONSE_TIMEOUT_SECONDS, SOCKET_TIMEOUT_SECONDS
+
 
 class SocketServerMixin:
     """
@@ -26,14 +28,14 @@ class SocketServerMixin:
             self.running = True
             self.socket_server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             self.socket_server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-            self.socket_server.bind(("127.0.0.1", 9004))
+            self.socket_server.bind(("127.0.0.1", PORT))
             self.socket_server.listen(5)
 
             self.socket_thread = threading.Thread(target=self._socket_listener)
             self.socket_thread.daemon = True
             self.socket_thread.start()
 
-            self.log("Socket server started successfully on port 9004")
+            self.log("Socket server started successfully on port " + str(PORT))
         except Exception as e:
             self.log("ERROR starting socket server: " + str(e))
             self.log(traceback.format_exc())
@@ -64,7 +66,7 @@ class SocketServerMixin:
         buffer = ""
 
         try:
-            client_socket.settimeout(30.0)
+            client_socket.settimeout(SOCKET_TIMEOUT_SECONDS)
 
             while self.running:
                 try:
@@ -89,7 +91,9 @@ class SocketServerMixin:
                                 self.command_queue.put((request_id, command))
 
                                 try:
-                                    response = self.response_queues[request_id].get(timeout=25.0)
+                                    response = self.response_queues[request_id].get(
+                                        timeout=RESPONSE_TIMEOUT_SECONDS
+                                    )
                                 except queue.Empty:
                                     response = {
                                         "ok": False,
