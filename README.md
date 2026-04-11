@@ -1,18 +1,38 @@
-# ALiveMCP Remote Script for Ableton Live
+# ALiveMCP — Ableton Live MCP Server
 
-A comprehensive Python Remote Script for Ableton Live that exposes **220 LiveAPI tools** via a simple TCP socket interface. Control every aspect of your Ableton Live session programmatically - from playback and recording to tracks, clips, devices, MIDI notes, and Max for Live / CV Tools devices.
+Control Ableton Live with AI. ALiveMCP exposes **220 LiveAPI tools** as a [Model Context Protocol](https://modelcontextprotocol.io/) server — plug it into Claude Code, Claude Desktop, or any MCP-compatible client and let AI agents compose music, manage tracks, edit MIDI, and control devices directly.
 
 [![CI](https://github.com/zandermax/alivemcp/workflows/CI/badge.svg)](https://github.com/zandermax/alivemcp/actions)
 [![License: GPL-3.0](https://img.shields.io/badge/License-GPL%203.0-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Ableton Live](https://img.shields.io/badge/Ableton%20Live-11%2F12-blue.svg)](https://www.ableton.com/)
-[![Python](https://img.shields.io/badge/Python-3.7%2B-green.svg)](https://www.python.org/)
-[![Release](https://img.shields.io/github/v/release/zandermax/alivemcp)](https://github.com/zandermax/alivemcp/releases)
+
+## Architecture
+
+```
+AI Client (Claude, etc.)
+    │  MCP protocol (stdio)
+    ▼
+mcp_server.py          ← MCP server (Python 3.10+, runs on your machine)
+    │  JSON over TCP 127.0.0.1:9004
+    ▼
+ALiveMCP_Remote/       ← Ableton Remote Script (runs inside Ableton Live)
+    │  Ableton LiveAPI
+    ▼
+Ableton Live
+```
+
+Two components, both required:
+
+| Component | Where it runs | Language |
+|---|---|---|
+| `ALiveMCP_Remote/` | Inside Ableton Live (Remote Script) | Python 2.7/3.x |
+| `mcp_server.py` | Your machine (MCP stdio server) | Python 3.10+ |
 
 ## Features
 
 - **220 LiveAPI Tools** - Covers 44 functional categories of Ableton Live's Python API
+- **MCP Native** - Works directly with Claude Code, Claude Desktop, and any MCP client
 - **Thread-Safe Architecture** - Queue-based design for reliable communication
-- **Simple TCP Interface** - Send JSON commands, receive JSON responses
 - **Real-Time Control** - Low latency for live performance
 - **Live 12 Support** - Take lanes, display values, application info (Live 12+)
 - **Live 11 Compatible** - Backward compatible with graceful feature detection
@@ -98,94 +118,52 @@ This implementation provides **220 tools across 44 categories** based on:
 
 ## Quick Start
 
-### Installation
+### Step 1 — Install the Ableton Remote Script
 
-1. **Clone this repository:**
+```bash
+git clone https://github.com/zandermax/alivemcp.git
+cd alivemcp
 
-   ```bash
-   git clone https://github.com/zandermax/alivemcp.git
-   cd alivemcp
-   ```
+# macOS
+cp -r ALiveMCP_Remote ~/Music/Ableton/User\ Library/Remote\ Scripts/
 
-2. **Run the installation script:**
-
-   ```bash
-   bash install.sh
-   ```
-
-   Or manually copy to Ableton's Remote Scripts folder:
-
-   ```bash
-   # macOS
-   cp -r ALiveMCP_Remote ~/Music/Ableton/User\ Library/Remote\ Scripts/
-
-   # Windows
-   # Copy to: %USERPROFILE%\Documents\Ableton\User Library\Remote Scripts\
-   ```
-
-3. **Restart Ableton Live**
-
-4. **Verify installation:**
-   ```bash
-   python3 examples/test_connection.py
-   ```
-
-### Basic Usage
-
-```python
-import socket
-import json
-
-def send_command(action, **params):
-    """Send command to Ableton via port 9004"""
-    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    sock.connect(('127.0.0.1', 9004))
-
-    command = {'action': action, **params}
-    message = json.dumps(command) + '\n'
-    sock.sendall(message.encode('utf-8'))
-
-    response = b''
-    while b'\n' not in response:
-        response += sock.recv(4096)
-
-    sock.close()
-    return json.loads(response.decode('utf-8'))
-
-# Set tempo
-result = send_command('set_tempo', bpm=128)
-print("Tempo: " + str(result['bpm']) + " BPM")
-
-# Create a MIDI track
-result = send_command('create_midi_track', name='Bass')
-track_index = result['track_index']
-
-# Create a clip and add notes
-send_command('create_midi_clip', track_index=track_index, scene_index=0, length=4.0)
-notes = [
-    {"pitch": 36, "start": 0.0, "duration": 0.5, "velocity": 100},
-    {"pitch": 36, "start": 1.0, "duration": 0.5, "velocity": 100}
-]
-send_command('add_notes', track_index=track_index, scene_index=0, notes=notes)
-
-# Launch the clip
-send_command('launch_clip', track_index=track_index, scene_index=0)
+# Windows: copy ALiveMCP_Remote to
+# %USERPROFILE%\Documents\Ableton\User Library\Remote Scripts\
 ```
+
+In Ableton: **Preferences → Link Tempo MIDI → Control Surface** → select `ALiveMCP_Remote`. Restart Ableton.
+
+### Step 2 — Connect to Claude
+
+No separate install step. `uv` ([install](https://docs.astral.sh/uv/getting-started/installation/)) handles dependencies automatically on first run.
+
+**Claude Code** — run once to register:
+
+```bash
+claude mcp add alivemcp -- uv run /path/to/alivemcp/mcp_server.py
+```
+
+**Claude Desktop** — add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "alivemcp": {
+      "command": "uv",
+      "args": ["run", "/path/to/alivemcp/mcp_server.py"]
+    }
+  }
+}
+```
+
+**Verify** — with Ableton running, ask Claude: *"Check the Ableton connection"* — it will call `ping` and report back.
 
 ## Documentation
 
 - **[Installation Guide](docs/INSTALLATION.md)** - Detailed installation instructions
 - **[API Reference](docs/API_REFERENCE.md)** - Complete list of all 220 tools
 - **[Troubleshooting](docs/TROUBLESHOOTING.md)** - Common issues and solutions
-
-## Examples
-
-Check the `examples/` directory for:
-
-- **`test_connection.py`** - Verify the Remote Script is working
-- **`basic_usage.py`** - Simple examples of common operations
-- **`creative_workflow.py`** - Generate music programmatically
-- **`test_all_tools.py`** - Comprehensive test of all 220 tools
+- **[Testing Guide](TESTING.md)** - Unit tests and mock server
 
 ## Architecture
 
