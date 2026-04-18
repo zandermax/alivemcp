@@ -160,7 +160,12 @@ class DevicesCoreMixin:
             return {"ok": False, "error": str(e)}
 
     def set_device_parameter_by_name(self, track_index, device_index, param_name, value):
-        """Set device parameter by name"""
+        """Set device parameter by name.
+
+        For quantized parameters, pass a string matching one of the value_items.
+        For continuous parameters, pass a number — clamped to min/max.
+        Matches the first parameter whose name equals param_name.
+        """
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -172,9 +177,29 @@ class DevicesCoreMixin:
             device = track.devices[device_index]
 
             for param in device.parameters:
-                if str(param.name) == param_name:
-                    param.value = float(value)
-                    return {"ok": True, "name": str(param.name), "value": float(param.value)}
+                if str(param.name) != param_name:
+                    continue
+
+                if isinstance(value, str):
+                    value_items = [str(v) for v in param.value_items] if hasattr(param, "value_items") else []
+                    if not value_items:
+                        return {"ok": False, "error": "Parameter has no value_items for string lookup"}
+                    try:
+                        idx = value_items.index(value)
+                    except ValueError:
+                        return {"ok": False, "error": "'" + value + "' not in value_items: " + str(value_items)}
+                    param.value = float(idx)
+                else:
+                    clamped = max(float(param.min), min(float(param.max), float(value)))
+                    param.value = clamped
+
+                display_value = str(param.display_value) if hasattr(param, "display_value") else str(param.__str__())
+                return {
+                    "ok": True,
+                    "name": str(param.name),
+                    "value": float(param.value),
+                    "display_value": display_value,
+                }
 
             return {"ok": False, "error": "Parameter '" + str(param_name) + "' not found"}
         except Exception as e:

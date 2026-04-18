@@ -157,6 +157,12 @@ TOOL_DEFS: list[tuple[str, str, dict]] = [
         _schema({"enabled": _p(_BOOL, "True to enable")}, required=["enabled"]),
     ),
     ("capture_midi", "Capture the last-played MIDI notes into a clip.", _schema({})),
+    # ── Track Lookup ──────────────────────────────────────────────────────────
+    (
+        "get_track_index_by_name",
+        "Find a track's index by name. Case-insensitive, partial match, returns first result.",
+        _schema({"name": _p(_STR, "Track name or partial name to search for")}, required=["name"]),
+    ),
     # ── Track Management ──────────────────────────────────────────────────────
     (
         "create_midi_track",
@@ -1050,6 +1056,51 @@ TOOL_DEFS: list[tuple[str, str, dict]] = [
         _schema({"pan": _p(_NUM, "Pan -1.0 to 1.0")}, required=["pan"]),
     ),
     ("get_master_devices", "Get all devices on the master track.", _schema({})),
+    (
+        "get_master_device_params",
+        "Get all enriched parameter info for a device on the master track (name, raw_value, display_value, min, max, is_quantized, value_items).",
+        _schema({"device_index": _p(_INT, "0-based device index on master track")}, required=["device_index"]),
+    ),
+    (
+        "set_master_device_param",
+        "Set a master track device parameter by index. Value is clamped to the parameter's min/max.",
+        _schema(
+            {
+                "device_index": _p(_INT, "0-based device index on master track"),
+                "param_index": _p(_INT, "0-based parameter index"),
+                "value": _p(_NUM, "New parameter value (clamped to min/max)"),
+            },
+            required=["device_index", "param_index", "value"],
+        ),
+    ),
+    (
+        "set_master_device_param_by_name",
+        "Set a master track device parameter by name. For quantized params pass a string from value_items (e.g. '4:1'). For continuous params pass a number (clamped to min/max). Matches first parameter with that name.",
+        _schema(
+            {
+                "device_index": _p(_INT, "0-based device index on master track"),
+                "param_name": _p(_STR, "Parameter name (first match)"),
+                "value": _p(_STR, "Display string for quantized params, or numeric string for continuous"),
+            },
+            required=["device_index", "param_name", "value"],
+        ),
+    ),
+    (
+        "get_master_device_param_info",
+        "Get enriched info for a single master track device parameter by name. Faster than get_master_device_params when you only need one parameter.",
+        _schema(
+            {
+                "device_index": _p(_INT, "0-based device index on master track"),
+                "param_name": _p(_STR, "Parameter name (first match)"),
+            },
+            required=["device_index", "param_name"],
+        ),
+    ),
+    (
+        "get_master_chain_summary",
+        "Get all devices on the master track with full enriched parameter lists in a single call — avoids multiple round-trips for mastering work.",
+        _schema({}),
+    ),
     # ── Return Tracks ─────────────────────────────────────────────────────────
     ("get_return_track_count", "Get the number of return tracks.", _schema({})),
     (

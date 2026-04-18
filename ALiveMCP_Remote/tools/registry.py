@@ -36,6 +36,8 @@ AVAILABLE_TOOLS = [
     "get_session_record",
     "set_session_record",
     "capture_midi",
+    # Track lookup (1 tool)
+    "get_track_index_by_name",
     # Track management (13 tools)
     "create_midi_track",
     "create_audio_track",
@@ -149,11 +151,16 @@ AVAILABLE_TOOLS = [
     "set_device_param_by_name",
     "get_m4l_param_by_name",
     "get_cv_tools_devices",
-    # Master Track Control (4 tools)
+    # Master Track Control (9 tools)
     "get_master_track_info",
     "set_master_volume",
     "set_master_pan",
     "get_master_devices",
+    "get_master_device_params",
+    "set_master_device_param",
+    "set_master_device_param_by_name",
+    "get_master_device_param_info",
+    "get_master_chain_summary",
     # Return Track Operations (3 tools)
     "get_return_track_count",
     "get_return_track_info",

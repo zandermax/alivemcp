@@ -16,6 +16,7 @@ from .tools.devices import DevicesMixin
 from .tools.m4l_and_live12 import M4LAndLive12Mixin
 from .tools.midi import MidiMixin
 from .tools.mixing import MixingMixin
+from .tools.mixing_master_devices import MixingMasterDevicesMixin
 from .tools.registry import AVAILABLE_TOOLS
 from .tools.scenes import ScenesMixin
 from .tools.session_transport import SessionTransportMixin
@@ -30,6 +31,7 @@ class LiveAPITools(
     MidiMixin,
     DevicesMixin,
     MixingMixin,
+    MixingMasterDevicesMixin,
     ScenesMixin,
     ArrangementMixin,
     AutomationMixin,

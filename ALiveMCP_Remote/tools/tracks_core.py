@@ -197,6 +197,17 @@ class TracksCoreMixin:
         except Exception as e:
             return {"ok": False, "error": str(e)}
 
+    def get_track_index_by_name(self, name):
+        """Find a track's index by name (case-insensitive, partial match, first result)"""
+        try:
+            needle = name.lower()
+            for i, track in enumerate(self.song.tracks):
+                if needle in str(track.name).lower():
+                    return {"ok": True, "track_index": i, "name": str(track.name)}
+            return {"ok": False, "error": "No track matching '" + name + "' found"}
+        except Exception as e:
+            return {"ok": False, "error": str(e)}
+
     def set_track_color(self, track_index, color_index):
         """Set track color"""
         try:
