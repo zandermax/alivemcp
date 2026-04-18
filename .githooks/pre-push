@@ -6,7 +6,16 @@ REMOTE="$1"
 REMOTE_URL="$2"
 
 echo "--- pre-push: pytest ---"
-if ! python -m pytest; then
+if command -v pytest >/dev/null 2>&1; then
+    PYTEST="pytest"
+elif command -v uvx >/dev/null 2>&1; then
+    PYTEST="uvx --with pytest-cov pytest"
+else
+    echo "pytest not found. Install it: pip install pytest pytest-cov  or  uv tool install pytest"
+    exit 1
+fi
+
+if ! $PYTEST; then
     echo ""
     echo "Tests failed. Push aborted."
     exit 1

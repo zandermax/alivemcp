@@ -2,6 +2,18 @@
 # Pre-commit hook: lint staged Python files with ruff and check file lengths.
 set -euo pipefail
 
+# Resolve ruff — git hooks run with a stripped PATH, so check several locations.
+if command -v ruff >/dev/null 2>&1; then
+    RUFF="ruff"
+elif python3 -m ruff --version >/dev/null 2>&1; then
+    RUFF="python3 -m ruff"
+elif command -v uvx >/dev/null 2>&1; then
+    RUFF="uvx ruff"
+else
+    echo "ruff not found. Install it: pip install ruff  or  uv tool install ruff"
+    exit 1
+fi
+
 # Collect staged Python files (excluding deleted ones)
 STAGED=$(git diff --cached --name-only --diff-filter=d -- '*.py')
 
@@ -9,22 +21,29 @@ if [ -z "$STAGED" ]; then
     exit 0
 fi
 
-echo "--- pre-commit: ruff lint ---"
-if ! ruff check $STAGED; then
-    echo ""
-    echo "Lint errors found. Fix them or run: ruff check --fix"
-    exit 1
-fi
+echo "--- pre-commit: ruff lint (auto-fix) ---"
+$RUFF check --fix $STAGED
 
-echo "--- pre-commit: ruff format check ---"
-if ! ruff format --check $STAGED; then
+echo "--- pre-commit: ruff format ---"
+$RUFF format $STAGED
+
+# Re-stage any files that ruff modified
+for f in $STAGED; do
+    if ! git diff --quiet "$f" 2>/dev/null; then
+        git add "$f"
+        echo "  re-staged (auto-fixed): $f"
+    fi
+done
+
+# Fail if unfixable lint errors remain after auto-fix
+if ! $RUFF check $STAGED; then
     echo ""
-    echo "Formatting issues found. Run: ruff format"
+    echo "Lint errors remain that ruff could not fix automatically."
     exit 1
 fi
 
 echo "--- pre-commit: file length check ---"
-if ! python scripts/check_file_length.py $STAGED; then
+if ! python3 scripts/check_file_length.py $STAGED; then
     exit 1
 fi
 

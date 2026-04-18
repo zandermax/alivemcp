@@ -13,19 +13,24 @@
 
 ## Installation Methods
 
-### Method 1: Automated Installation (Recommended)
+### Method 1: Automated Setup (Recommended)
 
 ```bash
 git clone https://github.com/zandermax/alivemcp.git
 cd alivemcp
-bash install.sh
+python3 install.py
 ```
 
-The installation script performs the following operations:
-1. Detects operating system and determines correct installation path
-2. Backs up existing installation if present
-3. Copies `ALiveMCP_Remote` directory to Ableton's Remote Scripts folder
-4. Verifies file integrity
+`install.py` is an interactive script that handles every step with prompts
+and approval gates. It will:
+
+1. Auto-detect (or ask for) Ableton's Remote Scripts directory
+2. Copy or symlink `ALiveMCP_Remote` into that directory
+3. Register the MCP server with Claude Code or Claude Desktop
+4. Configure git hooks for linting and testing (contributors)
+5. Optionally install dev dependencies (`ruff`, `pytest`, `pytest-cov`)
+
+Requires Python 3.10+ on your system (not Ableton's bundled Python).
 
 ### Method 2: Manual Installation
 
@@ -158,9 +163,9 @@ Delete the directory:
    git pull origin main
    ```
 
-3. Run installation script:
+3. Run the setup script:
    ```bash
-   bash install.sh
+   python3 install.py
    ```
 
 4. Restart Ableton Live

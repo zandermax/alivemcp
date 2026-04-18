@@ -118,33 +118,58 @@ This implementation provides **220 tools across 44 categories** based on:
 
 ## Quick Start
 
-### Step 1 — Install the Ableton Remote Script
+### Automated Setup (Recommended)
 
 ```bash
 git clone https://github.com/zandermax/alivemcp.git
 cd alivemcp
+python3 install.py
+```
 
-# macOS
+`install.py` is an interactive script that walks through every step — detecting your Ableton path, registering the MCP server with Claude, and setting up git hooks. It asks for your approval before making any change and lets you override any default.
+
+Requires Python 3.10+ (not Ableton's bundled Python — your system Python). `uv` ([install](https://docs.astral.sh/uv/getting-started/installation/)) is used to run the MCP server and is recommended but not required at setup time.
+
+After running the script: in Ableton open **Preferences → Link Tempo MIDI → Control Surface**, select `ALiveMCP_Remote`, and restart Ableton.
+
+**Verify** — with Ableton running, ask Claude: *"Check the Ableton connection"* — it will call `ping` and report back.
+
+---
+
+### Manual Setup
+
+<details>
+<summary>Expand for manual installation steps</summary>
+
+#### Step 1 — Install the Remote Script
+
+**macOS / Linux**
+```bash
 cp -r ALiveMCP_Remote ~/Music/Ableton/User\ Library/Remote\ Scripts/
+```
 
-# Windows: copy ALiveMCP_Remote to
-# %USERPROFILE%\Documents\Ableton\User Library\Remote Scripts\
+**Windows**
+```
+copy ALiveMCP_Remote to:
+%USERPROFILE%\Documents\Ableton\User Library\Remote Scripts\
+```
+
+**Developers** — use a symlink so edits take effect on Ableton restart:
+```bash
+# macOS / Linux
+ln -s "$(pwd)/ALiveMCP_Remote" ~/Music/Ableton/User\ Library/Remote\ Scripts/ALiveMCP_Remote
 ```
 
 In Ableton: **Preferences → Link Tempo MIDI → Control Surface** → select `ALiveMCP_Remote`. Restart Ableton.
 
-### Step 2 — Connect to Claude
-
-No separate install step. `uv` ([install](https://docs.astral.sh/uv/getting-started/installation/)) handles dependencies automatically on first run.
+#### Step 2 — Connect to Claude
 
 **Claude Code** — run once to register:
-
 ```bash
 claude mcp add alivemcp -- uv run /path/to/alivemcp/mcp_server.py
 ```
 
 **Claude Desktop** — add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
-
 ```json
 {
   "mcpServers": {
@@ -156,7 +181,24 @@ claude mcp add alivemcp -- uv run /path/to/alivemcp/mcp_server.py
 }
 ```
 
-**Verify** — with Ableton running, ask Claude: *"Check the Ableton connection"* — it will call `ping` and report back.
+#### Step 3 — Git Hooks (contributors only)
+
+```bash
+git config core.hooksPath .githooks
+```
+
+This enables:
+- **pre-commit**: `ruff` lint + format check + 300-line file length limit
+- **pre-push**: full `pytest` suite + version bump check
+
+#### Step 4 — Dev Dependencies (contributors only)
+
+```bash
+uv pip install ruff pytest pytest-cov
+# or: pip install ruff pytest pytest-cov
+```
+
+</details>
 
 ## Documentation
 
