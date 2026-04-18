@@ -17,7 +17,7 @@ stubbed out in `tests/conftest.py`, so tests run in any Python environment.
 ### Run the tests
 
 ```bash
-pip install -r requirements-dev.txt
+pip install -r requirements-dev.txt  # or: uv pip install -r requirements-dev.txt
 pytest
 ```
 
@@ -30,7 +30,7 @@ pytest --cov=ALiveMCP_Remote --cov-report=term-missing
 
 ### Test layout
 
-```
+```text
 tests/
 ├── conftest.py               # Live module stub + shared fixtures (song, tools)
 ├── test_alivemcp.py        # Dispatch, PARAM_ALIASES, error handling
@@ -158,7 +158,7 @@ and transport buttons update state visible in subsequent responses.
 The mock and the real Remote Script cannot both bind port 9004. If Ableton is
 already running with ALiveMCP loaded, the mock will refuse to start:
 
-```
+```text
 Error: cannot bind to 127.0.0.1:9004 — [Errno 48] Address already in use
 ```
 

@@ -8,7 +8,7 @@ Control Ableton Live with AI. ALiveMCP exposes **220 LiveAPI tools** as a [Model
 
 ## Architecture
 
-```
+```text
 AI Client (Claude, etc.)
     │  MCP protocol (stdio)
     ▼
@@ -23,10 +23,10 @@ Ableton Live
 
 Two components, both required:
 
-| Component | Where it runs | Language |
-|---|---|---|
+| Component          | Where it runs                       | Language       |
+| ------------------ | ----------------------------------- | -------------- |
 | `ALiveMCP_Remote/` | Inside Ableton Live (Remote Script) | Python 2.7/3.x |
-| `mcp_server.py` | Your machine (MCP stdio server) | Python 3.10+ |
+| `mcp_server.py`    | Your machine (MCP stdio server)     | Python 3.10+   |
 
 ## Features
 
@@ -143,18 +143,21 @@ After running the script: in Ableton open **Preferences → Link Tempo MIDI → 
 
 #### Step 1 — Install the Remote Script
 
-**macOS / Linux**
+##### MacOS / Linux
+
 ```bash
 cp -r ALiveMCP_Remote ~/Music/Ableton/User\ Library/Remote\ Scripts/
 ```
 
-**Windows**
-```
+##### Windows
+
+```sh
 copy ALiveMCP_Remote to:
 %USERPROFILE%\Documents\Ableton\User Library\Remote Scripts\
 ```
 
-**Developers** — use a symlink so edits take effect on Ableton restart:
+###### Developers — use a symlink so edits take effect on Ableton restart
+
 ```bash
 # macOS / Linux
 ln -s "$(pwd)/ALiveMCP_Remote" ~/Music/Ableton/User\ Library/Remote\ Scripts/ALiveMCP_Remote
@@ -164,12 +167,14 @@ In Ableton: **Preferences → Link Tempo MIDI → Control Surface** → select `
 
 #### Step 2 — Connect to Claude
 
-**Claude Code** — run once to register:
+##### Claude Code** — run once to register
+
 ```bash
 claude mcp add alivemcp -- uv run /path/to/alivemcp/mcp_server.py
 ```
 
-**Claude Desktop** — add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
+##### Claude Desktop — add to `~/Library/Application Support/Claude/claude_desktop_config.json`
+
 ```json
 {
   "mcpServers": {
@@ -188,6 +193,7 @@ git config core.hooksPath .githooks
 ```
 
 This enables:
+
 - **pre-commit**: `ruff` lint + format check + 300-line file length limit
 - **pre-push**: full `pytest` suite + version bump check
 
@@ -206,8 +212,6 @@ uv pip install ruff pytest pytest-cov
 - **[API Reference](docs/API_REFERENCE.md)** - Complete list of all 220 tools
 - **[Troubleshooting](docs/TROUBLESHOOTING.md)** - Common issues and solutions
 - **[Testing Guide](TESTING.md)** - Unit tests and mock server
-
-## Architecture
 
 ### Thread-Safe Design
 
