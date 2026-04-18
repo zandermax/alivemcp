@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# Pre-commit hook: lint staged Python files with ruff and check file lengths.
+set -euo pipefail
+
+# Collect staged Python files (excluding deleted ones)
+STAGED=$(git diff --cached --name-only --diff-filter=d -- '*.py')
+
+if [ -z "$STAGED" ]; then
+    exit 0
+fi
+
+echo "--- pre-commit: ruff lint ---"
+if ! ruff check $STAGED; then
+    echo ""
+    echo "Lint errors found. Fix them or run: ruff check --fix"
+    exit 1
+fi
+
+echo "--- pre-commit: ruff format check ---"
+if ! ruff format --check $STAGED; then
+    echo ""
+    echo "Formatting issues found. Run: ruff format"
+    exit 1
+fi
+
+echo "--- pre-commit: file length check ---"
+if ! python scripts/check_file_length.py $STAGED; then
+    exit 1
+fi
+
+echo "pre-commit checks passed."
