@@ -1585,6 +1585,26 @@ Get all devices within a specific rack chain.
 
 ---
 
+### `get_rack_contents`
+
+Get full rack interior in one call: all chains, chain devices, and enriched parameters.
+
+**Parameters:**
+- `track_index` (int, required)
+- `device_index` (int, required) — must be an Audio/Instrument Rack device
+
+**Response:** `ok`, `track_index`, `device_index`, `rack_name`, `chains`, `count`
+
+`chains` is a list of:
+- `chain_index` (int)
+- `chain_name` (string)
+- `devices` (list of `{device_index, name, class_name, is_active, parameters}`)
+
+`parameters` uses the enriched shape from chain summary tools:
+- `name`, `raw_value`, `display_value`, `min`, `max`, `is_quantized`, `value_items`
+
+---
+
 ### `set_chain_mute`
 
 Mute or unmute a rack chain.

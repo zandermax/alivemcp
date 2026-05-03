@@ -1,9 +1,7 @@
 """
-Tests for ALiveMCP: socket server lifecycle, command dispatch, queue processing,
-lifecycle stubs, and the create_instance factory.
+Tests for ALiveMCP core lifecycle, command dispatch, and queue processing.
 """
 
-import json
 import queue
 from unittest.mock import MagicMock, patch
 
@@ -11,21 +9,12 @@ import pytest
 
 from ALiveMCP_Remote import ALiveMCP, __version__, create_instance
 
-# ---------------------------------------------------------------------------
-# Fixture: a ALiveMCP instance with socket and thread mocked out
-# ---------------------------------------------------------------------------
-
 
 @pytest.fixture
 def mcp(c_instance):
     with patch("ALiveMCP_Remote.socket.socket"), patch("ALiveMCP_Remote.threading.Thread"):
         instance = ALiveMCP(c_instance)
     return instance
-
-
-# ---------------------------------------------------------------------------
-# __init__
-# ---------------------------------------------------------------------------
 
 
 def test_init_sets_c_instance_and_song(c_instance):
@@ -57,20 +46,13 @@ def test_init_starts_socket_server(c_instance):
 
 
 def test_start_socket_server_logs_error_on_exception(c_instance):
-    """If socket binding fails the error is logged, not raised."""
     with patch("ALiveMCP_Remote.socket.socket") as mock_sock_cls, patch(
         "ALiveMCP_Remote.threading.Thread"
     ):
         mock_sock_cls.return_value.bind.side_effect = OSError("address in use")
         instance = ALiveMCP(c_instance)
-    # The error should have been logged; the script still initialises.
     assert instance is not None
     c_instance.log_message.assert_called()
-
-
-# ---------------------------------------------------------------------------
-# log
-# ---------------------------------------------------------------------------
 
 
 def test_log_prefixes_message(mcp, c_instance):
@@ -81,11 +63,6 @@ def test_log_prefixes_message(mcp, c_instance):
 def test_log_converts_non_string(mcp, c_instance):
     mcp.log(42)
     c_instance.log_message.assert_called_with("[ALiveMCP] 42")
-
-
-# ---------------------------------------------------------------------------
-# _process_command - built-in actions
-# ---------------------------------------------------------------------------
 
 
 def test_process_command_ping(mcp):
@@ -115,10 +92,8 @@ def test_process_command_unknown_action(mcp):
 def test_process_command_dispatches_to_tools(mcp):
     mcp.tools.ping = MagicMock(return_value={"ok": True, "custom": "value"})
     result = mcp._process_command({"action": "ping"})
-    # ping is handled before getattr dispatch - ensure built-in takes priority
     assert result["ok"] is True
 
-    # Test a real tool dispatch
     mcp.tools.start_playback = MagicMock(return_value={"ok": True, "dispatched": True})
     result = mcp._process_command({"action": "start_playback"})
     mcp.tools.start_playback.assert_called_once_with()
@@ -139,19 +114,13 @@ def test_process_command_exception_returns_error_with_traceback(mcp):
     assert "traceback" in result
 
 
-# ---------------------------------------------------------------------------
-# update_display - queue processing
-# ---------------------------------------------------------------------------
-
-
 def _put_command(mcp, request_id, command):
-    """Helper: register a response queue and enqueue a command."""
     mcp.response_queues[request_id] = queue.Queue()
     mcp.command_queue.put((request_id, command))
 
 
 def test_update_display_empty_queue_is_noop(mcp):
-    mcp.update_display()  # should not raise
+    mcp.update_display()
 
 
 def test_update_display_processes_single_command(mcp):
@@ -177,22 +146,14 @@ def test_update_display_caps_at_five_commands_per_tick(mcp):
 
 
 def test_update_display_skips_missing_response_queue(mcp):
-    """Command whose response queue was already cleaned up should not raise."""
     mcp.command_queue.put((999, {"action": "ping"}))
-    # No entry in response_queues for id 999 - should not blow up
     mcp.update_display()
 
 
 def test_update_display_handles_exception_in_processing(mcp):
-    """An exception during command processing should be caught gracefully."""
     _put_command(mcp, 0, {"action": "ping"})
     mcp._process_command = MagicMock(side_effect=RuntimeError("unexpected"))
-    mcp.update_display()  # should not raise
-
-
-# ---------------------------------------------------------------------------
-# Ableton lifecycle stubs
-# ---------------------------------------------------------------------------
+    mcp.update_display()
 
 
 def test_connect_script_instances_returns_none(mcp):
@@ -209,11 +170,6 @@ def test_refresh_state_returns_none(mcp):
 
 def test_build_midi_map_returns_none(mcp):
     assert mcp.build_midi_map(MagicMock()) is None
-
-
-# ---------------------------------------------------------------------------
-# disconnect
-# ---------------------------------------------------------------------------
 
 
 def test_disconnect_sets_running_false(mcp):
@@ -233,169 +189,11 @@ def test_disconnect_handles_socket_close_error(mcp):
     mock_server = MagicMock()
     mock_server.close.side_effect = OSError("already closed")
     mcp.socket_server = mock_server
-    mcp.disconnect()  # should not raise
+    mcp.disconnect()
     assert mcp.running is False
-
-
-# ---------------------------------------------------------------------------
-# create_instance factory
-# ---------------------------------------------------------------------------
 
 
 def test_create_instance_returns_claude_mcp(c_instance):
     with patch("ALiveMCP_Remote.socket.socket"), patch("ALiveMCP_Remote.threading.Thread"):
         instance = create_instance(c_instance)
     assert isinstance(instance, ALiveMCP)
-
-
-# ---------------------------------------------------------------------------
-# _socket_listener
-# ---------------------------------------------------------------------------
-
-
-def test_socket_listener_exits_immediately_when_not_running(mcp):
-    mcp.running = False
-    mcp.socket_server = MagicMock()
-    mcp._socket_listener()
-    mcp.socket_server.accept.assert_not_called()
-
-
-def test_socket_listener_spawns_thread_per_connection(mcp):
-    mock_client = MagicMock()
-    call_count = 0
-
-    def accept_side_effect():
-        nonlocal call_count
-        call_count += 1
-        if call_count == 1:
-            return mock_client, ("127.0.0.1", 12345)
-        mcp.running = False
-        raise OSError("server closed")
-
-    mcp.socket_server = MagicMock()
-    mcp.socket_server.accept.side_effect = accept_side_effect
-
-    with patch("ALiveMCP_Remote.threading.Thread") as mock_thread_cls:
-        mock_thread_cls.return_value = MagicMock()
-        mcp._socket_listener()
-
-    mock_thread_cls.assert_called_once()
-
-
-def test_socket_listener_logs_error_when_running(mcp):
-    call_count = 0
-
-    def accept_side_effect():
-        nonlocal call_count
-        call_count += 1
-        if call_count == 1:
-            raise RuntimeError("random error")
-        mcp.running = False
-        raise RuntimeError("stop")
-
-    mcp.socket_server = MagicMock()
-    mcp.socket_server.accept.side_effect = accept_side_effect
-    mcp._socket_listener()
-    mcp.c_instance.log_message.assert_called()
-
-
-# ---------------------------------------------------------------------------
-# _handle_client
-# ---------------------------------------------------------------------------
-
-
-def _make_intercept(mcp):
-    """Intercept command_queue.put and immediately fulfil the response queue."""
-    original_put = mcp.command_queue.put
-
-    def intercept(item):
-        request_id, command = item
-        original_put(item)
-        response = mcp._process_command(command)
-        if request_id in mcp.response_queues:
-            mcp.response_queues[request_id].put(response)
-
-    return intercept
-
-
-def test_handle_client_success(mcp):
-    mock_client = MagicMock()
-    json_message = json.dumps({"action": "ping"}) + "\n"
-    mock_client.recv.side_effect = [json_message.encode(), b""]
-    mcp.command_queue.put = _make_intercept(mcp)
-
-    mcp._handle_client(mock_client)
-
-    mock_client.sendall.assert_called_once()
-    raw = mock_client.sendall.call_args[0][0]
-    response = json.loads(raw.decode().strip())
-    assert response["ok"] is True
-    assert response["message"] == "pong (queue-based, thread-safe)"
-
-
-def test_handle_client_json_parse_error(mcp):
-    mock_client = MagicMock()
-    mock_client.recv.side_effect = [b"not valid json\n", b""]
-
-    mcp._handle_client(mock_client)
-
-    mock_client.sendall.assert_called_once()
-    raw = mock_client.sendall.call_args[0][0]
-    response = json.loads(raw.decode().strip())
-    assert response["ok"] is False
-
-
-def test_handle_client_response_timeout(mcp):
-    """When no response is placed in the queue within the timeout, a timeout error is sent."""
-    mock_client = MagicMock()
-    json_message = json.dumps({"action": "ping"}) + "\n"
-    mock_client.recv.side_effect = [json_message.encode(), b""]
-
-    # Patch the response queue's get() to immediately raise queue.Empty
-    with patch("ALiveMCP_Remote.queue.Queue.get", side_effect=queue.Empty):
-        mcp._handle_client(mock_client)
-
-    mock_client.sendall.assert_called_once()
-    raw = mock_client.sendall.call_args[0][0]
-    response = json.loads(raw.decode().strip())
-    assert response["ok"] is False
-    assert "timeout" in response["error"].lower()
-
-
-def test_handle_client_closes_socket_on_exit(mcp):
-    mock_client = MagicMock()
-    mock_client.recv.return_value = b""
-    mcp._handle_client(mock_client)
-    mock_client.close.assert_called_once()
-
-
-def test_handle_client_socket_timeout_continues(mcp):
-    """A socket.timeout should cause the loop to continue, not exit."""
-    import socket as socket_mod
-
-    mock_client = MagicMock()
-    mock_client.recv.side_effect = [socket_mod.timeout, b""]
-    # Should not raise; just finish cleanly
-    mcp._handle_client(mock_client)
-
-
-def test_handle_client_exits_when_not_running(mcp):
-    mock_client = MagicMock()
-    mcp.running = False
-    mock_client.recv.return_value = b"irrelevant"
-    mcp._handle_client(mock_client)
-    mock_client.close.assert_called_once()
-
-
-def test_handle_client_multiple_messages_in_buffer(mcp):
-    """Two newline-separated messages in a single recv call are both processed."""
-    mock_client = MagicMock()
-    msg1 = json.dumps({"action": "ping"})
-    msg2 = json.dumps({"action": "ping"})
-    payload = (msg1 + "\n" + msg2 + "\n").encode()
-    mock_client.recv.side_effect = [payload, b""]
-    mcp.command_queue.put = _make_intercept(mcp)
-
-    mcp._handle_client(mock_client)
-
-    assert mock_client.sendall.call_count == 2

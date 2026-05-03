@@ -200,9 +200,10 @@ AVAILABLE_TOOLS = [
     # Groove Pool (2 tools)
     "get_groove_pool_grooves",
     "set_clip_groove",
-    # Rack/Chain Operations (4 tools)
+    # Rack/Chain Operations (5 tools)
     "get_device_chains",
     "get_chain_devices",
+    "get_rack_contents",
     "set_chain_mute",
     "set_chain_solo",
     # Clip Automation Envelopes (6 tools)
