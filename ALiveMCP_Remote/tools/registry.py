@@ -20,6 +20,7 @@ AVAILABLE_TOOLS = [
     "tap_tempo",
     "undo",
     "redo",
+    "save_project",
     # Transport (8 tools)
     "jump_to_time",
     "get_current_time",

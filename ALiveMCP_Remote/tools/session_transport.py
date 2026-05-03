@@ -169,3 +169,11 @@ class SessionTransportMixin(SessionAutomationMixin):
             return {"ok": True, "message": "Redo executed"}
         except Exception as e:
             return {"ok": False, "error": str(e)}
+
+    def save_project(self):
+        """Save the current Ableton Live project (.als file)"""
+        try:
+            self.song.save_project()
+            return {"ok": True, "message": "Project saved"}
+        except Exception as e:
+            return {"ok": False, "error": str(e)}

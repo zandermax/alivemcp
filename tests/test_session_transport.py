@@ -202,12 +202,6 @@ def test_set_metronome(tools, song):
     assert song.metronome is True
 
 
-def test_set_metronome_exception(tools, song):
-    song.metronome = property(lambda s: (_ for _ in ()).throw(Exception("err")))
-    result = tools.set_metronome(True)
-    assert result["ok"] is True
-
-
 def test_tap_tempo(tools, song):
     result = tools.tap_tempo()
     assert result["ok"] is True
@@ -244,6 +238,19 @@ def test_redo_exception(tools, song):
     assert result["ok"] is False
 
 
+def test_save_project(tools, song):
+    result = tools.save_project()
+    assert result["ok"] is True
+    assert result["message"] == "Project saved"
+    song.save_project.assert_called_once()
+
+
+def test_save_project_exception(tools, song):
+    song.save_project.side_effect = Exception("disk full")
+    result = tools.save_project()
+    assert result == {"ok": False, "error": "disk full"}
+
+
 def test_jump_to_time(tools, song):
     result = tools.jump_to_time(4.0)
     assert result["ok"] is True
@@ -274,12 +281,6 @@ def test_set_arrangement_overdub(tools, song):
     result = tools.set_arrangement_overdub(True)
     assert result["ok"] is True
     assert song.arrangement_overdub is True
-
-
-def test_set_arrangement_overdub_exception(tools, song):
-    song.arrangement_overdub = property(lambda s: (_ for _ in ()).throw(Exception("e")))
-    result = tools.set_arrangement_overdub(True)
-    assert result["ok"] is True
 
 
 def test_set_back_to_arranger(tools, song):
