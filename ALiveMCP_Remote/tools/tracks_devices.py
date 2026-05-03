@@ -32,9 +32,7 @@ class TracksDevicesMixin:
                     else str(param.__str__())
                 )
                 is_quantized = bool(param.is_quantized) if hasattr(param, "is_quantized") else False
-                value_items = (
-                    [str(v) for v in param.value_items] if hasattr(param, "value_items") else []
-                )
+                value_items = [str(v) for v in param.value_items] if is_quantized else []
                 params_info.append(
                     {
                         "index": i,
@@ -111,9 +109,10 @@ class TracksDevicesMixin:
                     continue
 
                 if isinstance(value, str):
-                    value_items = (
-                        [str(v) for v in param.value_items] if hasattr(param, "value_items") else []
+                    is_quantized = (
+                        bool(param.is_quantized) if hasattr(param, "is_quantized") else False
                     )
+                    value_items = [str(v) for v in param.value_items] if is_quantized else []
                     if not value_items:
                         return {
                             "ok": False,
@@ -174,9 +173,7 @@ class TracksDevicesMixin:
                     is_quantized = (
                         bool(param.is_quantized) if hasattr(param, "is_quantized") else False
                     )
-                    value_items = (
-                        [str(v) for v in param.value_items] if hasattr(param, "value_items") else []
-                    )
+                    value_items = [str(v) for v in param.value_items] if is_quantized else []
                     params_info.append(
                         {
                             "index": i,
