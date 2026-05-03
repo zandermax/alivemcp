@@ -26,11 +26,10 @@ class TracksDevicesMixin:
             device = track.devices[device_index]
             params_info = []
             for i, param in enumerate(device.parameters):
-                display_value = (
-                    str(param.display_value)
-                    if hasattr(param, "display_value")
-                    else str(param.__str__())
-                )
+                try:
+                    display_value = str(param.str_for_value(param.value))
+                except Exception:
+                    display_value = str(param.value)
                 is_quantized = bool(param.is_quantized) if hasattr(param, "is_quantized") else False
                 value_items = [str(v) for v in param.value_items] if is_quantized else []
                 params_info.append(
@@ -130,11 +129,10 @@ class TracksDevicesMixin:
                     clamped = max(float(param.min), min(float(param.max), float(value)))
                     param.value = clamped
 
-                display_value = (
-                    str(param.display_value)
-                    if hasattr(param, "display_value")
-                    else str(param.__str__())
-                )
+                try:
+                    display_value = str(param.str_for_value(param.value))
+                except Exception:
+                    display_value = str(param.value)
                 return {
                     "ok": True,
                     "track_index": track_index,
@@ -165,11 +163,10 @@ class TracksDevicesMixin:
             for d_idx, device in enumerate(track.devices):
                 params_info = []
                 for i, param in enumerate(device.parameters):
-                    display_value = (
-                        str(param.display_value)
-                        if hasattr(param, "display_value")
-                        else str(param.__str__())
-                    )
+                    try:
+                        display_value = str(param.str_for_value(param.value))
+                    except Exception:
+                        display_value = str(param.value)
                     is_quantized = (
                         bool(param.is_quantized) if hasattr(param, "is_quantized") else False
                     )
