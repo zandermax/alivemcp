@@ -161,6 +161,11 @@ AVAILABLE_TOOLS = [
     "set_master_device_param_by_name",
     "get_master_device_param_info",
     "get_master_chain_summary",
+    # Track Device Parameters — Enriched (4 tools)
+    "get_track_device_params",
+    "set_track_device_param",
+    "set_track_device_param_by_name",
+    "get_track_chain_summary",
     # Return Track Operations (3 tools)
     "get_return_track_count",
     "get_return_track_info",

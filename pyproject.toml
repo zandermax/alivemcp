@@ -13,7 +13,7 @@ dependencies = ["mcp>=1.0.0"]
 alivemcp = "mcp_server:main"
 
 [tool.setuptools]
-py-modules = ["mcp_server"]
+py-modules = ["mcp_server", "mcp_server_tool_defs"]
 
 [tool.ruff]
 target-version = "py37"

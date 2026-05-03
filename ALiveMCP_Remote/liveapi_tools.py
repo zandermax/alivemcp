@@ -21,12 +21,14 @@ from .tools.registry import AVAILABLE_TOOLS
 from .tools.scenes import ScenesMixin
 from .tools.session_transport import SessionTransportMixin
 from .tools.tracks import TracksMixin
+from .tools.tracks_devices import TracksDevicesMixin
 
 
 class LiveAPITools(
     BaseMixin,
     SessionTransportMixin,
     TracksMixin,
+    TracksDevicesMixin,
     ClipsMixin,
     MidiMixin,
     DevicesMixin,
@@ -43,6 +45,7 @@ class LiveAPITools(
     Composed from domain-specific mixins:
     - SessionTransportMixin: play/stop/record/tempo/transport/automation/metronome
     - TracksMixin: create/delete/arm/solo/mute/routing/groups/freeze/annotations
+    - TracksDevicesMixin: enriched track device parameters with display values
     - ClipsMixin: create/delete/launch/stop/looping/color/fades/follow actions
     - MidiMixin: add/remove/select notes, CC, program change
     - DevicesMixin: add/remove/parameters/racks/chains/plugin windows
