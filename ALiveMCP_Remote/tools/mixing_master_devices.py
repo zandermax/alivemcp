@@ -18,19 +18,27 @@ class MixingMasterDevicesMixin:
             device = master.devices[device_index]
             params_info = []
             for i, param in enumerate(device.parameters):
-                display_value = str(param.display_value) if hasattr(param, "display_value") else str(param.__str__())
+                display_value = (
+                    str(param.display_value)
+                    if hasattr(param, "display_value")
+                    else str(param.__str__())
+                )
                 is_quantized = bool(param.is_quantized) if hasattr(param, "is_quantized") else False
-                value_items = [str(v) for v in param.value_items] if hasattr(param, "value_items") else []
-                params_info.append({
-                    "index": i,
-                    "name": str(param.name),
-                    "raw_value": float(param.value),
-                    "display_value": display_value,
-                    "min": float(param.min),
-                    "max": float(param.max),
-                    "is_quantized": is_quantized,
-                    "value_items": value_items,
-                })
+                value_items = (
+                    [str(v) for v in param.value_items] if hasattr(param, "value_items") else []
+                )
+                params_info.append(
+                    {
+                        "index": i,
+                        "name": str(param.name),
+                        "raw_value": float(param.value),
+                        "display_value": display_value,
+                        "min": float(param.min),
+                        "max": float(param.max),
+                        "is_quantized": is_quantized,
+                        "value_items": value_items,
+                    }
+                )
 
             return {
                 "ok": True,
@@ -84,19 +92,31 @@ class MixingMasterDevicesMixin:
                     continue
 
                 if isinstance(value, str):
-                    value_items = [str(v) for v in param.value_items] if hasattr(param, "value_items") else []
+                    value_items = (
+                        [str(v) for v in param.value_items] if hasattr(param, "value_items") else []
+                    )
                     if not value_items:
-                        return {"ok": False, "error": "Parameter has no value_items for string lookup"}
+                        return {
+                            "ok": False,
+                            "error": "Parameter has no value_items for string lookup",
+                        }
                     try:
                         idx = value_items.index(value)
                     except ValueError:
-                        return {"ok": False, "error": "'" + value + "' not in value_items: " + str(value_items)}
+                        return {
+                            "ok": False,
+                            "error": "'" + value + "' not in value_items: " + str(value_items),
+                        }
                     param.value = float(idx)
                 else:
                     clamped = max(float(param.min), min(float(param.max), float(value)))
                     param.value = clamped
 
-                display_value = str(param.display_value) if hasattr(param, "display_value") else str(param.__str__())
+                display_value = (
+                    str(param.display_value)
+                    if hasattr(param, "display_value")
+                    else str(param.__str__())
+                )
                 return {
                     "ok": True,
                     "device_name": str(device.name),
@@ -125,9 +145,15 @@ class MixingMasterDevicesMixin:
                 if str(param.name) != param_name:
                     continue
 
-                display_value = str(param.display_value) if hasattr(param, "display_value") else str(param.__str__())
+                display_value = (
+                    str(param.display_value)
+                    if hasattr(param, "display_value")
+                    else str(param.__str__())
+                )
                 is_quantized = bool(param.is_quantized) if hasattr(param, "is_quantized") else False
-                value_items = [str(v) for v in param.value_items] if hasattr(param, "value_items") else []
+                value_items = (
+                    [str(v) for v in param.value_items] if hasattr(param, "value_items") else []
+                )
                 return {
                     "ok": True,
                     "device_name": str(device.name),
@@ -154,27 +180,39 @@ class MixingMasterDevicesMixin:
             for d_idx, device in enumerate(master.devices):
                 params_info = []
                 for i, param in enumerate(device.parameters):
-                    display_value = str(param.display_value) if hasattr(param, "display_value") else str(param.__str__())
-                    is_quantized = bool(param.is_quantized) if hasattr(param, "is_quantized") else False
-                    value_items = [str(v) for v in param.value_items] if hasattr(param, "value_items") else []
-                    params_info.append({
-                        "index": i,
-                        "name": str(param.name),
-                        "raw_value": float(param.value),
-                        "display_value": display_value,
-                        "min": float(param.min),
-                        "max": float(param.max),
-                        "is_quantized": is_quantized,
-                        "value_items": value_items,
-                    })
+                    display_value = (
+                        str(param.display_value)
+                        if hasattr(param, "display_value")
+                        else str(param.__str__())
+                    )
+                    is_quantized = (
+                        bool(param.is_quantized) if hasattr(param, "is_quantized") else False
+                    )
+                    value_items = (
+                        [str(v) for v in param.value_items] if hasattr(param, "value_items") else []
+                    )
+                    params_info.append(
+                        {
+                            "index": i,
+                            "name": str(param.name),
+                            "raw_value": float(param.value),
+                            "display_value": display_value,
+                            "min": float(param.min),
+                            "max": float(param.max),
+                            "is_quantized": is_quantized,
+                            "value_items": value_items,
+                        }
+                    )
 
-                devices.append({
-                    "index": d_idx,
-                    "name": str(device.name),
-                    "class_name": str(device.class_name),
-                    "is_active": device.is_active,
-                    "parameters": params_info,
-                })
+                devices.append(
+                    {
+                        "index": d_idx,
+                        "name": str(device.name),
+                        "class_name": str(device.class_name),
+                        "is_active": device.is_active,
+                        "parameters": params_info,
+                    }
+                )
 
             return {"ok": True, "count": len(devices), "devices": devices}
         except Exception as e:

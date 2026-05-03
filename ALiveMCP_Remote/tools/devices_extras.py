@@ -1,0 +1,237 @@
+"""
+Device extras: on/off, parameter enumeration, presets, and randomization.
+"""
+
+import random
+
+
+class DevicesExtrasMixin:
+    # ========================================================================
+    # DEVICE EXTRAS
+    # ========================================================================
+
+    def set_device_on_off(self, track_index, device_index, enabled):
+        """Turn device on or off"""
+        try:
+            if track_index < 0 or track_index >= len(self.song.tracks):
+                return {"ok": False, "error": "Invalid track index"}
+
+            track = self.song.tracks[track_index]
+            if device_index < 0 or device_index >= len(track.devices):
+                return {"ok": False, "error": "Invalid device index"}
+
+            device = track.devices[device_index]
+            if hasattr(device, "is_active"):
+                device.is_active = bool(enabled)
+                return {"ok": True, "is_active": device.is_active}
+            else:
+                return {"ok": False, "error": "Device does not support on/off"}
+        except Exception as e:
+            return {"ok": False, "error": str(e)}
+
+    def get_device_parameters(self, track_index, device_index):
+        """Get all parameters for a device"""
+        try:
+            if track_index < 0 or track_index >= len(self.song.tracks):
+                return {"ok": False, "error": "Invalid track index"}
+
+            track = self.song.tracks[track_index]
+            if device_index < 0 or device_index >= len(track.devices):
+                return {"ok": False, "error": "Invalid device index"}
+
+            device = track.devices[device_index]
+            parameters = []
+
+            for i, param in enumerate(device.parameters):
+                parameters.append(
+                    {
+                        "index": i,
+                        "name": str(param.name),
+                        "value": float(param.value),
+                        "min": float(param.min),
+                        "max": float(param.max),
+                        "is_quantized": param.is_quantized,
+                        "is_enabled": param.is_enabled if hasattr(param, "is_enabled") else True,
+                    }
+                )
+
+            return {
+                "ok": True,
+                "track_index": track_index,
+                "device_index": device_index,
+                "parameters": parameters,
+                "count": len(parameters),
+            }
+        except Exception as e:
+            return {"ok": False, "error": str(e)}
+
+    def get_device_parameter_by_name(self, track_index, device_index, param_name):
+        """Get device parameter by name"""
+        try:
+            if track_index < 0 or track_index >= len(self.song.tracks):
+                return {"ok": False, "error": "Invalid track index"}
+
+            track = self.song.tracks[track_index]
+            if device_index < 0 or device_index >= len(track.devices):
+                return {"ok": False, "error": "Invalid device index"}
+
+            device = track.devices[device_index]
+
+            for i, param in enumerate(device.parameters):
+                if str(param.name) == param_name:
+                    return {
+                        "ok": True,
+                        "index": i,
+                        "name": str(param.name),
+                        "value": float(param.value),
+                        "min": float(param.min),
+                        "max": float(param.max),
+                    }
+
+            return {"ok": False, "error": "Parameter '" + str(param_name) + "' not found"}
+        except Exception as e:
+            return {"ok": False, "error": str(e)}
+
+    def set_device_parameter_by_name(self, track_index, device_index, param_name, value):
+        """Set device parameter by name.
+
+        For quantized parameters, pass a string matching one of the value_items.
+        For continuous parameters, pass a number — clamped to min/max.
+        Matches the first parameter whose name equals param_name.
+        """
+        try:
+            if track_index < 0 or track_index >= len(self.song.tracks):
+                return {"ok": False, "error": "Invalid track index"}
+
+            track = self.song.tracks[track_index]
+            if device_index < 0 or device_index >= len(track.devices):
+                return {"ok": False, "error": "Invalid device index"}
+
+            device = track.devices[device_index]
+
+            for param in device.parameters:
+                if str(param.name) != param_name:
+                    continue
+
+                if isinstance(value, str):
+                    value_items = (
+                        [str(v) for v in param.value_items] if hasattr(param, "value_items") else []
+                    )
+                    if not value_items:
+                        return {
+                            "ok": False,
+                            "error": "Parameter has no value_items for string lookup",
+                        }
+                    try:
+                        idx = value_items.index(value)
+                    except ValueError:
+                        return {
+                            "ok": False,
+                            "error": "'" + value + "' not in value_items: " + str(value_items),
+                        }
+                    param.value = float(idx)
+                else:
+                    clamped = max(float(param.min), min(float(param.max), float(value)))
+                    param.value = clamped
+
+                display_value = (
+                    str(param.display_value)
+                    if hasattr(param, "display_value")
+                    else str(param.__str__())
+                )
+                return {
+                    "ok": True,
+                    "name": str(param.name),
+                    "value": float(param.value),
+                    "display_value": display_value,
+                }
+
+            return {"ok": False, "error": "Parameter '" + str(param_name) + "' not found"}
+        except Exception as e:
+            return {"ok": False, "error": str(e)}
+
+    def delete_device(self, track_index, device_index):
+        """Delete device from track"""
+        try:
+            if track_index < 0 or track_index >= len(self.song.tracks):
+                return {"ok": False, "error": "Invalid track index"}
+
+            track = self.song.tracks[track_index]
+            if device_index < 0 or device_index >= len(track.devices):
+                return {"ok": False, "error": "Invalid device index"}
+
+            track.delete_device(device_index)
+            return {"ok": True, "message": "Device deleted"}
+        except Exception as e:
+            return {"ok": False, "error": str(e)}
+
+    def get_device_presets(self, track_index, device_index):
+        """Get available presets for device"""
+        try:
+            if track_index < 0 or track_index >= len(self.song.tracks):
+                return {"ok": False, "error": "Invalid track index"}
+
+            track = self.song.tracks[track_index]
+            if device_index < 0 or device_index >= len(track.devices):
+                return {"ok": False, "error": "Invalid device index"}
+
+            return {
+                "ok": True,
+                "message": "Device preset browsing requires browser API",
+                "device_index": device_index,
+            }
+        except Exception as e:
+            return {"ok": False, "error": str(e)}
+
+    def set_device_preset(self, track_index, device_index, preset_index):
+        """Load preset for device"""
+        try:
+            if track_index < 0 or track_index >= len(self.song.tracks):
+                return {"ok": False, "error": "Invalid track index"}
+
+            track = self.song.tracks[track_index]
+            if device_index < 0 or device_index >= len(track.devices):
+                return {"ok": False, "error": "Invalid device index"}
+
+            return {
+                "ok": True,
+                "message": "Device preset loading requires browser API",
+                "preset_index": preset_index,
+            }
+        except Exception as e:
+            return {"ok": False, "error": str(e)}
+
+    def randomize_device_parameters(self, track_index, device_index):
+        """Randomize all device parameters (delegates to randomize_device)"""
+        return self.randomize_device(track_index, device_index)
+
+    def randomize_device(self, track_index, device_index):
+        """Randomize all parameters of a device"""
+        try:
+            if track_index < 0 or track_index >= len(self.song.tracks):
+                return {"ok": False, "error": "Invalid track index"}
+
+            track = self.song.tracks[track_index]
+            if device_index < 0 or device_index >= len(track.devices):
+                return {"ok": False, "error": "Invalid device index"}
+
+            device = track.devices[device_index]
+            randomized_count = 0
+
+            for param in device.parameters:
+                if hasattr(param, "is_enabled") and param.is_enabled and not param.is_quantized:
+                    try:
+                        param.value = random.uniform(float(param.min), float(param.max))
+                        randomized_count += 1
+                    except Exception:
+                        pass
+
+            return {
+                "ok": True,
+                "track_index": track_index,
+                "device_index": device_index,
+                "device_name": str(device.name),
+                "randomized_parameters": randomized_count,
+            }
+        except Exception as e:
+            return {"ok": False, "error": str(e)}

@@ -22,14 +22,20 @@ def song():
 
     device = MagicMock()
 
+    arrangement_clip = MagicMock()
+
     track = MagicMock()
     track.clip_slots = [clip_slot]
     track.devices = [device]
+    track.arrangement_clips = [arrangement_clip]
+
+    cue_point = MagicMock()
 
     s = MagicMock()
     s.tracks = [track]
     s.scenes = [MagicMock()]
     s.return_tracks = [MagicMock()]
+    s.cue_points = [cue_point]
     return s
 
 

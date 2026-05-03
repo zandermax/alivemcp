@@ -222,19 +222,27 @@ class DevicesRacksMixin:
 
             params_info = []
             for i, param in enumerate(device.parameters):
-                display_value = str(param.display_value) if hasattr(param, "display_value") else str(param.__str__())
+                display_value = (
+                    str(param.display_value)
+                    if hasattr(param, "display_value")
+                    else str(param.__str__())
+                )
                 is_quantized = bool(param.is_quantized) if hasattr(param, "is_quantized") else False
-                value_items = [str(v) for v in param.value_items] if hasattr(param, "value_items") else []
-                params_info.append({
-                    "index": i,
-                    "name": str(param.name),
-                    "raw_value": float(param.value),
-                    "display_value": display_value,
-                    "min": float(param.min),
-                    "max": float(param.max),
-                    "is_quantized": is_quantized,
-                    "value_items": value_items,
-                })
+                value_items = (
+                    [str(v) for v in param.value_items] if hasattr(param, "value_items") else []
+                )
+                params_info.append(
+                    {
+                        "index": i,
+                        "name": str(param.name),
+                        "raw_value": float(param.value),
+                        "display_value": display_value,
+                        "min": float(param.min),
+                        "max": float(param.max),
+                        "is_quantized": is_quantized,
+                        "value_items": value_items,
+                    }
+                )
 
             return {
                 "ok": True,
