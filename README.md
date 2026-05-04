@@ -85,7 +85,7 @@ This implementation provides **220 tools across 44 categories** based on:
 | **Loop/Locator**          | 6     | Enable loop, create locators, jump by amount                    |
 | **Project**               | 6     | Project root, session record, cue points                        |
 | **Max for Live**          | 5     | Detect M4L devices, control by parameter name, CV Tools support |
-| **Master Track**          | 4     | Master volume, pan, devices, info                               |
+| **Master Track**          | 9     | Master volume, pan, devices, enriched parameter control         |
 | **Return Tracks**         | 3     | Return track info, volume control                               |
 | **Audio Clips**           | 5     | Warp mode, warp markers, file paths, warping control            |
 | **Follow Actions**        | 3     | Clip follow actions for live performance                        |
@@ -94,7 +94,7 @@ This implementation provides **220 tools across 44 categories** based on:
 | **View/Navigation**       | 4     | Show views, focus tracks, scroll timeline                       |
 | **Color Utilities**       | 2     | Get clip/track colors                                           |
 | **Groove Pool**           | 2     | Groove library access and assignment                            |
-| **Rack/Chains**           | 4     | Instrument/effect rack chain control                            |
+| **Rack/Chains**           | 5     | Instrument/effect rack chain control                            |
 | **Clip Automation**       | 6     | Automation envelopes, steps, values                             |
 | **Track Freeze/Flatten**  | 3     | Freeze tracks for CPU, flatten to audio                         |
 | **Clip Fades**            | 4     | Fade in/out for audio clips                                     |
@@ -113,6 +113,8 @@ This implementation provides **220 tools across 44 categories** based on:
 | **Application Info**      | 4     | Version, variant, build ID, message boxes                       |
 | **Display Values**        | 2     | Get parameter values as shown in UI                             |
 | **Additional Properties** | 10    | Clip start time, track/scene states, signatures                 |
+
+Category rows are thematic and may overlap. For the canonical count, see `ALiveMCP_Remote/tools/registry.py` and `docs/API_REFERENCE.md`.
 
 **Total: 220 Tools**
 
@@ -167,7 +169,7 @@ In Ableton: **Preferences → Link Tempo MIDI → Control Surface** → select `
 
 #### Step 2 — Connect to Claude
 
-##### Claude Code** — run once to register
+##### Claude Code — run once to register
 
 ```bash
 claude mcp add alivemcp -- uv run /path/to/alivemcp/mcp_server.py
@@ -225,6 +227,18 @@ The Remote Script uses a queue-based architecture to ensure thread safety:
 
 This design ensures all LiveAPI calls happen on Ableton's main thread, preventing crashes and race conditions.
 
+### Push vs Polling: Does Ableton push updates?
+
+Short answer: command handling is queue-driven, not event-push from Ableton to clients.
+
+- Clients push commands immediately to the Remote Script over TCP.
+- The Remote Script does not poll an external service for work.
+- Ableton calls `update_display()` on its own tick (~60 Hz), and the script drains up to 5 queued commands per tick.
+- Responses are sent back on the same request/response socket flow.
+- There is currently no server-initiated subscription stream that pushes arbitrary Live state updates to clients.
+
+In practice, this means control is low-latency and near real-time, but bounded by Ableton's main-thread callback cadence.
+
 ### Communication Protocol
 
 **Request Format:**
@@ -248,7 +262,8 @@ This design ensures all LiveAPI calls happen on Ableton's main thread, preventin
 ## Requirements
 
 - **Ableton Live** 11 or 12 (Suite, Standard, or Intro)
-- **Python** 2.7+ (included with Ableton Live)
+- **Python for MCP server** 3.10+ (system Python)
+- **Python for Remote Script** 2.7+ (bundled with Ableton Live)
 - **Operating System** macOS, Windows, or Linux
 
 ## Use Cases
@@ -322,9 +337,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## License
 
 This project is licensed under the **GNU General Public License v3.0** - see the [LICENSE](LICENSE) file for details.
-
-This is a strong copyleft license that requires anyone who distributes your code or a derivative work to make the source available under the same terms. This protects your work while allowing open collaboration.
-
 ## Origins
 
 This project was originally forked from [Ziforge/ableton-liveapi-tools](https://github.com/Ziforge/ableton-liveapi-tools). It has since been significantly refactored, modularized, and expanded with tests and documentation.
@@ -343,9 +355,7 @@ This project was originally forked from [Ziforge/ableton-liveapi-tools](https://
 ## Roadmap
 
 - [ ] Add WebSocket support alongside TCP
-- [ ] Create high-level wrapper libraries (Python, JavaScript, etc.)
 - [ ] Add recording and audio file management tools
-- [ ] Create visual debugging/monitoring dashboard
 - [ ] Add Max for Live integration examples
 
 ---
