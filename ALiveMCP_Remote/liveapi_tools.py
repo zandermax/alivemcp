@@ -9,8 +9,11 @@ License: MIT
 """
 
 from .tools.arrangement import ArrangementMixin
+from .tools.arrangement_locators import ArrangementLocatorsMixin
+from .tools.arrangement_view import ArrangementViewMixin
 from .tools.automation import AutomationMixin
 from .tools.base import BaseMixin
+from .tools.builtin import BuiltinMixin
 from .tools.clips import ClipsMixin
 from .tools.devices import DevicesMixin
 from .tools.m4l_and_live12 import M4LAndLive12Mixin
@@ -26,6 +29,7 @@ from .tools.tracks_devices import TracksDevicesMixin
 
 class LiveAPITools(
     BaseMixin,
+    BuiltinMixin,
     SessionTransportMixin,
     TracksMixin,
     TracksDevicesMixin,
@@ -36,6 +40,8 @@ class LiveAPITools(
     MixingMasterDevicesMixin,
     ScenesMixin,
     ArrangementMixin,
+    ArrangementLocatorsMixin,
+    ArrangementViewMixin,
     AutomationMixin,
     M4LAndLive12Mixin,
 ):

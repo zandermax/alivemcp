@@ -6,13 +6,13 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-import ALiveMCP_Remote.tools.arrangement as arrangement_module
+import ALiveMCP_Remote.tools.arrangement_view as arrangement_view_module
 
 
 @pytest.fixture
 def live_in_arrangement():
     fresh_live = MagicMock()
-    with patch.object(arrangement_module, "Live", fresh_live, create=True):
+    with patch.object(arrangement_view_module, "Live", fresh_live, create=True):
         yield fresh_live
 
 

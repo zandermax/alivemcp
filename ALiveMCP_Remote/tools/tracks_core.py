@@ -222,3 +222,24 @@ class TracksCoreMixin:
                 return {"ok": False, "error": "Track color not supported"}
         except Exception as e:
             return {"ok": False, "error": str(e)}
+
+    def get_track_color(self, track_index):
+        """Get track color"""
+        try:
+            if track_index < 0 or track_index >= len(self.song.tracks):
+                return {"ok": False, "error": "Invalid track index"}
+
+            track = self.song.tracks[track_index]
+
+            if hasattr(track, "color_index"):
+                return {
+                    "ok": True,
+                    "track_index": track_index,
+                    "color_index": int(track.color_index),
+                }
+            elif hasattr(track, "color"):
+                return {"ok": True, "track_index": track_index, "color": int(track.color)}
+            else:
+                return {"ok": False, "error": "Track color not available"}
+        except Exception as e:
+            return {"ok": False, "error": str(e)}

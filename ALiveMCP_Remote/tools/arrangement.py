@@ -1,5 +1,13 @@
 """
-Project, arrangement, view/navigation, loop/locator, browser, and color utilities.
+Core arrangement tools: project info, arrangement clips, cue navigation.
+
+Single responsibility: operations on the arrangement timeline — project folder,
+session record triggering, arrangement clip inspection, clip duplication to
+arrangement, and cue-point navigation (jump to next/prev cue).
+
+View navigation → arrangement_view.py
+Locators (create/delete/list) and relative jumps → arrangement_locators.py
+Browser and color utilities → arrangement_browser.py
 """
 
 from .arrangement_browser import ArrangementBrowserMixin
@@ -125,160 +133,6 @@ class ArrangementMixin(ArrangementBrowserMixin):
                 "message": "Clip consolidation initiated",
                 "start_time": float(start_time),
                 "end_time": float(end_time),
-            }
-        except Exception as e:
-            return {"ok": False, "error": str(e)}
-
-    # ========================================================================
-    # VIEW/NAVIGATION
-    # ========================================================================
-
-    def show_clip_view(self):
-        """Show clip/session view"""
-        try:
-            app = Live.Application.get_application()
-            if hasattr(app.view, "show_view"):
-                app.view.show_view("Session")
-                return {"ok": True, "message": "Showing clip/session view"}
-            else:
-                return {"ok": False, "error": "View control not available"}
-        except Exception as e:
-            return {"ok": False, "error": str(e)}
-
-    def show_arrangement_view(self):
-        """Show arrangement view"""
-        try:
-            app = Live.Application.get_application()
-            if hasattr(app.view, "show_view"):
-                app.view.show_view("Arranger")
-                return {"ok": True, "message": "Showing arrangement view"}
-            else:
-                return {"ok": False, "error": "View control not available"}
-        except Exception as e:
-            return {"ok": False, "error": str(e)}
-
-    def focus_track(self, track_index):
-        """Focus/highlight a specific track in the view"""
-        try:
-            if track_index < 0 or track_index >= len(self.song.tracks):
-                return {"ok": False, "error": "Invalid track index"}
-
-            track = self.song.tracks[track_index]
-
-            if hasattr(self.song.view, "selected_track"):
-                self.song.view.selected_track = track
-                return {"ok": True, "track_index": track_index, "message": "Track focused"}
-            else:
-                return {"ok": False, "error": "Track selection not available"}
-        except Exception as e:
-            return {"ok": False, "error": str(e)}
-
-    def scroll_view_to_time(self, time_in_beats):
-        """Scroll arrangement view to specific time"""
-        try:
-            if hasattr(self.song.view, "visible_tracks"):
-                return {
-                    "ok": True,
-                    "message": "View scroll requested (limited API support)",
-                    "time": float(time_in_beats),
-                }
-            else:
-                return {"ok": False, "error": "View scrolling not available"}
-        except Exception as e:
-            return {"ok": False, "error": str(e)}
-
-    # ========================================================================
-    # LOOP AND LOCATOR OPERATIONS
-    # ========================================================================
-
-    def set_loop_enabled(self, enabled):
-        """Enable or disable song loop"""
-        try:
-            self.song.loop = bool(enabled)
-            return {"ok": True, "loop_enabled": self.song.loop}
-        except Exception as e:
-            return {"ok": False, "error": str(e)}
-
-    def get_loop_enabled(self):
-        """Get current loop enabled state"""
-        try:
-            return {
-                "ok": True,
-                "loop_enabled": self.song.loop,
-                "loop_start": float(self.song.loop_start),
-                "loop_length": float(self.song.loop_length),
-            }
-        except Exception as e:
-            return {"ok": False, "error": str(e)}
-
-    def create_locator(self, time_in_beats, name="Locator"):
-        """Create a locator/cue point at specified time"""
-        try:
-            if hasattr(self.song, "create_cue_point"):
-                self.song.create_cue_point(float(time_in_beats))
-                return {
-                    "ok": True,
-                    "message": "Cue point created",
-                    "time": float(time_in_beats),
-                    "name": name,
-                }
-            else:
-                return {
-                    "ok": False,
-                    "error": "Cue point creation not available in this Ableton version",
-                }
-        except Exception as e:
-            return {"ok": False, "error": str(e)}
-
-    def delete_locator(self, locator_index):
-        """Delete a locator/cue point"""
-        try:
-            if hasattr(self.song, "cue_points"):
-                if locator_index < 0 or locator_index >= len(self.song.cue_points):
-                    return {"ok": False, "error": "Invalid locator index"}
-                cue_point = self.song.cue_points[locator_index]
-                if hasattr(cue_point, "delete"):
-                    cue_point.delete()
-                    return {
-                        "ok": True,
-                        "message": "Locator deleted",
-                        "locator_index": locator_index,
-                    }
-            return {"ok": False, "error": "Cue points not available in this Ableton version"}
-        except Exception as e:
-            return {"ok": False, "error": str(e)}
-
-    def get_locators(self):
-        """Get all locators/cue points"""
-        try:
-            if hasattr(self.song, "cue_points"):
-                locators = []
-                for i, cue in enumerate(self.song.cue_points):
-                    locators.append(
-                        {
-                            "index": i,
-                            "time": float(cue.time) if hasattr(cue, "time") else 0.0,
-                            "name": str(cue.name) if hasattr(cue, "name") else "",
-                        }
-                    )
-                return {"ok": True, "locators": locators, "count": len(locators)}
-            else:
-                return {"ok": True, "locators": [], "count": 0}
-        except Exception as e:
-            return {"ok": False, "error": str(e)}
-
-    def jump_by_amount(self, amount_in_beats):
-        """Jump playback position by specified amount (positive or negative)"""
-        try:
-            current_time = self.song.current_song_time
-            new_time = float(current_time) + float(amount_in_beats)
-            new_time = max(0.0, new_time)
-            self.song.current_song_time = new_time
-            return {
-                "ok": True,
-                "old_time": float(current_time),
-                "new_time": float(self.song.current_song_time),
-                "jumped_by": float(amount_in_beats),
             }
         except Exception as e:
             return {"ok": False, "error": str(e)}

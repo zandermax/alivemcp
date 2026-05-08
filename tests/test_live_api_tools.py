@@ -34,8 +34,11 @@ def test_get_available_tools_contains_domain_tools(tools):
 
 def test_live_api_tools_is_composed_of_all_mixins(song, c_instance):
     from ALiveMCP_Remote.tools.arrangement import ArrangementMixin
+    from ALiveMCP_Remote.tools.arrangement_locators import ArrangementLocatorsMixin
+    from ALiveMCP_Remote.tools.arrangement_view import ArrangementViewMixin
     from ALiveMCP_Remote.tools.automation import AutomationMixin
     from ALiveMCP_Remote.tools.base import BaseMixin
+    from ALiveMCP_Remote.tools.builtin import BuiltinMixin
     from ALiveMCP_Remote.tools.clips import ClipsMixin
     from ALiveMCP_Remote.tools.devices import DevicesMixin
     from ALiveMCP_Remote.tools.m4l_and_live12 import M4LAndLive12Mixin
@@ -47,6 +50,7 @@ def test_live_api_tools_is_composed_of_all_mixins(song, c_instance):
 
     t = LiveAPITools(song, c_instance)
     assert isinstance(t, BaseMixin)
+    assert isinstance(t, BuiltinMixin)
     assert isinstance(t, SessionTransportMixin)
     assert isinstance(t, TracksMixin)
     assert isinstance(t, ClipsMixin)
@@ -55,5 +59,7 @@ def test_live_api_tools_is_composed_of_all_mixins(song, c_instance):
     assert isinstance(t, MixingMixin)
     assert isinstance(t, ScenesMixin)
     assert isinstance(t, ArrangementMixin)
+    assert isinstance(t, ArrangementLocatorsMixin)
+    assert isinstance(t, ArrangementViewMixin)
     assert isinstance(t, AutomationMixin)
     assert isinstance(t, M4LAndLive12Mixin)

@@ -14,22 +14,36 @@ alivemcp/
 │   ├── __init__.py            # Entry point: ALiveMCP class + create_instance()
 │   ├── liveapi_tools.py       # LiveAPITools: composes all mixin classes
 │   ├── socket_server.py       # SocketServerMixin: TCP listener on port 9004
-│   └── tools/                 # 30 domain-specific mixin modules
+│   └── tools/                 # Domain-specific mixin modules (one responsibility each)
 │       ├── base.py            # BaseMixin: self.song, self.c_instance, log()
-│       ├── registry.py        # AVAILABLE_TOOLS list (220 names)
-│       ├── session_transport.py / session_automation.py
+│       ├── builtin.py         # BuiltinMixin: ping, health_check, PARAM_ALIASES
+│       ├── registry.py        # AVAILABLE_TOOLS list
+│       ├── session_transport.py  # Playback, tempo, time sig, metronome, project save
+│       ├── session_automation.py # Playhead position, automation arm/record
 │       ├── tracks.py / tracks_core.py / tracks_routing.py / tracks_advanced.py
-│       ├── clips.py / clips_core.py / clips_extras.py / clips_properties.py
+│       ├── clips.py / clips_core.py / clips_extras.py
+│       ├── clips_properties.py   # Clip color, mute, loop, annotations, fades
+│       ├── clips_quantize.py     # MIDI clip quantization (grid + pitch)
 │       ├── midi.py / midi_notes.py / midi_cc.py
-│       ├── devices.py / devices_core.py / devices_racks.py
+│       ├── devices.py / devices_core.py
+│       ├── devices_display.py    # Parameter display values (UI strings)
+│       ├── devices_extras.py     # Device on/off, presets, randomize, plugin windows
+│       ├── devices_racks.py      # Rack/chain CRUD, device class/type queries
+│       ├── devices_rack_contents.py
 │       ├── mixing.py / mixing_groove.py
 │       ├── scenes.py
-│       ├── arrangement.py / arrangement_browser.py
+│       ├── arrangement.py        # Core arrangement: clips, cue navigation, project root
+│       ├── arrangement_browser.py # Browser: browse devices/plugins/categories
+│       ├── arrangement_locators.py # Cue point CRUD, relative jump
+│       ├── arrangement_view.py   # View navigation, loop state
 │       ├── automation.py
 │       └── m4l_and_live12.py / m4l_devices.py / m4l_audio.py
 │           live12_lanes.py / live12_properties.py
+├── ableton_client.py          # TCP transport: _call_ableton(), HOST, PORT constants
+├── mcp_server.py              # MCP protocol wiring (imports ableton_client)
+├── mcp_server_tool_defs.py    # Compact JSON tool definitions for mcp_server
 ├── docs/
-│   ├── API_REFERENCE.md       # Complete tool reference (all 220 tools)
+│   ├── API_REFERENCE.md       # Complete tool reference
 │   ├── ARCHITECTURE.md        # Thread-safety design, sequence diagrams
 │   ├── INSTALLATION.md        # Installation steps for macOS/Windows
 │   └── TROUBLESHOOTING.md     # Common problems and solutions
@@ -98,6 +112,7 @@ Key constraint: **All LiveAPI calls must execute on the main thread** (the one t
 |---|---|
 | **Main thread only** | Never call `self.song.*` from a socket thread. Use the queue. |
 | **300-line limit** | Each `.py` file in `ALiveMCP_Remote/` must be ≤ 300 lines. Many files are already near the limit — split into a new mixin if needed. |
+| **Single responsibility** | Every `.py` file must have one well-defined concern. Mixed responsibilities must be split before merging — check existing mixin docstrings. |
 | **Python 2.7 compatible syntax** | Ableton Live bundles Python 2.7. Avoid f-strings, type annotations, walrus operators, and other Python 3-only syntax. (The few existing f-strings in the codebase are in locations where Live 11+ ships Python 3.) |
 | **No external dependencies** | The Remote Script runs inside Ableton's bundled Python. Standard library only — no `pip install`. |
 | **Localhost only** | The socket binds to `127.0.0.1`, not `0.0.0.0`. Remote access requires an SSH tunnel or explicit reconfiguration. |

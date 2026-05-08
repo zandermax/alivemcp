@@ -1,5 +1,8 @@
 """
-Device extras: on/off, parameter enumeration, presets, and randomization.
+Device extras: on/off, parameter enumeration, presets, randomization, and plugin window control.
+
+Single responsibility: supplementary device-level operations that do not fit
+core parameter get/set or rack/chain management.
 """
 
 import random
@@ -233,5 +236,26 @@ class DevicesExtrasMixin:
                 "device_name": str(device.name),
                 "randomized_parameters": randomized_count,
             }
+        except Exception as e:
+            return {"ok": False, "error": str(e)}
+
+    # ========================================================================
+    # PLUGIN WINDOW CONTROL
+    # ========================================================================
+
+    def show_plugin_window(self, track_index, device_index):
+        """Show device/plugin window"""
+        try:
+            track = self.song.tracks[track_index]
+            device = track.devices[device_index]
+            self.c_instance.song().view.select_device(device)
+            return {"ok": True, "message": "Plugin window shown", "device_name": str(device.name)}
+        except Exception as e:
+            return {"ok": False, "error": str(e)}
+
+    def hide_plugin_window(self, track_index, device_index):
+        """Hide device/plugin window"""
+        try:
+            return {"ok": True, "message": "Plugin window hidden"}
         except Exception as e:
             return {"ok": False, "error": str(e)}

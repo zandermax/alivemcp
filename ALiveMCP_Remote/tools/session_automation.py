@@ -1,5 +1,8 @@
 """
-Transport position, automation recording, and metronome volume operations.
+Transport position and automation recording controls.
+
+Single responsibility: playhead position queries and automation arm/record state.
+Metronome volume lives in session_transport.py.
 """
 
 
@@ -125,27 +128,4 @@ class SessionAutomationMixin:
         except Exception as e:
             return {"ok": False, "error": str(e)}
 
-    # ========================================================================
-    # METRONOME VOLUME
-    # ========================================================================
 
-    def get_metronome_volume(self):
-        """Get metronome volume"""
-        try:
-            if hasattr(self.song, "metronome"):
-                return {"ok": True, "volume": float(self.song.metronome)}
-            else:
-                return {"ok": False, "error": "Metronome volume not available"}
-        except Exception as e:
-            return {"ok": False, "error": str(e)}
-
-    def set_metronome_volume(self, volume):
-        """Set metronome volume (0.0 to 1.0)"""
-        try:
-            if hasattr(self.song, "metronome"):
-                self.song.metronome = float(volume)
-                return {"ok": True, "volume": float(self.song.metronome)}
-            else:
-                return {"ok": False, "error": "Metronome volume not available"}
-        except Exception as e:
-            return {"ok": False, "error": str(e)}

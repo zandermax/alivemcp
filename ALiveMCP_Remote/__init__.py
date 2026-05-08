@@ -23,23 +23,7 @@ except ImportError:
 from .constants import MAX_COMMANDS_PER_TICK, PORT
 from .liveapi_tools import LiveAPITools
 from .socket_server import SocketServerMixin
-
-# Per-action parameter aliases for backward compatibility.
-# When a client sends the legacy key, it is translated to the canonical key
-# before dispatch. Only clip-slot actions get the scene_index→clip_index alias;
-# actual scene operations (launch_scene, delete_scene, …) keep their own
-# scene_index parameter and are NOT listed here.
-# NOTE: Do not remove entries — each is a supported public alias (see CLAUDE.md).
-PARAM_ALIASES = {
-    "create_midi_clip": {"scene_index": "clip_index"},
-    "delete_clip": {"scene_index": "clip_index"},
-    "duplicate_clip": {"scene_index": "clip_index"},
-    "launch_clip": {"scene_index": "clip_index"},
-    "stop_clip": {"scene_index": "clip_index"},
-    "get_clip_info": {"scene_index": "clip_index"},
-    "set_clip_name": {"scene_index": "clip_index"},
-    "add_notes": {"scene_index": "clip_index"},
-}
+from .tools.builtin import PARAM_ALIASES
 
 
 class ALiveMCP(SocketServerMixin):
@@ -63,11 +47,14 @@ class ALiveMCP(SocketServerMixin):
         self.song = c_instance.song()
 
         self.tools = LiveAPITools(self.song, self.c_instance)
+        self.tools._command_queue = None  # set after queue creation below
 
         self.command_queue = queue.Queue()
         self.response_queues = {}
         self.request_counter = 0
         self.request_lock = threading.Lock()
+
+        self.tools._command_queue = self.command_queue
 
         self.socket_server = None
         self.socket_thread = None
@@ -92,24 +79,6 @@ class ALiveMCP(SocketServerMixin):
         """
         try:
             action = command.get("action", "")
-
-            if action == "ping":
-                return {
-                    "ok": True,
-                    "message": "pong (queue-based, thread-safe)",
-                    "script": "ALiveMCP_Remote",
-                    "version": __version__,
-                }
-
-            if action == "health_check":
-                return {
-                    "ok": True,
-                    "message": "ALiveMCP Remote Script running (thread-safe)",
-                    "version": __version__,
-                    "tool_count": len(self.tools.get_available_tools()),
-                    "ableton_version": str(Live.Application.get_application().get_major_version()),
-                    "queue_size": self.command_queue.qsize(),
-                }
 
             method = getattr(self.tools, action, None)
             if method is None:

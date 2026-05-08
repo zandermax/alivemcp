@@ -1,5 +1,8 @@
 """
-Rack/chain operations, plugin windows, device utilities, and parameter display values.
+Rack/chain operations and device class/type utilities.
+
+Single responsibility: reading and mutating rack chain structure (mute/solo)
+and querying device class metadata.
 """
 
 
@@ -136,27 +139,6 @@ class DevicesRacksMixin:
             return {"ok": False, "error": str(e)}
 
     # ========================================================================
-    # PLUGIN WINDOW CONTROL
-    # ========================================================================
-
-    def show_plugin_window(self, track_index, device_index):
-        """Show device/plugin window"""
-        try:
-            track = self.song.tracks[track_index]
-            device = track.devices[device_index]
-            self.c_instance.song().view.select_device(device)
-            return {"ok": True, "message": "Plugin window shown", "device_name": str(device.name)}
-        except Exception as e:
-            return {"ok": False, "error": str(e)}
-
-    def hide_plugin_window(self, track_index, device_index):
-        """Hide device/plugin window"""
-        try:
-            return {"ok": True, "message": "Plugin window hidden"}
-        except Exception as e:
-            return {"ok": False, "error": str(e)}
-
-    # ========================================================================
     # DEVICE UTILITIES
     # ========================================================================
 
@@ -186,69 +168,4 @@ class DevicesRacksMixin:
         except Exception as e:
             return {"ok": False, "error": str(e)}
 
-    # ========================================================================
-    # DEVICE PARAMETER DISPLAY VALUES
-    # ========================================================================
 
-    def get_device_param_display_value(self, track_index, device_index, param_index):
-        """Get device parameter value as displayed in UI (Live 12+)"""
-        try:
-            track = self.song.tracks[track_index]
-            device = track.devices[device_index]
-            param = device.parameters[param_index]
-
-            if hasattr(param, "display_value"):
-                return {
-                    "ok": True,
-                    "display_value": str(param.display_value),
-                    "raw_value": float(param.value),
-                    "name": str(param.name),
-                }
-            else:
-                return {
-                    "ok": True,
-                    "display_value": str(param.__str__()),
-                    "raw_value": float(param.value),
-                    "name": str(param.name),
-                }
-        except Exception as e:
-            return {"ok": False, "error": str(e)}
-
-    def get_all_param_display_values(self, track_index, device_index):
-        """Get all enriched parameter info for a device on a regular track"""
-        try:
-            track = self.song.tracks[track_index]
-            device = track.devices[device_index]
-
-            params_info = []
-            for i, param in enumerate(device.parameters):
-                display_value = (
-                    str(param.display_value)
-                    if hasattr(param, "display_value")
-                    else str(param.__str__())
-                )
-                is_quantized = bool(param.is_quantized) if hasattr(param, "is_quantized") else False
-                value_items = (
-                    [str(v) for v in param.value_items] if hasattr(param, "value_items") else []
-                )
-                params_info.append(
-                    {
-                        "index": i,
-                        "name": str(param.name),
-                        "raw_value": float(param.value),
-                        "display_value": display_value,
-                        "min": float(param.min),
-                        "max": float(param.max),
-                        "is_quantized": is_quantized,
-                        "value_items": value_items,
-                    }
-                )
-
-            return {
-                "ok": True,
-                "device_name": str(device.name),
-                "count": len(params_info),
-                "parameters": params_info,
-            }
-        except Exception as e:
-            return {"ok": False, "error": str(e)}

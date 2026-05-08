@@ -1,5 +1,7 @@
 """
-Session, transport, automation, and metronome operations.
+Session transport, playback, tempo, time signature, metronome, and project save.
+
+Single responsibility: session-level transport controls and global song settings.
 """
 
 import subprocess
@@ -194,5 +196,30 @@ class SessionTransportMixin(SessionAutomationMixin):
             )
             time.sleep(0.25)
             return {"ok": True, "message": "Project saved"}
+        except Exception as e:
+            return {"ok": False, "error": str(e)}
+
+    # ========================================================================
+    # METRONOME VOLUME
+    # ========================================================================
+
+    def get_metronome_volume(self):
+        """Get metronome volume"""
+        try:
+            if hasattr(self.song, "metronome"):
+                return {"ok": True, "volume": float(self.song.metronome)}
+            else:
+                return {"ok": False, "error": "Metronome volume not available"}
+        except Exception as e:
+            return {"ok": False, "error": str(e)}
+
+    def set_metronome_volume(self, volume):
+        """Set metronome volume (0.0 to 1.0)"""
+        try:
+            if hasattr(self.song, "metronome"):
+                self.song.metronome = float(volume)
+                return {"ok": True, "volume": float(self.song.metronome)}
+            else:
+                return {"ok": False, "error": "Metronome volume not available"}
         except Exception as e:
             return {"ok": False, "error": str(e)}
