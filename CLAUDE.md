@@ -2,7 +2,7 @@
 
 ## What This Project Is
 
-ALiveMCP Remote Script is an Ableton Live Remote Script (Python) that exposes **220 LiveAPI tools** over a TCP socket on `127.0.0.1:9004`. Clients send newline-delimited JSON commands and receive JSON responses. The project is designed for use with AI agents (including Claude via MCP), algorithmic composition tools, and any external software that needs to control Ableton Live programmatically.
+ALiveMCP Remote Script is an Ableton Live Remote Script (Python) that exposes **232 LiveAPI tools** over a TCP socket on `127.0.0.1:9004`. Clients send newline-delimited JSON commands and receive JSON responses. The project is designed for use with AI agents (including Claude via MCP), algorithmic composition tools, and any external software that needs to control Ableton Live programmatically.
 
 ---
 
@@ -102,7 +102,7 @@ Key constraint: **All LiveAPI calls must execute on the main thread** (the one t
 | **Main thread only** | Never call `self.song.*` from a socket thread. Use the queue. |
 | **300-line limit** | Each `.py` file in `ALiveMCP_Remote/` must be ≤ 300 lines. Many files are already near the limit — split into a new mixin if needed. |
 | **Single responsibility** | Every `.py` file must have one well-defined concern. Mixed responsibilities must be split before merging — check existing mixin docstrings. |
-| **Python 2.7 compatible syntax** | Ableton Live bundles Python 2.7. Avoid f-strings, type annotations, walrus operators, and other Python 3-only syntax. (The few existing f-strings in the codebase are in locations where Live 11+ ships Python 3.) |
+| **Python 3.6+ syntax** | Ableton Live 11 and 12 bundle Python 3.6.x. Avoid Python 3.8+ syntax (walrus operators, positional-only params). f-strings and type annotations are fine. |
 | **No external dependencies** | The Remote Script runs inside Ableton's bundled Python. Standard library only — no `pip install`. |
 | **Localhost only** | The socket binds to `127.0.0.1`, not `0.0.0.0`. Remote access requires an SSH tunnel or explicit reconfiguration. |
 | **`scene_index` alias** | For clip-slot operations (`create_midi_clip`, `delete_clip`, `duplicate_clip`, `launch_clip`, `stop_clip`, `get_clip_info`, `set_clip_name`, `add_notes`), the canonical parameter is `clip_index`. Legacy clients sending `scene_index` are still supported via `PARAM_ALIASES` in `ALiveMCP_Remote/__init__.py`. **Do not remove this alias** — it is part of the public API. |
@@ -132,6 +132,6 @@ Messages are newline-delimited (`\n`), UTF-8 encoded.
 
 ## Full Tool List
 
-See [`docs/API_REFERENCE.md`](docs/API_REFERENCE.md) for all 220 tools with parameters and response fields.
+See [`docs/API_REFERENCE.md`](docs/API_REFERENCE.md) for all 232 tools with parameters and response fields.
 
 For a quick list of tool names only, see [`ALiveMCP_Remote/tools/core/registry.py`](ALiveMCP_Remote/tools/core/registry.py).

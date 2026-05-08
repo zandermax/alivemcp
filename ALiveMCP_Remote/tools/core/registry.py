@@ -5,7 +5,7 @@ Registry of all available tool names exposed by LiveAPITools.
 AVAILABLE_TOOLS = [
     "ping",
     "health_check",
-    # Session control (14 tools)
+    # Session control (15 tools)
     "start_playback",
     "stop_playback",
     "start_recording",
@@ -92,7 +92,7 @@ AVAILABLE_TOOLS = [
     "add_device",
     "get_track_devices",
     "set_device_param",
-    # Device extras (9 tools)
+    # Device extras (8 tools)
     "set_device_on_off",
     "get_device_parameters",
     "get_device_parameter_by_name",

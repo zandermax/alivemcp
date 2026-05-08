@@ -1,6 +1,6 @@
 # ALiveMCP — Ableton Live MCP Server
 
-Control Ableton Live with AI. ALiveMCP exposes **220 LiveAPI tools** as a [Model Context Protocol](https://modelcontextprotocol.io/) server — plug it into Claude Code, Claude Desktop, or any MCP-compatible client and let AI agents compose music, manage tracks, edit MIDI, and control devices directly.
+Control Ableton Live with AI. ALiveMCP exposes **232 LiveAPI tools** as a [Model Context Protocol](https://modelcontextprotocol.io/) server — plug it into Claude Code, Claude Desktop, or any MCP-compatible client and let AI agents compose music, manage tracks, edit MIDI, and control devices directly.
 
 [![CI](https://github.com/zandermax/alivemcp/workflows/CI/badge.svg)](https://github.com/zandermax/alivemcp/actions)
 [![License: GPL-3.0](https://img.shields.io/badge/License-GPL%203.0-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
@@ -30,7 +30,7 @@ Two components, both required:
 
 ## Features
 
-- **220 LiveAPI Tools** - Covers 44 functional categories of Ableton Live's Python API
+- **232 LiveAPI Tools** - Covers 44+ functional categories of Ableton Live's Python API
 - **MCP Native** - Works directly with Claude Code, Claude Desktop, and any MCP client
 - **Thread-Safe Architecture** - Queue-based design for reliable communication
 - **Real-Time Control** - Low latency for live performance
@@ -43,7 +43,7 @@ Two components, both required:
 
 ## Coverage Methodology
 
-This implementation provides **220 tools across 44 categories** based on:
+This implementation provides **232 tools across 44+ categories** based on:
 
 - **Primary Source**: [Ableton Live API Documentation](https://docs.cycling74.com/max8/vignettes/live_api_overview) (Cycling '74)
 - **Reference**: [Live API Doc Archive](https://nsuspray.github.io/Live_API_Doc/) (versions 9.7 - 11.0)
@@ -116,7 +116,7 @@ This implementation provides **220 tools across 44 categories** based on:
 
 Category rows are thematic and may overlap. For the canonical count, see `ALiveMCP_Remote/tools/core/registry.py` and `docs/API_REFERENCE.md`.
 
-**Total: 220 Tools**
+**Total: 232 Tools**
 
 ## Quick Start
 

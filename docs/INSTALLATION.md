@@ -4,7 +4,7 @@
 
 ### Required Software
 - Ableton Live 11.0+ or 12.0+ (Suite, Standard, or Intro editions)
-- Python 2.7+ (bundled with Ableton Live)
+- Python 3.6+ (bundled with Ableton Live 11 and 12)
 
 ### Supported Platforms
 - macOS 10.13+
@@ -80,7 +80,7 @@ python3 examples/test_connection.py
 Expected output:
 ```
 Connection successful
-Tool count: 125
+Tool count: 232
 Ableton version: 12
 ```
 
@@ -108,8 +108,8 @@ If the Remote Script does not load:
    Search for "ALiveMCP" or errors related to Remote Scripts.
 
 4. **Python compatibility**
-   - Ableton Live 11/12 uses Python 2.7
-   - Ensure no Python 3-specific syntax in modifications
+   - Ableton Live 11 and 12 use Python 3.6.x (bundled)
+   - Ensure no Python 3.8+ syntax in modifications (walrus operator, positional-only params, etc.)
 
 ## Network Configuration
 

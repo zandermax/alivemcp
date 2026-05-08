@@ -1,6 +1,6 @@
 # API Reference
 
-Complete reference for all 220 tools exposed by the ALiveMCP Remote Script over TCP port 9004.
+Complete reference for all 232 tools exposed by the ALiveMCP Remote Script over TCP port 9004.
 
 ## How to Use This Reference
 

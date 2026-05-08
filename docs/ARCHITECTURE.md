@@ -79,12 +79,12 @@ stateDiagram-v2
 
 ### 2. LiveAPITools Class
 
-Encapsulates all 220 LiveAPI operations (including Max for Live, CV Tools, master/return tracks, follow actions, and more).
+Encapsulates all 232 LiveAPI operations (including Max for Live, CV Tools, master/return tracks, follow actions, and more).
 
 **Categories:**
 ```mermaid
 graph LR
-    A[LiveAPITools] --> B[Session Control - 14]
+    A[LiveAPITools] --> B[Session Control - 15]
     A --> C[Track Management - 13]
     A --> D[Clip Operations - 18]
     A --> E[MIDI Editing - 7]
@@ -95,7 +95,7 @@ graph LR
     A --> J[Browser - 4]
     A --> K[Transport - 8]
     A --> L[Max for Live - 5]
-    A --> M[Master Track - 4]
+    A --> M[Master Track - 9]
     A --> N[Return Tracks - 3]
     A --> O[Audio Clips - 5]
     A --> P[Follow Actions - 3]
@@ -104,7 +104,7 @@ graph LR
     A --> S[View/Nav - 4]
     A --> T[Colors - 2]
     A --> U[Groove Pool - 2]
-    A --> V[Racks/Chains - 4]
+    A --> V[Racks/Chains - 5]
     A --> W[Clip Automation - 6]
     A --> X[Track Freeze/Flatten - 3]
     A --> Y[Clip Fades - 4]
