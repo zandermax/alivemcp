@@ -33,20 +33,22 @@ def test_get_available_tools_contains_domain_tools(tools):
 
 
 def test_live_api_tools_is_composed_of_all_mixins(song, c_instance):
-    from ALiveMCP_Remote.tools.arrangement import ArrangementMixin
-    from ALiveMCP_Remote.tools.arrangement_locators import ArrangementLocatorsMixin
-    from ALiveMCP_Remote.tools.arrangement_view import ArrangementViewMixin
-    from ALiveMCP_Remote.tools.automation import AutomationMixin
-    from ALiveMCP_Remote.tools.base import BaseMixin
-    from ALiveMCP_Remote.tools.builtin import BuiltinMixin
-    from ALiveMCP_Remote.tools.clips import ClipsMixin
-    from ALiveMCP_Remote.tools.devices import DevicesMixin
-    from ALiveMCP_Remote.tools.m4l_and_live12 import M4LAndLive12Mixin
-    from ALiveMCP_Remote.tools.midi import MidiMixin
-    from ALiveMCP_Remote.tools.mixing import MixingMixin
-    from ALiveMCP_Remote.tools.scenes import ScenesMixin
-    from ALiveMCP_Remote.tools.session_transport import SessionTransportMixin
-    from ALiveMCP_Remote.tools.tracks import TracksMixin
+    from ALiveMCP_Remote.tools.arrangement.arrangement import ArrangementMixin
+    from ALiveMCP_Remote.tools.arrangement.arrangement_locators import ArrangementLocatorsMixin
+    from ALiveMCP_Remote.tools.arrangement.arrangement_view import ArrangementViewMixin
+    from ALiveMCP_Remote.tools.arrangement.take_lanes import TakeLanesMixin
+    from ALiveMCP_Remote.tools.automation.automation import AutomationMixin
+    from ALiveMCP_Remote.tools.clips.clips import ClipsMixin
+    from ALiveMCP_Remote.tools.core.base import BaseMixin
+    from ALiveMCP_Remote.tools.core.builtin import BuiltinMixin
+    from ALiveMCP_Remote.tools.devices.devices import DevicesMixin
+    from ALiveMCP_Remote.tools.m4l.m4l import M4LMixin
+    from ALiveMCP_Remote.tools.midi.midi import MidiMixin
+    from ALiveMCP_Remote.tools.mixing.mixing import MixingMixin
+    from ALiveMCP_Remote.tools.properties.app_properties import AppPropertiesMixin
+    from ALiveMCP_Remote.tools.scenes.scenes import ScenesMixin
+    from ALiveMCP_Remote.tools.session.session_transport import SessionTransportMixin
+    from ALiveMCP_Remote.tools.tracks.tracks import TracksMixin
 
     t = LiveAPITools(song, c_instance)
     assert isinstance(t, BaseMixin)
@@ -61,5 +63,7 @@ def test_live_api_tools_is_composed_of_all_mixins(song, c_instance):
     assert isinstance(t, ArrangementMixin)
     assert isinstance(t, ArrangementLocatorsMixin)
     assert isinstance(t, ArrangementViewMixin)
+    assert isinstance(t, TakeLanesMixin)
     assert isinstance(t, AutomationMixin)
-    assert isinstance(t, M4LAndLive12Mixin)
+    assert isinstance(t, M4LMixin)
+    assert isinstance(t, AppPropertiesMixin)

@@ -127,9 +127,9 @@ def test_save_project(tools, monkeypatch):
         calls.append(command)
 
     monkeypatch.setattr(
-        "ALiveMCP_Remote.tools.session_transport.subprocess.check_call", _ok_check_call
+        "ALiveMCP_Remote.tools.session.session_transport.subprocess.check_call", _ok_check_call
     )
-    monkeypatch.setattr("ALiveMCP_Remote.tools.session_transport.time.sleep", lambda _: None)
+    monkeypatch.setattr("ALiveMCP_Remote.tools.session.session_transport.time.sleep", lambda _: None)
 
     result = tools.save_project()
 
@@ -143,7 +143,7 @@ def test_save_project_exception(tools, monkeypatch):
         raise Exception("disk full")
 
     monkeypatch.setattr(
-        "ALiveMCP_Remote.tools.session_transport.subprocess.check_call",
+        "ALiveMCP_Remote.tools.session.session_transport.subprocess.check_call",
         _failing_check_call,
     )
 

@@ -1,9 +1,9 @@
 """
-Live 12 application methods and miscellaneous track/clip/scene property queries.
+Application-level and miscellaneous track/clip/scene property queries.
 """
 
 
-class Live12PropertiesMixin:
+class AppPropertiesMixin:
     # ========================================================================
     # APPLICATION METHODS - LIVE 12
     # ========================================================================

@@ -1,5 +1,4 @@
-"""Tests for Live 12 application info tools: build id, variant, message box,
-and application version."""
+"""Tests for application info tools: build id, variant, message box, and version."""
 
 import sys
 from unittest.mock import patch

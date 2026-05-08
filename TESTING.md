@@ -35,7 +35,10 @@ tests/
 ├── conftest.py               # Live module stub + shared fixtures (song, tools)
 ├── test_alivemcp.py        # Dispatch, PARAM_ALIASES, error handling
 ├── test_session_transport.py # Session/transport tools
-├── test_m4l_and_live12.py    # M4L and Live 12 tools
+├── test_m4l_audio.py         # M4L audio/sample/simpler tools
+├── test_m4l_devices.py       # M4L device discovery/classification
+├── test_take_lanes.py        # Take lane tools (feature-gated)
+├── test_app_properties.py    # Application/version + misc property tools
 └── ...
 ```
 

@@ -1,4 +1,4 @@
-"""Tests for Live 12 track/clip/scene property tools."""
+"""Tests for track/clip/scene property tools."""
 
 from unittest.mock import MagicMock
 

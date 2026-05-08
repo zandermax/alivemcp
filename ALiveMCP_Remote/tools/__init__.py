@@ -14,8 +14,9 @@ Mixin hierarchy (top-level composites → leaf implementations):
   ScenesMixin
   ArrangementMixin       ← ArrangementBrowserMixin
   AutomationMixin
-  M4LAndLive12Mixin      ← M4LDevicesMixin, M4LAudioMixin,
-                           Live12LanesMixin, Live12PropertiesMixin
+  M4LMixin               ← M4LDevicesMixin, M4LAudioMixin
+  TakeLanesMixin
+  AppPropertiesMixin
 
 All mixins inherit BaseMixin (via LiveAPITools) which provides
 self.song, self.c_instance, and log().

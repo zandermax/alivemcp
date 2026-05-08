@@ -6,7 +6,7 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-import ALiveMCP_Remote.tools.arrangement_view as arrangement_view_module
+import ALiveMCP_Remote.tools.arrangement.arrangement_view as arrangement_view_module
 
 
 @pytest.fixture

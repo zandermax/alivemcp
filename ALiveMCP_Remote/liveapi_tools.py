@@ -2,29 +2,31 @@
 LiveAPI Tools Implementation for ALiveMCP Remote Script
 Implements all LiveAPI operations for controlling Ableton Live
 
-Composed from domain-specific mixin modules in the tools/ sub-package.
+Composed from domain-specific mixin modules in the tools/ package.
 
 Author: Claude Code
 License: MIT
 """
 
-from .tools.arrangement import ArrangementMixin
-from .tools.arrangement_locators import ArrangementLocatorsMixin
-from .tools.arrangement_view import ArrangementViewMixin
-from .tools.automation import AutomationMixin
-from .tools.base import BaseMixin
-from .tools.builtin import BuiltinMixin
-from .tools.clips import ClipsMixin
-from .tools.devices import DevicesMixin
-from .tools.m4l_and_live12 import M4LAndLive12Mixin
-from .tools.midi import MidiMixin
-from .tools.mixing import MixingMixin
-from .tools.mixing_master_devices import MixingMasterDevicesMixin
-from .tools.registry import AVAILABLE_TOOLS
-from .tools.scenes import ScenesMixin
-from .tools.session_transport import SessionTransportMixin
-from .tools.tracks import TracksMixin
-from .tools.tracks_devices import TracksDevicesMixin
+from .tools.arrangement.arrangement import ArrangementMixin
+from .tools.arrangement.arrangement_locators import ArrangementLocatorsMixin
+from .tools.arrangement.arrangement_view import ArrangementViewMixin
+from .tools.arrangement.take_lanes import TakeLanesMixin
+from .tools.automation.automation import AutomationMixin
+from .tools.clips.clips import ClipsMixin
+from .tools.core.base import BaseMixin
+from .tools.core.builtin import BuiltinMixin
+from .tools.core.registry import AVAILABLE_TOOLS
+from .tools.devices.devices import DevicesMixin
+from .tools.m4l.m4l import M4LMixin
+from .tools.midi.midi import MidiMixin
+from .tools.mixing.mixing import MixingMixin
+from .tools.mixing.mixing_master_devices import MixingMasterDevicesMixin
+from .tools.properties.app_properties import AppPropertiesMixin
+from .tools.scenes.scenes import ScenesMixin
+from .tools.session.session_transport import SessionTransportMixin
+from .tools.tracks.tracks import TracksMixin
+from .tools.tracks.tracks_devices import TracksDevicesMixin
 
 
 class LiveAPITools(
@@ -42,8 +44,10 @@ class LiveAPITools(
     ArrangementMixin,
     ArrangementLocatorsMixin,
     ArrangementViewMixin,
+    TakeLanesMixin,
     AutomationMixin,
-    M4LAndLive12Mixin,
+    M4LMixin,
+    AppPropertiesMixin,
 ):
     """
     Comprehensive implementation of LiveAPI operations.
@@ -59,7 +63,9 @@ class LiveAPITools(
     - ScenesMixin: create/delete/launch/color
     - ArrangementMixin: project/arrangement/view/loop/locator/browser/color
     - AutomationMixin: clip automation envelopes
-    - M4LAndLive12Mixin: Max for Live/audio clips/take lanes/application
+    - M4LMixin: Max for Live device/audio/sample/simpler operations
+    - TakeLanesMixin: take lane operations (feature-gated by Live capabilities)
+    - AppPropertiesMixin: application/version and miscellaneous property queries
     """
 
     def get_available_tools(self):

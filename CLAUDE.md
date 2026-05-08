@@ -14,31 +14,20 @@ alivemcp/
 │   ├── __init__.py            # Entry point: ALiveMCP class + create_instance()
 │   ├── liveapi_tools.py       # LiveAPITools: composes all mixin classes
 │   ├── socket_server.py       # SocketServerMixin: TCP listener on port 9004
-│   └── tools/                 # Domain-specific mixin modules (one responsibility each)
-│       ├── base.py            # BaseMixin: self.song, self.c_instance, log()
-│       ├── builtin.py         # BuiltinMixin: ping, health_check, PARAM_ALIASES
-│       ├── registry.py        # AVAILABLE_TOOLS list
-│       ├── session_transport.py  # Playback, tempo, time sig, metronome, project save
-│       ├── session_automation.py # Playhead position, automation arm/record
-│       ├── tracks.py / tracks_core.py / tracks_routing.py / tracks_advanced.py
-│       ├── clips.py / clips_core.py / clips_extras.py
-│       ├── clips_properties.py   # Clip color, mute, loop, annotations, fades
-│       ├── clips_quantize.py     # MIDI clip quantization (grid + pitch)
-│       ├── midi.py / midi_notes.py / midi_cc.py
-│       ├── devices.py / devices_core.py
-│       ├── devices_display.py    # Parameter display values (UI strings)
-│       ├── devices_extras.py     # Device on/off, presets, randomize, plugin windows
-│       ├── devices_racks.py      # Rack/chain CRUD, device class/type queries
-│       ├── devices_rack_contents.py
-│       ├── mixing.py / mixing_groove.py
-│       ├── scenes.py
-│       ├── arrangement.py        # Core arrangement: clips, cue navigation, project root
-│       ├── arrangement_browser.py # Browser: browse devices/plugins/categories
-│       ├── arrangement_locators.py # Cue point CRUD, relative jump
-│       ├── arrangement_view.py   # View navigation, loop state
-│       ├── automation.py
-│       └── m4l_and_live12.py / m4l_devices.py / m4l_audio.py
-│           live12_lanes.py / live12_properties.py
+│   └── tools/
+│       ├── core/               # base.py, builtin.py, registry.py
+│       ├── arrangement/        # arrangement.py, arrangement_view.py, locators/browser
+│       ├── automation/         # automation.py
+│       ├── session/            # session_transport.py, session_automation.py
+│       ├── tracks/             # tracks.py + core/routing/advanced/devices
+│       ├── clips/              # clips.py + core/properties/extras/quantize
+│       ├── midi/               # midi.py + notes/cc
+│       ├── devices/            # devices.py + core/display/extras/racks/rack_contents
+│       ├── mixing/             # mixing.py + groove/master_devices
+│       ├── m4l/                # m4l.py + m4l device/audio modules
+│       ├── scenes/             # scenes.py
+│       ├── properties/         # app/version + misc track/clip/scene properties
+│       └── (no live12 bucket)  # Live-version-specific behavior is feature-guarded
 ├── ableton_client.py          # TCP transport: _call_ableton(), HOST, PORT constants
 ├── mcp_server.py              # MCP protocol wiring (imports ableton_client)
 ├── mcp_server_tool_defs.py    # Compact JSON tool definitions for mcp_server
@@ -83,7 +72,7 @@ Key constraint: **All LiveAPI calls must execute on the main thread** (the one t
 
 ## How to Add a New Tool
 
-1. **Implement the method** in the appropriate mixin file under `ALiveMCP_Remote/tools/`. Follow the existing pattern — wrap everything in `try/except` and return `{"ok": True, ...}` or `{"ok": False, "error": str(e)}`. Keep files under **300 lines** (the pre-commit hook enforces this; create a new mixin if needed).
+1. **Implement the method** in the appropriate mixin file under `ALiveMCP_Remote/tools/<domain>/`. Follow the existing pattern — wrap everything in `try/except` and return `{"ok": True, ...}` or `{"ok": False, "error": str(e)}`. Keep files under **300 lines** (the pre-commit hook enforces this; create a new mixin if needed).
 
    ```python
    def my_new_tool(self, track_index, some_param):
@@ -96,7 +85,7 @@ Key constraint: **All LiveAPI calls must execute on the main thread** (the one t
            return {"ok": False, "error": str(e)}
    ```
 
-2. **Register the name** in `ALiveMCP_Remote/tools/registry.py` by adding the method name string to `AVAILABLE_TOOLS`.
+2. **Register the name** in `ALiveMCP_Remote/tools/core/registry.py` by adding the method name string to `AVAILABLE_TOOLS`.
 
 3. **Dispatch is automatic.** `ALiveMCP._process_command()` uses `getattr(self.tools, action, None)` — no dispatcher switch-case needed.
 
@@ -145,4 +134,4 @@ Messages are newline-delimited (`\n`), UTF-8 encoded.
 
 See [`docs/API_REFERENCE.md`](docs/API_REFERENCE.md) for all 220 tools with parameters and response fields.
 
-For a quick list of tool names only, see [`ALiveMCP_Remote/tools/registry.py`](ALiveMCP_Remote/tools/registry.py).
+For a quick list of tool names only, see [`ALiveMCP_Remote/tools/core/registry.py`](ALiveMCP_Remote/tools/core/registry.py).

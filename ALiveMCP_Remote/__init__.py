@@ -23,7 +23,7 @@ except ImportError:
 from .constants import MAX_COMMANDS_PER_TICK, PORT
 from .liveapi_tools import LiveAPITools
 from .socket_server import SocketServerMixin
-from .tools.builtin import PARAM_ALIASES
+from .tools.core.builtin import PARAM_ALIASES
 
 
 class ALiveMCP(SocketServerMixin):

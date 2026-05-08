@@ -3,7 +3,7 @@ Take lane operations (Live 12+).
 """
 
 
-class Live12LanesMixin:
+class TakeLanesMixin:
     # ========================================================================
     # TAKE LANES SUPPORT - LIVE 12
     # ========================================================================

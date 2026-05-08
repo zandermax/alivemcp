@@ -114,7 +114,7 @@ This implementation provides **220 tools across 44 categories** based on:
 | **Display Values**        | 2     | Get parameter values as shown in UI                             |
 | **Additional Properties** | 10    | Clip start time, track/scene states, signatures                 |
 
-Category rows are thematic and may overlap. For the canonical count, see `ALiveMCP_Remote/tools/registry.py` and `docs/API_REFERENCE.md`.
+Category rows are thematic and may overlap. For the canonical count, see `ALiveMCP_Remote/tools/core/registry.py` and `docs/API_REFERENCE.md`.
 
 **Total: 220 Tools**
 
