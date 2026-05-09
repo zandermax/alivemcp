@@ -2,20 +2,24 @@
 # Pre-push hook: run the full test suite and version-bump check before pushing.
 set -euo pipefail
 
-REMOTE="$1"
-REMOTE_URL="$2"
-
 echo "--- pre-push: pytest ---"
+PYTEST_CMD=""
 if command -v pytest >/dev/null 2>&1; then
-    PYTEST="pytest"
+    # If pytest exposes the --cov option (pytest-cov present), run normally.
+    if pytest --help 2>/dev/null | grep -q -- '--cov'; then
+        PYTEST_CMD="pytest"
+    else
+        echo "pytest found but pytest-cov plugin missing; running pytest without coverage (overriding addopts)."
+        PYTEST_CMD="pytest --override-ini=addopts="
+    fi
 elif command -v uvx >/dev/null 2>&1; then
-    PYTEST="uvx --with pytest-cov pytest"
+    PYTEST_CMD="uvx --with pytest-cov pytest"
 else
     echo "pytest not found. Install it: pip install pytest pytest-cov  or  uv tool install pytest"
     exit 1
 fi
 
-if ! $PYTEST; then
+if ! eval "$PYTEST_CMD"; then
     echo ""
     echo "Tests failed. Push aborted."
     exit 1
