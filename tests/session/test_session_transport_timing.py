@@ -120,39 +120,6 @@ def test_redo_exception(tools, song):
     assert result["ok"] is False
 
 
-def test_save_project(tools, monkeypatch):
-    calls = []
-
-    def _ok_check_call(command):
-        calls.append(command)
-
-    monkeypatch.setattr(
-        "ALiveMCP_Remote.tools.session.session_transport.subprocess.check_call", _ok_check_call
-    )
-    monkeypatch.setattr(
-        "ALiveMCP_Remote.tools.session.session_transport.time.sleep", lambda _: None
-    )
-
-    result = tools.save_project()
-
-    assert result["ok"] is True
-    assert result["message"] == "Project saved"
-    assert len(calls) == 2
-
-
-def test_save_project_exception(tools, monkeypatch):
-    def _failing_check_call(_):
-        raise Exception("disk full")
-
-    monkeypatch.setattr(
-        "ALiveMCP_Remote.tools.session.session_transport.subprocess.check_call",
-        _failing_check_call,
-    )
-
-    result = tools.save_project()
-    assert result == {"ok": False, "error": "disk full"}
-
-
 def test_jump_to_time(tools, song):
     result = tools.jump_to_time(4.0)
     assert result["ok"] is True

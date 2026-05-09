@@ -53,4 +53,4 @@ mock:
 ui:
 	uvicorn examples.ui.server:app --port 8080
 
-ci: lint format-check test check-length
+ci: install-dev lint format-check test check-length

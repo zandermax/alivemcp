@@ -4,9 +4,6 @@ Session transport, playback, tempo, time signature, metronome, and project save.
 Single responsibility: session-level transport controls and global song settings.
 """
 
-import subprocess
-import time
-
 from .session_automation import SessionAutomationMixin
 
 
@@ -172,30 +169,6 @@ class SessionTransportMixin(SessionAutomationMixin):
         try:
             self.song.redo()
             return {"ok": True, "message": "Redo executed"}
-        except Exception as e:
-            return {"ok": False, "error": str(e)}
-
-    def save_project(self):
-        """Save the current Ableton Live project (.als file)"""
-        try:
-            # Live's Song API does not expose a save() function in this runtime,
-            # so trigger the standard Save command at the application level.
-            subprocess.check_call(
-                [
-                    "/usr/bin/osascript",
-                    "-e",
-                    'tell application "Live" to activate',
-                ]
-            )
-            subprocess.check_call(
-                [
-                    "/usr/bin/osascript",
-                    "-e",
-                    'tell application "System Events" to keystroke "s" using command down',
-                ]
-            )
-            time.sleep(0.25)
-            return {"ok": True, "message": "Project saved"}
         except Exception as e:
             return {"ok": False, "error": str(e)}
 
