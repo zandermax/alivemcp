@@ -1,0 +1,30 @@
+{
+  "repo": {
+    "name": "alivemcp",
+    "path": ".",
+    "branch": "semantic-split",
+    "description": "ALiveMCP MCP server + Ableton Remote Script exposing LiveAPI tools to AI agents"
+  },
+  "entrypoints": {
+    "install": "python3 install.py",
+    "mcp_server": "uv run mcp_server.py",
+    "run_tests": "pytest -q"
+  },
+  "source_of_truth": [
+    "ALiveMCP_Remote/tools/core/registry.py",
+    "mcp_server_tool_defs.py"
+  ],
+  "high_risk_paths": [
+    { "path": "ALiveMCP_Remote/", "reason": "Remote Script (runs inside Ableton) — main-thread constraints and file-length limits" },
+    { "path": "mcp_server.py", "reason": "MCP binding, tool exposure, and server capabilities" }
+  ],
+  "validation_commands": [
+    "pytest -q",
+    "python -m pip install -r requirements-dev.txt",
+    "ruff . --fix"
+  ],
+  "change_triage": {
+    "ALiveMCP_Remote/tools/**": ["pytest tests/test_live_api_tools.py -q"],
+    "mcp_server_tool_defs.py": ["pytest tests/test_mcp_server.py -q"]
+  }
+}

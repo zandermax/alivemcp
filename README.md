@@ -212,6 +212,7 @@ uv pip install ruff pytest pytest-cov
 
 - **[Installation Guide](docs/INSTALLATION.md)** - Detailed installation instructions
 - **[API Reference](docs/API_REFERENCE.md)** - Complete list of all 220 tools
+ - **Agent artifacts**: `docs/tool_manifest.json`, `docs/AGENT_INDEX.json`, `docs/IMPACT_MAP_TOOL_SURFACE.md`, `docs/IMPACT_MAP_RUNTIME_DISPATCH.md`
 - **[Troubleshooting](docs/TROUBLESHOOTING.md)** - Common issues and solutions
 - **[Testing Guide](TESTING.md)** - Unit tests and mock server
 

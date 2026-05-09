@@ -1,0 +1,9 @@
+{
+  "version": "0.1",
+  "generated_from": [
+    "ALiveMCP_Remote/tools/core/registry.py",
+    "mcp_server_tool_defs.py"
+  ],
+  "note": "This is an initial manifest placeholder. Phase 2 will generate the full canonical manifest from registry and tool defs.",
+  "tools": []
+}
