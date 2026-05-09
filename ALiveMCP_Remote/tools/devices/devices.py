@@ -12,6 +12,10 @@ from .devices_racks import DevicesRacksMixin
 
 
 class DevicesMixin(
-    DevicesCoreMixin, DevicesDisplayMixin, DevicesExtrasMixin, DevicesRacksMixin, DevicesRackContentsMixin
+    DevicesCoreMixin,
+    DevicesDisplayMixin,
+    DevicesExtrasMixin,
+    DevicesRacksMixin,
+    DevicesRackContentsMixin,
 ):
     pass

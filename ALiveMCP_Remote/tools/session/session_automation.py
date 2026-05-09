@@ -127,5 +127,3 @@ class SessionAutomationMixin:
             return {"ok": True, "message": "MIDI captured"}
         except Exception as e:
             return {"ok": False, "error": str(e)}
-
-

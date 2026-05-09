@@ -167,5 +167,3 @@ class DevicesRacksMixin:
                 return {"ok": False, "error": "Device type not available"}
         except Exception as e:
             return {"ok": False, "error": str(e)}
-
-

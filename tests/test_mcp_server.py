@@ -12,10 +12,10 @@ import sys
 from types import ModuleType
 from unittest.mock import MagicMock, patch
 
-
 # ---------------------------------------------------------------------------
 # Stub the `mcp` package before importing mcp_server
 # ---------------------------------------------------------------------------
+
 
 def _make_mcp_stub():
     mcp = ModuleType("mcp")
@@ -37,6 +37,7 @@ def _make_mcp_stub():
 
     class _Server:
         """Minimal stand-in for mcp.server.Server."""
+
         def __init__(self, name):
             self.name = name
             self._list_tools_handler = None
@@ -46,12 +47,14 @@ def _make_mcp_stub():
             def decorator(fn):
                 self._list_tools_handler = fn
                 return fn
+
             return decorator
 
         def call_tool(self):
             def decorator(fn):
                 self._call_tool_handler = fn
                 return fn
+
             return decorator
 
         def get_capabilities(self, **_):
@@ -80,9 +83,8 @@ sys.modules.setdefault("mcp.server.stdio", _mcp_stub.server.stdio)
 sys.modules.setdefault("mcp.types", _mcp_stub.types)
 sys.modules.setdefault("mcp.server.models", _mcp_stub.server.models)
 
-import mcp_server  # noqa: E402 (import after stub setup)
 import ableton_client  # noqa: E402
-
+import mcp_server  # noqa: E402 (import after stub setup)
 
 # ---------------------------------------------------------------------------
 # _call_ableton
@@ -102,7 +104,9 @@ def _fake_socket_response(response_dict):
 
 def test_call_ableton_success():
     expected = {"ok": True, "bpm": 128.0}
-    with patch("ableton_client.socket.create_connection", return_value=_fake_socket_response(expected)):
+    with patch(
+        "ableton_client.socket.create_connection", return_value=_fake_socket_response(expected)
+    ):
         result = ableton_client._call_ableton("set_tempo", {"bpm": 128})
     assert result["ok"] is True
     assert result["bpm"] == 128.0

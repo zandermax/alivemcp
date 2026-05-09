@@ -129,7 +129,9 @@ def test_save_project(tools, monkeypatch):
     monkeypatch.setattr(
         "ALiveMCP_Remote.tools.session.session_transport.subprocess.check_call", _ok_check_call
     )
-    monkeypatch.setattr("ALiveMCP_Remote.tools.session.session_transport.time.sleep", lambda _: None)
+    monkeypatch.setattr(
+        "ALiveMCP_Remote.tools.session.session_transport.time.sleep", lambda _: None
+    )
 
     result = tools.save_project()
 

@@ -13,8 +13,6 @@ import socket  # noqa: F401 - re-exported so tests can patch ALiveMCP_Remote.soc
 import threading
 import traceback
 
-import Live
-
 try:
     import Queue as queue  # Python 2
 except ImportError:
