@@ -44,6 +44,9 @@ test:
 test-cov:
 	pytest --cov=ALiveMCP_Remote --cov-report=term-missing
 
+validate-manifest:
+	python3 scripts/validate_tool_manifest.py
+
 check-length:
 	python scripts/check_file_length.py
 
