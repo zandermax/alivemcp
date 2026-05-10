@@ -1,9 +1,4853 @@
 {
-  "version": "0.1",
+  "generated_at": "2026-05-10T01:07:04.365219Z",
   "generated_from": [
     "ALiveMCP_Remote/tools/core/registry.py",
     "mcp_server_tool_defs.py"
   ],
-  "note": "This is an initial manifest placeholder. Phase 2 will generate the full canonical manifest from registry and tool defs.",
-  "tools": []
+  "tool_count": 231,
+  "tools": [
+    {
+      "description": "Request adding a device to a track by name.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "add_device",
+      "schema": {
+        "properties": {
+          "device_name": {
+            "description": "Device name to add",
+            "type": "string"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "device_name"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Add MIDI notes to a clip. Each note: {pitch (0-127), start (beats), duration (beats), velocity (0-127)}.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "add_notes",
+      "schema": {
+        "properties": {
+          "notes": {
+            "description": "List of notes with pitch (0-127), start (beats), duration (beats), velocity (0-127)",
+            "items": {
+              "properties": {
+                "duration": {
+                  "description": "Duration in beats (> 0)",
+                  "type": "number"
+                },
+                "pitch": {
+                  "description": "MIDI note 0–127",
+                  "type": "integer"
+                },
+                "start": {
+                  "description": "Start time in beats",
+                  "type": "number"
+                },
+                "velocity": {
+                  "description": "Velocity 0–127",
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "pitch",
+                "start",
+                "duration",
+                "velocity"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "scene_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "scene_index",
+          "notes"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Arm or disarm a track for recording.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "arm_track",
+      "schema": {
+        "properties": {
+          "armed": {
+            "description": "True to arm (default true)",
+            "type": "boolean"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "List Ableton device categories available in the browser.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "browse_devices",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get plugin browsing status.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "browse_plugins",
+      "schema": {
+        "properties": {
+          "plugin_type": {
+            "description": "Plugin type (default 'vst')",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      }
+    },
+    {
+      "description": "Capture the last-played MIDI notes into a clip.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "capture_midi",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Clear (delete) the automation envelope for a device parameter in a clip.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "clear_automation_envelope",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "device_index": {
+            "description": "0-based device index",
+            "type": "integer"
+          },
+          "param_index": {
+            "description": "0-based parameter index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index",
+          "device_index",
+          "param_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Initiate consolidation of arrangement clips in a time range.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "consolidate_clip",
+      "schema": {
+        "properties": {
+          "end_time": {
+            "description": "End time in beats",
+            "type": "number"
+          },
+          "start_time": {
+            "description": "Start time in beats",
+            "type": "number"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "start_time",
+          "end_time"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Continue playback from the current position.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "continue_playing",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Create an audio clip inside a take lane. Requires Live 12+.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "create_audio_clip_in_lane",
+      "schema": {
+        "properties": {
+          "lane_index": {
+            "description": "0-based lane index",
+            "type": "integer"
+          },
+          "length": {
+            "description": "Clip length in beats (default 4.0)",
+            "type": "number"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "lane_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Create a new audio track at the end of the track list.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "create_audio_track",
+      "schema": {
+        "properties": {
+          "name": {
+            "description": "Optional track name",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      }
+    },
+    {
+      "description": "Create an automation envelope for a device parameter in a clip.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "create_automation_envelope",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "device_index": {
+            "description": "0-based device index",
+            "type": "integer"
+          },
+          "param_index": {
+            "description": "0-based parameter index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index",
+          "device_index",
+          "param_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Create a new empty group track.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "create_group_track",
+      "schema": {
+        "properties": {
+          "name": {
+            "description": "Optional group name",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      }
+    },
+    {
+      "description": "Create a cue point (locator) at a specific time.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "create_locator",
+      "schema": {
+        "properties": {
+          "name": {
+            "description": "Locator name (default 'Locator')",
+            "type": "string"
+          },
+          "time_in_beats": {
+            "description": "Position in beats",
+            "type": "number"
+          }
+        },
+        "required": [
+          "time_in_beats"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Create a new empty MIDI clip in a Session view slot. The slot must be empty.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "create_midi_clip",
+      "schema": {
+        "properties": {
+          "length": {
+            "description": "Clip length in beats (default 4.0)",
+            "type": "number"
+          },
+          "scene_index": {
+            "description": "0-based scene (row) index — slot must be empty",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based MIDI track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "scene_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Create a MIDI clip inside a take lane. Requires Live 12+.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "create_midi_clip_in_lane",
+      "schema": {
+        "properties": {
+          "lane_index": {
+            "description": "0-based lane index",
+            "type": "integer"
+          },
+          "length": {
+            "description": "Clip length in beats (default 4.0)",
+            "type": "number"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "lane_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Create a new MIDI track at the end of the track list.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "create_midi_track",
+      "schema": {
+        "properties": {
+          "name": {
+            "description": "Optional track name",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      }
+    },
+    {
+      "description": "Create a new return track.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "create_return_track",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Create a new scene at the end of the scene list.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "create_scene",
+      "schema": {
+        "properties": {
+          "name": {
+            "description": "Optional scene name",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      }
+    },
+    {
+      "description": "Create a new take lane on a track. Requires Live 12+.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "create_take_lane",
+      "schema": {
+        "properties": {
+          "name": {
+            "description": "Optional lane name",
+            "type": "string"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Delete the clip in a session slot.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "delete_clip",
+      "schema": {
+        "properties": {
+          "scene_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "scene_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Delete a device from a track.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "delete_device",
+      "schema": {
+        "properties": {
+          "device_index": {
+            "description": "0-based device index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "device_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Delete a cue point by index.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "delete_locator",
+      "schema": {
+        "properties": {
+          "locator_index": {
+            "description": "0-based locator index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "locator_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Delete a scene by index.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "delete_scene",
+      "schema": {
+        "properties": {
+          "scene_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "scene_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Delete a take lane. Requires Live 12+.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "delete_take_lane",
+      "schema": {
+        "properties": {
+          "lane_index": {
+            "description": "0-based lane index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "lane_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Delete a track by index.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "delete_track",
+      "schema": {
+        "properties": {
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Deselect all notes in a MIDI clip.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "deselect_all_notes",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Duplicate the clip in a slot.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "duplicate_clip",
+      "schema": {
+        "properties": {
+          "scene_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "scene_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Duplicate a scene; copy inserted immediately after the original.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "duplicate_scene",
+      "schema": {
+        "properties": {
+          "scene_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "scene_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Duplicate a session clip to the arrangement view at the current playback position.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "duplicate_to_arrangement",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Duplicate a track; copy inserted immediately after the original.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "duplicate_track",
+      "schema": {
+        "properties": {
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Flatten a frozen track to audio. Track must be frozen first.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "flatten_track",
+      "schema": {
+        "properties": {
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Select and focus a track in the current view.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "focus_track",
+      "schema": {
+        "properties": {
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Freeze a track to reduce CPU usage.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "freeze_track",
+      "schema": {
+        "properties": {
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get display values for all parameters of a device.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_all_param_display_values",
+      "schema": {
+        "properties": {
+          "device_index": {
+            "description": "0-based device index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "device_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get full Ableton Live version information.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_application_version",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get all clips in the arrangement view for a track.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_arrangement_clips",
+      "schema": {
+        "properties": {
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get the current arrangement overdub state.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_arrangement_overdub",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Check whether an automation envelope has any breakpoints.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_automation_envelope_values",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "device_index": {
+            "description": "0-based device index",
+            "type": "integer"
+          },
+          "param_index": {
+            "description": "0-based parameter index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index",
+          "device_index",
+          "param_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get browser items for a category: devices, plugins, instruments, audio_effects, midi_effects.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_browser_items",
+      "schema": {
+        "properties": {
+          "category": {
+            "description": "Category name (default 'devices')",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get the Ableton Live build identifier. Requires Live 12+.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_build_id",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Check whether there is a next cue point to jump to.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_can_jump_to_next_cue",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Check whether there is a previous cue point to jump to.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_can_jump_to_prev_cue",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get all devices within a specific rack chain.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_chain_devices",
+      "schema": {
+        "properties": {
+          "chain_index": {
+            "description": "0-based chain index",
+            "type": "integer"
+          },
+          "device_index": {
+            "description": "0-based rack device index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "device_index",
+          "chain_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get annotation text for a clip.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_clip_annotation",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Check whether an automation envelope exists for a device parameter in a clip.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_clip_automation_envelope",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "device_index": {
+            "description": "0-based device index",
+            "type": "integer"
+          },
+          "param_index": {
+            "description": "0-based parameter index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index",
+          "device_index",
+          "param_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get the color of a clip.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_clip_color",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get the fade-in time for an audio clip.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_clip_fade_in",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get the fade-out time for an audio clip.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_clip_fade_out",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get the file path of the audio sample for an audio clip.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_clip_file_path",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get the follow action for a clip. Codes: 0=Stop, 1=Play Again, 2=Previous, 3=Next, 4=First, 5=Last, 6=Any, 7=Other, 8=Jump.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_clip_follow_action",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get information about a clip (name, length, loop, MIDI/audio type, playing state, color).",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_clip_info",
+      "schema": {
+        "properties": {
+          "scene_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "scene_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get all MIDI notes from a clip.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_clip_notes",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Check whether an audio clip is loaded into RAM.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_clip_ram_mode",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get the start time property of a clip in the arrangement.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_clip_start_time",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get the warp mode for an audio clip. 0=Beats, 1=Tones, 2=Texture, 3=Re-Pitch, 4=Complex, 5=Complex Pro.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_clip_warp_mode",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get all clips inside a take lane. Requires Live 12+.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_clips_in_take_lane",
+      "schema": {
+        "properties": {
+          "lane_index": {
+            "description": "0-based lane index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "lane_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get a track's crossfader assignment: 0=None, 1=A, 2=B.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_crossfader_assignment",
+      "schema": {
+        "properties": {
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get the master crossfader position (-1.0 to 1.0).",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_crossfader_position",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get the current playback position and playing state.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_current_time",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "List all CV Tools devices on a track (filtered by name containing 'CV').",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_cv_tools_devices",
+      "schema": {
+        "properties": {
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get the chains of an instrument/effect rack device.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_device_chains",
+      "schema": {
+        "properties": {
+          "device_index": {
+            "description": "0-based rack device index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "device_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get the internal class name of a device (e.g. 'OriginalSimpler', 'Compressor2').",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_device_class_name",
+      "schema": {
+        "properties": {
+          "device_index": {
+            "description": "0-based device index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "device_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get a parameter's value as displayed in the Live UI (e.g. '128 Hz'). Falls back to string on older Live.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_device_param_display_value",
+      "schema": {
+        "properties": {
+          "device_index": {
+            "description": "0-based device index",
+            "type": "integer"
+          },
+          "param_index": {
+            "description": "0-based parameter index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "device_index",
+          "param_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Find a device parameter by name.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_device_parameter_by_name",
+      "schema": {
+        "properties": {
+          "device_index": {
+            "description": "0-based device index",
+            "type": "integer"
+          },
+          "param_name": {
+            "description": "Parameter name",
+            "type": "string"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "device_index",
+          "param_name"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get all parameters for a device.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_device_parameters",
+      "schema": {
+        "properties": {
+          "device_index": {
+            "description": "0-based device index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "device_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get available presets for a device.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_device_presets",
+      "schema": {
+        "properties": {
+          "device_index": {
+            "description": "0-based device index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "device_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get the device type: 0=audio_effect, 1=instrument, 2=midi_effect.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_device_type",
+      "schema": {
+        "properties": {
+          "device_index": {
+            "description": "0-based device index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "device_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get the global song groove amount.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_groove_amount",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "List all grooves in the groove pool.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_groove_pool_grooves",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get all cue points.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_locators",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get the current arrangement loop state and bounds.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_loop_enabled",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "List all Max for Live devices on a track.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_m4l_devices",
+      "schema": {
+        "properties": {
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get a device parameter value by name.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_m4l_param_by_name",
+      "schema": {
+        "properties": {
+          "device_index": {
+            "description": "0-based device index",
+            "type": "integer"
+          },
+          "param_name": {
+            "description": "Parameter name",
+            "type": "string"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "device_index",
+          "param_name"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get all devices on the master track with full enriched parameter lists in a single call — avoids multiple round-trips for mastering work.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_master_chain_summary",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get enriched info for a single master track device parameter by name. Faster than get_master_device_params when you only need one parameter.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_master_device_param_info",
+      "schema": {
+        "properties": {
+          "device_index": {
+            "description": "0-based device index on master track",
+            "type": "integer"
+          },
+          "param_name": {
+            "description": "Parameter name (first match)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "device_index",
+          "param_name"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get all enriched parameter info for a device on the master track (name, raw_value, display_value, min, max, is_quantized, value_items).",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_master_device_params",
+      "schema": {
+        "properties": {
+          "device_index": {
+            "description": "0-based device index on master track",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "device_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get all devices on the master track.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_master_devices",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get master track information (name, volume, pan, devices).",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_master_track_info",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get the metronome volume.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_metronome_volume",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get MIDI notes filtered by time and pitch range.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_notes_extended",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "pitch_span": {
+            "description": "Number of pitches to include",
+            "type": "integer"
+          },
+          "start_pitch": {
+            "description": "Lowest pitch to include",
+            "type": "integer"
+          },
+          "start_time": {
+            "description": "Filter start time in beats",
+            "type": "number"
+          },
+          "time_span": {
+            "description": "Duration of filter window in beats",
+            "type": "number"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index",
+          "start_time",
+          "time_span",
+          "start_pitch",
+          "pitch_span"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get the project root folder path.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_project_root_folder",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get full rack interior: all chains, chain devices, and enriched device parameters in one call.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_rack_contents",
+      "schema": {
+        "properties": {
+          "device_index": {
+            "description": "0-based rack device index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "device_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get the number of return tracks.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_return_track_count",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get information about a return track.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_return_track_info",
+      "schema": {
+        "properties": {
+          "return_index": {
+            "description": "0-based return track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "return_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get the raw sample length of an audio clip.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_sample_length",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get the playback mode of a Simpler or Sampler device.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_sample_playback_mode",
+      "schema": {
+        "properties": {
+          "device_index": {
+            "description": "0-based device index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "device_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get a scene's color index.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_scene_color",
+      "schema": {
+        "properties": {
+          "scene_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "scene_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get information about a scene (name, color, tempo, time signature).",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_scene_info",
+      "schema": {
+        "properties": {
+          "scene_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "scene_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Check whether a scene has no clips across all tracks.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_scene_is_empty",
+      "schema": {
+        "properties": {
+          "scene_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "scene_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get the tempo override set on a scene, if any.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_scene_tempo",
+      "schema": {
+        "properties": {
+          "scene_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "scene_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get whether session automation recording is enabled.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_session_automation_record",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get a full snapshot of the session state (tempo, tracks, scenes, playback status).",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_session_info",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get the session record state.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_session_record",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get the global time signature denominator.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_signature_denominator",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get the global time signature numerator.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_signature_numerator",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get the name of a specific take lane. Requires Live 12+.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_take_lane_name",
+      "schema": {
+        "properties": {
+          "lane_index": {
+            "description": "0-based lane index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "lane_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get all take lanes on a track. Requires Live 12+.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_take_lanes",
+      "schema": {
+        "properties": {
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get the annotation text for a track.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_track_annotation",
+      "schema": {
+        "properties": {
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "List available input routing type names for a track.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_track_available_input_routing_types",
+      "schema": {
+        "properties": {
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "List available output routing type names for a track.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_track_available_output_routing_types",
+      "schema": {
+        "properties": {
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get all devices on any track with full enriched parameter lists in a single call — lets the AI read the entire device chain in one round trip.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_track_chain_summary",
+      "schema": {
+        "properties": {
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get the color of a track.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_track_color",
+      "schema": {
+        "properties": {
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get a track's delay compensation value in samples.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_track_delay",
+      "schema": {
+        "properties": {
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get all enriched parameter info for a device on any track (name, raw_value, display_value, min, max, is_quantized, value_items).",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_track_device_params",
+      "schema": {
+        "properties": {
+          "device_index": {
+            "description": "0-based device index on that track",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "device_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get all devices on a track.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_track_devices",
+      "schema": {
+        "properties": {
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Find a track's index by name. Case-insensitive, partial match, returns first result.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_track_index_by_name",
+      "schema": {
+        "properties": {
+          "name": {
+            "description": "Track name or partial name to search for",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get detailed information about a track (name, volume, pan, devices, clips, etc.).",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_track_info",
+      "schema": {
+        "properties": {
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get the current input routing type for a track.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_track_input_routing_type",
+      "schema": {
+        "properties": {
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Check whether a track is foldable (i.e. is a group track).",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_track_is_foldable",
+      "schema": {
+        "properties": {
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Check whether a track is currently frozen.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_track_is_frozen",
+      "schema": {
+        "properties": {
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Check whether a track is a member of a group.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_track_is_grouped",
+      "schema": {
+        "properties": {
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get the current output routing configuration for a track.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_track_output_routing",
+      "schema": {
+        "properties": {
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get all send levels for a track.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_track_sends",
+      "schema": {
+        "properties": {
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get the Ableton Live edition (e.g. 'Suite', 'Standard', 'Intro'). Requires Live 12+.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_variant",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get all warp markers from an audio clip.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "get_warp_markers",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Group a range of tracks together.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "group_tracks",
+      "schema": {
+        "properties": {
+          "end_index": {
+            "description": "Last track to group (inclusive)",
+            "type": "integer"
+          },
+          "start_index": {
+            "description": "First track to group",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "start_index",
+          "end_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Get health status: Ableton version, queue depth, tool count.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "health_check",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Hide the editor window for a device/plugin.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "hide_plugin_window",
+      "schema": {
+        "properties": {
+          "device_index": {
+            "description": "0-based device index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "device_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Insert an automation breakpoint at a specific time and value.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "insert_automation_step",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "device_index": {
+            "description": "0-based device index",
+            "type": "integer"
+          },
+          "param_index": {
+            "description": "0-based parameter index",
+            "type": "integer"
+          },
+          "time": {
+            "description": "Time in beats",
+            "type": "number"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          },
+          "value": {
+            "description": "Automation value",
+            "type": "number"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index",
+          "device_index",
+          "param_index",
+          "time",
+          "value"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Check whether a device is a Max for Live device.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "is_max_device",
+      "schema": {
+        "properties": {
+          "device_index": {
+            "description": "0-based device index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "device_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Move the playback position by a relative offset in beats (negative to go backward).",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "jump_by_amount",
+      "schema": {
+        "properties": {
+          "amount_in_beats": {
+            "description": "Offset in beats",
+            "type": "number"
+          }
+        },
+        "required": [
+          "amount_in_beats"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Jump playback to the next cue point.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "jump_to_next_cue",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Jump playback to the previous cue point.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "jump_to_prev_cue",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Move the playback position to a specific beat.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "jump_to_time",
+      "schema": {
+        "properties": {
+          "time_in_beats": {
+            "description": "Target position in beats",
+            "type": "number"
+          }
+        },
+        "required": [
+          "time_in_beats"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Launch (fire) a clip.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "launch_clip",
+      "schema": {
+        "properties": {
+          "scene_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "scene_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Launch (fire) all clips in a scene.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "launch_scene",
+      "schema": {
+        "properties": {
+          "scene_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "scene_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Load a device from the browser onto a track by name.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "load_device_from_browser",
+      "schema": {
+        "properties": {
+          "device_name": {
+            "description": "Device name",
+            "type": "string"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "device_name"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Mute or unmute a track.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "mute_track",
+      "schema": {
+        "properties": {
+          "mute": {
+            "description": "True to mute (default true)",
+            "type": "boolean"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Nudge the playback position down.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "nudge_down",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Nudge the playback position up.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "nudge_up",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Check that the ALiveMCP Remote Script is running in Ableton.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "ping",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Quantize a MIDI clip to a grid value (e.g. 0.25 for 16th notes).",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "quantize_clip",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "quantize_to": {
+            "description": "Grid size in beats (e.g. 0.25 for 16th notes)",
+            "type": "number"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index",
+          "quantize_to"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Quantize MIDI clip pitch to a target pitch.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "quantize_clip_pitch",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "pitch": {
+            "description": "Target pitch MIDI note (default 60)",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Randomize all enabled, non-quantized parameters of a device (richer response).",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "randomize_device",
+      "schema": {
+        "properties": {
+          "device_index": {
+            "description": "0-based device index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "device_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Randomize all non-quantized parameters of a device.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "randomize_device_parameters",
+      "schema": {
+        "properties": {
+          "device_index": {
+            "description": "0-based device index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "device_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Re-enable all overridden automation.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "re_enable_automation",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Redo the last undone action in Ableton.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "redo",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Remove an automation breakpoint at a specific time.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "remove_automation_step",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "device_index": {
+            "description": "0-based device index",
+            "type": "integer"
+          },
+          "param_index": {
+            "description": "0-based parameter index",
+            "type": "integer"
+          },
+          "time": {
+            "description": "Time in beats of breakpoint to remove",
+            "type": "number"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index",
+          "device_index",
+          "param_index",
+          "time"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Remove MIDI notes from a clip within a pitch and time range.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "remove_notes",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "pitch_from": {
+            "description": "Lowest pitch to remove (default 0)",
+            "type": "integer"
+          },
+          "pitch_to": {
+            "description": "Highest pitch to remove (default 127)",
+            "type": "integer"
+          },
+          "time_from": {
+            "description": "Start time in beats (default 0.0)",
+            "type": "number"
+          },
+          "time_to": {
+            "description": "End time in beats (default 999.0)",
+            "type": "number"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Rename a scene.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "rename_scene",
+      "schema": {
+        "properties": {
+          "name": {
+            "description": "New scene name",
+            "type": "string"
+          },
+          "scene_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "scene_index",
+          "name"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Rename a track.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "rename_track",
+      "schema": {
+        "properties": {
+          "name": {
+            "description": "New name",
+            "type": "string"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "name"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Replace the currently selected notes with new notes.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "replace_selected_notes",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "notes": {
+            "description": "Replacement notes with pitch, start, duration, velocity, optional muted",
+            "items": {
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index",
+          "notes"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Request the arrangement view to scroll to a specific time.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "scroll_view_to_time",
+      "schema": {
+        "properties": {
+          "time_in_beats": {
+            "description": "Time in beats",
+            "type": "number"
+          }
+        },
+        "required": [
+          "time_in_beats"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Select all notes in a MIDI clip.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "select_all_notes",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Send a MIDI Control Change message.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "send_midi_cc",
+      "schema": {
+        "properties": {
+          "cc_number": {
+            "description": "CC number 0–127",
+            "type": "integer"
+          },
+          "cc_value": {
+            "description": "CC value 0–127",
+            "type": "integer"
+          },
+          "channel": {
+            "description": "MIDI channel 0-based (default 0 = ch 1)",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "Track index (required but unused for routing)",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "cc_number",
+          "cc_value"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Send a MIDI Program Change message.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "send_program_change",
+      "schema": {
+        "properties": {
+          "channel": {
+            "description": "MIDI channel 0-based (default 0)",
+            "type": "integer"
+          },
+          "program_number": {
+            "description": "Program number 0–127",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "Track index (required but unused for routing)",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "program_number"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Enable or disable arrangement overdub.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_arrangement_overdub",
+      "schema": {
+        "properties": {
+          "enabled": {
+            "description": "True to enable overdub",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "enabled"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Enable or disable Back to Arrangement mode.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_back_to_arranger",
+      "schema": {
+        "properties": {
+          "enabled": {
+            "description": "True to enable",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "enabled"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Mute or unmute a rack chain.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_chain_mute",
+      "schema": {
+        "properties": {
+          "chain_index": {
+            "description": "0-based chain index",
+            "type": "integer"
+          },
+          "device_index": {
+            "description": "0-based rack device index",
+            "type": "integer"
+          },
+          "mute": {
+            "description": "True to mute",
+            "type": "boolean"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "device_index",
+          "chain_index",
+          "mute"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Solo or unsolo a rack chain.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_chain_solo",
+      "schema": {
+        "properties": {
+          "chain_index": {
+            "description": "0-based chain index",
+            "type": "integer"
+          },
+          "device_index": {
+            "description": "0-based rack device index",
+            "type": "integer"
+          },
+          "solo": {
+            "description": "True to solo",
+            "type": "boolean"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "device_index",
+          "chain_index",
+          "solo"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set annotation text for a clip.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_clip_annotation",
+      "schema": {
+        "properties": {
+          "annotation_text": {
+            "description": "Annotation text",
+            "type": "string"
+          },
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index",
+          "annotation_text"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set a clip's color using an Ableton color index.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_clip_color",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "color_index": {
+            "description": "Ableton color index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index",
+          "color_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set the end marker (playback end point) of a clip in beats.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_clip_end_marker",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "end_marker": {
+            "description": "Position in beats",
+            "type": "number"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index",
+          "end_marker"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set the fade-in time for an audio clip.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_clip_fade_in",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "fade_time": {
+            "description": "Fade time",
+            "type": "number"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index",
+          "fade_time"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set the fade-out time for an audio clip.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_clip_fade_out",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "fade_time": {
+            "description": "Fade time",
+            "type": "number"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index",
+          "fade_time"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set follow actions for a clip. Codes: 0=Stop, 1=Play Again, 2=Previous, 3=Next, 4=First, 5=Last, 6=Any, 7=Other, 8=Jump.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_clip_follow_action",
+      "schema": {
+        "properties": {
+          "action_A": {
+            "description": "Follow action A code (0–8)",
+            "type": "integer"
+          },
+          "action_B": {
+            "description": "Follow action B code (0–8)",
+            "type": "integer"
+          },
+          "chance_A": {
+            "description": "Probability for action A, 0.0–1.0 (default 1.0)",
+            "type": "number"
+          },
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index",
+          "action_A",
+          "action_B"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set clip gain (audio clips only).",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_clip_gain",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "gain": {
+            "description": "Gain value",
+            "type": "number"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index",
+          "gain"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Assign a groove pool groove to a clip.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_clip_groove",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "groove_index": {
+            "description": "Index into groove pool",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index",
+          "groove_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set groove amount for a clip (0.0 to 1.0).",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_clip_groove_amount",
+      "schema": {
+        "properties": {
+          "amount": {
+            "description": "Groove amount 0.0–1.0",
+            "type": "number"
+          },
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index",
+          "amount"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set the loop end position within a clip in beats.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_clip_loop_end",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "loop_end": {
+            "description": "Position in beats",
+            "type": "number"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index",
+          "loop_end"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set the loop start position within a clip in beats.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_clip_loop_start",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "loop_start": {
+            "description": "Position in beats",
+            "type": "number"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index",
+          "loop_start"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Enable or disable looping for a clip.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_clip_looping",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "looping": {
+            "description": "True to loop",
+            "type": "boolean"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index",
+          "looping"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Mute or unmute a clip.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_clip_muted",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "muted": {
+            "description": "True to mute",
+            "type": "boolean"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index",
+          "muted"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Rename a clip.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_clip_name",
+      "schema": {
+        "properties": {
+          "name": {
+            "description": "New clip name",
+            "type": "string"
+          },
+          "scene_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "scene_index",
+          "name"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Transpose a clip by semitones.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_clip_pitch_coarse",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "semitones": {
+            "description": "Semitones to transpose",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index",
+          "semitones"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Fine-tune a clip's pitch in cents.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_clip_pitch_fine",
+      "schema": {
+        "properties": {
+          "cents": {
+            "description": "Cents to adjust",
+            "type": "integer"
+          },
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index",
+          "cents"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Control whether an audio clip streams from disk or loads into RAM.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_clip_ram_mode",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "ram_mode": {
+            "description": "True to load into RAM",
+            "type": "boolean"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index",
+          "ram_mode"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set a clip's local time signature numerator.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_clip_signature_numerator",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "numerator": {
+            "description": "Time signature numerator",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index",
+          "numerator"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set the start marker (playback start point) of a clip in beats.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_clip_start_marker",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "start_marker": {
+            "description": "Position in beats",
+            "type": "number"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index",
+          "start_marker"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set the start time of a clip.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_clip_start_time",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "start_time": {
+            "description": "Start time in beats",
+            "type": "number"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index",
+          "start_time"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set the warp mode for an audio clip. 0=Beats, 1=Tones, 2=Texture, 3=Re-Pitch, 4=Complex, 5=Complex Pro.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_clip_warp_mode",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          },
+          "warp_mode": {
+            "description": "Warp mode 0–5",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index",
+          "warp_mode"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Enable or disable warping for an audio clip.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_clip_warping",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          },
+          "warping": {
+            "description": "True to enable warping",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index",
+          "warping"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set a track's crossfader assignment: 0=None, 1=A, 2=B.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_crossfader_assignment",
+      "schema": {
+        "properties": {
+          "assignment": {
+            "description": "0=None, 1=A, 2=B",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "assignment"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Enable or disable a device.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_device_on_off",
+      "schema": {
+        "properties": {
+          "device_index": {
+            "description": "0-based device index",
+            "type": "integer"
+          },
+          "enabled": {
+            "description": "True to enable",
+            "type": "boolean"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "device_index",
+          "enabled"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set a device parameter by index.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_device_param",
+      "schema": {
+        "properties": {
+          "device_index": {
+            "description": "0-based device index",
+            "type": "integer"
+          },
+          "param_index": {
+            "description": "0-based parameter index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          },
+          "value": {
+            "description": "Parameter value",
+            "type": "number"
+          }
+        },
+        "required": [
+          "track_index",
+          "device_index",
+          "param_index",
+          "value"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set a device parameter value by name (works with any device including M4L).",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_device_param_by_name",
+      "schema": {
+        "properties": {
+          "device_index": {
+            "description": "0-based device index",
+            "type": "integer"
+          },
+          "param_name": {
+            "description": "Parameter name",
+            "type": "string"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          },
+          "value": {
+            "description": "New value",
+            "type": "number"
+          }
+        },
+        "required": [
+          "track_index",
+          "device_index",
+          "param_name",
+          "value"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set a device parameter by name.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_device_parameter_by_name",
+      "schema": {
+        "properties": {
+          "device_index": {
+            "description": "0-based device index",
+            "type": "integer"
+          },
+          "param_name": {
+            "description": "Parameter name",
+            "type": "string"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          },
+          "value": {
+            "description": "New value",
+            "type": "number"
+          }
+        },
+        "required": [
+          "track_index",
+          "device_index",
+          "param_name",
+          "value"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Load a preset for a device by index.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_device_preset",
+      "schema": {
+        "properties": {
+          "device_index": {
+            "description": "0-based device index",
+            "type": "integer"
+          },
+          "preset_index": {
+            "description": "0-based preset index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "device_index",
+          "preset_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set the time before the follow action triggers, in bars.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_follow_action_time",
+      "schema": {
+        "properties": {
+          "clip_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "time_in_bars": {
+            "description": "Time in bars",
+            "type": "number"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "clip_index",
+          "time_in_bars"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set the global song groove amount (0.0 to 1.0).",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_groove_amount",
+      "schema": {
+        "properties": {
+          "amount": {
+            "description": "Groove amount 0.0–1.0",
+            "type": "number"
+          }
+        },
+        "required": [
+          "amount"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Enable or disable the arrangement loop.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_loop_enabled",
+      "schema": {
+        "properties": {
+          "enabled": {
+            "description": "True to enable loop",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "enabled"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set arrangement loop length in beats.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_loop_length",
+      "schema": {
+        "properties": {
+          "length": {
+            "description": "Length in beats",
+            "type": "number"
+          }
+        },
+        "required": [
+          "length"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set arrangement loop start position in beats.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_loop_start",
+      "schema": {
+        "properties": {
+          "position": {
+            "description": "Position in beats",
+            "type": "number"
+          }
+        },
+        "required": [
+          "position"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set a master track device parameter by index. Value is clamped to the parameter's min/max.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_master_device_param",
+      "schema": {
+        "properties": {
+          "device_index": {
+            "description": "0-based device index on master track",
+            "type": "integer"
+          },
+          "param_index": {
+            "description": "0-based parameter index",
+            "type": "integer"
+          },
+          "value": {
+            "description": "New parameter value (clamped to min/max)",
+            "type": "number"
+          }
+        },
+        "required": [
+          "device_index",
+          "param_index",
+          "value"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set a master track device parameter by name. For quantized params pass a string from value_items (e.g. '4:1'). For continuous params pass a number (clamped to min/max). Matches first parameter with that name.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_master_device_param_by_name",
+      "schema": {
+        "properties": {
+          "device_index": {
+            "description": "0-based device index on master track",
+            "type": "integer"
+          },
+          "param_name": {
+            "description": "Parameter name (first match)",
+            "type": "string"
+          },
+          "value": {
+            "description": "Display string for quantized params, or numeric string for continuous",
+            "type": "string"
+          }
+        },
+        "required": [
+          "device_index",
+          "param_name",
+          "value"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set master track pan (-1.0 to 1.0).",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_master_pan",
+      "schema": {
+        "properties": {
+          "pan": {
+            "description": "Pan -1.0 to 1.0",
+            "type": "number"
+          }
+        },
+        "required": [
+          "pan"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set master track volume (0.0 to 1.0).",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_master_volume",
+      "schema": {
+        "properties": {
+          "volume": {
+            "description": "Volume 0.0–1.0",
+            "type": "number"
+          }
+        },
+        "required": [
+          "volume"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Enable or disable the metronome.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_metronome",
+      "schema": {
+        "properties": {
+          "enabled": {
+            "description": "True to enable",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "enabled"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set the metronome volume (0.0 to 1.0).",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_metronome_volume",
+      "schema": {
+        "properties": {
+          "volume": {
+            "description": "Volume 0.0–1.0",
+            "type": "number"
+          }
+        },
+        "required": [
+          "volume"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Enable or disable punch-in recording.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_punch_in",
+      "schema": {
+        "properties": {
+          "enabled": {
+            "description": "True to enable punch-in",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "enabled"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Enable or disable punch-out recording.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_punch_out",
+      "schema": {
+        "properties": {
+          "enabled": {
+            "description": "True to enable punch-out",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "enabled"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set session or arrangement record mode: 0=session, 1=arrangement.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_record_mode",
+      "schema": {
+        "properties": {
+          "mode": {
+            "description": "0=session, 1=arrangement",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "mode"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set a return track's volume (0.0 to 1.0).",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_return_track_volume",
+      "schema": {
+        "properties": {
+          "return_index": {
+            "description": "0-based return track index",
+            "type": "integer"
+          },
+          "volume": {
+            "description": "Volume 0.0–1.0",
+            "type": "number"
+          }
+        },
+        "required": [
+          "return_index",
+          "volume"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set the playback mode of a Simpler or Sampler device.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_sample_playback_mode",
+      "schema": {
+        "properties": {
+          "device_index": {
+            "description": "0-based device index",
+            "type": "integer"
+          },
+          "mode": {
+            "description": "Playback mode",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "device_index",
+          "mode"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set a scene's color.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_scene_color",
+      "schema": {
+        "properties": {
+          "color_index": {
+            "description": "Ableton color index",
+            "type": "integer"
+          },
+          "scene_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "scene_index",
+          "color_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Enable or disable session automation recording.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_session_automation_record",
+      "schema": {
+        "properties": {
+          "enabled": {
+            "description": "True to enable",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "enabled"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Enable or disable session recording.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_session_record",
+      "schema": {
+        "properties": {
+          "enabled": {
+            "description": "True to enable",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "enabled"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set the name of a take lane. Requires Live 12+.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_take_lane_name",
+      "schema": {
+        "properties": {
+          "lane_index": {
+            "description": "0-based lane index",
+            "type": "integer"
+          },
+          "name": {
+            "description": "New lane name",
+            "type": "string"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "lane_index",
+          "name"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set the session tempo. Valid range: 20–999 BPM.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_tempo",
+      "schema": {
+        "properties": {
+          "bpm": {
+            "description": "Tempo in BPM (20–999)",
+            "type": "number"
+          }
+        },
+        "required": [
+          "bpm"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set the session time signature.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_time_signature",
+      "schema": {
+        "properties": {
+          "denominator": {
+            "description": "Denominator: 1, 2, 4, 8, or 16",
+            "type": "integer"
+          },
+          "numerator": {
+            "description": "Numerator (1–99)",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "numerator",
+          "denominator"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set the annotation text for a track.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_track_annotation",
+      "schema": {
+        "properties": {
+          "annotation_text": {
+            "description": "Annotation text",
+            "type": "string"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "annotation_text"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set a track's color using an Ableton color index.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_track_color",
+      "schema": {
+        "properties": {
+          "color_index": {
+            "description": "Ableton color index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "color_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set track monitoring state: 0=In, 1=Auto, 2=Off.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_track_current_monitoring_state",
+      "schema": {
+        "properties": {
+          "state": {
+            "description": "0=In, 1=Auto, 2=Off",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "state"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set a track's delay compensation in samples.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_track_delay",
+      "schema": {
+        "properties": {
+          "delay_samples": {
+            "description": "Delay in samples",
+            "type": "number"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "delay_samples"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set a track device parameter by index. Value is clamped to the parameter's min/max.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_track_device_param",
+      "schema": {
+        "properties": {
+          "device_index": {
+            "description": "0-based device index on that track",
+            "type": "integer"
+          },
+          "param_index": {
+            "description": "0-based parameter index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          },
+          "value": {
+            "description": "New parameter value (clamped to min/max)",
+            "type": "number"
+          }
+        },
+        "required": [
+          "track_index",
+          "device_index",
+          "param_index",
+          "value"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set a track device parameter by name. For quantized params pass a string from value_items (e.g. '4:1'). For continuous params pass a number (clamped to min/max). Matches first parameter with that name.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_track_device_param_by_name",
+      "schema": {
+        "properties": {
+          "device_index": {
+            "description": "0-based device index on that track",
+            "type": "integer"
+          },
+          "param_name": {
+            "description": "Parameter name (first match)",
+            "type": "string"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          },
+          "value": {
+            "description": "Display string for quantized params, or numeric string for continuous",
+            "type": "string"
+          }
+        },
+        "required": [
+          "track_index",
+          "device_index",
+          "param_name",
+          "value"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Fold or unfold a group track.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_track_fold_state",
+      "schema": {
+        "properties": {
+          "folded": {
+            "description": "True to fold",
+            "type": "boolean"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "folded"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set a track's input routing type.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_track_input_routing",
+      "schema": {
+        "properties": {
+          "routing_channel": {
+            "description": "Channel index (default 0)",
+            "type": "integer"
+          },
+          "routing_type_name": {
+            "description": "Routing type name",
+            "type": "string"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "routing_type_name"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set a track's input sub-routing channel.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_track_input_sub_routing",
+      "schema": {
+        "properties": {
+          "sub_routing": {
+            "description": "Sub-routing channel name",
+            "type": "string"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "sub_routing"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set a track's output routing type.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_track_output_routing",
+      "schema": {
+        "properties": {
+          "routing_type_name": {
+            "description": "Routing type name",
+            "type": "string"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "routing_type_name"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set a track's output sub-routing channel.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_track_output_sub_routing",
+      "schema": {
+        "properties": {
+          "sub_routing": {
+            "description": "Sub-routing channel name",
+            "type": "string"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "sub_routing"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set a track's panning (-1.0 full left to 1.0 full right).",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_track_pan",
+      "schema": {
+        "properties": {
+          "pan": {
+            "description": "Pan -1.0 to 1.0",
+            "type": "number"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "pan"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set a send level for a track (0.0 to 1.0).",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_track_send",
+      "schema": {
+        "properties": {
+          "send_index": {
+            "description": "0-based return track index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          },
+          "value": {
+            "description": "Send level 0.0–1.0",
+            "type": "number"
+          }
+        },
+        "required": [
+          "track_index",
+          "send_index",
+          "value"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Set a track's volume (0.0 to 1.0).",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "set_track_volume",
+      "schema": {
+        "properties": {
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          },
+          "volume": {
+            "description": "Volume 0.0–1.0",
+            "type": "number"
+          }
+        },
+        "required": [
+          "track_index",
+          "volume"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Switch to the Arrangement view.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "show_arrangement_view",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Switch to the Session view.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "show_clip_view",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Show a message dialog box to the user in Ableton. Requires Live 12+.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "show_message_box",
+      "schema": {
+        "properties": {
+          "message": {
+            "description": "Message text",
+            "type": "string"
+          },
+          "title": {
+            "description": "Dialog title (default 'Message')",
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Show the editor window for a device/plugin.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "show_plugin_window",
+      "schema": {
+        "properties": {
+          "device_index": {
+            "description": "0-based device index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "device_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Solo or unsolo a track.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "solo_track",
+      "schema": {
+        "properties": {
+          "solo": {
+            "description": "True to solo (default true)",
+            "type": "boolean"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Start Ableton playback (no-op if already playing).",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "start_playback",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Enable record mode and start playback.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "start_recording",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Stop all playing clips across all tracks.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "stop_all_clips",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Stop clips on a track (all clips on the track are stopped).",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "stop_clip",
+      "schema": {
+        "properties": {
+          "scene_index": {
+            "description": "0-based scene index",
+            "type": "integer"
+          },
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index",
+          "scene_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Stop Ableton playback (no-op if not playing).",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "stop_playback",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Disable record mode (does not stop playback).",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "stop_recording",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Send a tap-tempo pulse.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "tap_tempo",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Trigger session recording with an optional fixed length in beats.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "trigger_session_record",
+      "schema": {
+        "properties": {
+          "length": {
+            "description": "Recording length in beats; omit for open-ended",
+            "type": "number"
+          }
+        },
+        "type": "object"
+      }
+    },
+    {
+      "description": "Undo the last action in Ableton.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "undo",
+      "schema": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "description": "Unfreeze a frozen track.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "unfreeze_track",
+      "schema": {
+        "properties": {
+          "track_index": {
+            "description": "0-based track index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "track_index"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "Ungroup a group track.",
+      "in_mcp_defs": true,
+      "in_registry": true,
+      "name": "ungroup_track",
+      "schema": {
+        "properties": {
+          "group_track_index": {
+            "description": "Index of the group track",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "group_track_index"
+        ],
+        "type": "object"
+      }
+    }
+  ],
+  "version": "0.1"
 }

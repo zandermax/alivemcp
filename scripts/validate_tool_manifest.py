@@ -33,9 +33,15 @@ def main():
         print("Field `tools` must be an array", file=sys.stderr)
         return 2
 
-    if tools and tools != sorted(tools):
-        print("tools list is not sorted; sort for deterministic manifest", file=sys.stderr)
-        return 2
+    # Ensure tools are sorted deterministically by their `name` field
+    if tools:
+        names = [t.get("name", "") for t in tools]
+        if names != sorted(names):
+            print(
+                "tools list is not sorted by `name`; sort for deterministic manifest",
+                file=sys.stderr,
+            )
+            return 2
 
     if not tools:
         print("Warning: manifest.tools is empty; run generation in Phase 2", file=sys.stderr)
