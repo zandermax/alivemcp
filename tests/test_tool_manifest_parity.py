@@ -30,6 +30,8 @@ def _normalize_registry_items(items):
 
 def _normalize_defs_items(items):
     names = set()
+    if isinstance(items, str):
+        items = json.loads(items)
     if isinstance(items, dict):
         return set(items.keys())
     for item in items:
