@@ -1,5 +1,7 @@
 .PHONY: help install-dev lint lint-fix format format-check test test-cov check-length mock ui ci
 
+VENV ?= .venv
+
 help:
 	@echo "Usage: make <target>"
 	@echo ""
@@ -24,7 +26,11 @@ help:
 	@echo "  ci              Run all checks (lint, format-check, test, check-length)"
 
 install-dev:
-	pip install -r requirements-dev.txt
+	$(VENV)/bin/python -m pip install -r requirements-dev.txt
+
+venv:
+	python3 -m venv $(VENV)
+	$(VENV)/bin/python -m pip install --upgrade pip setuptools wheel
 
 lint:
 	ruff check .
