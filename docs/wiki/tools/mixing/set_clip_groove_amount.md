@@ -11,11 +11,15 @@
 
 **Live mapping:**
 - Writes `clip.groove_amount = amount` when `clip` exposes `groove_amount`.
+
 **Example request:**
+
 ```json
 {"action":"set_clip_groove_amount","track_index":1,"clip_index":0,"amount":0.5}
 ```
+
 **Example response:**
+
 ```json
 {"ok": true, "groove_amount": 0.5}
 ```

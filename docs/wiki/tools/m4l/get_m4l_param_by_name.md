@@ -17,16 +17,15 @@ Returns:
 - `min`: float
 - `max`: float
 - `is_enabled`: boolean
+
 **Example request:**
+
 ```json
 {"action": "get_m4l_param_by_name", "track_index": 0, "device_index": 0, "param_name": "Rate"}
 ```
-**Example response:**
-```json
-{"ok": true}
-```
 
-**Example request:**
+**Example response:**
+
 ```json
 {"ok": true, "param_index": 1, "name": "Rate", "value": 0.5, "min": 0.0, "max": 1.0, "is_enabled": true}
 ```

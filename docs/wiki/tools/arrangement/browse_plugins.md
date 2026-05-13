@@ -9,11 +9,15 @@
 
 **Live mapping:**
 - Returns a message noting plugin browsing limitations; host may not expose full lists.
+
 **Example request:**
+
 ```json
 {"action":"browse_plugins","plugin_type":"vst"}
 ```
+
 **Example response:**
+
 ```json
 {"ok": true, "message":"Plugin browsing via LiveAPI is limited","plugin_type":"vst"}
 ```

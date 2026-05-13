@@ -9,11 +9,15 @@
 - `clip_index` (int)
 
 **Live mapping:** Reads `clip.warp_mode` or equivalent Live API property for an audio clip and returns a string describing the mode (e.g., ‘beats’, ‘textures’, etc.).
+
 **Example request:**
+
 ```json
 {"action":"get_clip_warp_mode","track_index":1,"clip_index":0}
 ```
+
 **Example response:**
+
 ```json
 {"ok": true, "warp_mode": "beats"}
 ```

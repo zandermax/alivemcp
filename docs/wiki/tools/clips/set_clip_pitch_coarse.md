@@ -12,11 +12,15 @@ Parameters:
 Returns:
 - `ok`: boolean
 - `pitch_coarse`: int (new value)
+
 **Example request:**
+
 ```json
 {"action": "set_clip_pitch_coarse", "track_index": 0, "clip_index": 0, "semitones": 2}
 ```
+
 **Example response:**
+
 ```json
 {"ok": true}
 ```

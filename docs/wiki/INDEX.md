@@ -373,7 +373,7 @@ Within each operation type, tools are grouped by domain: **Session**, **Tracks**
 ## How to contribute
 
 1. Add or update a page under `docs/wiki/tools/<domain>/` using [tool template](templates/tool.md).
-2. Commit and open a PR; include Live version notes if behaviour depends on Live 11 vs Live 12.
+2. Commit and open a PR; include Live version notes if behavior depends on Live 11 vs Live 12.
 
 ## Fossil/GitHub compatibility
 

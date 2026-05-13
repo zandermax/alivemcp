@@ -13,12 +13,15 @@
 - Calls into Live Object Model: {LIVE_CALLS}
 - Threading: All Live API calls execute on the main thread; do not call from socket threads.
 
+
 **Example request:**
+
 ```json
 {EXAMPLE_REQUEST}
 ```
 
 **Example response:**
+
 ```json
 {EXAMPLE_RESPONSE}
 ```

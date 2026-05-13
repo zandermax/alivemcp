@@ -10,11 +10,15 @@
 
 **Live mapping:**
 - Calls `clip_slot.fire()` on the Live Object Model to launch the clip.
+
 **Example request:**
+
 ```json
 {"action": "launch_clip", "track_index": 1, "clip_index": 0}
 ```
+
 **Example response:**
+
 ```json
 {"ok": true, "message": "Clip launched"}
 ```
