@@ -11,8 +11,13 @@ Returns:
 - `ok`: boolean
 - `is_foldable`: boolean (when available)
 
-Example request:
+**Example request:**
 ```json
 {"action": "get_track_is_foldable", "track_index": 2}
+```
+
+**Example request:**
+```json
+{"ok": true, "is_foldable": true}
 ```
 

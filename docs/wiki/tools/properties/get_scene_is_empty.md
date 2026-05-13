@@ -14,8 +14,13 @@ Returns:
 Notes:
 - If `scene.is_empty` is not available, the tool falls back to scanning tracks.
 
-Example request:
+**Example request:**
 ```json
 {"action": "get_scene_is_empty", "scene_index": 0}
+```
+
+**Example request:**
+```json
+{"ok": true, "is_empty": false}
 ```
 

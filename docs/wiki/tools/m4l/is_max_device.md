@@ -15,8 +15,13 @@ Returns:
 - `class_display_name`: string
 - `device_name`: string
 
-Example request:
+**Example request:**
 ```json
 {"action": "is_max_device", "track_index": 0, "device_index": 0}
+```
+
+**Example request:**
+```json
+{"ok": true, "is_m4l": true, "class_name": "MaxForLiveDevice", "class_display_name": "Max Device", "device_name": "My M4L Device"}
 ```
 

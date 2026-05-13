@@ -16,8 +16,13 @@ Returns:
 Notes:
 - Fails if the clip slot has no clip or the property is not settable.
 
-Example request:
+**Example request:**
 ```json
 {"action": "set_clip_start_time", "track_index": 0, "clip_index": 0, "start_time": 1.0}
+```
+
+**Example request:**
+```json
+{"ok": true, "start_time": 1.0}
 ```
 
