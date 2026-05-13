@@ -24,4 +24,4 @@
 - Names may be synthesized ("Send A", "Send B") if not exposed by the Live object.
 
 **See also:**
-- [docs/wiki/tools/mixing/set_track_send.md](docs/wiki/tools/mixing/set_track_send.md)
+- [set_track_send](tools/mixing/set_track_send.md)

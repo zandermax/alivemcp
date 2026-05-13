@@ -25,4 +25,4 @@
 - This manipulates the Live UI; use carefully during performance.
 
 **See also:**
-- [docs/wiki/tools/devices/hide_plugin_window.md](docs/wiki/tools/devices/hide_plugin_window.md)
+- [hide_plugin_window](tools/devices/hide_plugin_window.md)

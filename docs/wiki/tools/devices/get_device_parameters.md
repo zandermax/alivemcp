@@ -25,5 +25,5 @@
 - Useful to discover parameter indexes before using `set_device_param`.
 
 **See also:**
-- [docs/wiki/tools/devices/get_device_parameter_by_name.md](docs/wiki/tools/devices/get_device_parameter_by_name.md)
-- [docs/wiki/tools/devices/set_device_param.md](docs/wiki/tools/devices/set_device_param.md)
+- [get_device_parameter_by_name](tools/devices/get_device_parameter_by_name.md)
+- [set_device_param](tools/devices/set_device_param.md)

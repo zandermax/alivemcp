@@ -24,4 +24,4 @@
 - Returns an error when the master mixer device is not available.
 
 **See also:**
-- [docs/wiki/tools/mixing/get_master_track_info.md](docs/wiki/tools/mixing/get_master_track_info.md)
+- [get_master_track_info](tools/mixing/get_master_track_info.md)

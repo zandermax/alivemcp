@@ -36,5 +36,5 @@
 - Returns an error if the slot has no clip.
 
 **See also:**
-- [docs/wiki/tools/clips/set_clip_name.md](docs/wiki/tools/clips/set_clip_name.md)
-- [docs/wiki/tools/clips/get_clip_notes.md](docs/wiki/tools/clips/get_clip_notes.md)
+- [set_clip_name](tools/clips/set_clip_name.md)
+- [get_clip_notes](tools/clips/get_clip_notes.md)

@@ -21,4 +21,4 @@
 ```
 
 **See also:**
-- [docs/wiki/tools/mixing/set_groove_amount.md](docs/wiki/tools/mixing/set_groove_amount.md)
+- [set_groove_amount](tools/mixing/set_groove_amount.md)

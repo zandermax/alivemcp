@@ -24,5 +24,5 @@
 - Useful for discovering device indexes before setting parameters.
 
 **See also:**
-- [docs/wiki/tools/devices/add_device.md](docs/wiki/tools/devices/add_device.md)
-- [docs/wiki/tools/devices/get_device_parameters.md](docs/wiki/tools/devices/get_device_parameters.md)
+- [add_device](tools/devices/add_device.md)
+- [get_device_parameters](tools/devices/get_device_parameters.md)

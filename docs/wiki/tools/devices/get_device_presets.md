@@ -25,4 +25,4 @@
 - See `set_device_preset` for the companion action.
 
 **See also:**
-- [docs/wiki/tools/devices/set_device_preset.md](docs/wiki/tools/devices/set_device_preset.md)
+- [set_device_preset](tools/devices/set_device_preset.md)

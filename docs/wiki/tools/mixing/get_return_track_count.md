@@ -21,4 +21,4 @@
 ```
 
 **See also:**
-- [docs/wiki/tools/mixing/get_return_track_info.md](docs/wiki/tools/mixing/get_return_track_info.md)
+- [get_return_track_info](tools/mixing/get_return_track_info.md)

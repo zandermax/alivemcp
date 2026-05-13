@@ -25,4 +25,4 @@
 - Implementation may be extended in future to better control host UI.
 
 **See also:**
-- [docs/wiki/tools/devices/show_plugin_window.md](docs/wiki/tools/devices/show_plugin_window.md)
+- [show_plugin_window](tools/devices/show_plugin_window.md)

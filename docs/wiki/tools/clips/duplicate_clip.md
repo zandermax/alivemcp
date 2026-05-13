@@ -25,5 +25,5 @@
 - Fails if there is no empty slot after the source slot on the same track.
 
 **See also:**
-- [docs/wiki/tools/clips/create_midi_clip.md](docs/wiki/tools/clips/create_midi_clip.md)
-- [docs/wiki/tools/clips/delete_clip.md](docs/wiki/tools/clips/delete_clip.md)
+- [create_midi_clip](tools/clips/create_midi_clip.md)
+- [delete_clip](tools/clips/delete_clip.md)

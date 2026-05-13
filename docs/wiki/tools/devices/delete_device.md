@@ -25,4 +25,4 @@
 - Validates indexes and returns errors for invalid targets.
 
 **See also:**
-- [docs/wiki/tools/devices/get_track_devices.md](docs/wiki/tools/devices/get_track_devices.md)
+- [get_track_devices](tools/devices/get_track_devices.md)

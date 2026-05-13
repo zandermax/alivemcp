@@ -25,4 +25,4 @@
 - Useful for feature detection and device-specific handling.
 
 **See also:**
-- [docs/wiki/tools/devices/get_device_type.md](docs/wiki/tools/devices/get_device_type.md)
+- [get_device_type](tools/devices/get_device_type.md)

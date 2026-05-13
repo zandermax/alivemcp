@@ -24,5 +24,5 @@
 - Some hosts may not expose a `mixer_device` on the master track; feature-detect accordingly.
 
 **See also:**
-- [docs/wiki/tools/mixing/set_master_volume.md](docs/wiki/tools/mixing/set_master_volume.md)
-- [docs/wiki/tools/mixing/get_master_devices.md](docs/wiki/tools/mixing/get_master_devices.md)
+- [set_master_volume](tools/mixing/set_master_volume.md)
+- [get_master_devices](tools/mixing/get_master_devices.md)

@@ -27,4 +27,4 @@
 - Prefer `set_device_parameter_by_name` for the canonical API; this alias exists for legacy M4L clients.
 
 **See also:**
-- [docs/wiki/tools/devices/set_device_parameter_by_name.md](docs/wiki/tools/devices/set_device_parameter_by_name.md)
+- [set_device_parameter_by_name](tools/devices/set_device_parameter_by_name.md)

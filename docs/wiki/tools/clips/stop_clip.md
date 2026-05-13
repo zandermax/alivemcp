@@ -25,5 +25,4 @@
 - If no clip exists in the slot an error is returned.
 
 **See also:**
-- [docs/wiki/tools/clips/launch_clip.md](docs/wiki/tools/clips/launch_clip.md)
-- [docs/wiki/TOOLS_INDEX.md](docs/wiki/TOOLS_INDEX.md)
+- [launch_clip](tools/clips/launch_clip.md)

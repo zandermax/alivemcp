@@ -24,4 +24,5 @@
 - Duplicating shifts subsequent scene indices.
 
 **See also:**
-- create_scene, delete_scene
+- [create_scene](tools/scenes/create_scene.md)
+- [delete_scene](tools/scenes/delete_scene.md)

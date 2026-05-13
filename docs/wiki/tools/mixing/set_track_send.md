@@ -26,4 +26,4 @@
 - Validates send index and track index; values are cast to float.
 
 **See also:**
-- [docs/wiki/tools/mixing/get_track_sends.md](docs/wiki/tools/mixing/get_track_sends.md)
+- [get_track_sends](tools/mixing/get_track_sends.md)

@@ -24,4 +24,4 @@
 - Returns an error if the crossfader is not available in the host.
 
 **See also:**
-- [docs/wiki/tools/mixing/set_crossfader_assignment.md](docs/wiki/tools/mixing/set_crossfader_assignment.md)
+- [set_crossfader_assignment](tools/mixing/set_crossfader_assignment.md)

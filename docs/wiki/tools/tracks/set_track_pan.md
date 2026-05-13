@@ -25,5 +25,5 @@
 - Pan is clamped to [-1.0, 1.0]; returns error otherwise.
 
 **See also:**
-- [docs/wiki/tools/tracks/set_track_volume.md](docs/wiki/tools/tracks/set_track_volume.md)
-- [docs/wiki/tools/tracks/get_track_info.md](docs/wiki/tools/tracks/get_track_info.md)
+- [set_track_volume](tools/tracks/set_track_volume.md)
+- [get_track_info](tools/tracks/get_track_info.md)

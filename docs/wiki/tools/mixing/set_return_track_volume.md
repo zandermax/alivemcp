@@ -25,4 +25,4 @@
 - Volume is clamped to a valid range and `return_index` is validated.
 
 **See also:**
-- [docs/wiki/tools/mixing/get_return_track_info.md](docs/wiki/tools/mixing/get_return_track_info.md)
+- [get_return_track_info](tools/mixing/get_return_track_info.md)

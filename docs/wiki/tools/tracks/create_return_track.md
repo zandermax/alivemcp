@@ -24,4 +24,4 @@
 - Return tracks are appended to `song.return_tracks`.
 
 **See also:**
-- [docs/wiki/tools/tracks/delete_track.md](docs/wiki/tools/tracks/delete_track.md)
+- [delete_track](tools/tracks/delete_track.md)

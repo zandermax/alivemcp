@@ -26,5 +26,5 @@
 - Validates MIDI range (pitch 0-127, velocity 0-127) and that the target clip is a MIDI clip.
 
 **See also:**
-- [docs/wiki/tools/clips/get_clip_notes.md](docs/wiki/tools/clips/get_clip_notes.md)
-- [docs/wiki/tools/clips/remove_notes.md](docs/wiki/tools/clips/remove_notes.md)
+- [get_clip_notes](tools/clips/get_clip_notes.md)
+- [remove_notes](tools/clips/remove_notes.md)

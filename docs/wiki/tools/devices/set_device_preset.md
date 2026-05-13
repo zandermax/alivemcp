@@ -26,4 +26,4 @@
 - Prefetching or browsing presets is outside the current remote script's scope without browser integration.
 
 **See also:**
-- [docs/wiki/tools/devices/get_device_presets.md](docs/wiki/tools/devices/get_device_presets.md)
+- [get_device_presets](tools/devices/get_device_presets.md)

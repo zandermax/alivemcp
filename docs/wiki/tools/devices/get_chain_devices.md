@@ -26,6 +26,6 @@
 - Validates chain existence and returns clear errors if the target is not a rack.
 
 **See also:**
-- [docs/wiki/tools/devices/get_device_chains.md](docs/wiki/tools/devices/get_device_chains.md)
-- [docs/wiki/tools/devices/set_chain_mute.md](docs/wiki/tools/devices/set_chain_mute.md)
-- [docs/wiki/tools/devices/set_chain_solo.md](docs/wiki/tools/devices/set_chain_solo.md)
+- [get_device_chains](tools/devices/get_device_chains.md)
+- [set_chain_mute](tools/devices/set_chain_mute.md)
+- [set_chain_solo](tools/devices/set_chain_solo.md)

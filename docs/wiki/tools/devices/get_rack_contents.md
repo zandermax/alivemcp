@@ -25,4 +25,4 @@
 - Useful for inspecting complex rack structures programmatically.
 
 **See also:**
-- [docs/wiki/tools/devices/get_device_chains.md](docs/wiki/tools/devices/get_device_chains.md)
+- [get_device_chains](tools/devices/get_device_chains.md)

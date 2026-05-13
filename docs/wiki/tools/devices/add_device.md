@@ -25,5 +25,5 @@
 - This endpoint signals intent; actual device insertion via Live's browser is platform-dependent and requires additional browser integration.
 
 **See also:**
-- [docs/wiki/tools/devices/get_track_devices.md](docs/wiki/tools/devices/get_track_devices.md)
-- [docs/wiki/tools/devices/get_device_presets.md](docs/wiki/tools/devices/get_device_presets.md)
+- [get_track_devices](tools/devices/get_track_devices.md)
+- [get_device_presets](tools/devices/get_device_presets.md)

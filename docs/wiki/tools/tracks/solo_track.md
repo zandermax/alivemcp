@@ -25,5 +25,5 @@
 - Use with caution in live contexts; other track solo states are unaffected.
 
 **See also:**
-- [docs/wiki/tools/tracks/mute_track.md](docs/wiki/tools/tracks/mute_track.md)
-- [docs/wiki/tools/tracks/get_track_info.md](docs/wiki/tools/tracks/get_track_info.md)
+- [mute_track](tools/tracks/mute_track.md)
+- [get_track_info](tools/tracks/get_track_info.md)

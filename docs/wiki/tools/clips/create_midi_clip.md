@@ -31,6 +31,6 @@
 - Fails if the slot already has a clip or if the track is not a MIDI track.
 
 **See also:**
-- [docs/wiki/tools/clips/delete_clip.md](docs/wiki/tools/clips/delete_clip.md)
-- [docs/wiki/tools/clips/duplicate_clip.md](docs/wiki/tools/clips/duplicate_clip.md)
-- [docs/wiki/tools/clips/add_notes.md](docs/wiki/tools/clips/add_notes.md)
+- [delete_clip](tools/clips/delete_clip.md)
+- [duplicate_clip](tools/clips/duplicate_clip.md)
+- [add_notes](tools/clips/add_notes.md)

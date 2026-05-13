@@ -25,5 +25,5 @@
 - Validates assignment range and availability of the crossfader property.
 
 **See also:**
-- [docs/wiki/tools/mixing/get_crossfader_assignment.md](docs/wiki/tools/mixing/get_crossfader_assignment.md)
-- [docs/wiki/tools/mixing/get_crossfader_position.md](docs/wiki/tools/mixing/get_crossfader_position.md)
+- [get_crossfader_assignment](tools/mixing/get_crossfader_assignment.md)
+- [get_crossfader_position](tools/mixing/get_crossfader_position.md)

@@ -27,5 +27,5 @@
 - Parameter index must be valid for the device; value is cast to float.
 
 **See also:**
-- [docs/wiki/tools/devices/get_device_parameters.md](docs/wiki/tools/devices/get_device_parameters.md)
-- [docs/wiki/tools/devices/set_device_parameter_by_name.md](docs/wiki/tools/devices/set_device_parameter_by_name.md)
+- [get_device_parameters](tools/devices/get_device_parameters.md)
+- [set_device_parameter_by_name](tools/devices/set_device_parameter_by_name.md)

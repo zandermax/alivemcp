@@ -24,5 +24,5 @@
 - May duplicate devices, clips, and automation depending on Live's behavior.
 
 **See also:**
-- [docs/wiki/tools/tracks/create_midi_track.md](docs/wiki/tools/tracks/create_midi_track.md)
-- [docs/wiki/tools/tracks/get_track_info.md](docs/wiki/tools/tracks/get_track_info.md)
+- [create_midi_track](tools/tracks/create_midi_track.md)
+- [get_track_info](tools/tracks/get_track_info.md)

@@ -25,4 +25,4 @@
 - Returns an error if the device has no `chains` attribute (not a rack).
 
 **See also:**
-- [docs/wiki/tools/devices/get_chain_devices.md](docs/wiki/tools/devices/get_chain_devices.md)
+- [get_chain_devices](tools/devices/get_chain_devices.md)

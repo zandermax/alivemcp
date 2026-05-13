@@ -27,5 +27,5 @@
 - Returns an error when the clip or groove property is not available in the host.
 
 **See also:**
-- [docs/wiki/tools/mixing/get_groove_pool_grooves.md](docs/wiki/tools/mixing/get_groove_pool_grooves.md)
-- [docs/wiki/tools/mixing/set_clip_groove_amount.md](docs/wiki/tools/mixing/set_clip_groove_amount.md)
+- [get_groove_pool_grooves](tools/mixing/get_groove_pool_grooves.md)
+- [set_clip_groove_amount](tools/mixing/set_clip_groove_amount.md)

@@ -25,4 +25,4 @@
 - Skips quantized parameters and parameters that cannot be randomized safely.
 
 **See also:**
-- [docs/wiki/tools/devices/randomize_device.md](docs/wiki/tools/devices/randomize_device.md)
+- [randomize_device](tools/devices/randomize_device.md)

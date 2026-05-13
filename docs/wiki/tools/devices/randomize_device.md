@@ -25,4 +25,4 @@
 - Deterministic behavior isn't guaranteed; randomness is useful for creative exploration but should be used carefully in performance contexts.
 
 **See also:**
-- [docs/wiki/tools/devices/randomize_device_parameters.md](docs/wiki/tools/devices/randomize_device_parameters.md)
+- [randomize_device_parameters](tools/devices/randomize_device_parameters.md)

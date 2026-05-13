@@ -26,4 +26,4 @@
 - Returns an error if the device doesn't support on/off.
 
 **See also:**
-- [docs/wiki/tools/devices/get_track_devices.md](docs/wiki/tools/devices/get_track_devices.md)
+- [get_track_devices](tools/devices/get_track_devices.md)

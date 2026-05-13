@@ -27,4 +27,4 @@
 - Returns an error if the device is not a rack or chain mute is unsupported.
 
 **See also:**
-- [docs/wiki/tools/devices/set_chain_solo.md](docs/wiki/tools/devices/set_chain_solo.md)
+- [set_chain_solo](tools/devices/set_chain_solo.md)

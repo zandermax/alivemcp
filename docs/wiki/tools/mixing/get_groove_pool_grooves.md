@@ -21,4 +21,4 @@
 ```
 
 **See also:**
-- [docs/wiki/tools/mixing/set_clip_groove.md](docs/wiki/tools/mixing/set_clip_groove.md)
+- [set_clip_groove](tools/mixing/set_clip_groove.md)

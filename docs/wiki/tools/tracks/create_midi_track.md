@@ -24,5 +24,5 @@
 - Track is appended to the end of `song.tracks`.
 
 **See also:**
-- [docs/wiki/tools/tracks/create_audio_track.md](docs/wiki/tools/tracks/create_audio_track.md)
-- [docs/wiki/tools/tracks/duplicate_track.md](docs/wiki/tools/tracks/duplicate_track.md)
+- [create_audio_track](tools/tracks/create_audio_track.md)
+- [duplicate_track](tools/tracks/duplicate_track.md)

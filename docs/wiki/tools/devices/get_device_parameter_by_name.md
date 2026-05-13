@@ -26,4 +26,4 @@
 - Exact string match is used; consider `get_device_parameters` to inspect available names.
 
 **See also:**
-- [docs/wiki/tools/devices/set_device_parameter_by_name.md](docs/wiki/tools/devices/set_device_parameter_by_name.md)
+- [set_device_parameter_by_name](tools/devices/set_device_parameter_by_name.md)

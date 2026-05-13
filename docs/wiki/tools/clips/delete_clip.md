@@ -25,5 +25,5 @@
 - Returns an error if no clip exists in the specified slot.
 
 **See also:**
-- [docs/wiki/tools/clips/create_midi_clip.md](docs/wiki/tools/clips/create_midi_clip.md)
-- [docs/wiki/tools/clips/duplicate_clip.md](docs/wiki/tools/clips/duplicate_clip.md)
+- [create_midi_clip](tools/clips/create_midi_clip.md)
+- [duplicate_clip](tools/clips/duplicate_clip.md)

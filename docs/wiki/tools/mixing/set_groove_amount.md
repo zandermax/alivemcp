@@ -21,4 +21,4 @@
 ```
 
 **See also:**
-- [docs/wiki/tools/mixing/get_groove_amount.md](docs/wiki/tools/mixing/get_groove_amount.md)
+- [get_groove_amount](tools/mixing/get_groove_amount.md)

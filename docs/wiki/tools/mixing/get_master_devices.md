@@ -24,4 +24,4 @@
 - Some Live versions may omit master devices; feature-detect before use.
 
 **See also:**
-- [docs/wiki/tools/mixing/get_master_track_info.md](docs/wiki/tools/mixing/get_master_track_info.md)
+- [get_master_track_info](tools/mixing/get_master_track_info.md)

@@ -24,5 +24,5 @@
 - Validates the index; returns an error for invalid indexes.
 
 **See also:**
-- [docs/wiki/tools/tracks/duplicate_track.md](docs/wiki/tools/tracks/duplicate_track.md)
-- [docs/wiki/tools/tracks/rename_track.md](docs/wiki/tools/tracks/rename_track.md)
+- [duplicate_track](tools/tracks/duplicate_track.md)
+- [rename_track](tools/tracks/rename_track.md)

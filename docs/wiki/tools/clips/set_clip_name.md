@@ -26,4 +26,4 @@
 - Returns an error if the slot has no clip.
 
 **See also:**
-- [docs/wiki/tools/clips/get_clip_info.md](docs/wiki/tools/clips/get_clip_info.md)
+- [get_clip_info](tools/clips/get_clip_info.md)

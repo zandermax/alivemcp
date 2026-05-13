@@ -25,4 +25,4 @@
 - Behavior depends on Live's object model exposure.
 
 **See also:**
-- [docs/wiki/tools/devices/get_device_class_name.md](docs/wiki/tools/devices/get_device_class_name.md)
+- [get_device_class_name](tools/devices/get_device_class_name.md)

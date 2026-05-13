@@ -24,4 +24,4 @@
 - Validates `return_index` and returns errors for invalid indexes.
 
 **See also:**
-- [docs/wiki/tools/mixing/set_return_track_volume.md](docs/wiki/tools/mixing/set_return_track_volume.md)
+- [set_return_track_volume](tools/mixing/set_return_track_volume.md)
