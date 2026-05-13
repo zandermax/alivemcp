@@ -84,6 +84,8 @@ Tool count: 232
 Ableton version: 12
 ```
 
+For a navigable wiki index of all tools see: [docs/wiki/INDEX.md](docs/wiki/INDEX.md)
+
 ### Troubleshooting
 
 If the Remote Script does not load:

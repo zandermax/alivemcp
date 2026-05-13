@@ -134,6 +134,7 @@ Messages are newline-delimited (`\n`), UTF-8 encoded.
 
 See [`docs/API_REFERENCE.md`](docs/API_REFERENCE.md) for all 232 tools with parameters and response fields.
 
+For a navigable wiki index of tools, see [docs/wiki/INDEX.md](docs/wiki/INDEX.md).
 
 For a quick list of tool names only, see [`ALiveMCP_Remote/tools/core/registry.py`](ALiveMCP_Remote/tools/core/registry.py).
 

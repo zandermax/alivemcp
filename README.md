@@ -1,6 +1,6 @@
 # ALiveMCP — Ableton Live MCP Server
 
-Control Ableton Live with AI. ALiveMCP exposes **232 LiveAPI tools** as a [Model Context Protocol](https://modelcontextprotocol.io/) server — plug it into Claude Code, Claude Desktop, or any MCP-compatible client and let AI agents compose music, manage tracks, edit MIDI, and control devices directly.
+Control Ableton Live with AI. ALiveMCP exposes **232 LiveAPI tools** as a [Model Context Protocol](https://modelcontextprotocol.io/) server — plug it into Claude Code, Claude Desktop, or any MCP-compatible client and let AI agents compose music, manage tracks, edit MIDI, and control devices directly. See the wiki index for a navigable per-tool list: [docs/wiki/INDEX.md](docs/wiki/INDEX.md)
 
 [![CI](https://github.com/zandermax/alivemcp/workflows/CI/badge.svg)](https://github.com/zandermax/alivemcp/actions)
 [![License: GPL-3.0](https://img.shields.io/badge/License-GPL%203.0-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
@@ -117,6 +117,7 @@ This implementation provides **232 tools across 44+ categories** based on:
 Category rows are thematic and may overlap. For the canonical count, see `ALiveMCP_Remote/tools/core/registry.py` and `docs/API_REFERENCE.md`.
 
 **Total: 232 Tools**
+See the wiki index for a quick, navigable tool inventory: [docs/wiki/INDEX.md](docs/wiki/INDEX.md)
 
 ## Quick Start
 

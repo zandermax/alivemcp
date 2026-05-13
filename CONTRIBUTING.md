@@ -140,8 +140,8 @@ All common tasks are available via `make`. Run `make help` to see the full list.
 
 ```
 ALiveMCP_Remote/
-├── __init__.py          # Main Remote Script entry point
-└── liveapi_tools.py     # 220 LiveAPI tools implementation
+|── __init__.py          # Main Remote Script entry point
+|└── liveapi_tools.py     # 220 LiveAPI tools implementation — see docs/wiki/INDEX.md for a navigable per-tool index
 
 docs/
 ├── ARCHITECTURE.md      # System architecture

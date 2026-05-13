@@ -13,7 +13,7 @@
 Go to https://github.com/new and create a new repository:
 
 - **Repository name**: `ableton-mcp-remote` (or your preferred name)
-- **Description**: "Thread-safe Python Remote Script for Ableton Live with 220 LiveAPI tools including Max for Live support"
+- **Description**: "Thread-safe Python Remote Script for Ableton Live with 220 LiveAPI tools including Max for Live support" (see the wiki index: [docs/wiki/INDEX.md](docs/wiki/INDEX.md))
 - **Visibility**: Public (to share with community)
 - **Do NOT initialize** with README, .gitignore, or license (we already have these)
 
@@ -60,6 +60,7 @@ Control tempo, tracks, clips, MIDI notes, devices, and more programmatically.
 - Enable Wiki (optional)
 - Enable Discussions (recommended for community support)
 - Enable Issues (recommended for bug reports)
+ - See the wiki index for a navigable per-tool list: [docs/wiki/INDEX.md](docs/wiki/INDEX.md)
 
 ### 4. Update README URLs
 
