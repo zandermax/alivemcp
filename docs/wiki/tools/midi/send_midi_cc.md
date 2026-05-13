@@ -31,4 +31,4 @@
 - Not all Ableton hosts expose `song.send_midi`; the method checks with `hasattr(self.song, "send_midi")` and returns a helpful error if unavailable.
 
 **See also:**
-- send_program_change
+- [send_program_change](tools/midi/send_program_change.md)

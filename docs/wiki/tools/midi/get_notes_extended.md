@@ -29,4 +29,4 @@
 - Useful for efficient, bounded queries over large clips.
 
 **See also:**
-- get_clip_notes
+- [get_clip_notes](tools/midi/get_clip_notes.md)

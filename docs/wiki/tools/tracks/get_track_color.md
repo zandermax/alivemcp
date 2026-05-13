@@ -24,4 +24,4 @@
 - Some Live versions expose `color_index`; others expose `color` — use feature-detection.
 
 **See also:**
-- [tools/tracks/set_track_color.md](tools/tracks/set_track_color.md)
+- [set_track_color](tools/tracks/set_track_color.md)

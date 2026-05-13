@@ -25,5 +25,5 @@
 - Volume is clamped to [0.0, 1.0]; returns error otherwise.
 
 **See also:**
-- [docs/wiki/tools/tracks/set_track_pan.md](docs/wiki/tools/tracks/set_track_pan.md)
-- [docs/wiki/tools/tracks/get_track_info.md](docs/wiki/tools/tracks/get_track_info.md)
+- [set_track_pan](tools/tracks/set_track_pan.md)
+- [get_track_info](tools/tracks/get_track_info.md)

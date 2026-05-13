@@ -25,4 +25,5 @@
 - Useful before `replace_selected_notes` to operate on entire clip.
 
 **See also:**
-- deselect_all_notes, replace_selected_notes
+- [deselect_all_notes](tools/midi/deselect_all_notes.md)
+- [replace_selected_notes](tools/midi/replace_selected_notes.md)

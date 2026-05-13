@@ -13,7 +13,7 @@
 Go to https://github.com/new and create a new repository:
 
 - **Repository name**: `ableton-mcp-remote` (or your preferred name)
-- **Description**: "Thread-safe Python Remote Script for Ableton Live with 220 LiveAPI tools including Max for Live support" (see the wiki index: [docs/wiki/INDEX.md](docs/wiki/INDEX.md))
+- **Description**: "Thread-safe Python Remote Script for Ableton Live with 232 LiveAPI tools including Max for Live support" (see the wiki index: [docs/wiki/INDEX.md](docs/wiki/INDEX.md))
 - **Visibility**: Public (to share with community)
 - **Do NOT initialize** with README, .gitignore, or license (we already have these)
 
@@ -52,7 +52,7 @@ Add relevant topics to help users discover the repository:
 #### About Section
 Add description:
 ```
-Thread-safe Python Remote Script for Ableton Live exposing 220 LiveAPI tools via TCP socket.
+Thread-safe Python Remote Script for Ableton Live exposing 232 LiveAPI tools via TCP socket.
 Control tempo, tracks, clips, MIDI notes, devices, and more programmatically.
 ```
 
@@ -95,7 +95,7 @@ Then on GitHub:
    Initial release of ALiveMCP Remote Script
 
    Features:
-   - 220 LiveAPI tools covering all aspects of Ableton Live (including Max for Live & CV Tools)
+  - 232 LiveAPI tools covering all aspects of Ableton Live (including Max for Live & CV Tools)
    - Thread-safe queue-based architecture
    - Simple TCP socket interface (port 9004)
    - JSON request/response protocol

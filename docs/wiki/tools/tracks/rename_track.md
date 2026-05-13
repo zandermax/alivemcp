@@ -25,4 +25,4 @@
 - Validates the track index.
 
 **See also:**
-- [docs/wiki/tools/tracks/get_track_info.md](docs/wiki/tools/tracks/get_track_info.md)
+- [get_track_info](tools/tracks/get_track_info.md)

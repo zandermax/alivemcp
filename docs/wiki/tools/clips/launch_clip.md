@@ -25,5 +25,5 @@
 - Returns an error if no clip is present in the specified slot.
 
 **See also:**
-- (tools/clips/stop_clip.md](tools/clips/stop_clip.md)
-- (tools/clips/get_clip_info.md](tools/clips/get_clip_info.md)
+- [stop_clip](tools/clips/stop_clip.md)
+- [get_clip_info](tools/clips/get_clip_info.md)

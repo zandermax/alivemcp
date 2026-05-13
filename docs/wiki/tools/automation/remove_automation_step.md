@@ -28,4 +28,4 @@
 - Validates presence of clip and envelope; returns an error if removal function is unavailable.
 
 **See also:**
-- [docs/wiki/tools/automation/insert_automation_step.md](docs/wiki/tools/automation/insert_automation_step.md)
+- [insert_automation_step](tools/automation/insert_automation_step.md)

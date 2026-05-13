@@ -27,4 +27,4 @@
 - Host may not implement `clear_envelope`; function validates and errors if unavailable.
 
 **See also:**
-- [docs/wiki/tools/automation/get_clip_automation_envelope.md](docs/wiki/tools/automation/get_clip_automation_envelope.md)
+- [get_clip_automation_envelope](tools/automation/get_clip_automation_envelope.md)

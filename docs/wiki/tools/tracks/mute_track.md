@@ -25,4 +25,4 @@
 - Returns an error for invalid track indexes.
 
 **See also:**
-- [docs/wiki/tools/tracks/solo_track.md](docs/wiki/tools/tracks/solo_track.md)
+- [solo_track](tools/tracks/solo_track.md)

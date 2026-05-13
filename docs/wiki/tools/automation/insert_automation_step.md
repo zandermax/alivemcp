@@ -29,4 +29,4 @@
 - Validates clip and envelope presence; `insert_step` may not be available in all hosts.
 
 **See also:**
-- [docs/wiki/tools/automation/remove_automation_step.md](docs/wiki/tools/automation/remove_automation_step.md)
+- [remove_automation_step](tools/automation/remove_automation_step.md)

@@ -22,4 +22,4 @@
 ```
 
 **See also:**
-- select_all_notes
+- [select_all_notes](tools/midi/select_all_notes.md)

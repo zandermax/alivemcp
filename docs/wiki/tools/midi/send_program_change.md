@@ -26,4 +26,4 @@
 - Requires `song.send_midi`; returns `{"ok": false, "error": "send_midi not available"}` if missing.
 
 **See also:**
-- send_midi_cc
+- [send_midi_cc](tools/midi/send_midi_cc.md)

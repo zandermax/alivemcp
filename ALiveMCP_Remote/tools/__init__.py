@@ -1,5 +1,5 @@
 """
-Domain-specific mixin modules that implement the 220 LiveAPI tools.
+Domain-specific mixin modules that implement the 232 LiveAPI tools.
 
 Each mixin class provides methods for a related group of operations.
 LiveAPITools (in liveapi_tools.py) composes them all via multiple inheritance.

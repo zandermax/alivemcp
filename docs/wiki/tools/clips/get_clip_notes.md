@@ -25,5 +25,5 @@
 - Only valid for MIDI clips; returns an error for audio clips.
 
 **See also:**
-- [docs/wiki/tools/clips/add_notes.md](docs/wiki/tools/clips/add_notes.md)
-- [docs/wiki/tools/clips/remove_notes.md](docs/wiki/tools/clips/remove_notes.md)
+- [add_notes](tools/clips/add_notes.md)
+- [remove_notes](tools/clips/remove_notes.md)

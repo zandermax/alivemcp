@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Comprehensive test of all 220 LiveAPI tools in ALiveMCP Python backend
+Comprehensive test of all 232 LiveAPI tools in ALiveMCP Python backend
 Tests organized by category with proper timeout handling
 """
 
@@ -40,7 +40,7 @@ def send_command(action, timeout=10, **params):
 
 def main():
     print("=" * 80)
-    print("ALiveMCP - Comprehensive 220 LiveAPI Tools Test")
+    print("ALiveMCP - Comprehensive 232 LiveAPI Tools Test")
     print("=" * 80)
     print()
 

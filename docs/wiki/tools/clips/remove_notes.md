@@ -29,5 +29,5 @@
 - Parameters are clamped/validated; operates only on MIDI clips.
 
 **See also:**
-- [docs/wiki/tools/clips/add_notes.md](docs/wiki/tools/clips/add_notes.md)
-- [docs/wiki/tools/clips/get_clip_notes.md](docs/wiki/tools/clips/get_clip_notes.md)
+- [add_notes](tools/clips/add_notes.md)
+- [get_clip_notes](tools/clips/get_clip_notes.md)

@@ -24,8 +24,8 @@
 ```
 
 **Notes:**
-- Returns `has_envelope: false` when no envelope exists; returns an error if the host lacks `automation_envelope` support.
 
 **See also:**
-- [docs/wiki/tools/automation/create_automation_envelope.md](docs/wiki/tools/automation/create_automation_envelope.md)
-- [docs/wiki/tools/automation/get_automation_envelope_values.md](docs/wiki/tools/automation/get_automation_envelope_values.md)
+- [create_automation_envelope](tools/automation/create_automation_envelope.md)
+- [get_automation_envelope_values](tools/automation/get_automation_envelope_values.md)
+- [insert_automation_step](tools/automation/insert_automation_step.md)

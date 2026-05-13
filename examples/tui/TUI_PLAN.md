@@ -3,7 +3,7 @@
 ## Goal
 
 A terminal-based interactive dashboard for ALiveMCP that lets you control
-Ableton Live, inspect session state, and test any of the 220 tools — all from
+Ableton Live, inspect session state, and test any of the 232 tools — all from
 the terminal, without a browser or build step.
 
 Built with [Textual](https://github.com/Textualize/textual) (`pip install textual`).

@@ -27,4 +27,4 @@
 - Validates clip presence and that `create_automation_envelope` is implemented by the host.
 
 **See also:**
-- [docs/wiki/tools/automation/get_clip_automation_envelope.md](docs/wiki/tools/automation/get_clip_automation_envelope.md)
+- [get_clip_automation_envelope](tools/automation/get_clip_automation_envelope.md)

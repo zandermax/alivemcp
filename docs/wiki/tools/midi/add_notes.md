@@ -28,4 +28,6 @@
 - Uses `clip.set_notes` which replaces/sets notes — callers should manage selection/replace semantics accordingly.
 
 **See also:**
-- get_clip_notes, remove_notes, replace_selected_notes
+- [get_clip_notes](tools/midi/get_clip_notes.md)
+- [remove_notes](tools/midi/remove_notes.md)
+- [replace_selected_notes](tools/midi/replace_selected_notes.md)

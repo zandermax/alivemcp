@@ -29,4 +29,5 @@
 - `time_to` default is large to allow removing across clip length; callers should provide explicit bounds for safety.
 
 **See also:**
-- add_notes, get_clip_notes
+- [add_notes](tools/midi/add_notes.md)
+- [get_clip_notes](tools/midi/get_clip_notes.md)

@@ -39,6 +39,6 @@
 - Some properties may not exist depending on Live version (use feature-detection).
 
 **See also:**
-- [tools/tracks/set_track_color.md](tools/tracks/set_track_color.md)
-- [tools/tracks/set_track_volume.md](tools/tracks/set_track_volume.md)
-- [tools/tracks/set_track_pan.md](tools/tracks/set_track_pan.md)
+- [set_track_color](tools/tracks/set_track_color.md)
+- [set_track_volume](tools/tracks/set_track_volume.md)
+- [set_track_pan](tools/tracks/set_track_pan.md)
