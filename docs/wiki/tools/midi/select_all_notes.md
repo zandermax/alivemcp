@@ -10,11 +10,15 @@
 
 **Live mapping:**
 - Calls `clip.select_all_notes()` after validating clip presence and type.
+
 **Example request:**
+
 ```json
 {"action": "select_all_notes", "track_index": 1, "clip_index": 0}
 ```
+
 **Example response:**
+
 ```json
 {"ok": true, "message": "All notes selected"}
 ```

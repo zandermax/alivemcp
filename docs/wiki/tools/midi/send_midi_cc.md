@@ -13,11 +13,15 @@
 **Live mapping:**
 - Calls `self.song.send_midi((status_byte, cc_number, cc_value))` where `status_byte = 176 + channel`.
 - Requires `song.send_midi` to be available on the host.
+
 **Example request:**
+
 ```json
 {"action": "send_midi_cc", "track_index": 0, "cc_number": 1, "cc_value": 127, "channel": 0}
 ```
+
 **Example response:**
+
 ```json
 {"ok": true, "cc_number": 1, "cc_value": 127, "channel": 0, "message": "MIDI CC sent"}
 ```
