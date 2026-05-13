@@ -26,5 +26,5 @@
 - Returns times in beats as floats. If no clip or not a MIDI clip, returns an error.
 
 **See also:**
-- [add_notes](tools/midi/add_notes.md)
+- [add_notes](tools/clips/add_notes.md)
 - [get_notes_extended](tools/midi/get_notes_extended.md)

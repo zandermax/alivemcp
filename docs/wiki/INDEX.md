@@ -47,8 +47,6 @@ Generated: 2026-05-13
 - [quantize_clip](tools/clips/quantize_clip.md)
 - [quantize_clip_pitch](tools/clips/quantize_clip_pitch.md)
 
-## Tracks
-
 ## Mixing
 - [set_track_send](tools/mixing/set_track_send.md)
 - [get_track_sends](tools/mixing/get_track_sends.md)
@@ -185,16 +183,22 @@ Generated: 2026-05-13
 - [set_session_record](tools/session/set_session_record.md)
 - [capture_midi](tools/session/capture_midi.md)
 
-## MIDI
+-## MIDI
 - [send_midi_cc](tools/midi/send_midi_cc.md)
 - [send_program_change](tools/midi/send_program_change.md)
-- [add_notes](tools/midi/add_notes.md)
+- [add_notes](tools/clips/add_notes.md)
 - [get_clip_notes](tools/midi/get_clip_notes.md)
 - [remove_notes](tools/midi/remove_notes.md)
 - [select_all_notes](tools/midi/select_all_notes.md)
 - [deselect_all_notes](tools/midi/deselect_all_notes.md)
 - [replace_selected_notes](tools/midi/replace_selected_notes.md)
 - [get_notes_extended](tools/midi/get_notes_extended.md)
+
+## Max for Live (M4L)
+- [is_max_device](tools/m4l/is_max_device.md)
+- [get_m4l_devices](tools/m4l/get_m4l_devices.md)
+- [get_m4l_param_by_name](tools/m4l/get_m4l_param_by_name.md)
+- [get_cv_tools_devices](tools/m4l/get_cv_tools_devices.md)
 
 ## Scenes
 - [create_scene](tools/scenes/create_scene.md)
@@ -250,8 +254,7 @@ Generated: 2026-05-13
 
 ## How to contribute
 1. Add or update a page under `docs/wiki/tools/<domain>/` using [tool template](templates/tool.md).
-2. Run the optional generator script `scripts/generate_wiki_index.py` (planned) to update [TOOLS_INDEX](TOOLS_INDEX.md).
-3. Commit and open a PR; include Live version notes if behaviour depends on Live 11 vs Live 12.
+2. Commit and open a PR; include Live version notes if behaviour depends on Live 11 vs Live 12.
 
 ## Fossil/GitHub compatibility
 Keep content in the `docs/wiki/` tree (plain Markdown). Avoid GitHub-only wiki features.
