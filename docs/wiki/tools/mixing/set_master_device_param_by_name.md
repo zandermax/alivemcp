@@ -20,3 +20,4 @@ Example request:
 ```json
 {"action": "set_master_device_param_by_name", "device_index": 0, "param_name": "Ratio", "value": "4:1"}
 ```
+

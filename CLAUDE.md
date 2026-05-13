@@ -93,6 +93,10 @@ Key constraint: **All LiveAPI calls must execute on the main thread** (the one t
 
 5. **Add documentation** to `docs/API_REFERENCE.md`.
 
+6. **Run the docs/tools verifier**: after adding/removing a tool or changing docs, run `maint/verify_docs_tools.py` from the repository root and ensure it exits `0`. If it fails, either add the missing `.md` pages under `docs/wiki/tools/` or update `ALiveMCP_Remote/tools/core/registry.py` so both the registry and docs are in sync.
+
+7. **CI / Agent requirement**: CI and any automation/agents must run the verifier as part of their checks and must fail the job or halt edits if the verifier returns a non-zero exit code. Agents performing edits should not merge or finalize changes until the verifier passes.
+
 ---
 
 ## Key Constraints

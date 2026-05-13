@@ -17,3 +17,4 @@ Example request:
 ```json
 {"action": "set_clip_gain", "track_index": 0, "clip_index": 0, "gain": 0.0}
 ```
+

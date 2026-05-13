@@ -24,3 +24,4 @@ Example request:
 ```json
 {"action": "get_master_device_param_info", "device_index": 0, "param_name": "Threshold"}
 ```
+

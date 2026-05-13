@@ -18,3 +18,4 @@ Example request:
 ```json
 {"action": "get_clip_color", "track_index": 0, "clip_index": 0}
 ```
+

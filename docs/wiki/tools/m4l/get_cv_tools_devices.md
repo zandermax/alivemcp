@@ -18,3 +18,4 @@ Example request:
 ```json
 {"action": "get_cv_tools_devices", "track_index": 0}
 ```
+

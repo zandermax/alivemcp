@@ -17,3 +17,4 @@ Example request:
 ```json
 {"action": "get_master_device_params", "device_index": 0}
 ```
+

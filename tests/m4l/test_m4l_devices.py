@@ -103,11 +103,11 @@ def test_get_m4l_type_variants(tools, song):
 
 
 # ---------------------------------------------------------------------------
-# set_device_param_by_name
+# set_device_parameter_by_name
 # ---------------------------------------------------------------------------
 
 
-def test_set_device_param_by_name_found(tools, song):
+def test_set_device_parameter_by_name_found(tools, song):
     param = MagicMock()
     param.name = "Threshold"
     param.min = 0.0
@@ -115,44 +115,44 @@ def test_set_device_param_by_name_found(tools, song):
     dev = MagicMock()
     dev.parameters = [param]
     song.tracks[0].devices = [dev]
-    result = tools.set_device_param_by_name(0, 0, "Threshold", 0.5)
+    result = tools.set_device_parameter_by_name(0, 0, "Threshold", 0.5)
     assert result["ok"] is True
     assert param.value == 0.5
 
 
-def test_set_device_param_by_name_not_found(tools, song):
+def test_set_device_parameter_by_name_not_found(tools, song):
     param = MagicMock()
     param.name = "Gain"
     dev = MagicMock()
     dev.parameters = [param]
     song.tracks[0].devices = [dev]
-    result = tools.set_device_param_by_name(0, 0, "Missing", 0.5)
+    result = tools.set_device_parameter_by_name(0, 0, "Missing", 0.5)
     assert result["ok"] is False
     assert "not found" in result["error"]
 
 
-def test_set_device_param_by_name_invalid_track(tools):
-    result = tools.set_device_param_by_name(-1, 0, "x", 0)
+def test_set_device_parameter_by_name_invalid_track(tools):
+    result = tools.set_device_parameter_by_name(-1, 0, "x", 0)
     assert result["ok"] is False
 
 
-def test_set_device_param_by_name_invalid_device(tools, song):
+def test_set_device_parameter_by_name_invalid_device(tools, song):
     song.tracks[0].devices = []
-    result = tools.set_device_param_by_name(0, 0, "x", 0)
+    result = tools.set_device_parameter_by_name(0, 0, "x", 0)
     assert result["ok"] is False
 
 
-def test_set_device_param_by_name_exception(tools, song):
+def test_set_device_parameter_by_name_exception(tools, song):
     dev = MagicMock()
     dev.parameters = MagicMock(side_effect=Exception("err"))
     song.tracks[0].devices = [dev]
-    result = tools.set_device_param_by_name(0, 0, "x", 0)
+    result = tools.set_device_parameter_by_name(0, 0, "x", 0)
     assert result["ok"] is False
 
 
-def test_set_device_param_by_name_except_block(tools):
+def test_set_device_parameter_by_name_except_block(tools):
     tools.song = None
-    result = tools.set_device_param_by_name(0, 0, "x", 0)
+    result = tools.set_device_parameter_by_name(0, 0, "x", 0)
     assert result["ok"] is False
 
 

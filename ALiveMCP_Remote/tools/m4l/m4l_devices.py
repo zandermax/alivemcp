@@ -78,10 +78,6 @@ class M4LDevicesMixin:
         }
         return type_map.get(class_name, "unknown")
 
-    def set_device_param_by_name(self, track_index, device_index, param_name, value):
-        """Set device parameter by name (delegates to set_device_parameter_by_name)"""
-        return self.set_device_parameter_by_name(track_index, device_index, param_name, value)
-
     def get_m4l_param_by_name(self, track_index, device_index, param_name):
         """Get M4L device parameter value by name"""
         try:

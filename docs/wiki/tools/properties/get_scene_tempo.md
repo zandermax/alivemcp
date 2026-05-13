@@ -19,3 +19,4 @@ Example request:
 ```json
 {"action": "get_scene_tempo", "scene_index": 0}
 ```
+

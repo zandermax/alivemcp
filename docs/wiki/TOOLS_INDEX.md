@@ -168,9 +168,14 @@ Generated: 2026-05-13
 ## Max for Live (M4L)
 - is_max_device
 - get_m4l_devices
-- set_device_param_by_name
+- get_m4l_param_by_name
 - get_m4l_param_by_name
 - get_cv_tools_devices
+ - is_max_device
+ - get_m4l_devices
+ - set_device_parameter_by_name
+ - get_m4l_param_by_name
+ - get_cv_tools_devices
 
 ## Master Track Control
 - get_master_track_info

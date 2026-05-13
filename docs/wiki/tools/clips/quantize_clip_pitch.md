@@ -18,3 +18,4 @@ Example request:
 ```json
 {"action": "quantize_clip_pitch", "track_index": 0, "clip_index": 0, "pitch": 60}
 ```
+

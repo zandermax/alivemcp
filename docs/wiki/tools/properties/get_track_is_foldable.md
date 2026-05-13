@@ -15,3 +15,4 @@ Example request:
 ```json
 {"action": "get_track_is_foldable", "track_index": 2}
 ```
+

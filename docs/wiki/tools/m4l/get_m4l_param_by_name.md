@@ -22,3 +22,4 @@ Example request:
 ```json
 {"action": "get_m4l_param_by_name", "track_index": 0, "device_index": 0, "param_name": "Rate"}
 ```
+

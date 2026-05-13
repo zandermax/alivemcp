@@ -17,3 +17,4 @@ Example request:
 ```json
 {"action": "set_clip_signature_numerator", "track_index": 0, "clip_index": 0, "numerator": 4}
 ```
+

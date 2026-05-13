@@ -18,3 +18,4 @@ Example request:
 ```json
 {"action": "get_application_version"}
 ```
+

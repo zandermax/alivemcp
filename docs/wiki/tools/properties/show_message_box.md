@@ -17,3 +17,4 @@ Example request:
 ```json
 {"action": "show_message_box", "message": "Hello", "title": "Note"}
 ```
+

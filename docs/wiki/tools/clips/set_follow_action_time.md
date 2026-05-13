@@ -17,3 +17,4 @@ Example request:
 ```json
 {"action": "set_follow_action_time", "track_index": 0, "clip_index": 0, "time_in_bars": 1.0}
 ```
+

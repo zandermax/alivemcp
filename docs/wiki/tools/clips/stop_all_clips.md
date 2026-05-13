@@ -14,3 +14,4 @@ Example request:
 ```json
 {"action": "stop_all_clips"}
 ```
+

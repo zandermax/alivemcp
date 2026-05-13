@@ -17,3 +17,4 @@ Example request:
 ```json
 {"action": "set_clip_fade_out", "track_index": 0, "clip_index": 0, "fade_time": 0.05}
 ```
+

@@ -17,3 +17,4 @@ Example request:
 ```json
 {"action": "set_clip_pitch_fine", "track_index": 0, "clip_index": 0, "cents": 10}
 ```
+

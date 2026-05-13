@@ -18,3 +18,4 @@ Example request:
 ```json
 {"action": "get_scene_is_empty", "scene_index": 0}
 ```
+

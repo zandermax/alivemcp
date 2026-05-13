@@ -298,7 +298,7 @@ cv_devices = send_command({"action": "get_cv_tools_devices", "track_index": 0})
 ```python
 # Set CV LFO rate by parameter name (easier than finding param index)
 send_command({
-    "action": "set_device_param_by_name",
+    "action": "set_device_parameter_by_name",
     "track_index": 0,
     "device_index": 2,
     "param_name": "Rate",

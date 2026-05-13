@@ -19,3 +19,4 @@ Example request:
 ```json
 {"action": "is_max_device", "track_index": 0, "device_index": 0}
 ```
+

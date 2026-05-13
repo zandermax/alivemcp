@@ -58,11 +58,11 @@ class AbletonM4LController:
             {"action": "is_max_device", "track_index": track_index, "device_index": device_index}
         )
 
-    def set_device_param_by_name(self, track_index, device_index, param_name, value):
+    def set_device_parameter_by_name(self, track_index, device_index, param_name, value):
         """Set device parameter by name"""
         return self.send(
             {
-                "action": "set_device_param_by_name",
+                "action": "set_device_parameter_by_name",
                 "track_index": track_index,
                 "device_index": device_index,
                 "param_name": param_name,
@@ -190,14 +190,14 @@ def main():
 
         for i in range(10):
             rate = i / 10.0
-            result = controller.set_device_param_by_name(0, lfo_index, "Rate", rate)
+            result = controller.set_device_parameter_by_name(0, lfo_index, "Rate", rate)
 
             if result.get("ok"):
                 print(f"  Set Rate to {rate:.2f}")
             else:
                 # If "Rate" parameter doesn't exist, try other common LFO parameters
                 print("  Note: 'Rate' parameter not found - trying 'Frequency'...")
-                result = controller.set_device_param_by_name(0, lfo_index, "Frequency", rate)
+                result = controller.set_device_parameter_by_name(0, lfo_index, "Frequency", rate)
                 if result.get("ok"):
                     print(f"  Set Frequency to {rate:.2f}")
 
@@ -228,7 +228,7 @@ def main():
     print("- CV LFO: Control Rate, Shape, Depth parameters")
     print("- CV Shaper: Control Drive, Curve, Bias parameters")
     print("- CV Envelope Follower: Control Attack, Release, Gain")
-    print("- Use set_device_param_by_name() for easy parameter access")
+    print("- Use set_device_parameter_by_name() for easy parameter access")
 
 
 if __name__ == "__main__":

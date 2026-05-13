@@ -2486,7 +2486,7 @@ List all Max for Live devices on a track.
 
 ---
 
-### `set_device_param_by_name`
+### `set_device_parameter_by_name` (canonical)
 
 Set a device parameter value by name. Works with any device including M4L.
 

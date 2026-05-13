@@ -243,7 +243,7 @@ Within each operation type, tools are grouped by domain: **Session**, **Tracks**
 - [set_device_param](tools/devices/set_device_param.md) *(possible alias — see note above)*
 - [set_device_on_off](tools/devices/set_device_on_off.md)
 - [set_device_parameter_by_name](tools/devices/set_device_parameter_by_name.md)
-- [set_device_param_by_name](tools/devices/set_device_param_by_name.md) *(possible alias — see note above)*
+
 - [set_device_preset](tools/devices/set_device_preset.md)
 - [randomize_device_parameters](tools/devices/randomize_device_parameters.md)
 - [randomize_device](tools/devices/randomize_device.md)

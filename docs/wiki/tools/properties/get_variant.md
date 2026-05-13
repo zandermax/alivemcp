@@ -14,3 +14,4 @@ Example request:
 ```json
 {"action": "get_variant"}
 ```
+

@@ -31,11 +31,11 @@ The implementation uses **runtime introspection** to discover devices and parame
 - User/client provides parameter names (e.g., "Rate", "Depth", "Attack")
 - No maintenance needed when new M4L devices are released
 
-### Example: How set_device_param_by_name Works
+### Example: How set_device_parameter_by_name Works
 
 ```python
-def set_device_param_by_name(self, track_index, device_index, param_name, value):
-    """Set device parameter by name (useful for M4L devices)"""
+def set_device_parameter_by_name(self, track_index, device_index, param_name, value):
+  """Set device parameter by name (useful for M4L devices)"""
     device = track.devices[device_index]
 
     # Runtime discovery - iterate through ALL parameters
@@ -86,7 +86,7 @@ lfo = cv_devices['cv_devices'][0]  # First CV device
 device_index = lfo['index']
 
 # 2. Set LFO rate by parameter name (no index lookup needed!)
-send_command('set_device_param_by_name',
+send_command('set_device_parameter_by_name',
     track_index=0,
     device_index=device_index,
     param_name='Rate',
@@ -189,13 +189,13 @@ Response:
 }
 ```
 
-### 4. set_device_param_by_name - Set Parameter by Name
+### 4. set_device_parameter_by_name - Set Parameter by Name
 
 **Works with ANY device, but especially useful for M4L devices:**
 
 ```json
 {
-  "action": "set_device_param_by_name",
+  "action": "set_device_parameter_by_name",
   "track_index": 0,
   "device_index": 2,
   "param_name": "Rate",
@@ -310,7 +310,7 @@ if cv_result['count'] > 0:
     # 4. Animate LFO rate using parameter name (no index lookup needed!)
     for i in range(10):
         rate = i / 10.0
-        result = send_command('set_device_param_by_name',
+        result = send_command('set_device_parameter_by_name',
             track_index=0,
             device_index=device_index,
             param_name='Rate',
@@ -358,7 +358,7 @@ The ALiveMCP Remote Script provides **complete M4L support** through 5 specializ
 1. `is_max_device` - Check if device is M4L
 2. `get_m4l_devices` - Get all M4L devices on track
 3. `get_m4l_param_by_name` - Get parameter by name
-4. `set_device_param_by_name` - Set parameter by name (works with ANY device)
+4. `set_device_parameter_by_name` - Set parameter by name (works with ANY device)
 5. `get_cv_tools_devices` - Get CV Tools pack devices
 
 ✅ **Generic implementation:**

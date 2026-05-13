@@ -17,3 +17,4 @@ Example request:
 ```json
 {"action": "set_clip_color", "track_index": 0, "clip_index": 0, "color_index": 5}
 ```
+

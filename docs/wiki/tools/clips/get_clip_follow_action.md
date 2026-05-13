@@ -22,3 +22,4 @@ Example request:
 ```json
 {"action": "get_clip_follow_action", "track_index": 0, "clip_index": 0}
 ```
+

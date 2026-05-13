@@ -15,3 +15,4 @@ Example request:
 ```json
 {"action": "set_record_mode", "mode": 1}
 ```
+
