@@ -7,8 +7,8 @@ and the connection constants HOST / PORT.
 """
 
 import json
-import socket
 import os
+import socket
 
 # Host and port for the ALiveMCP Remote Script. Allow override via environment for tests.
 HOST = os.environ.get('ALIVEMCP_HOST', '127.0.0.1')

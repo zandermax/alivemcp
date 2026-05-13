@@ -4,9 +4,9 @@ Verify that docs/wiki tool pages match the AVAILABLE_TOOLS registry.
 
 Exit code 0 on success (no missing/extra). Exit code 1 if mismatches found.
 """
+import importlib.util
 import os
 import sys
-import importlib.util
 
 
 def load_registry(path):
@@ -61,7 +61,7 @@ def main():
                 print('  -', e, '->', p, file=sys.stderr)
 
     if ok:
-        print('OK: docs/wiki/tools matches AVAILABLE_TOOLS ({} tools)'.format(len(tools)))
+        print(f'OK: docs/wiki/tools matches AVAILABLE_TOOLS ({len(tools)} tools)')
         return 0
     else:
         print('\nRun this script again after adding/removing docs or updating the registry.', file=sys.stderr)

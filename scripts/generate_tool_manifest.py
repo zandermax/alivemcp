@@ -48,12 +48,22 @@ def parse_registry(path):
 def parse_mcp_defs(path):
     src = open(path, encoding="utf-8").read()
     m = re.search(r'TOOL_DEFS_JSON\s*=\s*r?"""(.*?)"""', src, re.DOTALL)
-    if not m:
+    if m:
+        json_text = m.group(1)
+        raw_defs = json.loads(json_text)
+        return raw_defs
+
+    # Fallback: import the module and use runtime TOOL_DEFS export
+    try:
+        import importlib.util
+
+        spec = importlib.util.spec_from_file_location("mcp_server_tool_defs", path)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)  # type: ignore
+        defs = list(getattr(mod, "TOOL_DEFS"))
+        return [[n, d, s] for n, d, s in defs]
+    except Exception:
         raise RuntimeError("TOOL_DEFS_JSON not found in " + path)
-    json_text = m.group(1)
-    raw_defs = json.loads(json_text)
-    # Expect list of [name, description, schema]
-    return raw_defs
 
 
 def build_manifest(registry_tools, raw_defs):

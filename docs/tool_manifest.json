@@ -3713,7 +3713,7 @@
       }
     },
     {
-      "name": "set_device_param_by_name",
+      "name": "set_device_parameter_by_name",
       "in_registry": true,
       "in_mcp_defs": true,
       "description": "Set a device parameter value by name (works with any device including M4L).",

@@ -19,16 +19,7 @@ from mcp.server import NotificationOptions, Server
 from mcp.server.models import InitializationOptions
 
 from ableton_client import _call_ableton
-from mcp_server_tool_defs import TOOL_DEFS_JSON
-
-
-def _load_tool_defs() -> list[tuple[str, str, dict]]:
-    """Deserialize tool definitions from the compact helper module."""
-    raw_defs = json.loads(TOOL_DEFS_JSON)
-    return [(name, description, schema) for name, description, schema in raw_defs]
-
-
-TOOL_DEFS: list[tuple[str, str, dict]] = _load_tool_defs()
+from mcp_server_tool_defs import TOOL_DEFS
 
 server = Server("alivemcp")
 

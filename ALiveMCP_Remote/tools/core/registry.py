@@ -148,7 +148,7 @@ AVAILABLE_TOOLS = [
     # Max for Live (M4L) operations (5 tools)
     "is_max_device",
     "get_m4l_devices",
-    "set_device_param_by_name",
+
     "get_m4l_param_by_name",
     "get_cv_tools_devices",
     # Master Track Control (9 tools)

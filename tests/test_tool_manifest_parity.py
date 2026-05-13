@@ -11,6 +11,21 @@ def _extract_literal(file_path: Path, var_name: str):
             for target in node.targets:
                 if isinstance(target, ast.Name) and target.id == var_name:
                     return ast.literal_eval(node.value)
+    # Fallback: if the source file no longer contains a literal assignment
+    # (e.g., we now load defs from chunked files), import the module and
+    # return the runtime attribute instead. This keeps the test compatible
+    # with both legacy embedded-blob and chunked-loader implementations.
+    try:
+        import importlib.util
+
+        spec = importlib.util.spec_from_file_location("mcp_server_tool_defs", str(file_path))
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)  # type: ignore
+        if hasattr(mod, var_name):
+            return getattr(mod, var_name)
+    except Exception:
+        pass
+
     raise RuntimeError(f"{var_name} not found in {file_path}")
 
 
@@ -53,7 +68,13 @@ def test_tool_manifest_parity():
     available_tools = _extract_literal(registry_file, "AVAILABLE_TOOLS")
     registry_names = _normalize_registry_items(available_tools)
 
-    tool_defs = _extract_literal(defs_file, "TOOL_DEFS_JSON")
+    # Use runtime export from the module (chunked-loader): TOOL_DEFS
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location("mcp_server_tool_defs", str(defs_file))
+    m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m)  # type: ignore
+    tool_defs = getattr(m, "TOOL_DEFS")
     defs_names = _normalize_defs_items(tool_defs)
 
     manifest = json.loads(manifest_file.read_text())

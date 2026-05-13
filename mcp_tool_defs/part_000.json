@@ -1,0 +1,3829 @@
+[
+  [
+    "add_device",
+    "Request adding a device to a track by name.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "device_name": {
+          "type": "string",
+          "description": "Device name to add"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_name"
+      ]
+    }
+  ],
+  [
+    "add_notes",
+    "Add MIDI notes to a clip. Each note: {pitch (0-127), start (beats), duration (beats), velocity (0-127)}.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "scene_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "notes": {
+          "type": "array",
+          "description": "List of notes with pitch (0-127), start (beats), duration (beats), velocity (0-127)",
+          "items": {
+            "type": "object",
+            "properties": {
+              "pitch": {
+                "type": "integer",
+                "description": "MIDI note 0–127"
+              },
+              "start": {
+                "type": "number",
+                "description": "Start time in beats"
+              },
+              "duration": {
+                "type": "number",
+                "description": "Duration in beats (> 0)"
+              },
+              "velocity": {
+                "type": "integer",
+                "description": "Velocity 0–127"
+              }
+            },
+            "required": [
+              "pitch",
+              "start",
+              "duration",
+              "velocity"
+            ]
+          }
+        }
+      },
+      "required": [
+        "track_index",
+        "scene_index",
+        "notes"
+      ]
+    }
+  ],
+  [
+    "arm_track",
+    "Arm or disarm a track for recording.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "armed": {
+          "type": "boolean",
+          "description": "True to arm (default true)"
+        }
+      },
+      "required": [
+        "track_index"
+      ]
+    }
+  ],
+  [
+    "browse_devices",
+    "List Ableton device categories available in the browser.",
+    {
+      "type": "object",
+      "properties": {}
+    }
+  ],
+  [
+    "browse_plugins",
+    "Get plugin browsing status.",
+    {
+      "type": "object",
+      "properties": {
+        "plugin_type": {
+          "type": "string",
+          "description": "Plugin type (default 'vst')"
+        }
+      }
+    }
+  ],
+  [
+    "capture_midi",
+    "Capture the last-played MIDI notes into a clip.",
+    {
+      "type": "object",
+      "properties": {}
+    }
+  ],
+  [
+    "clear_automation_envelope",
+    "Clear (delete) the automation envelope for a device parameter in a clip.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "device_index": {
+          "type": "integer",
+          "description": "0-based device index"
+        },
+        "param_index": {
+          "type": "integer",
+          "description": "0-based parameter index"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "device_index",
+        "param_index"
+      ]
+    }
+  ],
+  [
+    "consolidate_clip",
+    "Initiate consolidation of arrangement clips in a time range.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "start_time": {
+          "type": "number",
+          "description": "Start time in beats"
+        },
+        "end_time": {
+          "type": "number",
+          "description": "End time in beats"
+        }
+      },
+      "required": [
+        "track_index",
+        "start_time",
+        "end_time"
+      ]
+    }
+  ],
+  [
+    "continue_playing",
+    "Continue playback from the current position.",
+    {
+      "type": "object",
+      "properties": {}
+    }
+  ],
+  [
+    "create_audio_clip_in_lane",
+    "Create an audio clip inside a take lane. Requires Live 12+.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "lane_index": {
+          "type": "integer",
+          "description": "0-based lane index"
+        },
+        "length": {
+          "type": "number",
+          "description": "Clip length in beats (default 4.0)"
+        }
+      },
+      "required": [
+        "track_index",
+        "lane_index"
+      ]
+    }
+  ],
+  [
+    "create_audio_track",
+    "Create a new audio track at the end of the track list.",
+    {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Optional track name"
+        }
+      }
+    }
+  ],
+  [
+    "create_automation_envelope",
+    "Create an automation envelope for a device parameter in a clip.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "device_index": {
+          "type": "integer",
+          "description": "0-based device index"
+        },
+        "param_index": {
+          "type": "integer",
+          "description": "0-based parameter index"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "device_index",
+        "param_index"
+      ]
+    }
+  ],
+  [
+    "create_group_track",
+    "Create a new empty group track.",
+    {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Optional group name"
+        }
+      }
+    }
+  ],
+  [
+    "create_locator",
+    "Create a cue point (locator) at a specific time.",
+    {
+      "type": "object",
+      "properties": {
+        "time_in_beats": {
+          "type": "number",
+          "description": "Position in beats"
+        },
+        "name": {
+          "type": "string",
+          "description": "Locator name (default 'Locator')"
+        }
+      },
+      "required": [
+        "time_in_beats"
+      ]
+    }
+  ],
+  [
+    "create_midi_clip",
+    "Create a new empty MIDI clip in a Session view slot. The slot must be empty.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based MIDI track index"
+        },
+        "scene_index": {
+          "type": "integer",
+          "description": "0-based scene (row) index — slot must be empty"
+        },
+        "length": {
+          "type": "number",
+          "description": "Clip length in beats (default 4.0)"
+        }
+      },
+      "required": [
+        "track_index",
+        "scene_index"
+      ]
+    }
+  ],
+  [
+    "create_midi_clip_in_lane",
+    "Create a MIDI clip inside a take lane. Requires Live 12+.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "lane_index": {
+          "type": "integer",
+          "description": "0-based lane index"
+        },
+        "length": {
+          "type": "number",
+          "description": "Clip length in beats (default 4.0)"
+        }
+      },
+      "required": [
+        "track_index",
+        "lane_index"
+      ]
+    }
+  ],
+  [
+    "create_midi_track",
+    "Create a new MIDI track at the end of the track list.",
+    {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Optional track name"
+        }
+      }
+    }
+  ],
+  [
+    "create_return_track",
+    "Create a new return track.",
+    {
+      "type": "object",
+      "properties": {}
+    }
+  ],
+  [
+    "create_scene",
+    "Create a new scene at the end of the scene list.",
+    {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Optional scene name"
+        }
+      }
+    }
+  ],
+  [
+    "create_take_lane",
+    "Create a new take lane on a track. Requires Live 12+.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "name": {
+          "type": "string",
+          "description": "Optional lane name"
+        }
+      },
+      "required": [
+        "track_index"
+      ]
+    }
+  ],
+  [
+    "delete_clip",
+    "Delete the clip in a session slot.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "scene_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        }
+      },
+      "required": [
+        "track_index",
+        "scene_index"
+      ]
+    }
+  ],
+  [
+    "delete_device",
+    "Delete a device from a track.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "device_index": {
+          "type": "integer",
+          "description": "0-based device index"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index"
+      ]
+    }
+  ],
+  [
+    "delete_locator",
+    "Delete a cue point by index.",
+    {
+      "type": "object",
+      "properties": {
+        "locator_index": {
+          "type": "integer",
+          "description": "0-based locator index"
+        }
+      },
+      "required": [
+        "locator_index"
+      ]
+    }
+  ],
+  [
+    "delete_scene",
+    "Delete a scene by index.",
+    {
+      "type": "object",
+      "properties": {
+        "scene_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        }
+      },
+      "required": [
+        "scene_index"
+      ]
+    }
+  ],
+  [
+    "delete_take_lane",
+    "Delete a take lane. Requires Live 12+.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "lane_index": {
+          "type": "integer",
+          "description": "0-based lane index"
+        }
+      },
+      "required": [
+        "track_index",
+        "lane_index"
+      ]
+    }
+  ],
+  [
+    "delete_track",
+    "Delete a track by index.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        }
+      },
+      "required": [
+        "track_index"
+      ]
+    }
+  ],
+  [
+    "deselect_all_notes",
+    "Deselect all notes in a MIDI clip.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index"
+      ]
+    }
+  ],
+  [
+    "duplicate_clip",
+    "Duplicate the clip in a slot.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "scene_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        }
+      },
+      "required": [
+        "track_index",
+        "scene_index"
+      ]
+    }
+  ],
+  [
+    "duplicate_scene",
+    "Duplicate a scene; copy inserted immediately after the original.",
+    {
+      "type": "object",
+      "properties": {
+        "scene_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        }
+      },
+      "required": [
+        "scene_index"
+      ]
+    }
+  ],
+  [
+    "duplicate_to_arrangement",
+    "Duplicate a session clip to the arrangement view at the current playback position.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index"
+      ]
+    }
+  ],
+  [
+    "duplicate_track",
+    "Duplicate a track; copy inserted immediately after the original.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        }
+      },
+      "required": [
+        "track_index"
+      ]
+    }
+  ],
+  [
+    "flatten_track",
+    "Flatten a frozen track to audio. Track must be frozen first.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        }
+      },
+      "required": [
+        "track_index"
+      ]
+    }
+  ],
+  [
+    "focus_track",
+    "Select and focus a track in the current view.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        }
+      },
+      "required": [
+        "track_index"
+      ]
+    }
+  ],
+  [
+    "freeze_track",
+    "Freeze a track to reduce CPU usage.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        }
+      },
+      "required": [
+        "track_index"
+      ]
+    }
+  ],
+  [
+    "get_all_param_display_values",
+    "Get display values for all parameters of a device.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "device_index": {
+          "type": "integer",
+          "description": "0-based device index"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index"
+      ]
+    }
+  ],
+  [
+    "get_application_version",
+    "Get full Ableton Live version information.",
+    {
+      "type": "object",
+      "properties": {}
+    }
+  ],
+  [
+    "get_arrangement_clips",
+    "Get all clips in the arrangement view for a track.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        }
+      },
+      "required": [
+        "track_index"
+      ]
+    }
+  ],
+  [
+    "get_arrangement_overdub",
+    "Get the current arrangement overdub state.",
+    {
+      "type": "object",
+      "properties": {}
+    }
+  ],
+  [
+    "get_automation_envelope_values",
+    "Check whether an automation envelope has any breakpoints.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "device_index": {
+          "type": "integer",
+          "description": "0-based device index"
+        },
+        "param_index": {
+          "type": "integer",
+          "description": "0-based parameter index"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "device_index",
+        "param_index"
+      ]
+    }
+  ],
+  [
+    "get_browser_items",
+    "Get browser items for a category: devices, plugins, instruments, audio_effects, midi_effects.",
+    {
+      "type": "object",
+      "properties": {
+        "category": {
+          "type": "string",
+          "description": "Category name (default 'devices')"
+        }
+      }
+    }
+  ],
+  [
+    "get_build_id",
+    "Get the Ableton Live build identifier. Requires Live 12+.",
+    {
+      "type": "object",
+      "properties": {}
+    }
+  ],
+  [
+    "get_can_jump_to_next_cue",
+    "Check whether there is a next cue point to jump to.",
+    {
+      "type": "object",
+      "properties": {}
+    }
+  ],
+  [
+    "get_can_jump_to_prev_cue",
+    "Check whether there is a previous cue point to jump to.",
+    {
+      "type": "object",
+      "properties": {}
+    }
+  ],
+  [
+    "get_chain_devices",
+    "Get all devices within a specific rack chain.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "device_index": {
+          "type": "integer",
+          "description": "0-based rack device index"
+        },
+        "chain_index": {
+          "type": "integer",
+          "description": "0-based chain index"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index",
+        "chain_index"
+      ]
+    }
+  ],
+  [
+    "get_clip_annotation",
+    "Get annotation text for a clip.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index"
+      ]
+    }
+  ],
+  [
+    "get_clip_automation_envelope",
+    "Check whether an automation envelope exists for a device parameter in a clip.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "device_index": {
+          "type": "integer",
+          "description": "0-based device index"
+        },
+        "param_index": {
+          "type": "integer",
+          "description": "0-based parameter index"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "device_index",
+        "param_index"
+      ]
+    }
+  ],
+  [
+    "get_clip_color",
+    "Get the color of a clip.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index"
+      ]
+    }
+  ],
+  [
+    "get_clip_fade_in",
+    "Get the fade-in time for an audio clip.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index"
+      ]
+    }
+  ],
+  [
+    "get_clip_fade_out",
+    "Get the fade-out time for an audio clip.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index"
+      ]
+    }
+  ],
+  [
+    "get_clip_file_path",
+    "Get the file path of the audio sample for an audio clip.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index"
+      ]
+    }
+  ],
+  [
+    "get_clip_follow_action",
+    "Get the follow action for a clip. Codes: 0=Stop, 1=Play Again, 2=Previous, 3=Next, 4=First, 5=Last, 6=Any, 7=Other, 8=Jump.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index"
+      ]
+    }
+  ],
+  [
+    "get_clip_info",
+    "Get information about a clip (name, length, loop, MIDI/audio type, playing state, color).",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "scene_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        }
+      },
+      "required": [
+        "track_index",
+        "scene_index"
+      ]
+    }
+  ],
+  [
+    "get_clip_notes",
+    "Get all MIDI notes from a clip.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index"
+      ]
+    }
+  ],
+  [
+    "get_clip_ram_mode",
+    "Check whether an audio clip is loaded into RAM.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index"
+      ]
+    }
+  ],
+  [
+    "get_clip_start_time",
+    "Get the start time property of a clip in the arrangement.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index"
+      ]
+    }
+  ],
+  [
+    "get_clip_warp_mode",
+    "Get the warp mode for an audio clip. 0=Beats, 1=Tones, 2=Texture, 3=Re-Pitch, 4=Complex, 5=Complex Pro.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index"
+      ]
+    }
+  ],
+  [
+    "get_clips_in_take_lane",
+    "Get all clips inside a take lane. Requires Live 12+.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "lane_index": {
+          "type": "integer",
+          "description": "0-based lane index"
+        }
+      },
+      "required": [
+        "track_index",
+        "lane_index"
+      ]
+    }
+  ],
+  [
+    "get_crossfader_assignment",
+    "Get a track's crossfader assignment: 0=None, 1=A, 2=B.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        }
+      },
+      "required": [
+        "track_index"
+      ]
+    }
+  ],
+  [
+    "get_crossfader_position",
+    "Get the master crossfader position (-1.0 to 1.0).",
+    {
+      "type": "object",
+      "properties": {}
+    }
+  ],
+  [
+    "get_current_time",
+    "Get the current playback position and playing state.",
+    {
+      "type": "object",
+      "properties": {}
+    }
+  ],
+  [
+    "get_cv_tools_devices",
+    "List all CV Tools devices on a track (filtered by name containing 'CV').",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        }
+      },
+      "required": [
+        "track_index"
+      ]
+    }
+  ],
+  [
+    "get_device_chains",
+    "Get the chains of an instrument/effect rack device.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "device_index": {
+          "type": "integer",
+          "description": "0-based rack device index"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index"
+      ]
+    }
+  ],
+  [
+    "get_device_class_name",
+    "Get the internal class name of a device (e.g. 'OriginalSimpler', 'Compressor2').",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "device_index": {
+          "type": "integer",
+          "description": "0-based device index"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index"
+      ]
+    }
+  ],
+  [
+    "get_device_param_display_value",
+    "Get a parameter's value as displayed in the Live UI (e.g. '128 Hz'). Falls back to string on older Live.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "device_index": {
+          "type": "integer",
+          "description": "0-based device index"
+        },
+        "param_index": {
+          "type": "integer",
+          "description": "0-based parameter index"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index",
+        "param_index"
+      ]
+    }
+  ],
+  [
+    "get_device_parameter_by_name",
+    "Find a device parameter by name.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "device_index": {
+          "type": "integer",
+          "description": "0-based device index"
+        },
+        "param_name": {
+          "type": "string",
+          "description": "Parameter name"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index",
+        "param_name"
+      ]
+    }
+  ],
+  [
+    "get_device_parameters",
+    "Get all parameters for a device.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "device_index": {
+          "type": "integer",
+          "description": "0-based device index"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index"
+      ]
+    }
+  ],
+  [
+    "get_device_presets",
+    "Get available presets for a device.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "device_index": {
+          "type": "integer",
+          "description": "0-based device index"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index"
+      ]
+    }
+  ],
+  [
+    "get_device_type",
+    "Get the device type: 0=audio_effect, 1=instrument, 2=midi_effect.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "device_index": {
+          "type": "integer",
+          "description": "0-based device index"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index"
+      ]
+    }
+  ],
+  [
+    "get_groove_amount",
+    "Get the global song groove amount.",
+    {
+      "type": "object",
+      "properties": {}
+    }
+  ],
+  [
+    "get_groove_pool_grooves",
+    "List all grooves in the groove pool.",
+    {
+      "type": "object",
+      "properties": {}
+    }
+  ],
+  [
+    "get_locators",
+    "Get all cue points.",
+    {
+      "type": "object",
+      "properties": {}
+    }
+  ],
+  [
+    "get_loop_enabled",
+    "Get the current arrangement loop state and bounds.",
+    {
+      "type": "object",
+      "properties": {}
+    }
+  ],
+  [
+    "get_m4l_devices",
+    "List all Max for Live devices on a track.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        }
+      },
+      "required": [
+        "track_index"
+      ]
+    }
+  ],
+  [
+    "get_m4l_param_by_name",
+    "Get a device parameter value by name.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "device_index": {
+          "type": "integer",
+          "description": "0-based device index"
+        },
+        "param_name": {
+          "type": "string",
+          "description": "Parameter name"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index",
+        "param_name"
+      ]
+    }
+  ],
+  [
+    "get_master_chain_summary",
+    "Get all devices on the master track with full enriched parameter lists in a single call — avoids multiple round-trips for mastering work.",
+    {
+      "type": "object",
+      "properties": {}
+    }
+  ],
+  [
+    "get_master_device_param_info",
+    "Get enriched info for a single master track device parameter by name. Faster than get_master_device_params when you only need one parameter.",
+    {
+      "type": "object",
+      "properties": {
+        "device_index": {
+          "type": "integer",
+          "description": "0-based device index on master track"
+        },
+        "param_name": {
+          "type": "string",
+          "description": "Parameter name (first match)"
+        }
+      },
+      "required": [
+        "device_index",
+        "param_name"
+      ]
+    }
+  ],
+  [
+    "get_master_device_params",
+    "Get all enriched parameter info for a device on the master track (name, raw_value, display_value, min, max, is_quantized, value_items).",
+    {
+      "type": "object",
+      "properties": {
+        "device_index": {
+          "type": "integer",
+          "description": "0-based device index on master track"
+        }
+      },
+      "required": [
+        "device_index"
+      ]
+    }
+  ],
+  [
+    "get_master_devices",
+    "Get all devices on the master track.",
+    {
+      "type": "object",
+      "properties": {}
+    }
+  ],
+  [
+    "get_master_track_info",
+    "Get master track information (name, volume, pan, devices).",
+    {
+      "type": "object",
+      "properties": {}
+    }
+  ],
+  [
+    "get_metronome_volume",
+    "Get the metronome volume.",
+    {
+      "type": "object",
+      "properties": {}
+    }
+  ],
+  [
+    "get_notes_extended",
+    "Get MIDI notes filtered by time and pitch range.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "start_time": {
+          "type": "number",
+          "description": "Filter start time in beats"
+        },
+        "time_span": {
+          "type": "number",
+          "description": "Duration of filter window in beats"
+        },
+        "start_pitch": {
+          "type": "integer",
+          "description": "Lowest pitch to include"
+        },
+        "pitch_span": {
+          "type": "integer",
+          "description": "Number of pitches to include"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "start_time",
+        "time_span",
+        "start_pitch",
+        "pitch_span"
+      ]
+    }
+  ],
+  [
+    "get_project_root_folder",
+    "Get the project root folder path.",
+    {
+      "type": "object",
+      "properties": {}
+    }
+  ],
+  [
+    "get_rack_contents",
+    "Get full rack interior: all chains, chain devices, and enriched device parameters in one call.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "device_index": {
+          "type": "integer",
+          "description": "0-based rack device index"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index"
+      ]
+    }
+  ],
+  [
+    "get_return_track_count",
+    "Get the number of return tracks.",
+    {
+      "type": "object",
+      "properties": {}
+    }
+  ],
+  [
+    "get_return_track_info",
+    "Get information about a return track.",
+    {
+      "type": "object",
+      "properties": {
+        "return_index": {
+          "type": "integer",
+          "description": "0-based return track index"
+        }
+      },
+      "required": [
+        "return_index"
+      ]
+    }
+  ],
+  [
+    "get_sample_length",
+    "Get the raw sample length of an audio clip.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index"
+      ]
+    }
+  ],
+  [
+    "get_sample_playback_mode",
+    "Get the playback mode of a Simpler or Sampler device.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "device_index": {
+          "type": "integer",
+          "description": "0-based device index"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index"
+      ]
+    }
+  ],
+  [
+    "get_scene_color",
+    "Get a scene's color index.",
+    {
+      "type": "object",
+      "properties": {
+        "scene_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        }
+      },
+      "required": [
+        "scene_index"
+      ]
+    }
+  ],
+  [
+    "get_scene_info",
+    "Get information about a scene (name, color, tempo, time signature).",
+    {
+      "type": "object",
+      "properties": {
+        "scene_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        }
+      },
+      "required": [
+        "scene_index"
+      ]
+    }
+  ],
+  [
+    "get_scene_is_empty",
+    "Check whether a scene has no clips across all tracks.",
+    {
+      "type": "object",
+      "properties": {
+        "scene_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        }
+      },
+      "required": [
+        "scene_index"
+      ]
+    }
+  ],
+  [
+    "get_scene_tempo",
+    "Get the tempo override set on a scene, if any.",
+    {
+      "type": "object",
+      "properties": {
+        "scene_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        }
+      },
+      "required": [
+        "scene_index"
+      ]
+    }
+  ],
+  [
+    "get_session_automation_record",
+    "Get whether session automation recording is enabled.",
+    {
+      "type": "object",
+      "properties": {}
+    }
+  ],
+  [
+    "get_session_info",
+    "Get a full snapshot of the session state (tempo, tracks, scenes, playback status).",
+    {
+      "type": "object",
+      "properties": {}
+    }
+  ],
+  [
+    "get_session_record",
+    "Get the session record state.",
+    {
+      "type": "object",
+      "properties": {}
+    }
+  ],
+  [
+    "get_signature_denominator",
+    "Get the global time signature denominator.",
+    {
+      "type": "object",
+      "properties": {}
+    }
+  ],
+  [
+    "get_signature_numerator",
+    "Get the global time signature numerator.",
+    {
+      "type": "object",
+      "properties": {}
+    }
+  ],
+  [
+    "get_take_lane_name",
+    "Get the name of a specific take lane. Requires Live 12+.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "lane_index": {
+          "type": "integer",
+          "description": "0-based lane index"
+        }
+      },
+      "required": [
+        "track_index",
+        "lane_index"
+      ]
+    }
+  ],
+  [
+    "get_take_lanes",
+    "Get all take lanes on a track. Requires Live 12+.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        }
+      },
+      "required": [
+        "track_index"
+      ]
+    }
+  ],
+  [
+    "get_track_annotation",
+    "Get the annotation text for a track.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        }
+      },
+      "required": [
+        "track_index"
+      ]
+    }
+  ],
+  [
+    "get_track_available_input_routing_types",
+    "List available input routing type names for a track.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        }
+      },
+      "required": [
+        "track_index"
+      ]
+    }
+  ],
+  [
+    "get_track_available_output_routing_types",
+    "List available output routing type names for a track.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        }
+      },
+      "required": [
+        "track_index"
+      ]
+    }
+  ],
+  [
+    "get_track_chain_summary",
+    "Get all devices on any track with full enriched parameter lists in a single call — lets the AI read the entire device chain in one round trip.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        }
+      },
+      "required": [
+        "track_index"
+      ]
+    }
+  ],
+  [
+    "get_track_color",
+    "Get the color of a track.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        }
+      },
+      "required": [
+        "track_index"
+      ]
+    }
+  ],
+  [
+    "get_track_delay",
+    "Get a track's delay compensation value in samples.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        }
+      },
+      "required": [
+        "track_index"
+      ]
+    }
+  ],
+  [
+    "get_track_device_params",
+    "Get all enriched parameter info for a device on any track (name, raw_value, display_value, min, max, is_quantized, value_items).",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "device_index": {
+          "type": "integer",
+          "description": "0-based device index on that track"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index"
+      ]
+    }
+  ],
+  [
+    "get_track_devices",
+    "Get all devices on a track.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        }
+      },
+      "required": [
+        "track_index"
+      ]
+    }
+  ],
+  [
+    "get_track_index_by_name",
+    "Find a track's index by name. Case-insensitive, partial match, returns first result.",
+    {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Track name or partial name to search for"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    }
+  ],
+  [
+    "get_track_info",
+    "Get detailed information about a track (name, volume, pan, devices, clips, etc.).",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        }
+      },
+      "required": [
+        "track_index"
+      ]
+    }
+  ],
+  [
+    "get_track_input_routing_type",
+    "Get the current input routing type for a track.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        }
+      },
+      "required": [
+        "track_index"
+      ]
+    }
+  ],
+  [
+    "get_track_is_foldable",
+    "Check whether a track is foldable (i.e. is a group track).",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        }
+      },
+      "required": [
+        "track_index"
+      ]
+    }
+  ],
+  [
+    "get_track_is_frozen",
+    "Check whether a track is currently frozen.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        }
+      },
+      "required": [
+        "track_index"
+      ]
+    }
+  ],
+  [
+    "get_track_is_grouped",
+    "Check whether a track is a member of a group.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        }
+      },
+      "required": [
+        "track_index"
+      ]
+    }
+  ],
+  [
+    "get_track_output_routing",
+    "Get the current output routing configuration for a track.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        }
+      },
+      "required": [
+        "track_index"
+      ]
+    }
+  ],
+  [
+    "get_track_sends",
+    "Get all send levels for a track.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        }
+      },
+      "required": [
+        "track_index"
+      ]
+    }
+  ],
+  [
+    "get_variant",
+    "Get the Ableton Live edition (e.g. 'Suite', 'Standard', 'Intro'). Requires Live 12+.",
+    {
+      "type": "object",
+      "properties": {}
+    }
+  ],
+  [
+    "get_warp_markers",
+    "Get all warp markers from an audio clip.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index"
+      ]
+    }
+  ],
+  [
+    "group_tracks",
+    "Group a range of tracks together.",
+    {
+      "type": "object",
+      "properties": {
+        "start_index": {
+          "type": "integer",
+          "description": "First track to group"
+        },
+        "end_index": {
+          "type": "integer",
+          "description": "Last track to group (inclusive)"
+        }
+      },
+      "required": [
+        "start_index",
+        "end_index"
+      ]
+    }
+  ],
+  [
+    "health_check",
+    "Get health status: Ableton version, queue depth, tool count.",
+    {
+      "type": "object",
+      "properties": {}
+    }
+  ],
+  [
+    "hide_plugin_window",
+    "Hide the editor window for a device/plugin.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "device_index": {
+          "type": "integer",
+          "description": "0-based device index"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index"
+      ]
+    }
+  ],
+  [
+    "insert_automation_step",
+    "Insert an automation breakpoint at a specific time and value.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "device_index": {
+          "type": "integer",
+          "description": "0-based device index"
+        },
+        "param_index": {
+          "type": "integer",
+          "description": "0-based parameter index"
+        },
+        "time": {
+          "type": "number",
+          "description": "Time in beats"
+        },
+        "value": {
+          "type": "number",
+          "description": "Automation value"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "device_index",
+        "param_index",
+        "time",
+        "value"
+      ]
+    }
+  ],
+  [
+    "is_max_device",
+    "Check whether a device is a Max for Live device.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "device_index": {
+          "type": "integer",
+          "description": "0-based device index"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index"
+      ]
+    }
+  ],
+  [
+    "jump_by_amount",
+    "Move the playback position by a relative offset in beats (negative to go backward).",
+    {
+      "type": "object",
+      "properties": {
+        "amount_in_beats": {
+          "type": "number",
+          "description": "Offset in beats"
+        }
+      },
+      "required": [
+        "amount_in_beats"
+      ]
+    }
+  ],
+  [
+    "jump_to_next_cue",
+    "Jump playback to the next cue point.",
+    {
+      "type": "object",
+      "properties": {}
+    }
+  ],
+  [
+    "jump_to_prev_cue",
+    "Jump playback to the previous cue point.",
+    {
+      "type": "object",
+      "properties": {}
+    }
+  ],
+  [
+    "jump_to_time",
+    "Move the playback position to a specific beat.",
+    {
+      "type": "object",
+      "properties": {
+        "time_in_beats": {
+          "type": "number",
+          "description": "Target position in beats"
+        }
+      },
+      "required": [
+        "time_in_beats"
+      ]
+    }
+  ],
+  [
+    "launch_clip",
+    "Launch (fire) a clip.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "scene_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        }
+      },
+      "required": [
+        "track_index",
+        "scene_index"
+      ]
+    }
+  ],
+  [
+    "launch_scene",
+    "Launch (fire) all clips in a scene.",
+    {
+      "type": "object",
+      "properties": {
+        "scene_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        }
+      },
+      "required": [
+        "scene_index"
+      ]
+    }
+  ],
+  [
+    "load_device_from_browser",
+    "Load a device from the browser onto a track by name.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "device_name": {
+          "type": "string",
+          "description": "Device name"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_name"
+      ]
+    }
+  ],
+  [
+    "mute_track",
+    "Mute or unmute a track.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "mute": {
+          "type": "boolean",
+          "description": "True to mute (default true)"
+        }
+      },
+      "required": [
+        "track_index"
+      ]
+    }
+  ],
+  [
+    "nudge_down",
+    "Nudge the playback position down.",
+    {
+      "type": "object",
+      "properties": {}
+    }
+  ],
+  [
+    "nudge_up",
+    "Nudge the playback position up.",
+    {
+      "type": "object",
+      "properties": {}
+    }
+  ],
+  [
+    "ping",
+    "Check that the ALiveMCP Remote Script is running in Ableton.",
+    {
+      "type": "object",
+      "properties": {}
+    }
+  ],
+  [
+    "quantize_clip",
+    "Quantize a MIDI clip to a grid value (e.g. 0.25 for 16th notes).",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "quantize_to": {
+          "type": "number",
+          "description": "Grid size in beats (e.g. 0.25 for 16th notes)"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "quantize_to"
+      ]
+    }
+  ],
+  [
+    "quantize_clip_pitch",
+    "Quantize MIDI clip pitch to a target pitch.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "pitch": {
+          "type": "integer",
+          "description": "Target pitch MIDI note (default 60)"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index"
+      ]
+    }
+  ],
+  [
+    "randomize_device",
+    "Randomize all enabled, non-quantized parameters of a device (richer response).",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "device_index": {
+          "type": "integer",
+          "description": "0-based device index"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index"
+      ]
+    }
+  ],
+  [
+    "randomize_device_parameters",
+    "Randomize all non-quantized parameters of a device.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "device_index": {
+          "type": "integer",
+          "description": "0-based device index"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index"
+      ]
+    }
+  ],
+  [
+    "re_enable_automation",
+    "Re-enable all overridden automation.",
+    {
+      "type": "object",
+      "properties": {}
+    }
+  ],
+  [
+    "redo",
+    "Redo the last undone action in Ableton.",
+    {
+      "type": "object",
+      "properties": {}
+    }
+  ],
+  [
+    "remove_automation_step",
+    "Remove an automation breakpoint at a specific time.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "device_index": {
+          "type": "integer",
+          "description": "0-based device index"
+        },
+        "param_index": {
+          "type": "integer",
+          "description": "0-based parameter index"
+        },
+        "time": {
+          "type": "number",
+          "description": "Time in beats of breakpoint to remove"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "device_index",
+        "param_index",
+        "time"
+      ]
+    }
+  ],
+  [
+    "remove_notes",
+    "Remove MIDI notes from a clip within a pitch and time range.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "pitch_from": {
+          "type": "integer",
+          "description": "Lowest pitch to remove (default 0)"
+        },
+        "pitch_to": {
+          "type": "integer",
+          "description": "Highest pitch to remove (default 127)"
+        },
+        "time_from": {
+          "type": "number",
+          "description": "Start time in beats (default 0.0)"
+        },
+        "time_to": {
+          "type": "number",
+          "description": "End time in beats (default 999.0)"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index"
+      ]
+    }
+  ],
+  [
+    "rename_scene",
+    "Rename a scene.",
+    {
+      "type": "object",
+      "properties": {
+        "scene_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "name": {
+          "type": "string",
+          "description": "New scene name"
+        }
+      },
+      "required": [
+        "scene_index",
+        "name"
+      ]
+    }
+  ],
+  [
+    "rename_track",
+    "Rename a track.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "name": {
+          "type": "string",
+          "description": "New name"
+        }
+      },
+      "required": [
+        "track_index",
+        "name"
+      ]
+    }
+  ],
+  [
+    "replace_selected_notes",
+    "Replace the currently selected notes with new notes.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "notes": {
+          "type": "array",
+          "description": "Replacement notes with pitch, start, duration, velocity, optional muted",
+          "items": {
+            "type": "object"
+          }
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "notes"
+      ]
+    }
+  ],
+  [
+    "scroll_view_to_time",
+    "Request the arrangement view to scroll to a specific time.",
+    {
+      "type": "object",
+      "properties": {
+        "time_in_beats": {
+          "type": "number",
+          "description": "Time in beats"
+        }
+      },
+      "required": [
+        "time_in_beats"
+      ]
+    }
+  ],
+  [
+    "select_all_notes",
+    "Select all notes in a MIDI clip.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index"
+      ]
+    }
+  ],
+  [
+    "send_midi_cc",
+    "Send a MIDI Control Change message.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "Track index (required but unused for routing)"
+        },
+        "cc_number": {
+          "type": "integer",
+          "description": "CC number 0–127"
+        },
+        "cc_value": {
+          "type": "integer",
+          "description": "CC value 0–127"
+        },
+        "channel": {
+          "type": "integer",
+          "description": "MIDI channel 0-based (default 0 = ch 1)"
+        }
+      },
+      "required": [
+        "track_index",
+        "cc_number",
+        "cc_value"
+      ]
+    }
+  ],
+  [
+    "send_program_change",
+    "Send a MIDI Program Change message.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "Track index (required but unused for routing)"
+        },
+        "program_number": {
+          "type": "integer",
+          "description": "Program number 0–127"
+        },
+        "channel": {
+          "type": "integer",
+          "description": "MIDI channel 0-based (default 0)"
+        }
+      },
+      "required": [
+        "track_index",
+        "program_number"
+      ]
+    }
+  ],
+  [
+    "set_arrangement_overdub",
+    "Enable or disable arrangement overdub.",
+    {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "True to enable overdub"
+        }
+      },
+      "required": [
+        "enabled"
+      ]
+    }
+  ],
+  [
+    "set_back_to_arranger",
+    "Enable or disable Back to Arrangement mode.",
+    {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "True to enable"
+        }
+      },
+      "required": [
+        "enabled"
+      ]
+    }
+  ],
+  [
+    "set_chain_mute",
+    "Mute or unmute a rack chain.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "device_index": {
+          "type": "integer",
+          "description": "0-based rack device index"
+        },
+        "chain_index": {
+          "type": "integer",
+          "description": "0-based chain index"
+        },
+        "mute": {
+          "type": "boolean",
+          "description": "True to mute"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index",
+        "chain_index",
+        "mute"
+      ]
+    }
+  ],
+  [
+    "set_chain_solo",
+    "Solo or unsolo a rack chain.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "device_index": {
+          "type": "integer",
+          "description": "0-based rack device index"
+        },
+        "chain_index": {
+          "type": "integer",
+          "description": "0-based chain index"
+        },
+        "solo": {
+          "type": "boolean",
+          "description": "True to solo"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index",
+        "chain_index",
+        "solo"
+      ]
+    }
+  ],
+  [
+    "set_clip_annotation",
+    "Set annotation text for a clip.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "annotation_text": {
+          "type": "string",
+          "description": "Annotation text"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "annotation_text"
+      ]
+    }
+  ],
+  [
+    "set_clip_color",
+    "Set a clip's color using an Ableton color index.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "color_index": {
+          "type": "integer",
+          "description": "Ableton color index"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "color_index"
+      ]
+    }
+  ],
+  [
+    "set_clip_end_marker",
+    "Set the end marker (playback end point) of a clip in beats.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "end_marker": {
+          "type": "number",
+          "description": "Position in beats"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "end_marker"
+      ]
+    }
+  ],
+  [
+    "set_clip_fade_in",
+    "Set the fade-in time for an audio clip.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "fade_time": {
+          "type": "number",
+          "description": "Fade time"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "fade_time"
+      ]
+    }
+  ],
+  [
+    "set_clip_fade_out",
+    "Set the fade-out time for an audio clip.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "fade_time": {
+          "type": "number",
+          "description": "Fade time"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "fade_time"
+      ]
+    }
+  ],
+  [
+    "set_clip_follow_action",
+    "Set follow actions for a clip. Codes: 0=Stop, 1=Play Again, 2=Previous, 3=Next, 4=First, 5=Last, 6=Any, 7=Other, 8=Jump.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "action_A": {
+          "type": "integer",
+          "description": "Follow action A code (0–8)"
+        },
+        "action_B": {
+          "type": "integer",
+          "description": "Follow action B code (0–8)"
+        },
+        "chance_A": {
+          "type": "number",
+          "description": "Probability for action A, 0.0–1.0 (default 1.0)"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "action_A",
+        "action_B"
+      ]
+    }
+  ],
+  [
+    "set_clip_gain",
+    "Set clip gain (audio clips only).",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "gain": {
+          "type": "number",
+          "description": "Gain value"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "gain"
+      ]
+    }
+  ],
+  [
+    "set_clip_groove",
+    "Assign a groove pool groove to a clip.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "groove_index": {
+          "type": "integer",
+          "description": "Index into groove pool"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "groove_index"
+      ]
+    }
+  ],
+  [
+    "set_clip_groove_amount",
+    "Set groove amount for a clip (0.0 to 1.0).",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "amount": {
+          "type": "number",
+          "description": "Groove amount 0.0–1.0"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "amount"
+      ]
+    }
+  ],
+  [
+    "set_clip_loop_end",
+    "Set the loop end position within a clip in beats.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "loop_end": {
+          "type": "number",
+          "description": "Position in beats"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "loop_end"
+      ]
+    }
+  ],
+  [
+    "set_clip_loop_start",
+    "Set the loop start position within a clip in beats.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "loop_start": {
+          "type": "number",
+          "description": "Position in beats"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "loop_start"
+      ]
+    }
+  ],
+  [
+    "set_clip_looping",
+    "Enable or disable looping for a clip.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "looping": {
+          "type": "boolean",
+          "description": "True to loop"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "looping"
+      ]
+    }
+  ],
+  [
+    "set_clip_muted",
+    "Mute or unmute a clip.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "muted": {
+          "type": "boolean",
+          "description": "True to mute"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "muted"
+      ]
+    }
+  ],
+  [
+    "set_clip_name",
+    "Rename a clip.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "scene_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "name": {
+          "type": "string",
+          "description": "New clip name"
+        }
+      },
+      "required": [
+        "track_index",
+        "scene_index",
+        "name"
+      ]
+    }
+  ],
+  [
+    "set_clip_pitch_coarse",
+    "Transpose a clip by semitones.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "semitones": {
+          "type": "integer",
+          "description": "Semitones to transpose"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "semitones"
+      ]
+    }
+  ],
+  [
+    "set_clip_pitch_fine",
+    "Fine-tune a clip's pitch in cents.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "cents": {
+          "type": "integer",
+          "description": "Cents to adjust"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "cents"
+      ]
+    }
+  ],
+  [
+    "set_clip_ram_mode",
+    "Control whether an audio clip streams from disk or loads into RAM.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "ram_mode": {
+          "type": "boolean",
+          "description": "True to load into RAM"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "ram_mode"
+      ]
+    }
+  ],
+  [
+    "set_clip_signature_numerator",
+    "Set a clip's local time signature numerator.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "numerator": {
+          "type": "integer",
+          "description": "Time signature numerator"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "numerator"
+      ]
+    }
+  ],
+  [
+    "set_clip_start_marker",
+    "Set the start marker (playback start point) of a clip in beats.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "start_marker": {
+          "type": "number",
+          "description": "Position in beats"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "start_marker"
+      ]
+    }
+  ],
+  [
+    "set_clip_start_time",
+    "Set the start time of a clip.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "start_time": {
+          "type": "number",
+          "description": "Start time in beats"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "start_time"
+      ]
+    }
+  ],
+  [
+    "set_clip_warp_mode",
+    "Set the warp mode for an audio clip. 0=Beats, 1=Tones, 2=Texture, 3=Re-Pitch, 4=Complex, 5=Complex Pro.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "warp_mode": {
+          "type": "integer",
+          "description": "Warp mode 0–5"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "warp_mode"
+      ]
+    }
+  ],
+  [
+    "set_clip_warping",
+    "Enable or disable warping for an audio clip.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "warping": {
+          "type": "boolean",
+          "description": "True to enable warping"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "warping"
+      ]
+    }
+  ],
+  [
+    "set_crossfader_assignment",
+    "Set a track's crossfader assignment: 0=None, 1=A, 2=B.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "assignment": {
+          "type": "integer",
+          "description": "0=None, 1=A, 2=B"
+        }
+      },
+      "required": [
+        "track_index",
+        "assignment"
+      ]
+    }
+  ],
+  [
+    "set_device_on_off",
+    "Enable or disable a device.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "device_index": {
+          "type": "integer",
+          "description": "0-based device index"
+        },
+        "enabled": {
+          "type": "boolean",
+          "description": "True to enable"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index",
+        "enabled"
+      ]
+    }
+  ],
+  [
+    "set_device_param",
+    "Set a device parameter by index.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "device_index": {
+          "type": "integer",
+          "description": "0-based device index"
+        },
+        "param_index": {
+          "type": "integer",
+          "description": "0-based parameter index"
+        },
+        "value": {
+          "type": "number",
+          "description": "Parameter value"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index",
+        "param_index",
+        "value"
+      ]
+    }
+  ],
+  [
+    "set_device_parameter_by_name",
+    "Set a device parameter by name.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "device_index": {
+          "type": "integer",
+          "description": "0-based device index"
+        },
+        "param_name": {
+          "type": "string",
+          "description": "Parameter name"
+        },
+        "value": {
+          "type": "number",
+          "description": "New value"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index",
+        "param_name",
+        "value"
+      ]
+    }
+  ],
+  [
+    "set_device_preset",
+    "Load a preset for a device by index.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "device_index": {
+          "type": "integer",
+          "description": "0-based device index"
+        },
+        "preset_index": {
+          "type": "integer",
+          "description": "0-based preset index"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index",
+        "preset_index"
+      ]
+    }
+  ],
+  [
+    "set_follow_action_time",
+    "Set the time before the follow action triggers, in bars.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "clip_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "time_in_bars": {
+          "type": "number",
+          "description": "Time in bars"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "time_in_bars"
+      ]
+    }
+  ],
+  [
+    "set_groove_amount",
+    "Set the global song groove amount (0.0 to 1.0).",
+    {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number",
+          "description": "Groove amount 0.0–1.0"
+        }
+      },
+      "required": [
+        "amount"
+      ]
+    }
+  ],
+  [
+    "set_loop_enabled",
+    "Enable or disable the arrangement loop.",
+    {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "True to enable loop"
+        }
+      },
+      "required": [
+        "enabled"
+      ]
+    }
+  ],
+  [
+    "set_loop_length",
+    "Set arrangement loop length in beats.",
+    {
+      "type": "object",
+      "properties": {
+        "length": {
+          "type": "number",
+          "description": "Length in beats"
+        }
+      },
+      "required": [
+        "length"
+      ]
+    }
+  ],
+  [
+    "set_loop_start",
+    "Set arrangement loop start position in beats.",
+    {
+      "type": "object",
+      "properties": {
+        "position": {
+          "type": "number",
+          "description": "Position in beats"
+        }
+      },
+      "required": [
+        "position"
+      ]
+    }
+  ],
+  [
+    "set_master_device_param",
+    "Set a master track device parameter by index. Value is clamped to the parameter's min/max.",
+    {
+      "type": "object",
+      "properties": {
+        "device_index": {
+          "type": "integer",
+          "description": "0-based device index on master track"
+        },
+        "param_index": {
+          "type": "integer",
+          "description": "0-based parameter index"
+        },
+        "value": {
+          "type": "number",
+          "description": "New parameter value (clamped to min/max)"
+        }
+      },
+      "required": [
+        "device_index",
+        "param_index",
+        "value"
+      ]
+    }
+  ],
+  [
+    "set_master_device_param_by_name",
+    "Set a master track device parameter by name. For quantized params pass a string from value_items (e.g. '4:1'). For continuous params pass a number (clamped to min/max). Matches first parameter with that name.",
+    {
+      "type": "object",
+      "properties": {
+        "device_index": {
+          "type": "integer",
+          "description": "0-based device index on master track"
+        },
+        "param_name": {
+          "type": "string",
+          "description": "Parameter name (first match)"
+        },
+        "value": {
+          "type": "string",
+          "description": "Display string for quantized params, or numeric string for continuous"
+        }
+      },
+      "required": [
+        "device_index",
+        "param_name",
+        "value"
+      ]
+    }
+  ],
+  [
+    "set_master_pan",
+    "Set master track pan (-1.0 to 1.0).",
+    {
+      "type": "object",
+      "properties": {
+        "pan": {
+          "type": "number",
+          "description": "Pan -1.0 to 1.0"
+        }
+      },
+      "required": [
+        "pan"
+      ]
+    }
+  ],
+  [
+    "set_master_volume",
+    "Set master track volume (0.0 to 1.0).",
+    {
+      "type": "object",
+      "properties": {
+        "volume": {
+          "type": "number",
+          "description": "Volume 0.0–1.0"
+        }
+      },
+      "required": [
+        "volume"
+      ]
+    }
+  ],
+  [
+    "set_metronome",
+    "Enable or disable the metronome.",
+    {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "True to enable"
+        }
+      },
+      "required": [
+        "enabled"
+      ]
+    }
+  ],
+  [
+    "set_metronome_volume",
+    "Set the metronome volume (0.0 to 1.0).",
+    {
+      "type": "object",
+      "properties": {
+        "volume": {
+          "type": "number",
+          "description": "Volume 0.0–1.0"
+        }
+      },
+      "required": [
+        "volume"
+      ]
+    }
+  ],
+  [
+    "set_punch_in",
+    "Enable or disable punch-in recording.",
+    {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "True to enable punch-in"
+        }
+      },
+      "required": [
+        "enabled"
+      ]
+    }
+  ],
+  [
+    "set_punch_out",
+    "Enable or disable punch-out recording.",
+    {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "True to enable punch-out"
+        }
+      },
+      "required": [
+        "enabled"
+      ]
+    }
+  ],
+  [
+    "set_record_mode",
+    "Set session or arrangement record mode: 0=session, 1=arrangement.",
+    {
+      "type": "object",
+      "properties": {
+        "mode": {
+          "type": "integer",
+          "description": "0=session, 1=arrangement"
+        }
+      },
+      "required": [
+        "mode"
+      ]
+    }
+  ],
+  [
+    "set_return_track_volume",
+    "Set a return track's volume (0.0 to 1.0).",
+    {
+      "type": "object",
+      "properties": {
+        "return_index": {
+          "type": "integer",
+          "description": "0-based return track index"
+        },
+        "volume": {
+          "type": "number",
+          "description": "Volume 0.0–1.0"
+        }
+      },
+      "required": [
+        "return_index",
+        "volume"
+      ]
+    }
+  ],
+  [
+    "set_sample_playback_mode",
+    "Set the playback mode of a Simpler or Sampler device.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "device_index": {
+          "type": "integer",
+          "description": "0-based device index"
+        },
+        "mode": {
+          "type": "integer",
+          "description": "Playback mode"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index",
+        "mode"
+      ]
+    }
+  ],
+  [
+    "set_scene_color",
+    "Set a scene's color.",
+    {
+      "type": "object",
+      "properties": {
+        "scene_index": {
+          "type": "integer",
+          "description": "0-based scene index"
+        },
+        "color_index": {
+          "type": "integer",
+          "description": "Ableton color index"
+        }
+      },
+      "required": [
+        "scene_index",
+        "color_index"
+      ]
+    }
+  ],
+  [
+    "set_session_automation_record",
+    "Enable or disable session automation recording.",
+    {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "True to enable"
+        }
+      },
+      "required": [
+        "enabled"
+      ]
+    }
+  ],
+  [
+    "set_session_record",
+    "Enable or disable session recording.",
+    {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "True to enable"
+        }
+      },
+      "required": [
+        "enabled"
+      ]
+    }
+  ],
+  [
+    "set_take_lane_name",
+    "Set the name of a take lane. Requires Live 12+.",
+    {
+      "type": "object",
+      "properties": {
+        "track_index": {
+          "type": "integer",
+          "description": "0-based track index"
+        },
+        "lane_index": {
+          "type": "integer",
+          "description": "0-based lane index"
+        },
+        "name": {
+          "type": "string",
+          "description": "New lane name"
+        }
+      },
+      "required": [
+        "track_index",
+        "lane_index",
+        "name"
+      ]
+    }
+  ],
+  [
+    "set_tempo",
+    "Set the session tempo. Valid range: 20–999 BPM.",
+    {
+      "type": "object",
+      "properties": {
+        "bpm": {
+          "type": "number",
+          "description": "Tempo in BPM (20–999)"
+        }
+      },
+      "required": [
+        "bpm"
+      ]
+    }
+  ],
+  [
+    "set_time_signature",
+    "Set the session time signature.",
+    {
+      "type": "object",
+      "properties": {
+        "numerator": {
+          "type": "integer",
+          "description": "Numerator (1–99)"
+        },
+        "denominator": {
+          "type": "integer",
+          "description": "Denominator: 1, 2, 4, 8, or 16"
+        }
+      },
+      "required": [
+        "numerator",
+        "denominator"
+      ]
+    }
+  ]
+]

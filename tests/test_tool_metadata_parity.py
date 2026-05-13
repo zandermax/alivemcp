@@ -11,15 +11,15 @@ def test_manifest_registry_mcp_parity():
     manifest_path = os.path.join(repo_root, "docs", "tool_manifest.json")
 
     # Load manifest
-    with open(manifest_path, "r", encoding="utf-8") as fh:
+    with open(manifest_path, encoding="utf-8") as fh:
         manifest = json.load(fh)
     manifest_names = [t["name"] for t in manifest.get("tools", [])]
 
     # Load registry
     registry_names = list(registry_mod.AVAILABLE_TOOLS)
 
-    # Load MCP defs
-    raw_defs = json.loads(mcp_server_tool_defs.TOOL_DEFS_JSON)
+    # Load MCP defs from runtime export
+    raw_defs = list(mcp_server_tool_defs.TOOL_DEFS)
     mcp_names = [entry[0] for entry in raw_defs]
 
     set_manifest = set(manifest_names)
