@@ -11,9 +11,13 @@ Parameters:
 Returns:
 - `ok`: boolean
 - `ram_mode`: boolean (when available)
-
-Example request:
+**Example request:**
 ```json
 {"action": "get_clip_ram_mode", "track_index": 0, "clip_index": 0}
 ```
+**Example response:**
+```json
+{"ok": true}
+```
+
 

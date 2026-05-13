@@ -11,12 +11,10 @@
 
 **Live mapping:**
 - Writes `track.mixer_device.sends[send_index].value = value` on the Live Object Model.
-
 **Example request:**
 ```json
 {"action":"set_track_send","track_index":1,"send_index":0,"value":0.5}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "send_index": 0, "value": 0.5}

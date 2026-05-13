@@ -10,12 +10,10 @@
 
 **Live mapping:**
 - Validates index bounds and sets `self.song.scenes[scene_index].name = str(name)`.
-
 **Example request:**
 ```json
 {"action": "rename_scene", "scene_index": 1, "name": "Chorus"}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "Scene renamed", "name": "Chorus"}

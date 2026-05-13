@@ -9,13 +9,16 @@
 
 **Live mapping:**
 - Calls `song.nudge_down()`.
-
 **Example request:**
 ```json
 {"action":"nudge_down"}
 ```
-
 **Example response:**
+```json
+{"ok": true}
+```
+
+**Example request:**
 ```json
 {"ok": true, "message":"Nudged down"}
 ```

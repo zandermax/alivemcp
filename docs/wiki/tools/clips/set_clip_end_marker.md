@@ -12,9 +12,13 @@ Parameters:
 Returns:
 - `ok`: boolean
 - `end_marker`: float (new value)
-
-Example request:
+**Example request:**
 ```json
 {"action": "set_clip_end_marker", "track_index": 0, "clip_index": 0, "end_marker": 4.0}
 ```
+**Example response:**
+```json
+{"ok": true}
+```
+
 

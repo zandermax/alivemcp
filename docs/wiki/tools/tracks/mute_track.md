@@ -10,12 +10,10 @@
 
 **Live mapping:**
 - Sets `song.tracks[track_index].mute = mute`.
-
 **Example request:**
 ```json
 {"action":"mute_track","track_index":1,"mute":true}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "Track muted"}

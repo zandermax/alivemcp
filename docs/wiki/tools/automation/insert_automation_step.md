@@ -14,12 +14,10 @@
 
 **Live mapping:**
 - Retrieves `clip.automation_envelope(param)` and calls `envelope.insert_step(time, value)` when available.
-
 **Example request:**
 ```json
 {"action":"insert_automation_step","track_index":0,"clip_index":0,"device_index":0,"param_index":1,"time":1.0,"value":0.7}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "time":1.0, "value":0.7, "parameter_name":"Gain","message":"Automation step inserted"}

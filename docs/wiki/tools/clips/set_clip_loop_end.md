@@ -12,9 +12,13 @@ Parameters:
 Returns:
 - `ok`: boolean
 - `loop_end`: float (new value)
-
-Example request:
+**Example request:**
 ```json
 {"action": "set_clip_loop_end", "track_index": 0, "clip_index": 0, "loop_end": 4.0}
 ```
+**Example response:**
+```json
+{"ok": true}
+```
+
 

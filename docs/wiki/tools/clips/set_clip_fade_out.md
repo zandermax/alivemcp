@@ -12,9 +12,13 @@ Parameters:
 Returns:
 - `ok`: boolean
 - `fade_out_time`: float (new value)
-
-Example request:
+**Example request:**
 ```json
 {"action": "set_clip_fade_out", "track_index": 0, "clip_index": 0, "fade_time": 0.05}
 ```
+**Example response:**
+```json
+{"ok": true}
+```
+
 

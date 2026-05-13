@@ -12,9 +12,13 @@ Parameters:
 Returns:
 - `ok`: boolean
 - `pitch_fine`: int (new value)
-
-Example request:
+**Example request:**
 ```json
 {"action": "set_clip_pitch_fine", "track_index": 0, "clip_index": 0, "cents": 10}
 ```
+**Example response:**
+```json
+{"ok": true}
+```
+
 

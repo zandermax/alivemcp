@@ -12,9 +12,13 @@ Parameters:
 Returns:
 - `ok`: boolean
 - `annotation`: string (new value)
-
-Example request:
+**Example request:**
 ```json
 {"action": "set_clip_annotation", "track_index": 0, "clip_index": 0, "annotation_text": "Verse"}
 ```
+**Example response:**
+```json
+{"ok": true}
+```
+
 

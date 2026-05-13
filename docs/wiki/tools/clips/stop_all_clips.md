@@ -9,9 +9,13 @@ Parameters: None
 Returns:
 - `ok`: boolean
 - `message`: status string
-
-Example request:
+**Example request:**
 ```json
 {"action": "stop_all_clips"}
 ```
+**Example response:**
+```json
+{"ok": true}
+```
+
 

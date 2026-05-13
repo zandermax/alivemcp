@@ -9,12 +9,10 @@
 - `clip_index` (int)
 
 **Live mapping:** Reads `clip.file_path` or the closest Live API property and returns the absolute path to the source audio file.
-
 **Example request:**
 ```json
 {"action":"get_clip_file_path","track_index":1,"clip_index":0}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "file_path": "/path/to/sample.wav"}

@@ -7,12 +7,10 @@
 **Parameters:** None
 
 **Live mapping:** No Live API calls — returns a simple `ok` JSON payload for connectivity checks.
-
 **Example request:**
 ```json
 {"action": "ping"}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "pong"}

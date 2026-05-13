@@ -9,12 +9,10 @@
 
 **Live mapping:**
 - Calls `song.delete_track(track_index)` on the Live Object Model.
-
 **Example request:**
 ```json
 {"action":"delete_track","track_index":3}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "Track deleted"}

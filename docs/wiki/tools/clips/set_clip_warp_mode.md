@@ -10,12 +10,10 @@
 - `warp_mode` (string)
 
 **Live mapping:** Writes `clip.warp_mode = warp_mode` or uses the appropriate Live API setter to change the clip's warp mode.
-
 **Example request:**
 ```json
 {"action":"set_clip_warp_mode","track_index":1,"clip_index":0,"warp_mode":"beats"}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "Warp mode set", "warp_mode": "beats"}

@@ -10,12 +10,10 @@
 
 **Live mapping:**
 - Reads properties from `clip = track.clip_slots[clip_index].clip`, including `clip.name`, `clip.length`, `clip.loop_start`, `clip.loop_end`, `clip.is_midi_clip`, `clip.is_audio_clip`, `clip.is_playing`, `clip.muted`, and `clip.color`.
-
 **Example request:**
 ```json
 {"action": "get_clip_info", "track_index": 1, "clip_index": 0}
 ```
-
 **Example response:**
 ```json
 {

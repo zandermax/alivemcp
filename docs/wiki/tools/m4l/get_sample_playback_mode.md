@@ -9,13 +9,16 @@
 - `device_id` (int or string)
 
 **Live mapping:** Reads the device parameter describing playback mode and returns a normalized string.
-
 **Example request:**
 ```json
 {"action":"get_sample_playback_mode","track_index":1,"device_id":0}
 ```
-
 **Example response:**
+```json
+{"ok": true}
+```
+
+**Example request:**
 ```json
 {"ok": true, "mode": "loop"}
 ```

@@ -9,12 +9,10 @@
 
 **Live mapping:**
 - Iterates `song.groove_pool` and returns `index`, `name`, and common groove amounts when available.
-
 **Example request:**
 ```json
 {"action":"get_groove_pool_grooves"}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "grooves": [{"index":0,"name":"Swing","timing_amount":0.5}], "count":1}

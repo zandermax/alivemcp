@@ -11,12 +11,10 @@
 
 **Live mapping:**
 - Uses `clip.set_notes(((pitch, start, duration, velocity, muted),))` for each note on the Live clip object.
-
 **Example request:**
 ```json
 {"action":"add_notes","track_index":1,"clip_index":0,"notes":[{"pitch":60,"start":0.0,"duration":1.0,"velocity":100}]}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "Notes added", "track_index": 1, "clip_index": 0, "note_count": 1}

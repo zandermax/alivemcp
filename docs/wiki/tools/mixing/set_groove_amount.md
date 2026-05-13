@@ -9,12 +9,10 @@
 
 **Live mapping:**
 - Writes `song.groove_amount = amount` when available.
-
 **Example request:**
 ```json
 {"action":"set_groove_amount","amount":0.4}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "groove_amount": 0.4}

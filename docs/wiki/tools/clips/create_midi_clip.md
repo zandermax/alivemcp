@@ -12,12 +12,10 @@
 **Live mapping:**
 - Uses `track.clip_slots[clip_index].create_clip(length)` on the Live Object Model.
 - Main-thread only.
-
 **Example request:**
 ```json
 {"action": "create_midi_clip", "track_index": 1, "clip_index": 0, "length": 4.0}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "MIDI clip created", "track_index": 1, "clip_index": 0, "length": 4.0}

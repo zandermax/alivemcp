@@ -17,9 +17,13 @@ Returns:
 - `follow_action_time`: float
 - `follow_action_chance_A`: float
 - `follow_action_chance_B`: float
-
-Example request:
+**Example request:**
 ```json
 {"action": "get_clip_follow_action", "track_index": 0, "clip_index": 0}
 ```
+**Example response:**
+```json
+{"ok": true}
+```
+
 

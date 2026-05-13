@@ -10,12 +10,10 @@
 
 **Live mapping:**
 - Checks `device.chains` and returns per-chain metadata: `index`, `name`, `mute`, `solo`, and `num_devices`.
-
 **Example request:**
 ```json
 {"action":"get_device_chains","track_index":1,"device_index":0}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "chains": [{"index":0,"name":"Chain 1","mute":false,"solo":false,"num_devices":2}], "count":1}

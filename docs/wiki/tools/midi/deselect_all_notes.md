@@ -10,12 +10,10 @@
 
 **Live mapping:**
 - Calls `clip.deselect_all_notes()`.
-
 **Example request:**
 ```json
 {"action": "deselect_all_notes", "track_index": 1, "clip_index": 0}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "All notes deselected"}

@@ -10,13 +10,16 @@
 - `mode` (string)
 
 **Live mapping:** Writes the appropriate device parameter to change playback mode.
-
 **Example request:**
 ```json
 {"action":"set_sample_playback_mode","track_index":1,"device_id":0,"mode":"loop"}
 ```
-
 **Example response:**
+```json
+{"ok": true}
+```
+
+**Example request:**
 ```json
 {"ok": true, "mode": "loop"}
 ```

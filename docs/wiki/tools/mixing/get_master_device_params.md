@@ -12,9 +12,13 @@ Returns:
 - `device_name`: string
 - `count`: int
 - `parameters`: list of {index, name, raw_value, display_value, min, max, is_quantized, value_items}
-
-Example request:
+**Example request:**
 ```json
 {"action": "get_master_device_params", "device_index": 0}
 ```
+**Example response:**
+```json
+{"ok": true}
+```
+
 

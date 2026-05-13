@@ -9,12 +9,10 @@
 
 **Live mapping:**
 - Reads `song.can_jump_to_next_cue`.
-
 **Example request:**
 ```json
 {"action":"get_can_jump_to_next_cue"}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "can_jump_to_next_cue": true}

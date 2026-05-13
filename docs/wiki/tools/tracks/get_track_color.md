@@ -9,12 +9,10 @@
 
 **Live mapping:**
 - Reads `track.color_index` or `track.color` depending on Live's object model.
-
 **Example request:**
 ```json
 {"action":"get_track_color","track_index":1}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "track_index": 1, "color_index": 5}

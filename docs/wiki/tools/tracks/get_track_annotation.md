@@ -9,12 +9,10 @@
 
 **Live mapping:**
 - If `track.annotation` exists, returns it as a string.
-
 **Example request:**
 ```json
 {"action": "get_track_annotation", "track_index": 1}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "annotation": "Recorded live"}

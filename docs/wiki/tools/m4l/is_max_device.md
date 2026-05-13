@@ -14,10 +14,13 @@ Returns:
 - `class_name`: string
 - `class_display_name`: string
 - `device_name`: string
-
 **Example request:**
 ```json
 {"action": "is_max_device", "track_index": 0, "device_index": 0}
+```
+**Example response:**
+```json
+{"ok": true}
 ```
 
 **Example request:**

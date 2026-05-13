@@ -9,12 +9,10 @@
 
 **Live mapping:**
 - Reads `scene.color` if `hasattr(scene, "color")` and returns it as an integer.
-
 **Example request:**
 ```json
 {"action": "get_scene_color", "scene_index": 0}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "color": 5}

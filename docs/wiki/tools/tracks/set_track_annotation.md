@@ -10,12 +10,10 @@
 
 **Live mapping:**
 - If `track.annotation` exists, sets `track.annotation = str(annotation_text)` and returns the updated annotation.
-
 **Example request:**
 ```json
 {"action": "set_track_annotation", "track_index": 1, "annotation_text": "New notes"}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "annotation": "New notes"}

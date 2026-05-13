@@ -11,12 +11,10 @@
 
 **Live mapping:**
 - Validates index; returns a message indicating routing change requested. Actual routing options depend on host capabilities.
-
 **Example request:**
 ```json
 {"action": "set_track_input_routing", "track_index": 1, "routing_type_name": "Input: All", "routing_channel": 0}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "Input routing set (requires routing configuration)", "routing_type": "Input: All", "routing_channel": 0}

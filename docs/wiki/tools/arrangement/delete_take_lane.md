@@ -10,12 +10,10 @@
 
 **Live mapping:**
 - Calls `track.delete_take_lane(lane_index)` when supported.
-
 **Example request:**
 ```json
 {"action":"delete_take_lane","track_index":1,"lane_index":0}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message":"Take lane deleted"}

@@ -9,13 +9,16 @@
 
 **Live mapping:**
 - Writes `song.current_song_time = time_in_beats`.
-
 **Example request:**
 ```json
 {"action":"jump_to_time","time_in_beats":32.0}
 ```
-
 **Example response:**
+```json
+{"ok": true}
+```
+
+**Example request:**
 ```json
 {"ok": true, "time": 32.0}
 ```

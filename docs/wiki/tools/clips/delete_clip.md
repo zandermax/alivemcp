@@ -10,12 +10,10 @@
 
 **Live mapping:**
 - Calls `clip_slot.delete_clip()` on the Live Object Model.
-
 **Example request:**
 ```json
 {"action": "delete_clip", "track_index": 1, "clip_index": 0}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "Clip deleted"}

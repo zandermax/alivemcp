@@ -9,9 +9,13 @@ Parameters: None
 Returns:
 - `ok`: boolean
 - `arrangement_overdub`: boolean
-
-Example request:
+**Example request:**
 ```json
 {"action": "get_arrangement_overdub"}
 ```
+**Example response:**
+```json
+{"ok": true}
+```
+
 

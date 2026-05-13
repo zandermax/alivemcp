@@ -9,12 +9,10 @@
 
 **Live mapping:**
 - Validates index bounds and calls `self.song.duplicate_scene(scene_index)`. Returns the expected new index (`scene_index + 1`).
-
 **Example request:**
 ```json
 {"action": "duplicate_scene", "scene_index": 1}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "Scene duplicated", "new_index": 2}

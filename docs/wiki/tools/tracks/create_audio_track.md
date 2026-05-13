@@ -9,12 +9,10 @@
 
 **Live mapping:**
 - Calls `song.create_audio_track(index)` and sets `song.tracks[index].name` if provided.
-
 **Example request:**
 ```json
 {"action":"create_audio_track","name":"New Audio"}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "Audio track created", "track_index": 5, "name": "New Audio"}

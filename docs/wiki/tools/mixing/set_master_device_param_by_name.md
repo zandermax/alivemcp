@@ -15,9 +15,13 @@ Returns:
 - `param_name`: string
 - `value`: float
 - `display_value`: string
-
-Example request:
+**Example request:**
 ```json
 {"action": "set_master_device_param_by_name", "device_index": 0, "param_name": "Ratio", "value": "4:1"}
 ```
+**Example response:**
+```json
+{"ok": true}
+```
+
 

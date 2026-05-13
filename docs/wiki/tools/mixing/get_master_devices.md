@@ -9,12 +9,10 @@
 
 **Live mapping:**
 - Iterates `song.master_track.devices` and returns `name`, `class_name`, and `is_active`.
-
 **Example request:**
 ```json
 {"action":"get_master_devices"}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "devices": [{"name":"Limiter","class_name":"Limiter","is_active":true}], "count":1}

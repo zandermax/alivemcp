@@ -9,9 +9,13 @@ Parameters: None
 Returns:
 - `ok`: boolean
 - `variant`: string (when `ok` is true)
-
-Example request:
+**Example request:**
 ```json
 {"action": "get_variant"}
 ```
+**Example response:**
+```json
+{"ok": true}
+```
+
 

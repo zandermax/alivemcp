@@ -11,12 +11,10 @@
 
 **Live mapping:**
 - Calls `self.song.send_midi((status_byte, program_number))` where `status_byte = 192 + channel`.
-
 **Example request:**
 ```json
 {"action": "send_program_change", "track_index": 0, "program_number": 10, "channel": 0}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "program_number": 10, "channel": 0, "message": "MIDI Program Change sent"}

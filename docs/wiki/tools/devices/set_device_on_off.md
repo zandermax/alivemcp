@@ -11,12 +11,10 @@
 
 **Live mapping:**
 - Sets `device.is_active = enabled` when the `is_active` attribute exists.
-
 **Example request:**
 ```json
 {"action":"set_device_on_off","track_index":1,"device_index":0,"enabled":false}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "is_active": false}

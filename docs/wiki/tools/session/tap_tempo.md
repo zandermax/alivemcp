@@ -9,12 +9,10 @@
 
 **Live mapping:**
 - Calls `song.tap_tempo()`.
-
 **Example request:**
 ```json
 {"action":"tap_tempo"}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "Tempo tapped"}

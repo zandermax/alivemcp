@@ -13,9 +13,13 @@ Returns:
 - `annotation`: string (when available)
 
 Notes: Some Ableton versions may not expose `annotation`.
-
-Example request:
+**Example request:**
 ```json
 {"action": "get_clip_annotation", "track_index": 0, "clip_index": 0}
 ```
+**Example response:**
+```json
+{"ok": true}
+```
+
 

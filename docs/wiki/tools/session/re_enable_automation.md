@@ -9,13 +9,16 @@
 
 **Live mapping:**
 - Calls `song.re_enable_automation()`.
-
 **Example request:**
 ```json
 {"action":"re_enable_automation"}
 ```
-
 **Example response:**
+```json
+{"ok": true}
+```
+
+**Example request:**
 ```json
 {"ok": true, "message":"Automation re-enabled"}
 ```

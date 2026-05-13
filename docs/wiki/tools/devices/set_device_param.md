@@ -12,12 +12,10 @@
 
 **Live mapping:**
 - Writes `device.parameters[param_index].value = value` after validation.
-
 **Example request:**
 ```json
 {"action":"set_device_param","track_index":1,"device_index":0,"param_index":2,"value":0.5}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "Parameter set", "value": 0.5}

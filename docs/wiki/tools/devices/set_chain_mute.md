@@ -12,12 +12,10 @@
 
 **Live mapping:**
 - Sets `chain.mute = mute` when `chain` exposes a `mute` attribute.
-
 **Example request:**
 ```json
 {"action":"set_chain_mute","track_index":1,"device_index":0,"chain_index":0,"mute":true}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "chain_index":0, "mute": true}

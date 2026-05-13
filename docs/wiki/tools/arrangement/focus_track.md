@@ -9,12 +9,10 @@
 
 **Live mapping:**
 - Sets `song.view.selected_track = track` when view selection is supported.
-
 **Example request:**
 ```json
 {"action":"focus_track","track_index":2}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "track_index":2, "message":"Track focused"}

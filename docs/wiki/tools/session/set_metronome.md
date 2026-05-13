@@ -9,12 +9,10 @@
 
 **Live mapping:**
 - Writes `song.metronome = bool(enabled)`.
-
 **Example request:**
 ```json
 {"action":"set_metronome","enabled":true}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "metronome": true}

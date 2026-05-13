@@ -9,12 +9,10 @@
 
 **Live mapping:**
 - Validates index bounds and calls `self.song.delete_scene(scene_index)`.
-
 **Example request:**
 ```json
 {"action": "delete_scene", "scene_index": 2}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "Scene deleted"}

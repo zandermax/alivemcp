@@ -10,12 +10,10 @@
 
 **Live mapping:**
 - Sets `song.tracks[track_index].name = name`.
-
 **Example request:**
 ```json
 {"action":"rename_track","track_index":1,"name":"Bass"}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "Track renamed", "name": "Bass"}

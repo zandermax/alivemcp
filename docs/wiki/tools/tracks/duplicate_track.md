@@ -9,12 +9,10 @@
 
 **Live mapping:**
 - Calls `song.duplicate_track(track_index)` which creates a copy next to the source.
-
 **Example request:**
 ```json
 {"action":"duplicate_track","track_index":2}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "Track duplicated", "new_index": 3}

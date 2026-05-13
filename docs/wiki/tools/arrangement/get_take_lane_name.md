@@ -10,12 +10,10 @@
 
 **Live mapping:**
 - Reads `track.take_lanes[lane_index].name` when available.
-
 **Example request:**
 ```json
 {"action":"get_take_lane_name","track_index":1,"lane_index":0}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "name":"Take 1"}

@@ -10,12 +10,10 @@
 
 **Live mapping:**
 - Reads `device.class_name` and returns it as a string when available.
-
 **Example request:**
 ```json
 {"action":"get_device_class_name","track_index":1,"device_index":0}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "class_name": "OriginalSimpler"}

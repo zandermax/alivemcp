@@ -12,9 +12,13 @@ Parameters:
 Returns:
 - `ok`: boolean
 - `follow_action_time`: float (new value)
-
-Example request:
+**Example request:**
 ```json
 {"action": "set_follow_action_time", "track_index": 0, "clip_index": 0, "time_in_bars": 1.0}
 ```
+**Example response:**
+```json
+{"ok": true}
+```
+
 

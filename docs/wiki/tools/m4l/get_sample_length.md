@@ -9,13 +9,16 @@
 - `device_id` (int or string) — identifies the device containing the sample
 
 **Live mapping:** Queries the device sample or Simpler API to retrieve sample length.
-
 **Example request:**
 ```json
 {"action":"get_sample_length","track_index":1,"device_id":0}
 ```
-
 **Example response:**
+```json
+{"ok": true}
+```
+
+**Example request:**
 ```json
 {"ok": true, "length_seconds": 3.25}
 ```

@@ -11,12 +11,10 @@
 
 **Live mapping:**
 - Acknowledges preset load intent; actual preset loading requires the Live browser API.
-
 **Example request:**
 ```json
 {"action":"set_device_preset","track_index":1,"device_index":0,"preset_index":2}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "Device preset loading requires browser API", "preset_index": 2}

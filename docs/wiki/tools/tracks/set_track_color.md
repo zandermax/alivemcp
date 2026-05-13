@@ -10,12 +10,10 @@
 
 **Live mapping:**
 - Sets `track.color = color_index` when `track` supports `color`.
-
 **Example request:**
 ```json
 {"action":"set_track_color","track_index":1,"color_index":5}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "Track color set", "color": 5}

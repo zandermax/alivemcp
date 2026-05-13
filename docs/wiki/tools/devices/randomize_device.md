@@ -10,12 +10,10 @@
 
 **Live mapping:**
 - Randomizes enabled, non-quantized parameters using uniform random sampling between `param.min` and `param.max`.
-
 **Example request:**
 ```json
 {"action":"randomize_device","track_index":1,"device_index":0}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "track_index":1, "device_index":0, "device_name":"Synth","randomized_parameters":7}

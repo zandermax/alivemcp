@@ -9,12 +9,10 @@
 
 **Live mapping:**
 - Iterates `track.arrangement_clips` returning name, start_time, end_time, length.
-
 **Example request:**
 ```json
 {"action":"get_arrangement_clips","track_index":1}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "count":2, "clips":[{"name":"Intro","start_time":0.0,"end_time":16.0,"length":16.0}]}

@@ -10,12 +10,10 @@
 
 **Live mapping:**
 - Calls `c_instance.song().view.select_device(device)` to focus the device in Live's UI.
-
 **Example request:**
 ```json
 {"action":"show_plugin_window","track_index":1,"device_index":0}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "Plugin window shown", "device_name": "Reverb"}

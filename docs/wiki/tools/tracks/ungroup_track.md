@@ -9,12 +9,10 @@
 
 **Live mapping:**
 - Validates index and verifies `track.is_foldable`; returns a message indicating ungroup requested; may require manual steps.
-
 **Example request:**
 ```json
 {"action": "ungroup_track", "group_track_index": 4}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "Ungroup operation requested (may require manual implementation)", "group_track_index": 4}

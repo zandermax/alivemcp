@@ -9,12 +9,10 @@
 
 **Live mapping:**
 - Validates index bounds and calls `self.song.scenes[scene_index].fire()`.
-
 **Example request:**
 ```json
 {"action": "launch_scene", "scene_index": 0}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "Scene launched", "scene_index": 0}

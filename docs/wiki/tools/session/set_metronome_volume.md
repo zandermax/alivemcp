@@ -9,12 +9,10 @@
 
 **Live mapping:**
 - Writes `song.metronome = volume` when the host exposes metronome volume.
-
 **Example request:**
 ```json
 {"action":"set_metronome_volume","volume":0.7}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "volume": 0.7}

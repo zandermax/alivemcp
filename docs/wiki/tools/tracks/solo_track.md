@@ -10,12 +10,10 @@
 
 **Live mapping:**
 - Sets `song.tracks[track_index].solo = solo`.
-
 **Example request:**
 ```json
 {"action":"solo_track","track_index":1,"solo":true}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "Track soloed"}

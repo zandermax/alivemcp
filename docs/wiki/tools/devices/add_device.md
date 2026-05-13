@@ -10,12 +10,10 @@
 
 **Live mapping:**
 - Currently returns a request acknowledgement; adding devices via the Live browser requires the browser API and is not fully implemented.
-
 **Example request:**
 ```json
 {"action":"add_device","track_index":1,"device_name":"Compressor"}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "Device add requested (browser API required for full implementation)", "device_name": "Compressor"}

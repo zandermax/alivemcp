@@ -12,9 +12,13 @@ Parameters:
 Returns:
 - `ok`: boolean
 - `muted`: boolean (new value)
-
-Example request:
+**Example request:**
 ```json
 {"action": "set_clip_muted", "track_index": 0, "clip_index": 0, "muted": true}
 ```
+**Example response:**
+```json
+{"ok": true}
+```
+
 

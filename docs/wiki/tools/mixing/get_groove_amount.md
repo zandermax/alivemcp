@@ -9,12 +9,10 @@
 
 **Live mapping:**
 - Reads `song.groove_amount` when available.
-
 **Example request:**
 ```json
 {"action":"get_groove_amount"}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "groove_amount": 0.3}

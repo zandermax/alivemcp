@@ -9,12 +9,10 @@
 
 **Live mapping:**
 - Writes `song.back_to_arranger = bool(enabled)`.
-
 **Example request:**
 ```json
 {"action":"set_back_to_arranger","enabled":true}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "back_to_arranger": true}

@@ -9,12 +9,10 @@
 
 **Live mapping:**
 - Iterates `song.tracks[track_index].devices` and reads `device.name`, `device.class_name`, `device.is_active`, and `len(device.parameters)`.
-
 **Example request:**
 ```json
 {"action":"get_track_devices","track_index":1}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "track_index": 1, "devices": [{"name":"Compressor","class_name":"Compressor2","is_active":true,"num_parameters":12}], "count":1}

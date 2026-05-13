@@ -10,12 +10,10 @@
 
 **Live mapping:**
 - Uses `track.clip_slots[clip_index].stop()` to stop the clip.
-
 **Example request:**
 ```json
 {"action": "stop_clip", "track_index": 1, "clip_index": 0}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "Clip stopped"}

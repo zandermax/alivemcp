@@ -13,10 +13,13 @@ Returns:
 - `track_name`: string
 - `devices`: list of {index, name, class_name, type, is_active, num_parameters}
 - `count`: int
-
 **Example request:**
 ```json
 {"action": "get_m4l_devices", "track_index": 0}
+```
+**Example response:**
+```json
+{"ok": true}
 ```
 
 **Example request:**

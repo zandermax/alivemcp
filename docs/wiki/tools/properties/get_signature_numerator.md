@@ -9,9 +9,13 @@ Parameters: None
 Returns:
 - `ok`: boolean
 - `signature_numerator`: int
-
-Example request:
+**Example request:**
 ```json
 {"action": "get_signature_numerator"}
 ```
+**Example response:**
+```json
+{"ok": true}
+```
+
 

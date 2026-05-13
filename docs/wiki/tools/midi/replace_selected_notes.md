@@ -11,12 +11,10 @@
 
 **Live mapping:**
 - Builds a tuple of note tuples and calls `clip.replace_selected_notes(tuple(note_tuples))`.
-
 **Example request:**
 ```json
 {"action": "replace_selected_notes", "track_index": 1, "clip_index": 0, "notes": [{"pitch": 64, "start": 0.0, "duration": 1.0, "velocity": 110, "muted": false}]}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "Selected notes replaced", "note_count": 1}

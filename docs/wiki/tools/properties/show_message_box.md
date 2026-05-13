@@ -12,9 +12,13 @@ Returns:
 - `ok`: boolean
 - `message`: status message
 - `button_pressed`: integer (button id if available)
-
-Example request:
+**Example request:**
 ```json
 {"action": "show_message_box", "message": "Hello", "title": "Note"}
 ```
+**Example response:**
+```json
+{"ok": true}
+```
+
 

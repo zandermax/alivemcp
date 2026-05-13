@@ -10,12 +10,10 @@
 
 **Live mapping:**
 - Iterates `device.parameters` and returns `index`, `name`, `value`, `min`, `max`, `is_quantized`, and `is_enabled` where available.
-
 **Example request:**
 ```json
 {"action":"get_device_parameters","track_index":1,"device_index":0}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "track_index":1, "device_index":0, "parameters": [{"index":0,"name":"Gain","value":0.5,"min":0.0,"max":1.0}], "count":1}

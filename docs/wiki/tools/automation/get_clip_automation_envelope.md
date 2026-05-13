@@ -12,12 +12,10 @@
 
 **Live mapping:**
 - Uses `clip.automation_envelope(param)` to obtain the envelope object when available.
-
 **Example request:**
 ```json
 {"action":"get_clip_automation_envelope","track_index":0,"clip_index":0,"device_index":0,"param_index":1}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "has_envelope": true, "parameter_name":"Filter Frequency","device_name":"AutoFilter"}

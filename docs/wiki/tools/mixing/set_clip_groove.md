@@ -11,12 +11,10 @@
 
 **Live mapping:**
 - Sets `clip.groove = song.groove_pool[groove_index]` when the clip and groove pool are available.
-
 **Example request:**
 ```json
 {"action":"set_clip_groove","track_index":1,"clip_index":0,"groove_index":2}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "Groove set", "groove_index": 2}

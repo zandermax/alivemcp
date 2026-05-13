@@ -10,12 +10,10 @@
 
 **Live mapping:**
 - Writes `track.mixer_device.volume.value = volume`.
-
 **Example request:**
 ```json
 {"action":"set_track_volume","track_index":1,"volume":0.8}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "Track volume set", "track_index": 1, "volume": 0.8}

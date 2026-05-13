@@ -9,12 +9,10 @@
 
 **Live mapping:**
 - If `track.delay` exists, returns `float(track.delay)`.
-
 **Example request:**
 ```json
 {"action": "get_track_delay", "track_index": 1}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "delay": 0.0}

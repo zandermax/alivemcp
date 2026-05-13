@@ -19,9 +19,13 @@ Returns:
 - `max`: float
 - `is_quantized`: boolean
 - `value_items`: list
-
-Example request:
+**Example request:**
 ```json
 {"action": "get_master_device_param_info", "device_index": 0, "param_name": "Threshold"}
 ```
+**Example response:**
+```json
+{"ok": true}
+```
+
 

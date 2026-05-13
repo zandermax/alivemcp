@@ -10,12 +10,10 @@
 
 **Live mapping:**
 - Writes `track.mixer_device.panning.value = pan`.
-
 **Example request:**
 ```json
 {"action":"set_track_pan","track_index":1,"pan":0.0}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "Track pan set", "track_index": 1, "pan": 0.0}

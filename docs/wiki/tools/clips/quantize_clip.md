@@ -13,9 +13,13 @@ Returns:
 - `ok`: boolean
 - `message`: status
 - `quantize_to`: supplied value
-
-Example request:
+**Example request:**
 ```json
 {"action": "quantize_clip", "track_index": 0, "clip_index": 0, "quantize_to": 0.25}
 ```
+**Example response:**
+```json
+{"ok": true}
+```
+
 

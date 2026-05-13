@@ -9,9 +9,13 @@ Parameters: None
 Returns:
 - `ok`: boolean
 - `signature_denominator`: int
-
-Example request:
+**Example request:**
 ```json
 {"action": "get_signature_denominator"}
 ```
+**Example response:**
+```json
+{"ok": true}
+```
+
 

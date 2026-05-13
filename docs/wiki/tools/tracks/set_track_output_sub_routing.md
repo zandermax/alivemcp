@@ -10,12 +10,10 @@
 
 **Live mapping:**
 - If `track.output_sub_routing` is present, attempts to set it or returns a message describing limitations.
-
 **Example request:**
 ```json
 {"action": "set_track_output_sub_routing", "track_index": 1, "sub_routing": "Mono"}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "Output sub-routing setting is limited in LiveAPI", "requested_sub_routing": "Mono"}

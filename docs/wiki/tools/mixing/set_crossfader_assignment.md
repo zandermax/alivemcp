@@ -10,12 +10,10 @@
 
 **Live mapping:**
 - Writes `track.mixer_device.crossfade_assign = assignment` when supported.
-
 **Example request:**
 ```json
 {"action":"set_crossfader_assignment","track_index":1,"assignment":1}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "track_index":1, "crossfader_assignment":1}

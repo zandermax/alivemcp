@@ -14,9 +14,13 @@ Returns:
 
 Notes:
 - Returns an error when scene `tempo` property is unavailable.
-
-Example request:
+**Example request:**
 ```json
 {"action": "get_scene_tempo", "scene_index": 0}
 ```
+**Example response:**
+```json
+{"ok": true}
+```
+
 

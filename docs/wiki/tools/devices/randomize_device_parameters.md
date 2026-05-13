@@ -10,12 +10,10 @@
 
 **Live mapping:**
 - Iterates `device.parameters` and assigns random values within `param.min` and `param.max` for enabled, non-quantized parameters.
-
 **Example request:**
 ```json
 {"action":"randomize_device_parameters","track_index":1,"device_index":0}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "track_index":1, "device_index":0, "device_name":"Filter","randomized_parameters":5}

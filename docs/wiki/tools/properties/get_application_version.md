@@ -13,9 +13,13 @@ Returns:
 - `bugfix_version`: int
 - `build_id`: string (optional)
 - `variant`: string (optional)
-
-Example request:
+**Example request:**
 ```json
 {"action": "get_application_version"}
 ```
+**Example response:**
+```json
+{"ok": true}
+```
+
 

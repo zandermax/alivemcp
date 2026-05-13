@@ -22,8 +22,11 @@
 ```json
 {"action":"set_device_parameter_by_name","track_index":1,"device_index":0,"param_name":"Mode","value":"Classic"}
 ```
-
-**Example response:**
+**Example request:**
+```json
+{"action": "unknown"}
+```
+
 ```json
 {"ok": true, "name": "Drive", "value": 0.8, "display_value": "0.8"}
 ```

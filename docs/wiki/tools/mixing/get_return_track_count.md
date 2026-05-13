@@ -9,12 +9,10 @@
 
 **Live mapping:**
 - Returns `len(song.return_tracks)`.
-
 **Example request:**
 ```json
 {"action":"get_return_track_count"}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "count": 2}

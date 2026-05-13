@@ -9,12 +9,10 @@
 
 **Live mapping:**
 - Reads many `track` properties including `name`, `color`, `is_foldable`, `mute`, `solo`, `arm`, `has_midi_input`, `has_audio_input`, `mixer_device.volume.value`, `mixer_device.panning.value`, number of devices and clips.
-
 **Example request:**
 ```json
 {"action":"get_track_info","track_index":1}
 ```
-
 **Example response:**
 ```json
 {

@@ -9,12 +9,10 @@
 
 **Live mapping:**
 - Validates index bounds and reads `scene.name`, `scene.color` (if available), `scene.tempo` (if available), and `scene.time_signature_numerator` (if available).
-
 **Example request:**
 ```json
 {"action": "get_scene_info", "scene_index": 0}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "scene_index": 0, "name": "Intro", "color": null, "tempo": null, "time_signature_numerator": null}

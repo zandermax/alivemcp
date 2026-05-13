@@ -10,12 +10,10 @@
 
 **Live mapping:**
 - If `track.input_sub_routing` is present, attempts to set it or returns a message describing limitations.
-
 **Example request:**
 ```json
 {"action": "set_track_input_sub_routing", "track_index": 1, "sub_routing": "L/R"}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "Input sub-routing setting is limited in LiveAPI", "requested_sub_routing": "L/R"}

@@ -9,12 +9,10 @@
 
 **Live mapping:**
 - Writes `song.master_track.mixer_device.panning.value = pan` when available.
-
 **Example request:**
 ```json
 {"action":"set_master_pan","pan":0.0}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "pan": 0.0}

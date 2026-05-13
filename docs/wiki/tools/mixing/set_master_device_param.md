@@ -14,9 +14,13 @@ Returns:
 - `device_name`: string
 - `param_name`: string
 - `value`: float
-
-Example request:
+**Example request:**
 ```json
 {"action": "set_master_device_param", "device_index": 0, "param_index": 1, "value": 0.5}
 ```
+**Example response:**
+```json
+{"ok": true}
+```
+
 

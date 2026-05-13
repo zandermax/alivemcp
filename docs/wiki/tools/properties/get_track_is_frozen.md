@@ -10,9 +10,13 @@ Parameters:
 Returns:
 - `ok`: boolean
 - `is_frozen`: boolean (when available)
-
-Example request:
+**Example request:**
 ```json
 {"action": "get_track_is_frozen", "track_index": 1}
 ```
+**Example response:**
+```json
+{"ok": true}
+```
+
 

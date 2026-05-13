@@ -10,12 +10,10 @@
 
 **Live mapping:**
 - Reads `device.type` and returns the integer value representing the device category.
-
 **Example request:**
 ```json
 {"action":"get_device_type","track_index":1,"device_index":0}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "type": 1}

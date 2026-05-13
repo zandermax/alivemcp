@@ -12,12 +12,10 @@
 
 **Live mapping:**
 - Sets `chain.solo = solo` when `chain` exposes a `solo` attribute.
-
 **Example request:**
 ```json
 {"action":"set_chain_solo","track_index":1,"device_index":0,"chain_index":0,"solo":true}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "chain_index":0, "solo": true}

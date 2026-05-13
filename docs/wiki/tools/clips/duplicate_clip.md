@@ -10,12 +10,10 @@
 
 **Live mapping:**
 - Uses `clip_slot.duplicate_clip_to(dest_slot)` where `dest_slot` is the next empty `track.clip_slots` entry.
-
 **Example request:**
 ```json
 {"action": "duplicate_clip", "track_index": 1, "clip_index": 0}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "Clip duplicated", "source_clip_index": 0, "destination_clip_index": 2}

@@ -10,12 +10,10 @@
 
 **Live mapping:**
 - Calls `track.create_take_lane()` and optionally sets its `name`.
-
 **Example request:**
 ```json
 {"action":"create_take_lane","track_index":1,"name":"Comp A"}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message":"Take lane created","name":"Comp A"}

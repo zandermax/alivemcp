@@ -9,12 +9,10 @@
 
 **Live mapping:**
 - Writes `song.loop = bool(enabled)`.
-
 **Example request:**
 ```json
 {"action":"set_loop_enabled","enabled":true}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "loop_enabled": true}

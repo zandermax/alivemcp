@@ -10,12 +10,10 @@
 
 **Live mapping:**
 - If `track.can_be_armed`, sets `track.current_monitoring_state = int(state)` and returns the new state.
-
 **Example request:**
 ```json
 {"action": "set_track_current_monitoring_state", "track_index": 1, "state": 1}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "monitoring_state": 1}

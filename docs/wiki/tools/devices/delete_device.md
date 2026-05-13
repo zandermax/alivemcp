@@ -10,12 +10,10 @@
 
 **Live mapping:**
 - Calls `track.delete_device(device_index)` to remove the device.
-
 **Example request:**
 ```json
 {"action":"delete_device","track_index":1,"device_index":0}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "Device deleted"}

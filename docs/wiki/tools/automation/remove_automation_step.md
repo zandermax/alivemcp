@@ -13,12 +13,10 @@
 
 **Live mapping:**
 - Uses `clip.automation_envelope(param).remove_step(time)` when supported.
-
 **Example request:**
 ```json
 {"action":"remove_automation_step","track_index":0,"clip_index":0,"device_index":0,"param_index":1,"time":1.0}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "time":1.0, "parameter_name":"Gain","message":"Automation step removed"}

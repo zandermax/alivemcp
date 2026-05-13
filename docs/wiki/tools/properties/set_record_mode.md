@@ -10,9 +10,13 @@ Parameters:
 Returns:
 - `ok`: boolean
 - `record_mode`: int (new value when set)
-
-Example request:
+**Example request:**
 ```json
 {"action": "set_record_mode", "mode": 1}
 ```
+**Example response:**
+```json
+{"ok": true}
+```
+
 

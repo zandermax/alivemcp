@@ -9,12 +9,10 @@
 
 **Live mapping:**
 - Iterates `self.song.tracks` and returns the first index where `needle in track.name.lower()`.
-
 **Example request:**
 ```json
 {"action": "get_track_index_by_name", "name": "bass"}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "track_index": 2, "name": "Bass"}

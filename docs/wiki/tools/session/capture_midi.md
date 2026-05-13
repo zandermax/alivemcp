@@ -9,12 +9,10 @@
 
 **Live mapping:**
 - Calls `song.capture_midi()`; behavior depends on host capabilities.
-
 **Example request:**
 ```json
 {"action":"capture_midi"}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "MIDI captured"}

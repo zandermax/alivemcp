@@ -10,12 +10,10 @@
 
 **Live mapping:**
 - Currently returns success; explicit hiding of plugin windows is not implemented.
-
 **Example request:**
 ```json
 {"action":"hide_plugin_window","track_index":1,"device_index":0}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "Plugin window hidden"}

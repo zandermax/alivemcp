@@ -12,9 +12,13 @@ Parameters:
 Returns:
 - `ok`: boolean
 - `color_index` or `color`: int (new value)
-
-Example request:
+**Example request:**
 ```json
 {"action": "set_clip_color", "track_index": 0, "clip_index": 0, "color_index": 5}
 ```
+**Example response:**
+```json
+{"ok": true}
+```
+
 

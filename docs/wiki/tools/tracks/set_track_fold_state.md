@@ -10,12 +10,10 @@
 
 **Live mapping:**
 - If `track.is_foldable`, sets `track.fold_state = bool(folded)`.
-
 **Example request:**
 ```json
 {"action": "set_track_fold_state", "track_index": 1, "folded": true}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "fold_state": true}

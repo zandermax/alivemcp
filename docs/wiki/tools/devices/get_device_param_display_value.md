@@ -11,12 +11,10 @@
 
 **Live mapping:**
 - Reads `param.display_value` (Live 12+) when available, falls back to `str(param)` and returns `raw_value`.
-
 **Example request:**
 ```json
 {"action": "get_device_param_display_value", "track_index": 1, "device_index": 0, "param_index": 2}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "display_value": "-6.0 dB","raw_value": 0.5, "name": "Gain"}

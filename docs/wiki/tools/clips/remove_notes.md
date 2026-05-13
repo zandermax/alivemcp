@@ -14,12 +14,10 @@
 
 **Live mapping:**
 - Calls `clip.remove_notes(time_from, pitch_from, time_span, pitch_span)` on the Live clip object.
-
 **Example request:**
 ```json
 {"action":"remove_notes","track_index":1,"clip_index":0,"pitch_from":60,"pitch_to":60}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "Notes removed"}

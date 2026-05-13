@@ -10,12 +10,10 @@
 
 **Live mapping:**
 - Iterates `lane.clips` and returns basic metadata (name, length, is_midi).
-
 **Example request:**
 ```json
 {"action":"get_clips_in_take_lane","track_index":1,"lane_index":0}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "count":1, "clips":[{"name":"Take A","length":4.0,"is_midi":false}]}

@@ -11,12 +11,10 @@
 
 **Live mapping:**
 - Reads `device.chains[chain_index].devices` and returns `name`, `class_name`, and `is_active` for each device.
-
 **Example request:**
 ```json
 {"action":"get_chain_devices","track_index":1,"device_index":0,"chain_index":0}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "chain_index":0, "devices":[{"name":"Synth","class_name":"Operator","is_active":true}], "count":1}

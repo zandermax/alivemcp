@@ -14,9 +14,13 @@ Returns:
 
 Notes:
 - Returns an error when the clip slot has no clip or the property is unavailable.
-
-Example request:
+**Example request:**
 ```json
 {"action": "get_clip_start_time", "track_index": 0, "clip_index": 0}
 ```
+**Example response:**
+```json
+{"ok": true}
+```
+
 

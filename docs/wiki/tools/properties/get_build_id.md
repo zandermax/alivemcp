@@ -12,9 +12,13 @@ Returns:
 
 Notes:
 - Requires Live 12+; the tool checks availability at runtime and returns an error if unavailable.
-
-Example request:
+**Example request:**
 ```json
 {"action": "get_build_id"}
 ```
+**Example response:**
+```json
+{"ok": true}
+```
+
 

@@ -9,12 +9,10 @@
 
 **Live mapping:**
 - Reads `song.session_automation_record`.
-
 **Example request:**
 ```json
 {"action":"get_session_automation_record"}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "session_automation_record": false}

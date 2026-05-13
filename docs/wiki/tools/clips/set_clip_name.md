@@ -11,12 +11,10 @@
 
 **Live mapping:**
 - Sets `clip_slot.clip.name = name` on the Live Object Model.
-
 **Example request:**
 ```json
 {"action": "set_clip_name", "track_index": 1, "clip_index": 0, "name": "New Name"}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "message": "Clip renamed", "name": "New Name"}

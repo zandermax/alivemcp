@@ -11,12 +11,10 @@
 - `warp_markers` (optional list) — when provided, applies markers after enabling warping
 
 **Live mapping:** Sets `clip.warping` (or the appropriate Live API property). If `warp_markers` provided, updates the clip's warp markers accordingly.
-
 **Example request:**
 ```json
 {"action":"set_clip_warping","track_index":1,"clip_index":0,"warping":true}
 ```
-
 **Example response:**
 ```json
 {"ok": true, "warping": true}
