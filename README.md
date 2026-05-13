@@ -2,7 +2,6 @@
 
 Control Ableton Live with AI. ALiveMCP exposes **232 LiveAPI tools** as a [Model Context Protocol](https://modelcontextprotocol.io/) server — plug it into Claude Code, Claude Desktop, or any MCP-compatible client and let AI agents compose music, manage tracks, edit MIDI, and control devices directly. See the wiki index for a navigable per-tool list: [docs/wiki/INDEX.md](docs/wiki/INDEX.md)
 
-[![CI](https://github.com/zandermax/alivemcp/workflows/CI/badge.svg)](https://github.com/zandermax/alivemcp/actions)
 [![License: GPL-3.0](https://img.shields.io/badge/License-GPL%203.0-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Ableton Live](https://img.shields.io/badge/Ableton%20Live-11%2F12-blue.svg)](https://www.ableton.com/)
 

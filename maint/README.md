@@ -18,7 +18,7 @@ Exit codes
 - `1` — Mismatch found (missing or extra pages)
 - `2` — Repo layout error (missing registry or docs folder)
 
-CI / Agents
+Automation / Verifier
 
-CI jobs and agents must run this verifier before merging documentation changes. The job should
-fail if the script exits with non-zero. Keep `docs/wiki/tools` and `AVAILABLE_TOOLS` in sync.
+Maintainers and automation should run this verifier before merging documentation changes. Run the
+script locally and ensure it exits `0`. Keep `docs/wiki/tools` and `AVAILABLE_TOOLS` in sync.

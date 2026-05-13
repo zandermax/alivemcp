@@ -1,4 +1,4 @@
-.PHONY: help install-dev lint lint-fix format format-check test test-cov check-length mock ui ci
+.PHONY: help install-dev lint lint-fix format format-check test test-cov check-length mock ui
 
 VENV ?= .venv
 
@@ -23,7 +23,7 @@ help:
 	@echo "  mock            Start mock Ableton server on port 9004"
 	@echo "  ui              Start web dashboard on port 8080"
 	@echo ""
-	@echo "  ci              Run all checks (lint, format-check, test, check-length)"
+
 
 install-dev:
 	$(VENV)/bin/python -m pip install -r requirements-dev.txt
@@ -67,4 +67,5 @@ mock:
 ui:
 	uvicorn examples.ui.server:app --port 8080
 
-ci: install-dev lint format-check test check-length
+all:
+	install-dev lint format-check test check-length

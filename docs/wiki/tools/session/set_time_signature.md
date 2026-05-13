@@ -14,11 +14,11 @@
 **Example request:**
 
 ```json
-{"action":"set_time_signature","numerator":4,"denominator":4}
+{ "action": "set_time_signature", "numerator": 4, "denominator": 4 }
 ```
 
 **Example response:**
 
 ```json
-{"ok": true, "numerator":4, "denominator":4, "message":"Time signature set"}
+{ "ok": true, "numerator": 4, "denominator": 4, "message": "Time signature set" }
 ```

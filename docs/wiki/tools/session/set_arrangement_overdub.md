@@ -9,16 +9,15 @@
 
 **Live mapping:**
 - Writes `song.arrangement_overdub = bool(enabled)`.
-**Example request:**
-```json
-{"action":"set_arrangement_overdub","enabled":true}
-```
-**Example response:**
-```json
-{"ok": true}
-```
 
 **Example request:**
+
 ```json
-{"ok": true, "arrangement_overdub": true}
+{ "action": "set_arrangement_overdub", "enabled": true }
+```
+
+**Example response:**
+
+```json
+{ "ok": true, "arrangement_overdub": true }
 ```

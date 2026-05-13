@@ -110,7 +110,7 @@ All common tasks are available via `make`. Run `make help` to see the full list.
 | `make check-length` | Check all `.py` files are ≤ 300 lines                   |
 | `make mock`         | Start mock Ableton server on port 9004                  |
 | `make ui`           | Start web dashboard on port 8080                        |
-| `make ci`           | Run all checks (lint, format-check, test, check-length) |
+| `make all`           | Run all checks (lint, format-check, test, check-length) |
 
 ### Testing Changes
 

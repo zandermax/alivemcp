@@ -13,11 +13,11 @@
 **Example request:**
 
 ```json
-{"action":"start_playback"}
+{ "action": "start_playback" }
 ```
 
 **Example response:**
 
 ```json
-{"ok": true, "message": "Playback started"}
+{ "ok": true, "message": "Playback started" }
 ```

@@ -13,11 +13,11 @@
 **Example request:**
 
 ```json
-{"action":"re_enable_automation"}
+{ "action": "re_enable_automation" }
 ```
 
 **Example response:**
 
 ```json
-{"ok": true, "message":"Automation re-enabled"}
+{ "ok": true, "message": "Automation re-enabled" }
 ```

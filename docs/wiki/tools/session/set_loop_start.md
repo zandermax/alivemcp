@@ -9,16 +9,15 @@
 
 **Live mapping:**
 - Writes `song.loop_start = position`.
-**Example request:**
-```json
-{"action":"set_loop_start","position":0.0}
-```
-**Example response:**
-```json
-{"ok": true}
-```
 
 **Example request:**
+
 ```json
-{"ok": true, "loop_start": 0.0}
+{ "action": "set_loop_start", "position": 0.0 }
+```
+
+**Example response:**
+
+```json
+{ "ok": true, "loop_start": 0.0 }
 ```
