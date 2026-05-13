@@ -1,3 +1,5 @@
+# is_max_device
+
 Is Max Device
 
 Check whether a device on a track is a Max for Live device.

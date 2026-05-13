@@ -1,3 +1,5 @@
+# set_clip_fade_out
+
 Set Clip Fade Out
 
 Set the fade-out time for an audio clip.

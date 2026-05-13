@@ -1,3 +1,5 @@
+# set_clip_follow_action
+
 Set Clip Follow Action
 
 Configure follow actions A/B and chance for a clip.

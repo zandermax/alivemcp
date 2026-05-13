@@ -1,3 +1,5 @@
+# get_master_device_params
+
 Get Master Device Params
 
 Get enriched parameter info for a device on the master track.

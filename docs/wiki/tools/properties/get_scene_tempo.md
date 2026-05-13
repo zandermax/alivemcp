@@ -1,3 +1,5 @@
+# get_scene_tempo
+
 Get Scene Tempo
 
 Get a scene's tempo override if set.

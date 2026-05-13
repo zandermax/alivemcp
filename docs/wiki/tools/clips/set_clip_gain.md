@@ -1,3 +1,5 @@
+# set_clip_gain
+
 Set Clip Gain
 
 Set clip gain/volume (audio clips only).

@@ -1,3 +1,5 @@
+# set_clip_ram_mode
+
 Set Clip RAM Mode
 
 Set whether an audio clip should be loaded into RAM or streamed from disk.

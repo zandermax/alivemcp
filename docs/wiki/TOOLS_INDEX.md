@@ -1,4 +1,4 @@
-# ALiveMCP Tools Index
+# TOOLS_INDEX
 
 Generated inventory of available tools exposed by ALiveMCP (from `ALiveMCP_Remote/tools/core/registry.py`).
 

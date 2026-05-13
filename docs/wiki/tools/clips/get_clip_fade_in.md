@@ -1,3 +1,5 @@
+# get_clip_fade_in
+
 Get Clip Fade In
 
 Get the fade-in time for an audio clip.

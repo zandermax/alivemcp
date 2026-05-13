@@ -1,3 +1,5 @@
+# get_clip_follow_action
+
 Get Clip Follow Action
 
 Return follow-action configuration for a clip (A/B actions, time, chances).

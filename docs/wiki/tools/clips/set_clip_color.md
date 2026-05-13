@@ -1,3 +1,5 @@
+# set_clip_color
+
 Set Clip Color
 
 Set a clip's color (index) when supported by the Ableton version.

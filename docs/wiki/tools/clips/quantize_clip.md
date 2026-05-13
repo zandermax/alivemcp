@@ -1,3 +1,5 @@
+# quantize_clip
+
 Quantize Clip
 
 Quantize a MIDI clip to a grid value.

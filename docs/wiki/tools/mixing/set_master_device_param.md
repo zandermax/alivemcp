@@ -1,3 +1,5 @@
+# set_master_device_param
+
 Set Master Device Param
 
 Set a device parameter on the master track by index.

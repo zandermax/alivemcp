@@ -1,3 +1,5 @@
+# get_clip_annotation
+
 Get Clip Annotation
 
 Get the annotation text for a clip.

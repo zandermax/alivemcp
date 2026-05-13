@@ -1,3 +1,5 @@
+# get_application_version
+
 Get Application Version
 
 Get full Ableton Live version information.

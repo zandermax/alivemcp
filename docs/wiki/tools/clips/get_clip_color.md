@@ -1,3 +1,5 @@
+# get_clip_color
+
 Get Clip Color
 
 Get a clip's color or color index.

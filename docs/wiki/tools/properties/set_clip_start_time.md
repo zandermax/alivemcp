@@ -1,3 +1,5 @@
+# set_clip_start_time
+
 Set Clip Start Time
 
 Set clip `start_time` for a clip in a track slot.

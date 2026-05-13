@@ -1,3 +1,5 @@
+# get_m4l_param_by_name
+
 Get M4L Param By Name
 
 Get a parameter value from a Max for Live device by parameter name.

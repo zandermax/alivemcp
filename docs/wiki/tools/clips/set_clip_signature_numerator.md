@@ -1,3 +1,5 @@
+# set_clip_signature_numerator
+
 Set Clip Signature Numerator
 
 Set the time signature numerator for a clip.

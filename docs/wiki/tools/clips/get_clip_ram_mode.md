@@ -1,3 +1,5 @@
+# get_clip_ram_mode
+
 Get Clip RAM Mode
 
 Get whether an audio clip is loaded in RAM (RAM mode) or streamed.

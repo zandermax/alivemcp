@@ -1,9 +1,7 @@
 
-# ALiveMCP Wiki
+# TOOL INDEX
 
 This repository-hosted wiki documents the ALiveMCP tool surface and maps each tool to the Ableton Live API operations it performs. The source files live in `docs/wiki/` so they render on GitHub and are usable with Fossil.
-
-Generated: 2026-05-13
 
 ## Quick links
 - Tools inventory: [TOOLS_INDEX](TOOLS_INDEX.md)
@@ -186,7 +184,6 @@ Generated: 2026-05-13
 -## MIDI
 - [send_midi_cc](tools/midi/send_midi_cc.md)
 - [send_program_change](tools/midi/send_program_change.md)
-- [add_notes](tools/clips/add_notes.md)
 - [get_clip_notes](tools/midi/get_clip_notes.md)
 - [remove_notes](tools/midi/remove_notes.md)
 - [select_all_notes](tools/midi/select_all_notes.md)

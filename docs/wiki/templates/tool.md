@@ -1,4 +1,5 @@
-<!-- Template for tool documentation -->
+# tool
+
 # {TOOL_NAME}
 
 **Domain:** {DOMAIN}

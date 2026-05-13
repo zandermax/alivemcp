@@ -1,3 +1,5 @@
+# set_clip_pitch_coarse
+
 Set Clip Pitch Coarse
 
 Transpose a clip by semitones (coarse pitch).

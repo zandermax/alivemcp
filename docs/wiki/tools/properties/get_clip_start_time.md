@@ -1,3 +1,5 @@
+# get_clip_start_time
+
 Get Clip Start Time
 
 Get clip `start_time` for a clip in a track slot (Live 12+ observable).

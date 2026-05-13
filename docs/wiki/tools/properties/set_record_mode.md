@@ -1,3 +1,5 @@
+# set_record_mode
+
 Set Record Mode
 
 Set global record mode (0=session, 1=arrangement) when supported.

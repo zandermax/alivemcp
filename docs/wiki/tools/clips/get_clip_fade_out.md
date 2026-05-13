@@ -1,3 +1,5 @@
+# get_clip_fade_out
+
 Get Clip Fade Out
 
 Get the fade-out time for an audio clip.

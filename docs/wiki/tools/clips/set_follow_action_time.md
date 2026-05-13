@@ -1,3 +1,5 @@
+# set_follow_action_time
+
 Set Follow Action Time
 
 Set the follow-action time for a clip (in bars).

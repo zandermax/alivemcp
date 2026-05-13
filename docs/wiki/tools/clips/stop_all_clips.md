@@ -1,3 +1,5 @@
+# stop_all_clips
+
 Stop All Clips
 
 Stop all playing clips in the song.

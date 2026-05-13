@@ -1,3 +1,5 @@
+# get_master_chain_summary
+
 Get Master Chain Summary
 
 Get all devices on the master track with enriched parameter lists.

@@ -1,3 +1,5 @@
+# set_clip_loop_end
+
 Set Clip Loop End
 
 Set the loop end position of a clip.

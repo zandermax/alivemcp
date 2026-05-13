@@ -1,3 +1,5 @@
+# get_signature_denominator
+
 Get Signature Denominator
 
 Get the global time signature denominator.

@@ -1,3 +1,5 @@
+# get_track_is_foldable
+
 Get Track Is Foldable
 
 Check whether a track is foldable (group track folding support).

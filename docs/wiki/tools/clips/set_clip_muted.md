@@ -1,3 +1,5 @@
+# set_clip_muted
+
 Set Clip Muted
 
 Mute or unmute a clip.

@@ -1,3 +1,5 @@
+# get_scene_is_empty
+
 Get Scene Is Empty
 
 Check whether a scene contains no clips.

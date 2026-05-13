@@ -1,3 +1,5 @@
+# set_clip_pitch_fine
+
 Set Clip Pitch Fine
 
 Fine-tune clip pitch in cents.

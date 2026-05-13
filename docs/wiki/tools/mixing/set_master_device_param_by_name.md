@@ -1,3 +1,5 @@
+# set_master_device_param_by_name
+
 Set Master Device Param By Name
 
 Set a master track device parameter by name. For quantized parameters pass a string matching a `value_item`.

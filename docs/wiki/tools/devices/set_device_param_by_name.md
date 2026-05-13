@@ -1,4 +1,4 @@
-# set_device_param_by_name (M4L alias)
+# set_device_param_by_name
 
 **Domain:** m4l / devices
 

@@ -1,3 +1,5 @@
+# set_clip_end_marker
+
 Set Clip End Marker
 
 Set the end marker position of a clip.

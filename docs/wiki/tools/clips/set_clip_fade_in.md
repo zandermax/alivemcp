@@ -1,3 +1,5 @@
+# set_clip_fade_in
+
 Set Clip Fade In
 
 Set the fade-in time for an audio clip.

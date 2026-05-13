@@ -1,3 +1,5 @@
+# set_clip_looping
+
 Set Clip Looping
 
 Enable or disable looping on a clip.

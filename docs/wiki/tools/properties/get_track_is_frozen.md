@@ -1,3 +1,5 @@
+# get_track_is_frozen
+
 Get Track Is Frozen
 
 Check whether a track is currently frozen.
