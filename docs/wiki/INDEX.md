@@ -20,10 +20,59 @@ Generated: 2026-05-13
 - [add_notes](tools/clips/add_notes.md)
 - [get_clip_notes](tools/clips/get_clip_notes.md)
 - [remove_notes](tools/clips/remove_notes.md)
+- [stop_all_clips](tools/clips/stop_all_clips.md)
+- [get_clip_annotation](tools/clips/get_clip_annotation.md)
+- [set_clip_annotation](tools/clips/set_clip_annotation.md)
+- [get_clip_fade_in](tools/clips/get_clip_fade_in.md)
+- [set_clip_fade_in](tools/clips/set_clip_fade_in.md)
+- [get_clip_fade_out](tools/clips/get_clip_fade_out.md)
+- [set_clip_fade_out](tools/clips/set_clip_fade_out.md)
+- [get_clip_ram_mode](tools/clips/get_clip_ram_mode.md)
+- [set_clip_ram_mode](tools/clips/set_clip_ram_mode.md)
+- [get_clip_follow_action](tools/clips/get_clip_follow_action.md)
+- [set_clip_follow_action](tools/clips/set_clip_follow_action.md)
+- [set_follow_action_time](tools/clips/set_follow_action_time.md)
+- [set_clip_looping](tools/clips/set_clip_looping.md)
+- [set_clip_loop_start](tools/clips/set_clip_loop_start.md)
+- [set_clip_loop_end](tools/clips/set_clip_loop_end.md)
+- [set_clip_start_marker](tools/clips/set_clip_start_marker.md)
+- [set_clip_end_marker](tools/clips/set_clip_end_marker.md)
+- [set_clip_muted](tools/clips/set_clip_muted.md)
+- [set_clip_gain](tools/clips/set_clip_gain.md)
+- [set_clip_pitch_coarse](tools/clips/set_clip_pitch_coarse.md)
+- [set_clip_pitch_fine](tools/clips/set_clip_pitch_fine.md)
+- [set_clip_signature_numerator](tools/clips/set_clip_signature_numerator.md)
+- [get_clip_color](tools/clips/get_clip_color.md)
+- [set_clip_color](tools/clips/set_clip_color.md)
+- [quantize_clip](tools/clips/quantize_clip.md)
+- [quantize_clip_pitch](tools/clips/quantize_clip_pitch.md)
 
 ## Tracks
 
 ## Mixing
+- [set_track_send](tools/mixing/set_track_send.md)
+- [get_track_sends](tools/mixing/get_track_sends.md)
+- [get_master_track_info](tools/mixing/get_master_track_info.md)
+- [set_master_volume](tools/mixing/set_master_volume.md)
+- [set_master_pan](tools/mixing/set_master_pan.md)
+- [get_master_devices](tools/mixing/get_master_devices.md)
+- [get_return_track_count](tools/mixing/get_return_track_count.md)
+- [get_return_track_info](tools/mixing/get_return_track_info.md)
+- [set_return_track_volume](tools/mixing/set_return_track_volume.md)
+- [get_crossfader_assignment](tools/mixing/get_crossfader_assignment.md)
+- [set_crossfader_assignment](tools/mixing/set_crossfader_assignment.md)
+- [get_crossfader_position](tools/mixing/get_crossfader_position.md)
+- [set_clip_groove_amount](tools/mixing/set_clip_groove_amount.md)
+- [get_groove_amount](tools/mixing/get_groove_amount.md)
+- [set_groove_amount](tools/mixing/set_groove_amount.md)
+- [get_groove_pool_grooves](tools/mixing/get_groove_pool_grooves.md)
+- [set_clip_groove](tools/mixing/set_clip_groove.md)
+- [get_master_device_params](tools/mixing/get_master_device_params.md)
+- [set_master_device_param](tools/mixing/set_master_device_param.md)
+- [set_master_device_param_by_name](tools/mixing/set_master_device_param_by_name.md)
+- [get_master_device_param_info](tools/mixing/get_master_device_param_info.md)
+- [get_master_chain_summary](tools/mixing/get_master_chain_summary.md)
+
 
 ## Devices
 - [get_project_root_folder](tools/arrangement/get_project_root_folder.md)
@@ -79,6 +128,22 @@ Generated: 2026-05-13
 - [get_device_class_name](tools/devices/get_device_class_name.md)
 - [get_device_type](tools/devices/get_device_type.md)
 - [get_rack_contents](tools/devices/get_rack_contents.md)
+
+## Properties
+- [get_build_id](tools/properties/get_build_id.md)
+- [get_variant](tools/properties/get_variant.md)
+- [show_message_box](tools/properties/show_message_box.md)
+- [get_application_version](tools/properties/get_application_version.md)
+- [get_clip_start_time](tools/properties/get_clip_start_time.md)
+- [set_clip_start_time](tools/properties/set_clip_start_time.md)
+- [get_track_is_foldable](tools/properties/get_track_is_foldable.md)
+- [get_track_is_frozen](tools/properties/get_track_is_frozen.md)
+- [get_scene_is_empty](tools/properties/get_scene_is_empty.md)
+- [get_scene_tempo](tools/properties/get_scene_tempo.md)
+- [get_arrangement_overdub](tools/properties/get_arrangement_overdub.md)
+- [set_record_mode](tools/properties/set_record_mode.md)
+- [get_signature_numerator](tools/properties/get_signature_numerator.md)
+- [get_signature_denominator](tools/properties/get_signature_denominator.md)
 
 ## Automation
 - [get_clip_automation_envelope](tools/automation/get_clip_automation_envelope.md)
@@ -189,4 +254,4 @@ Generated: 2026-05-13
 3. Commit and open a PR; include Live version notes if behaviour depends on Live 11 vs Live 12.
 
 ## Fossil/GitHub compatibility
-Keep content in the `docs/wiki/` tree (plain Markdown). Avoid GitHub-only wiki features. See [planning/wiki.instructions.md](planning/wiki.instructions.md) for more details.
+Keep content in the `docs/wiki/` tree (plain Markdown). Avoid GitHub-only wiki features.
