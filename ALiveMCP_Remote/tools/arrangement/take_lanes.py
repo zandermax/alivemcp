@@ -12,7 +12,16 @@ class TakeLanesMixin:
         """Get all take lanes for a track (Live 12+)
 
         See Also:
-            Wiki: docs/wiki/tools/get_take_lanes.md"""
+            Wiki: docs/wiki/tools/get_take_lanes.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             track = self.song.tracks[track_index]
 
@@ -35,7 +44,16 @@ class TakeLanesMixin:
         """Create new take lane on a track (Live 12+)
 
         See Also:
-            Wiki: docs/wiki/tools/create_take_lane.md"""
+            Wiki: docs/wiki/tools/create_take_lane.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             track = self.song.tracks[track_index]
 
@@ -58,7 +76,16 @@ class TakeLanesMixin:
         """Get take lane name (Live 12+)
 
         See Also:
-            Wiki: docs/wiki/tools/get_take_lane_name.md"""
+            Wiki: docs/wiki/tools/get_take_lane_name.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             track = self.song.tracks[track_index]
 
@@ -79,7 +106,16 @@ class TakeLanesMixin:
         """Set take lane name (Live 12+)
 
         See Also:
-            Wiki: docs/wiki/tools/set_take_lane_name.md"""
+            Wiki: docs/wiki/tools/set_take_lane_name.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             track = self.song.tracks[track_index]
 
@@ -99,7 +135,16 @@ class TakeLanesMixin:
         """Create audio clip in take lane (Live 12+)
 
         See Also:
-            Wiki: docs/wiki/tools/create_audio_clip_in_lane.md"""
+            Wiki: docs/wiki/tools/create_audio_clip_in_lane.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             track = self.song.tracks[track_index]
 
@@ -123,7 +168,16 @@ class TakeLanesMixin:
         """Create MIDI clip in take lane (Live 12+)
 
         See Also:
-            Wiki: docs/wiki/tools/create_midi_clip_in_lane.md"""
+            Wiki: docs/wiki/tools/create_midi_clip_in_lane.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             track = self.song.tracks[track_index]
 
@@ -147,7 +201,16 @@ class TakeLanesMixin:
         """Get all clips in a take lane (Live 12+)
 
         See Also:
-            Wiki: docs/wiki/tools/get_clips_in_take_lane.md"""
+            Wiki: docs/wiki/tools/get_clips_in_take_lane.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             track = self.song.tracks[track_index]
 
@@ -174,7 +237,16 @@ class TakeLanesMixin:
         """Delete a take lane (Live 12+)
 
         See Also:
-            Wiki: docs/wiki/tools/delete_take_lane.md"""
+            Wiki: docs/wiki/tools/delete_take_lane.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             track = self.song.tracks[track_index]
 

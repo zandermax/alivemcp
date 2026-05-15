@@ -1,3 +1,8 @@
+---
+name: "get_arrangement_overdub"
+summary: ""
+---
+
 # get_arrangement_overdub
 
 Get Arrangement Overdub
@@ -7,15 +12,17 @@ Return the arrangement overdub state.
 Parameters: None
 
 Returns:
+
 - `ok`: boolean
 - `arrangement_overdub`: boolean
-**Example request:**
+  **Example request:**
+
 ```json
-{"action": "get_arrangement_overdub"}
+{ "action": "get_arrangement_overdub" }
 ```
+
 **Example response:**
+
 ```json
-{"ok": true}
+{ "ok": true }
 ```
-
-

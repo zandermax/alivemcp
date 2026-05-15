@@ -1,3 +1,9 @@
+---
+name: "stop_recording"
+summary: ""
+Live mapping: "- Sets `song.record_mode = False`."
+---
+
 # stop_recording
 
 **Domain:** session
@@ -5,15 +11,20 @@
 **Summary:** Stop recording (clears `record_mode`).
 
 **Parameters:**
+
 - none
 
 **Live mapping:**
+
 - Sets `song.record_mode = False`.
-**Example request:**
+  **Example request:**
+
 ```json
-{"action":"stop_recording"}
+{ "action": "stop_recording" }
 ```
+
 **Example response:**
+
 ```json
-{"ok": true, "message": "Recording stopped"}
+{ "ok": true, "message": "Recording stopped" }
 ```

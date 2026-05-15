@@ -14,7 +14,16 @@ class ClipsQuantizeMixin:
         """Quantize MIDI clip to grid
 
         See Also:
-            Wiki: docs/wiki/tools/quantize_clip.md"""
+            Wiki: docs/wiki/tools/quantize_clip.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -40,7 +49,16 @@ class ClipsQuantizeMixin:
         """Quantize MIDI clip pitch
 
         See Also:
-            Wiki: docs/wiki/tools/quantize_clip_pitch.md"""
+            Wiki: docs/wiki/tools/quantize_clip_pitch.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}

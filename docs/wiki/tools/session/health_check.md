@@ -1,3 +1,9 @@
+---
+name: "health_check"
+summary: ""
+Live mapping: "No Live API calls; returns diagnostic info such as server version and uptime. Useful for monitoring."
+---
+
 # health_check
 
 **Domain:** session
@@ -8,13 +14,17 @@
 
 **Live mapping:** No Live API calls; returns diagnostic info such as server version and uptime. Useful for monitoring.
 **Example request:**
+
 ```json
-{"action": "health_check"}
+{ "action": "health_check" }
 ```
+
 **Example response:**
+
 ```json
-{"ok": true, "version": "0.0.0", "uptime_seconds": 123}
+{ "ok": true, "version": "0.0.0", "uptime_seconds": 123 }
 ```
 
 **See also:**
+
 - [ping](tools/session/ping.md)

@@ -1,3 +1,9 @@
+---
+name: "start_playback"
+summary: ""
+Live mapping: "- Calls `song.start_playing()` when playback isn't already running."
+---
+
 # start_playback
 
 **Domain:** session
@@ -5,9 +11,11 @@
 **Summary:** Start Ableton playback.
 
 **Parameters:**
+
 - none
 
 **Live mapping:**
+
 - Calls `song.start_playing()` when playback isn't already running.
 
 **Example request:**

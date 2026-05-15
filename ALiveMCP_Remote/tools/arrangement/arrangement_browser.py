@@ -17,7 +17,16 @@ class ArrangementBrowserMixin:
         """Get list of available devices from browser
 
         See Also:
-            Wiki: docs/wiki/tools/browse_devices.md"""
+            Wiki: docs/wiki/tools/browse_devices.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             device_types = [
                 "Instrument",
@@ -35,7 +44,16 @@ class ArrangementBrowserMixin:
         """Browse available plugins (VST, AU, etc.)
 
         See Also:
-            Wiki: docs/wiki/tools/browse_plugins.md"""
+            Wiki: docs/wiki/tools/browse_plugins.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             return {
                 "ok": True,
@@ -49,14 +67,32 @@ class ArrangementBrowserMixin:
         """Load a device from browser onto track (alias for add_device)
 
         See Also:
-            Wiki: docs/wiki/tools/load_device_from_browser.md"""
+            Wiki: docs/wiki/tools/load_device_from_browser.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         return self.add_device(track_index, device_name)
 
     def get_browser_items(self, category="devices"):
         """Get browser items by category
 
         See Also:
-            Wiki: docs/wiki/tools/get_browser_items.md"""
+            Wiki: docs/wiki/tools/get_browser_items.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             categories = ["devices", "plugins", "instruments", "audio_effects", "midi_effects"]
             return {

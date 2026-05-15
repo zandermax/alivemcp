@@ -15,7 +15,16 @@ class MixingGrooveMixin:
         """Set clip groove amount (0.0-1.0)
 
         See Also:
-            Wiki: docs/wiki/tools/set_clip_groove_amount.md"""
+            Wiki: docs/wiki/tools/set_clip_groove_amount.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -41,7 +50,16 @@ class MixingGrooveMixin:
         """Get song groove amount
 
         See Also:
-            Wiki: docs/wiki/tools/get_groove_amount.md"""
+            Wiki: docs/wiki/tools/get_groove_amount.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if hasattr(self.song, "groove_amount"):
                 return {"ok": True, "groove_amount": float(self.song.groove_amount)}
@@ -54,7 +72,16 @@ class MixingGrooveMixin:
         """Set song groove amount (0.0-1.0)
 
         See Also:
-            Wiki: docs/wiki/tools/set_groove_amount.md"""
+            Wiki: docs/wiki/tools/set_groove_amount.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if hasattr(self.song, "groove_amount"):
                 self.song.groove_amount = float(amount)
@@ -72,7 +99,16 @@ class MixingGrooveMixin:
         """Get list of grooves in groove pool
 
         See Also:
-            Wiki: docs/wiki/tools/get_groove_pool_grooves.md"""
+            Wiki: docs/wiki/tools/get_groove_pool_grooves.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             grooves = []
 
@@ -100,7 +136,16 @@ class MixingGrooveMixin:
         """Set groove for clip
 
         See Also:
-            Wiki: docs/wiki/tools/set_clip_groove.md"""
+            Wiki: docs/wiki/tools/set_clip_groove.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}

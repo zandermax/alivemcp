@@ -18,7 +18,15 @@ class DevicesExtrasMixin:
 
         See Also:
             Wiki: docs/wiki/tools/set_device_on_off.md
-        """
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -41,7 +49,15 @@ class DevicesExtrasMixin:
 
         See Also:
             Wiki: docs/wiki/tools/get_device_parameters.md
-        """
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -81,7 +97,15 @@ class DevicesExtrasMixin:
 
         See Also:
             Wiki: docs/wiki/tools/get_device_parameter_by_name.md
-        """
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -116,7 +140,15 @@ class DevicesExtrasMixin:
 
         See Also:
             Wiki: docs/wiki/tools/set_device_parameter_by_name.md
-        """
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -173,7 +205,15 @@ class DevicesExtrasMixin:
 
         See Also:
             Wiki: docs/wiki/tools/delete_device.md
-        """
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -192,7 +232,15 @@ class DevicesExtrasMixin:
 
         See Also:
             Wiki: docs/wiki/tools/randomize_device_parameters.md
-        """
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         return self.randomize_device(track_index, device_index)
 
     def randomize_device(self, track_index, device_index):
@@ -200,7 +248,15 @@ class DevicesExtrasMixin:
 
         See Also:
             Wiki: docs/wiki/tools/randomize_device.md
-        """
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}

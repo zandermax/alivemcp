@@ -12,7 +12,16 @@ class MixingMasterDevicesMixin:
         """Get all enriched parameter info for a device on the master track
 
         See Also:
-            Wiki: docs/wiki/tools/get_master_device_params.md"""
+            Wiki: docs/wiki/tools/get_master_device_params.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             master = self.song.master_track
             if device_index < 0 or device_index >= len(master.devices):
@@ -56,7 +65,16 @@ class MixingMasterDevicesMixin:
         """Set a parameter value on a device on the master track by index
 
         See Also:
-            Wiki: docs/wiki/tools/set_master_device_param.md"""
+            Wiki: docs/wiki/tools/set_master_device_param.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             master = self.song.master_track
             if device_index < 0 or device_index >= len(master.devices):
@@ -87,7 +105,16 @@ class MixingMasterDevicesMixin:
         Matches the first parameter whose name equals param_name.
 
         See Also:
-            Wiki: docs/wiki/tools/set_master_device_param_by_name.md"""
+            Wiki: docs/wiki/tools/set_master_device_param_by_name.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             master = self.song.master_track
             if device_index < 0 or device_index >= len(master.devices):
@@ -143,7 +170,16 @@ class MixingMasterDevicesMixin:
         Matches the first parameter whose name equals param_name.
 
         See Also:
-            Wiki: docs/wiki/tools/get_master_device_param_info.md"""
+            Wiki: docs/wiki/tools/get_master_device_param_info.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             master = self.song.master_track
             if device_index < 0 or device_index >= len(master.devices):
@@ -185,7 +221,16 @@ class MixingMasterDevicesMixin:
         """Get all devices on the master track with full enriched parameter lists
 
         See Also:
-            Wiki: docs/wiki/tools/get_master_chain_summary.md"""
+            Wiki: docs/wiki/tools/get_master_chain_summary.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             master = self.song.master_track
             devices = []

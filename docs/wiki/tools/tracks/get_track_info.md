@@ -1,3 +1,9 @@
+---
+name: "get_track_info"
+summary: ""
+Live mapping: "- Reads many `track` properties including `name`, `color`, `is_foldable`, `mute`, `solo`, `arm`, `has_midi_input`, `has_audio_input`, `mixer_device.volume.value`, `mixer_device.panning.value`, number of devices and clips."
+---
+
 # get_track_info
 
 **Domain:** tracks
@@ -5,15 +11,20 @@
 **Summary:** Retrieve comprehensive information about a track.
 
 **Parameters:**
+
 - `track_index` (int)
 
 **Live mapping:**
+
 - Reads many `track` properties including `name`, `color`, `is_foldable`, `mute`, `solo`, `arm`, `has_midi_input`, `has_audio_input`, `mixer_device.volume.value`, `mixer_device.panning.value`, number of devices and clips.
-**Example request:**
+  **Example request:**
+
 ```json
-{"action":"get_track_info","track_index":1}
+{ "action": "get_track_info", "track_index": 1 }
 ```
+
 **Example response:**
+
 ```json
 {
   "ok": true,
@@ -34,9 +45,11 @@
 ```
 
 **Notes:**
+
 - Some properties may not exist depending on Live version (use feature-detection).
 
 **See also:**
+
 - [set_track_color](tools/tracks/set_track_color.md)
 - [set_track_volume](tools/tracks/set_track_volume.md)
 - [set_track_pan](tools/tracks/set_track_pan.md)

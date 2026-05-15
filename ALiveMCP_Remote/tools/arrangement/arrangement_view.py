@@ -20,7 +20,16 @@ class ArrangementViewMixin:
         """Show clip/session view
 
         See Also:
-            Wiki: docs/wiki/tools/show_clip_view.md"""
+            Wiki: docs/wiki/tools/show_clip_view.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             app = Live.Application.get_application()
             if hasattr(app.view, "show_view"):
@@ -35,7 +44,16 @@ class ArrangementViewMixin:
         """Show arrangement view
 
         See Also:
-            Wiki: docs/wiki/tools/show_arrangement_view.md"""
+            Wiki: docs/wiki/tools/show_arrangement_view.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             app = Live.Application.get_application()
             if hasattr(app.view, "show_view"):
@@ -50,7 +68,16 @@ class ArrangementViewMixin:
         """Focus/highlight a specific track in the view
 
         See Also:
-            Wiki: docs/wiki/tools/focus_track.md"""
+            Wiki: docs/wiki/tools/focus_track.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -69,7 +96,16 @@ class ArrangementViewMixin:
         """Scroll arrangement view to specific time
 
         See Also:
-            Wiki: docs/wiki/tools/scroll_view_to_time.md"""
+            Wiki: docs/wiki/tools/scroll_view_to_time.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if hasattr(self.song.view, "visible_tracks"):
                 return {
@@ -90,7 +126,16 @@ class ArrangementViewMixin:
         """Enable or disable song loop
 
         See Also:
-            Wiki: docs/wiki/tools/set_loop_enabled.md"""
+            Wiki: docs/wiki/tools/set_loop_enabled.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             self.song.loop = bool(enabled)
             return {"ok": True, "loop_enabled": self.song.loop}
@@ -101,7 +146,16 @@ class ArrangementViewMixin:
         """Get current loop enabled state
 
         See Also:
-            Wiki: docs/wiki/tools/get_loop_enabled.md"""
+            Wiki: docs/wiki/tools/get_loop_enabled.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             return {
                 "ok": True,

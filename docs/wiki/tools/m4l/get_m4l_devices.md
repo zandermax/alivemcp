@@ -1,3 +1,8 @@
+---
+name: "get_m4l_devices"
+summary: ""
+---
+
 # get_m4l_devices
 
 Get M4L Devices
@@ -5,9 +10,11 @@ Get M4L Devices
 List all Max for Live devices on a track.
 
 Parameters:
+
 - `track_index` (int)
 
 Returns:
+
 - `ok`: boolean
 - `track_index`: int
 - `track_name`: string
@@ -17,11 +24,26 @@ Returns:
 **Example request:**
 
 ```json
-{"action": "get_m4l_devices", "track_index": 0}
+{ "action": "get_m4l_devices", "track_index": 0 }
 ```
 
 **Example response:**
 
 ```json
-{"ok": true, "track_index": 0, "track_name": "Track 1", "devices": [{"index": 0, "name": "MaxDevice", "class_name": "m4l.device", "type": "m4l", "is_active": true, "num_parameters": 3}], "count": 1}
+{
+  "ok": true,
+  "track_index": 0,
+  "track_name": "Track 1",
+  "devices": [
+    {
+      "index": 0,
+      "name": "MaxDevice",
+      "class_name": "m4l.device",
+      "type": "m4l",
+      "is_active": true,
+      "num_parameters": 3
+    }
+  ],
+  "count": 1
+}
 ```

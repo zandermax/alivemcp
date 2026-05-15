@@ -12,7 +12,16 @@ class ClipsCoreMixin:
         """Create a new MIDI clip
 
         See Also:
-            Wiki: docs/wiki/tools/create_midi_clip.md"""
+            Wiki: docs/wiki/tools/create_midi_clip.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -45,7 +54,16 @@ class ClipsCoreMixin:
         """Delete clip
 
         See Also:
-            Wiki: docs/wiki/tools/delete_clip.md"""
+            Wiki: docs/wiki/tools/delete_clip.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -67,7 +85,16 @@ class ClipsCoreMixin:
         """Duplicate clip to the next empty slot on the same track
 
         See Also:
-            Wiki: docs/wiki/tools/duplicate_clip.md"""
+            Wiki: docs/wiki/tools/duplicate_clip.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -103,7 +130,16 @@ class ClipsCoreMixin:
         """Launch clip
 
         See Also:
-            Wiki: docs/wiki/tools/launch_clip.md"""
+            Wiki: docs/wiki/tools/launch_clip.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -125,7 +161,16 @@ class ClipsCoreMixin:
         """Stop the clip in the specific slot
 
         See Also:
-            Wiki: docs/wiki/tools/stop_clip.md"""
+            Wiki: docs/wiki/tools/stop_clip.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -143,7 +188,16 @@ class ClipsCoreMixin:
         """Stop all playing clips
 
         See Also:
-            Wiki: docs/wiki/tools/stop_all_clips.md"""
+            Wiki: docs/wiki/tools/stop_all_clips.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             self.song.stop_all_clips()
             return {"ok": True, "message": "All clips stopped"}
@@ -154,7 +208,16 @@ class ClipsCoreMixin:
         """Get clip information
 
         See Also:
-            Wiki: docs/wiki/tools/get_clip_info.md"""
+            Wiki: docs/wiki/tools/get_clip_info.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -187,7 +250,16 @@ class ClipsCoreMixin:
         """Set clip name
 
         See Also:
-            Wiki: docs/wiki/tools/set_clip_name.md"""
+            Wiki: docs/wiki/tools/set_clip_name.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}

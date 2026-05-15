@@ -1,3 +1,9 @@
+---
+name: "get_session_record"
+summary: ""
+Live mapping: "- Reads `song.session_record`."
+---
+
 # get_session_record
 
 **Domain:** session (automation)
@@ -5,15 +11,20 @@
 **Summary:** Get whether session record is enabled.
 
 **Parameters:**
+
 - none
 
 **Live mapping:**
+
 - Reads `song.session_record`.
-**Example request:**
+  **Example request:**
+
 ```json
-{"action":"get_session_record"}
+{ "action": "get_session_record" }
 ```
+
 **Example response:**
+
 ```json
-{"ok": true, "session_record": false}
+{ "ok": true, "session_record": false }
 ```

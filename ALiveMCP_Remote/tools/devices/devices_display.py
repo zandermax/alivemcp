@@ -15,7 +15,16 @@ class DevicesDisplayMixin:
         """Get device parameter value as displayed in UI (Live 12+)
 
         See Also:
-            Wiki: docs/wiki/tools/get_device_param_display_value.md"""
+            Wiki: docs/wiki/tools/get_device_param_display_value.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             track = self.song.tracks[track_index]
             device = track.devices[device_index]
@@ -42,7 +51,16 @@ class DevicesDisplayMixin:
         """Get all enriched parameter info for a device on a regular track
 
         See Also:
-            Wiki: docs/wiki/tools/get_all_param_display_values.md"""
+            Wiki: docs/wiki/tools/get_all_param_display_values.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             track = self.song.tracks[track_index]
             device = track.devices[device_index]

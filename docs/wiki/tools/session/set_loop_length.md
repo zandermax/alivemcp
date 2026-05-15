@@ -1,3 +1,9 @@
+---
+name: "set_loop_length"
+summary: ""
+Live mapping: "- Writes `song.loop_length = length`."
+---
+
 # set_loop_length
 
 **Domain:** session
@@ -5,9 +11,11 @@
 **Summary:** Set the song loop length (in beats).
 
 **Parameters:**
+
 - `length` (float)
 
 **Live mapping:**
+
 - Writes `song.loop_length = length`.
 
 **Example request:**

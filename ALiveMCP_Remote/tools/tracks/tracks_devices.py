@@ -16,7 +16,16 @@ class TracksDevicesMixin:
         for every parameter on that device.
 
         See Also:
-            Wiki: docs/wiki/tools/get_track_device_params.md"""
+            Wiki: docs/wiki/tools/get_track_device_params.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -64,7 +73,16 @@ class TracksDevicesMixin:
         Clamps value to min/max range.
 
         See Also:
-            Wiki: docs/wiki/tools/set_track_device_param.md"""
+            Wiki: docs/wiki/tools/set_track_device_param.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -99,7 +117,16 @@ class TracksDevicesMixin:
         Matches the first parameter whose name equals param_name.
 
         See Also:
-            Wiki: docs/wiki/tools/set_track_device_param_by_name.md"""
+            Wiki: docs/wiki/tools/set_track_device_param_by_name.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -161,7 +188,16 @@ class TracksDevicesMixin:
         touching anything.
 
         See Also:
-            Wiki: docs/wiki/tools/get_track_chain_summary.md"""
+            Wiki: docs/wiki/tools/get_track_chain_summary.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}

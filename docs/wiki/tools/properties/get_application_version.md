@@ -1,3 +1,8 @@
+---
+name: "get_application_version"
+summary: ""
+---
+
 # get_application_version
 
 Get Application Version
@@ -7,19 +12,21 @@ Get full Ableton Live version information.
 Parameters: None
 
 Returns:
+
 - `ok`: boolean
 - `major_version`: int
 - `minor_version`: int
 - `bugfix_version`: int
 - `build_id`: string (optional)
 - `variant`: string (optional)
-**Example request:**
+  **Example request:**
+
 ```json
-{"action": "get_application_version"}
+{ "action": "get_application_version" }
 ```
+
 **Example response:**
+
 ```json
-{"ok": true}
+{ "ok": true }
 ```
-
-

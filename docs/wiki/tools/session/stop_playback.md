@@ -1,3 +1,9 @@
+---
+name: "stop_playback"
+summary: ""
+Live mapping: "- Calls `song.stop_playing()` when playback is running."
+---
+
 # stop_playback
 
 **Domain:** session
@@ -5,9 +11,11 @@
 **Summary:** Stop Ableton playback.
 
 **Parameters:**
+
 - none
 
 **Live mapping:**
+
 - Calls `song.stop_playing()` when playback is running.
 
 **Example request:**

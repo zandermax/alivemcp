@@ -1,3 +1,9 @@
+---
+name: "undo"
+summary: ""
+Live mapping: "- Calls `song.undo()`."
+---
+
 # undo
 
 **Domain:** session
@@ -5,15 +11,20 @@
 **Summary:** Undo the last action in the host.
 
 **Parameters:**
+
 - none
 
 **Live mapping:**
+
 - Calls `song.undo()`.
-**Example request:**
+  **Example request:**
+
 ```json
-{"action":"undo"}
+{ "action": "undo" }
 ```
+
 **Example response:**
+
 ```json
-{"ok": true, "message": "Undo executed"}
+{ "ok": true, "message": "Undo executed" }
 ```

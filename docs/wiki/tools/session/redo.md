@@ -1,3 +1,9 @@
+---
+name: "redo"
+summary: ""
+Live mapping: "- Calls `song.redo()`."
+---
+
 # redo
 
 **Domain:** session
@@ -5,15 +11,20 @@
 **Summary:** Redo the last undone action in the host.
 
 **Parameters:**
+
 - none
 
 **Live mapping:**
+
 - Calls `song.redo()`.
-**Example request:**
+  **Example request:**
+
 ```json
-{"action":"redo"}
+{ "action": "redo" }
 ```
+
 **Example response:**
+
 ```json
-{"ok": true, "message": "Redo executed"}
+{ "ok": true, "message": "Redo executed" }
 ```

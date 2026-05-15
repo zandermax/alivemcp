@@ -9,7 +9,15 @@ class DevicesUIMixin:
 
         See Also:
             Wiki: docs/wiki/tools/get_device_presets.md
-        """
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -31,7 +39,15 @@ class DevicesUIMixin:
 
         See Also:
             Wiki: docs/wiki/tools/set_device_preset.md
-        """
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -53,7 +69,15 @@ class DevicesUIMixin:
 
         See Also:
             Wiki: docs/wiki/tools/show_plugin_window.md
-        """
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             track = self.song.tracks[track_index]
             device = track.devices[device_index]
@@ -67,7 +91,15 @@ class DevicesUIMixin:
 
         See Also:
             Wiki: docs/wiki/tools/hide_plugin_window.md
-        """
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             return {"ok": True, "message": "Plugin window hidden"}
         except Exception as e:

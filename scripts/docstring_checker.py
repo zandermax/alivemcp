@@ -6,16 +6,47 @@ Usage: python3 scripts/docstring_checker.py --check
 
 import argparse
 import os
+import sys
+from pathlib import Path
 
-from scripts.docstring_lib import (
-    check_docstring_structure,
-    collect_docstrings,
-    fix_missing_see_also,
-    load_available_tools,
-)
+# Ensure the repo root is on sys.path so `scripts.*` imports work when
+# invoking this script directly (not as a package).
+repo_root = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(repo_root))
+
+
+def _import_docstring_libs():
+    # Import package-specific helpers here after ensuring repo root is
+    # on sys.path. This avoids ruff's E402 (module level import not at
+    # top of file) while still allowing direct script execution.
+    from scripts.docstring_lib import (
+        check_docstring_structure,
+        collect_docstrings,
+        fix_missing_sections,
+        fix_missing_see_also,
+        load_available_tools,
+    )
+
+    return (
+        check_docstring_structure,
+        collect_docstrings,
+        fix_missing_sections,
+        fix_missing_see_also,
+        load_available_tools,
+    )
 
 
 def main(args):
+    # Import package-specific helpers lazily to keep module-level imports
+    # at the top and satisfy linters (E402).
+    (
+        check_docstring_structure,
+        collect_docstrings,
+        fix_missing_sections,
+        fix_missing_see_also,
+        load_available_tools,
+    ) = _import_docstring_libs()
+
     repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     registry_path = os.path.join(repo_root, "ALiveMCP_Remote", "tools", "core", "registry.py")
     tools_root = os.path.join(repo_root, "ALiveMCP_Remote", "tools")
@@ -35,6 +66,15 @@ def main(args):
 
     if args.fix and missing_see_also:
         fix_missing_see_also(missing_see_also, files_by_symbol)
+
+    if args.insert_stubs:
+        missing_sections = {
+            name: [e for e in errs if e in ("missing Args:", "missing Returns:", "missing Raises:")]
+            for name, errs in problems.items()
+        }
+        missing_sections = {k: v for k, v in missing_sections.items() if v}
+        if missing_sections:
+            fix_missing_sections(missing_sections, files_by_symbol)
 
     if problems:
         print("Docstring validation issues for exported tools:")
@@ -56,6 +96,12 @@ if __name__ == "__main__":
     parser.add_argument("--check", action="store_true", default=True)
     parser.add_argument(
         "--fix", action="store_true", default=False, help="Apply minimal See Also docstring fixes"
+    )
+    parser.add_argument(
+        "--insert-stubs",
+        action="store_true",
+        default=False,
+        help="Insert TODO stubs for missing Args/Returns/Raises",
     )
     args = parser.parse_args()
     rc = main(args)

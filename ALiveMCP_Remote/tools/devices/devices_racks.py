@@ -15,7 +15,16 @@ class DevicesRacksMixin:
         """Get chains from a rack device
 
         See Also:
-            Wiki: docs/wiki/tools/get_device_chains.md"""
+            Wiki: docs/wiki/tools/get_device_chains.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -49,7 +58,16 @@ class DevicesRacksMixin:
         """Get devices in a specific chain
 
         See Also:
-            Wiki: docs/wiki/tools/get_chain_devices.md"""
+            Wiki: docs/wiki/tools/get_chain_devices.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -92,7 +110,16 @@ class DevicesRacksMixin:
         """Mute/unmute a chain in a rack
 
         See Also:
-            Wiki: docs/wiki/tools/set_chain_mute.md"""
+            Wiki: docs/wiki/tools/set_chain_mute.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -123,7 +150,16 @@ class DevicesRacksMixin:
         """Solo/unsolo a chain in a rack
 
         See Also:
-            Wiki: docs/wiki/tools/set_chain_solo.md"""
+            Wiki: docs/wiki/tools/set_chain_solo.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -158,7 +194,16 @@ class DevicesRacksMixin:
         """Get device class name (e.g., 'OriginalSimpler', 'Compressor2')
 
         See Also:
-            Wiki: docs/wiki/tools/get_device_class_name.md"""
+            Wiki: docs/wiki/tools/get_device_class_name.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             track = self.song.tracks[track_index]
             device = track.devices[device_index]
@@ -174,7 +219,16 @@ class DevicesRacksMixin:
         """Get device type (audio_effect, instrument, midi_effect)
 
         See Also:
-            Wiki: docs/wiki/tools/get_device_type.md"""
+            Wiki: docs/wiki/tools/get_device_type.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             track = self.song.tracks[track_index]
             device = track.devices[device_index]

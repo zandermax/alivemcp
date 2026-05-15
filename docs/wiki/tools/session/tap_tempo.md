@@ -1,3 +1,9 @@
+---
+name: "tap_tempo"
+summary: ""
+Live mapping: "- Calls `song.tap_tempo()`."
+---
+
 # tap_tempo
 
 **Domain:** session
@@ -5,15 +11,20 @@
 **Summary:** Tap tempo (one tap registers a tempo change in the host).
 
 **Parameters:**
+
 - none
 
 **Live mapping:**
+
 - Calls `song.tap_tempo()`.
-**Example request:**
+  **Example request:**
+
 ```json
-{"action":"tap_tempo"}
+{ "action": "tap_tempo" }
 ```
+
 **Example response:**
+
 ```json
-{"ok": true, "message": "Tempo tapped"}
+{ "ok": true, "message": "Tempo tapped" }
 ```
