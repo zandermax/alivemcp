@@ -35,6 +35,10 @@ venv:
 lint:
 	ruff check .
 
+lint-md:
+	@echo "Linting tracked Markdown files in alivemcp..."
+	git ls-files -z '*.md' | xargs -0 npx --yes --prefix ../Music markdownlint-cli2 -c ./.markdownlint.json || true
+
 lint-fix:
 	ruff check . --fix
 
@@ -68,4 +72,16 @@ ui:
 	uvicorn examples.ui.server:app --port 8080
 
 all:
-	install-dev lint format-check test check-length
+	install-dev lint lint-md format-check test check-length
+
+# Wiki parity targets
+generate-from-wiki:
+	python3 scripts/generate_from_wiki.py --apply --output-dir mcp_tool_defs --manifest docs/tool_manifest.json
+
+validate-wiki:
+	python3 scripts/generate_from_wiki.py --check
+	python3 scripts/validate_wiki_parity.py --check
+	python3 scripts/docstring_checker.py --check
+
+validate-docstrings:
+	python3 scripts/docstring_checker.py --check

@@ -17,7 +17,10 @@ class ArrangementViewMixin:
     # ========================================================================
 
     def show_clip_view(self):
-        """Show clip/session view"""
+        """Show clip/session view
+
+        See Also:
+            Wiki: docs/wiki/tools/show_clip_view.md"""
         try:
             app = Live.Application.get_application()
             if hasattr(app.view, "show_view"):
@@ -29,7 +32,10 @@ class ArrangementViewMixin:
             return {"ok": False, "error": str(e)}
 
     def show_arrangement_view(self):
-        """Show arrangement view"""
+        """Show arrangement view
+
+        See Also:
+            Wiki: docs/wiki/tools/show_arrangement_view.md"""
         try:
             app = Live.Application.get_application()
             if hasattr(app.view, "show_view"):
@@ -41,7 +47,10 @@ class ArrangementViewMixin:
             return {"ok": False, "error": str(e)}
 
     def focus_track(self, track_index):
-        """Focus/highlight a specific track in the view"""
+        """Focus/highlight a specific track in the view
+
+        See Also:
+            Wiki: docs/wiki/tools/focus_track.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -57,7 +66,10 @@ class ArrangementViewMixin:
             return {"ok": False, "error": str(e)}
 
     def scroll_view_to_time(self, time_in_beats):
-        """Scroll arrangement view to specific time"""
+        """Scroll arrangement view to specific time
+
+        See Also:
+            Wiki: docs/wiki/tools/scroll_view_to_time.md"""
         try:
             if hasattr(self.song.view, "visible_tracks"):
                 return {
@@ -75,7 +87,10 @@ class ArrangementViewMixin:
     # ========================================================================
 
     def set_loop_enabled(self, enabled):
-        """Enable or disable song loop"""
+        """Enable or disable song loop
+
+        See Also:
+            Wiki: docs/wiki/tools/set_loop_enabled.md"""
         try:
             self.song.loop = bool(enabled)
             return {"ok": True, "loop_enabled": self.song.loop}
@@ -83,7 +98,10 @@ class ArrangementViewMixin:
             return {"ok": False, "error": str(e)}
 
     def get_loop_enabled(self):
-        """Get current loop enabled state"""
+        """Get current loop enabled state
+
+        See Also:
+            Wiki: docs/wiki/tools/get_loop_enabled.md"""
         try:
             return {
                 "ok": True,

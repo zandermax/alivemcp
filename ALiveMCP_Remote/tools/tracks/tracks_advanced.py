@@ -9,7 +9,10 @@ class TracksAdvancedMixin:
     # ========================================================================
 
     def create_group_track(self, name=None):
-        """Create a new group track"""
+        """Create a new group track
+
+        See Also:
+            Wiki: docs/wiki/tools/create_group_track.md"""
         try:
             track_index = len(self.song.tracks)
             self.song.create_group_track(track_index)
@@ -29,7 +32,10 @@ class TracksAdvancedMixin:
             return {"ok": False, "error": str(e)}
 
     def group_tracks(self, start_index, end_index):
-        """Group tracks from start_index to end_index (inclusive)"""
+        """Group tracks from start_index to end_index (inclusive)
+
+        See Also:
+            Wiki: docs/wiki/tools/group_tracks.md"""
         try:
             if start_index < 0 or start_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid start index"}
@@ -48,7 +54,10 @@ class TracksAdvancedMixin:
             return {"ok": False, "error": str(e)}
 
     def get_track_is_grouped(self, track_index):
-        """Check if track is part of a group"""
+        """Check if track is part of a group
+
+        See Also:
+            Wiki: docs/wiki/tools/get_track_is_grouped.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -76,7 +85,10 @@ class TracksAdvancedMixin:
             return {"ok": False, "error": str(e)}
 
     def ungroup_track(self, group_track_index):
-        """Ungroup a group track"""
+        """Ungroup a group track
+
+        See Also:
+            Wiki: docs/wiki/tools/ungroup_track.md"""
         try:
             if group_track_index < 0 or group_track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -99,7 +111,10 @@ class TracksAdvancedMixin:
     # ========================================================================
 
     def freeze_track(self, track_index):
-        """Freeze a track to reduce CPU usage"""
+        """Freeze a track to reduce CPU usage
+
+        See Also:
+            Wiki: docs/wiki/tools/freeze_track.md"""
         try:
             track = self.song.tracks[track_index]
 
@@ -115,7 +130,10 @@ class TracksAdvancedMixin:
             return {"ok": False, "error": str(e)}
 
     def unfreeze_track(self, track_index):
-        """Unfreeze a frozen track"""
+        """Unfreeze a frozen track
+
+        See Also:
+            Wiki: docs/wiki/tools/unfreeze_track.md"""
         try:
             track = self.song.tracks[track_index]
 
@@ -128,7 +146,10 @@ class TracksAdvancedMixin:
             return {"ok": False, "error": str(e)}
 
     def flatten_track(self, track_index):
-        """Flatten a frozen track (converts to audio)"""
+        """Flatten a frozen track (converts to audio)
+
+        See Also:
+            Wiki: docs/wiki/tools/flatten_track.md"""
         try:
             track = self.song.tracks[track_index]
 
@@ -145,7 +166,10 @@ class TracksAdvancedMixin:
     # ========================================================================
 
     def get_track_annotation(self, track_index):
-        """Get track annotation text"""
+        """Get track annotation text
+
+        See Also:
+            Wiki: docs/wiki/tools/get_track_annotation.md"""
         try:
             track = self.song.tracks[track_index]
 
@@ -157,7 +181,10 @@ class TracksAdvancedMixin:
             return {"ok": False, "error": str(e)}
 
     def set_track_annotation(self, track_index, annotation_text):
-        """Set track annotation text"""
+        """Set track annotation text
+
+        See Also:
+            Wiki: docs/wiki/tools/set_track_annotation.md"""
         try:
             track = self.song.tracks[track_index]
 
@@ -174,7 +201,10 @@ class TracksAdvancedMixin:
     # ========================================================================
 
     def get_track_delay(self, track_index):
-        """Get track delay compensation in samples"""
+        """Get track delay compensation in samples
+
+        See Also:
+            Wiki: docs/wiki/tools/get_track_delay.md"""
         try:
             track = self.song.tracks[track_index]
 
@@ -186,7 +216,10 @@ class TracksAdvancedMixin:
             return {"ok": False, "error": str(e)}
 
     def set_track_delay(self, track_index, delay_samples):
-        """Set track delay compensation in samples"""
+        """Set track delay compensation in samples
+
+        See Also:
+            Wiki: docs/wiki/tools/set_track_delay.md"""
         try:
             track = self.song.tracks[track_index]
 

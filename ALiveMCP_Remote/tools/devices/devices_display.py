@@ -12,7 +12,10 @@ class DevicesDisplayMixin:
     # ========================================================================
 
     def get_device_param_display_value(self, track_index, device_index, param_index):
-        """Get device parameter value as displayed in UI (Live 12+)"""
+        """Get device parameter value as displayed in UI (Live 12+)
+
+        See Also:
+            Wiki: docs/wiki/tools/get_device_param_display_value.md"""
         try:
             track = self.song.tracks[track_index]
             device = track.devices[device_index]
@@ -36,7 +39,10 @@ class DevicesDisplayMixin:
             return {"ok": False, "error": str(e)}
 
     def get_all_param_display_values(self, track_index, device_index):
-        """Get all enriched parameter info for a device on a regular track"""
+        """Get all enriched parameter info for a device on a regular track
+
+        See Also:
+            Wiki: docs/wiki/tools/get_all_param_display_values.md"""
         try:
             track = self.song.tracks[track_index]
             device = track.devices[device_index]

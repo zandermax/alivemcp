@@ -12,7 +12,10 @@ class MixingGrooveMixin:
     # ========================================================================
 
     def set_clip_groove_amount(self, track_index, clip_index, amount):
-        """Set clip groove amount (0.0-1.0)"""
+        """Set clip groove amount (0.0-1.0)
+
+        See Also:
+            Wiki: docs/wiki/tools/set_clip_groove_amount.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -35,7 +38,10 @@ class MixingGrooveMixin:
             return {"ok": False, "error": str(e)}
 
     def get_groove_amount(self):
-        """Get song groove amount"""
+        """Get song groove amount
+
+        See Also:
+            Wiki: docs/wiki/tools/get_groove_amount.md"""
         try:
             if hasattr(self.song, "groove_amount"):
                 return {"ok": True, "groove_amount": float(self.song.groove_amount)}
@@ -45,7 +51,10 @@ class MixingGrooveMixin:
             return {"ok": False, "error": str(e)}
 
     def set_groove_amount(self, amount):
-        """Set song groove amount (0.0-1.0)"""
+        """Set song groove amount (0.0-1.0)
+
+        See Also:
+            Wiki: docs/wiki/tools/set_groove_amount.md"""
         try:
             if hasattr(self.song, "groove_amount"):
                 self.song.groove_amount = float(amount)
@@ -60,7 +69,10 @@ class MixingGrooveMixin:
     # ========================================================================
 
     def get_groove_pool_grooves(self):
-        """Get list of grooves in groove pool"""
+        """Get list of grooves in groove pool
+
+        See Also:
+            Wiki: docs/wiki/tools/get_groove_pool_grooves.md"""
         try:
             grooves = []
 
@@ -85,7 +97,10 @@ class MixingGrooveMixin:
             return {"ok": False, "error": str(e)}
 
     def set_clip_groove(self, track_index, clip_index, groove_index):
-        """Set groove for clip"""
+        """Set groove for clip
+
+        See Also:
+            Wiki: docs/wiki/tools/set_clip_groove.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}

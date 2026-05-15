@@ -1,0 +1,24 @@
+name: Check Wiki Parity
+
+on:
+  push:
+    branches: [ main, mainline, master ]
+  pull_request:
+
+jobs:
+  check-wiki-parity:
+    name: Check Wiki Parity
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - name: Generate (check)
+        run: |
+          python3 scripts/generate_from_wiki.py --output-dir mcp_tool_defs --manifest docs/tool_manifest.json --check
+      - name: Validate parity
+        run: |
+          python3 scripts/validate_wiki_parity.py --check
+          python3 scripts/docstring_checker.py --check

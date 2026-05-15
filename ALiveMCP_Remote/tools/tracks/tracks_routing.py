@@ -9,7 +9,10 @@ class TracksRoutingMixin:
     # ========================================================================
 
     def set_track_fold_state(self, track_index, folded):
-        """Fold or unfold a group track"""
+        """Fold or unfold a group track
+
+        See Also:
+            Wiki: docs/wiki/tools/set_track_fold_state.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -24,7 +27,10 @@ class TracksRoutingMixin:
             return {"ok": False, "error": str(e)}
 
     def set_track_input_routing(self, track_index, routing_type_name, routing_channel=0):
-        """Set track input routing"""
+        """Set track input routing
+
+        See Also:
+            Wiki: docs/wiki/tools/set_track_input_routing.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -39,7 +45,10 @@ class TracksRoutingMixin:
             return {"ok": False, "error": str(e)}
 
     def set_track_output_routing(self, track_index, routing_type_name):
-        """Set track output routing"""
+        """Set track output routing
+
+        See Also:
+            Wiki: docs/wiki/tools/set_track_output_routing.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -57,7 +66,10 @@ class TracksRoutingMixin:
     # ========================================================================
 
     def set_track_current_monitoring_state(self, track_index, state):
-        """Set track monitoring state (0=In, 1=Auto, 2=Off)"""
+        """Set track monitoring state (0=In, 1=Auto, 2=Off)
+
+        See Also:
+            Wiki: docs/wiki/tools/set_track_current_monitoring_state.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -72,7 +84,10 @@ class TracksRoutingMixin:
             return {"ok": False, "error": str(e)}
 
     def get_track_available_input_routing_types(self, track_index):
-        """Get available input routing types for track"""
+        """Get available input routing types for track
+
+        See Also:
+            Wiki: docs/wiki/tools/get_track_available_input_routing_types.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -88,7 +103,10 @@ class TracksRoutingMixin:
             return {"ok": False, "error": str(e)}
 
     def get_track_available_output_routing_types(self, track_index):
-        """Get available output routing types for track"""
+        """Get available output routing types for track
+
+        See Also:
+            Wiki: docs/wiki/tools/get_track_available_output_routing_types.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -104,7 +122,10 @@ class TracksRoutingMixin:
             return {"ok": False, "error": str(e)}
 
     def get_track_input_routing_type(self, track_index):
-        """Get current input routing type for track"""
+        """Get current input routing type for track
+
+        See Also:
+            Wiki: docs/wiki/tools/get_track_input_routing_type.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -127,7 +148,10 @@ class TracksRoutingMixin:
     # ========================================================================
 
     def get_track_output_routing(self, track_index):
-        """Get track output routing configuration"""
+        """Get track output routing configuration
+
+        See Also:
+            Wiki: docs/wiki/tools/get_track_output_routing.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -154,7 +178,10 @@ class TracksRoutingMixin:
             return {"ok": False, "error": str(e)}
 
     def set_track_input_sub_routing(self, track_index, sub_routing):
-        """Set track input sub-routing"""
+        """Set track input sub-routing
+
+        See Also:
+            Wiki: docs/wiki/tools/set_track_input_sub_routing.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -174,7 +201,10 @@ class TracksRoutingMixin:
             return {"ok": False, "error": str(e)}
 
     def set_track_output_sub_routing(self, track_index, sub_routing):
-        """Set track output sub-routing"""
+        """Set track output sub-routing
+
+        See Also:
+            Wiki: docs/wiki/tools/set_track_output_sub_routing.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}

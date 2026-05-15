@@ -96,7 +96,7 @@ def build_manifest(registry_tools, raw_defs):
             os.path.relpath(REGISTRY_PY, BASE),
             os.path.relpath(MCP_DEFS_PY, BASE),
         ],
-        "generated_at": datetime.utcnow().isoformat() + "Z",
+        "generated_at": datetime.datetime.now(datetime.timezone.utc).isoformat() + "Z",
         "tool_count": len(tools),
         "tools": tools,
     }

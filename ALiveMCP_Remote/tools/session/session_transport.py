@@ -13,7 +13,11 @@ class SessionTransportMixin(SessionAutomationMixin):
     # ========================================================================
 
     def start_playback(self):
-        """Start Ableton playback"""
+        """Start Ableton playback
+
+        See Also:
+            Wiki: docs/wiki/tools/start_playback.md
+        """
         try:
             if not self.song.is_playing:
                 self.song.start_playing()
@@ -22,7 +26,11 @@ class SessionTransportMixin(SessionAutomationMixin):
             return {"ok": False, "error": str(e)}
 
     def stop_playback(self):
-        """Stop Ableton playback"""
+        """Stop Ableton playback
+
+        See Also:
+            Wiki: docs/wiki/tools/stop_playback.md
+        """
         try:
             if self.song.is_playing:
                 self.song.stop_playing()
@@ -31,7 +39,11 @@ class SessionTransportMixin(SessionAutomationMixin):
             return {"ok": False, "error": str(e)}
 
     def start_recording(self):
-        """Start recording"""
+        """Start recording
+
+        See Also:
+            Wiki: docs/wiki/tools/start_recording.md
+        """
         try:
             self.song.record_mode = True
             if not self.song.is_playing:
@@ -41,7 +53,11 @@ class SessionTransportMixin(SessionAutomationMixin):
             return {"ok": False, "error": str(e)}
 
     def stop_recording(self):
-        """Stop recording"""
+        """Stop recording
+
+        See Also:
+            Wiki: docs/wiki/tools/stop_recording.md
+        """
         try:
             self.song.record_mode = False
             return {"ok": True, "message": "Recording stopped"}
@@ -49,7 +65,11 @@ class SessionTransportMixin(SessionAutomationMixin):
             return {"ok": False, "error": str(e)}
 
     def continue_playing(self):
-        """Continue playback from current position"""
+        """Continue playback from current position
+
+        See Also:
+            Wiki: docs/wiki/tools/continue_playing.md
+        """
         try:
             self.song.continue_playing()
             return {"ok": True, "message": "Playback continued"}
@@ -57,7 +77,11 @@ class SessionTransportMixin(SessionAutomationMixin):
             return {"ok": False, "error": str(e)}
 
     def get_session_info(self):
-        """Get current session state information"""
+        """Get current session state information
+
+        See Also:
+            Wiki: docs/wiki/tools/get_session_info.md
+        """
         try:
             return {
                 "ok": True,
@@ -80,11 +104,13 @@ class SessionTransportMixin(SessionAutomationMixin):
             return {"ok": False, "error": str(e)}
 
     def set_tempo(self, bpm):
-        """
-        Set session tempo
+        """Set session tempo
 
         Args:
             bpm: Tempo in BPM (20-999)
+
+                See Also:
+                    Wiki: docs/wiki/tools/set_tempo.md
         """
         try:
             bpm = float(bpm)
@@ -96,12 +122,14 @@ class SessionTransportMixin(SessionAutomationMixin):
             return {"ok": False, "error": str(e)}
 
     def set_time_signature(self, numerator, denominator):
-        """
-        Set time signature
+        """Set time signature
 
         Args:
             numerator: Top number (1-99)
             denominator: Bottom number (1, 2, 4, 8, 16)
+
+                See Also:
+                    Wiki: docs/wiki/tools/set_time_signature.md
         """
         try:
             numerator = int(numerator)
@@ -125,7 +153,11 @@ class SessionTransportMixin(SessionAutomationMixin):
             return {"ok": False, "error": str(e)}
 
     def set_loop_start(self, position):
-        """Set loop start position in beats"""
+        """Set loop start position in beats
+
+        See Also:
+            Wiki: docs/wiki/tools/set_loop_start.md
+        """
         try:
             self.song.loop_start = float(position)
             return {"ok": True, "loop_start": float(self.song.loop_start)}
@@ -133,7 +165,11 @@ class SessionTransportMixin(SessionAutomationMixin):
             return {"ok": False, "error": str(e)}
 
     def set_loop_length(self, length):
-        """Set loop length in beats"""
+        """Set loop length in beats
+
+        See Also:
+            Wiki: docs/wiki/tools/set_loop_length.md
+        """
         try:
             self.song.loop_length = float(length)
             return {"ok": True, "loop_length": float(self.song.loop_length)}
@@ -141,7 +177,11 @@ class SessionTransportMixin(SessionAutomationMixin):
             return {"ok": False, "error": str(e)}
 
     def set_metronome(self, enabled):
-        """Enable or disable metronome"""
+        """Enable or disable metronome
+
+        See Also:
+            Wiki: docs/wiki/tools/set_metronome.md
+        """
         try:
             self.song.metronome = bool(enabled)
             return {"ok": True, "metronome": self.song.metronome}
@@ -149,7 +189,11 @@ class SessionTransportMixin(SessionAutomationMixin):
             return {"ok": False, "error": str(e)}
 
     def tap_tempo(self):
-        """Tap tempo"""
+        """Tap tempo
+
+        See Also:
+            Wiki: docs/wiki/tools/tap_tempo.md
+        """
         try:
             self.song.tap_tempo()
             return {"ok": True, "message": "Tempo tapped"}
@@ -157,7 +201,11 @@ class SessionTransportMixin(SessionAutomationMixin):
             return {"ok": False, "error": str(e)}
 
     def undo(self):
-        """Undo last action"""
+        """Undo last action
+
+        See Also:
+            Wiki: docs/wiki/tools/undo.md
+        """
         try:
             self.song.undo()
             return {"ok": True, "message": "Undo executed"}
@@ -165,7 +213,11 @@ class SessionTransportMixin(SessionAutomationMixin):
             return {"ok": False, "error": str(e)}
 
     def redo(self):
-        """Redo last undone action"""
+        """Redo last undone action
+
+        See Also:
+            Wiki: docs/wiki/tools/redo.md
+        """
         try:
             self.song.redo()
             return {"ok": True, "message": "Redo executed"}
@@ -177,7 +229,11 @@ class SessionTransportMixin(SessionAutomationMixin):
     # ========================================================================
 
     def get_metronome_volume(self):
-        """Get metronome volume"""
+        """Get metronome volume
+
+        See Also:
+            Wiki: docs/wiki/tools/get_metronome_volume.md
+        """
         try:
             if hasattr(self.song, "metronome"):
                 return {"ok": True, "volume": float(self.song.metronome)}
@@ -187,7 +243,11 @@ class SessionTransportMixin(SessionAutomationMixin):
             return {"ok": False, "error": str(e)}
 
     def set_metronome_volume(self, volume):
-        """Set metronome volume (0.0 to 1.0)"""
+        """Set metronome volume (0.0 to 1.0)
+
+        See Also:
+            Wiki: docs/wiki/tools/set_metronome_volume.md
+        """
         try:
             if hasattr(self.song, "metronome"):
                 self.song.metronome = float(volume)

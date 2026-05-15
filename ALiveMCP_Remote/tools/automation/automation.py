@@ -9,7 +9,10 @@ class AutomationMixin:
     # ========================================================================
 
     def get_clip_automation_envelope(self, track_index, clip_index, device_index, param_index):
-        """Get automation envelope for a device parameter in a clip"""
+        """Get automation envelope for a device parameter in a clip
+
+        See Also:
+            Wiki: docs/wiki/tools/get_clip_automation_envelope.md"""
         try:
             track = self.song.tracks[track_index]
             clip_slot = track.clip_slots[clip_index]
@@ -47,7 +50,10 @@ class AutomationMixin:
             return {"ok": False, "error": str(e)}
 
     def create_automation_envelope(self, track_index, clip_index, device_index, param_index):
-        """Create automation envelope for a device parameter"""
+        """Create automation envelope for a device parameter
+
+        See Also:
+            Wiki: docs/wiki/tools/create_automation_envelope.md"""
         try:
             track = self.song.tracks[track_index]
             clip_slot = track.clip_slots[clip_index]
@@ -76,7 +82,10 @@ class AutomationMixin:
             return {"ok": False, "error": str(e)}
 
     def clear_automation_envelope(self, track_index, clip_index, device_index, param_index):
-        """Clear automation envelope for a device parameter"""
+        """Clear automation envelope for a device parameter
+
+        See Also:
+            Wiki: docs/wiki/tools/clear_automation_envelope.md"""
         try:
             track = self.song.tracks[track_index]
             clip_slot = track.clip_slots[clip_index]
@@ -106,7 +115,10 @@ class AutomationMixin:
     def insert_automation_step(
         self, track_index, clip_index, device_index, param_index, time, value
     ):
-        """Insert automation step/breakpoint at specific time"""
+        """Insert automation step/breakpoint at specific time
+
+        See Also:
+            Wiki: docs/wiki/tools/insert_automation_step.md"""
         try:
             track = self.song.tracks[track_index]
             clip_slot = track.clip_slots[clip_index]
@@ -139,7 +151,10 @@ class AutomationMixin:
             return {"ok": False, "error": str(e)}
 
     def remove_automation_step(self, track_index, clip_index, device_index, param_index, time):
-        """Remove automation step/breakpoint at specific time"""
+        """Remove automation step/breakpoint at specific time
+
+        See Also:
+            Wiki: docs/wiki/tools/remove_automation_step.md"""
         try:
             track = self.song.tracks[track_index]
             clip_slot = track.clip_slots[clip_index]
@@ -171,7 +186,10 @@ class AutomationMixin:
             return {"ok": False, "error": str(e)}
 
     def get_automation_envelope_values(self, track_index, clip_index, device_index, param_index):
-        """Get all automation envelope values for a parameter"""
+        """Get all automation envelope values for a parameter
+
+        See Also:
+            Wiki: docs/wiki/tools/get_automation_envelope_values.md"""
         try:
             track = self.song.tracks[track_index]
             clip_slot = track.clip_slots[clip_index]

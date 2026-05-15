@@ -9,7 +9,10 @@ class ClipsPropertiesMixin:
     # ========================================================================
 
     def set_clip_looping(self, track_index, clip_index, looping):
-        """Enable/disable clip looping"""
+        """Enable/disable clip looping
+
+        See Also:
+            Wiki: docs/wiki/tools/set_clip_looping.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -29,7 +32,10 @@ class ClipsPropertiesMixin:
             return {"ok": False, "error": str(e)}
 
     def set_clip_loop_start(self, track_index, clip_index, loop_start):
-        """Set clip loop start position"""
+        """Set clip loop start position
+
+        See Also:
+            Wiki: docs/wiki/tools/set_clip_loop_start.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -49,7 +55,10 @@ class ClipsPropertiesMixin:
             return {"ok": False, "error": str(e)}
 
     def set_clip_loop_end(self, track_index, clip_index, loop_end):
-        """Set clip loop end position"""
+        """Set clip loop end position
+
+        See Also:
+            Wiki: docs/wiki/tools/set_clip_loop_end.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -69,7 +78,10 @@ class ClipsPropertiesMixin:
             return {"ok": False, "error": str(e)}
 
     def set_clip_start_marker(self, track_index, clip_index, start_marker):
-        """Set clip start marker"""
+        """Set clip start marker
+
+        See Also:
+            Wiki: docs/wiki/tools/set_clip_start_marker.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -89,7 +101,10 @@ class ClipsPropertiesMixin:
             return {"ok": False, "error": str(e)}
 
     def set_clip_end_marker(self, track_index, clip_index, end_marker):
-        """Set clip end marker"""
+        """Set clip end marker
+
+        See Also:
+            Wiki: docs/wiki/tools/set_clip_end_marker.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -109,7 +124,10 @@ class ClipsPropertiesMixin:
             return {"ok": False, "error": str(e)}
 
     def set_clip_muted(self, track_index, clip_index, muted):
-        """Mute or unmute clip"""
+        """Mute or unmute clip
+
+        See Also:
+            Wiki: docs/wiki/tools/set_clip_muted.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -129,7 +147,10 @@ class ClipsPropertiesMixin:
             return {"ok": False, "error": str(e)}
 
     def set_clip_gain(self, track_index, clip_index, gain):
-        """Set clip gain/volume"""
+        """Set clip gain/volume
+
+        See Also:
+            Wiki: docs/wiki/tools/set_clip_gain.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -152,7 +173,10 @@ class ClipsPropertiesMixin:
             return {"ok": False, "error": str(e)}
 
     def set_clip_pitch_coarse(self, track_index, clip_index, semitones):
-        """Transpose clip by semitones"""
+        """Transpose clip by semitones
+
+        See Also:
+            Wiki: docs/wiki/tools/set_clip_pitch_coarse.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -175,7 +199,10 @@ class ClipsPropertiesMixin:
             return {"ok": False, "error": str(e)}
 
     def set_clip_pitch_fine(self, track_index, clip_index, cents):
-        """Fine-tune clip pitch in cents"""
+        """Fine-tune clip pitch in cents
+
+        See Also:
+            Wiki: docs/wiki/tools/set_clip_pitch_fine.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -198,7 +225,10 @@ class ClipsPropertiesMixin:
             return {"ok": False, "error": str(e)}
 
     def set_clip_signature_numerator(self, track_index, clip_index, numerator):
-        """Set clip time signature numerator"""
+        """Set clip time signature numerator
+
+        See Also:
+            Wiki: docs/wiki/tools/set_clip_signature_numerator.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -214,68 +244,5 @@ class ClipsPropertiesMixin:
             clip = clip_slot.clip
             clip.signature_numerator = int(numerator)
             return {"ok": True, "signature_numerator": clip.signature_numerator}
-        except Exception as e:
-            return {"ok": False, "error": str(e)}
-
-    def get_clip_color(self, track_index, clip_index):
-        """Get clip color"""
-        try:
-            if track_index < 0 or track_index >= len(self.song.tracks):
-                return {"ok": False, "error": "Invalid track index"}
-
-            track = self.song.tracks[track_index]
-            if clip_index < 0 or clip_index >= len(track.clip_slots):
-                return {"ok": False, "error": "Invalid clip index"}
-
-            clip_slot = track.clip_slots[clip_index]
-            if not clip_slot.has_clip:
-                return {"ok": False, "error": "No clip in slot"}
-
-            clip = clip_slot.clip
-
-            if hasattr(clip, "color_index"):
-                return {"ok": True, "color_index": int(clip.color_index)}
-            elif hasattr(clip, "color"):
-                return {"ok": True, "color": int(clip.color)}
-            else:
-                return {"ok": False, "error": "Clip color not available"}
-        except Exception as e:
-            return {"ok": False, "error": str(e)}
-
-    def set_clip_color(self, track_index, clip_index, color_index):
-        """Set clip color"""
-        try:
-            if track_index < 0 or track_index >= len(self.song.tracks):
-                return {"ok": False, "error": "Invalid track index"}
-
-            track = self.song.tracks[track_index]
-
-            if clip_index < 0 or clip_index >= len(track.clip_slots):
-                return {"ok": False, "error": "Invalid clip index"}
-
-            clip_slot = track.clip_slots[clip_index]
-            if not clip_slot.has_clip:
-                return {"ok": False, "error": "No clip in slot"}
-
-            clip = clip_slot.clip
-
-            if hasattr(clip, "color_index"):
-                clip.color_index = int(color_index)
-                return {
-                    "ok": True,
-                    "track_index": track_index,
-                    "clip_index": clip_index,
-                    "color_index": int(color_index),
-                }
-            elif hasattr(clip, "color"):
-                clip.color = int(color_index)
-                return {
-                    "ok": True,
-                    "track_index": track_index,
-                    "clip_index": clip_index,
-                    "color": int(color_index),
-                }
-            else:
-                return {"ok": False, "error": "Clip color not available in this Ableton version"}
         except Exception as e:
             return {"ok": False, "error": str(e)}

@@ -59,7 +59,7 @@ def chunk_and_write(defs, chunk_size: int = 200):
     parts = []
     for i in range(0, len(defs), chunk_size):
         part = defs[i : i + chunk_size]
-        name = f"part_{i//chunk_size:03d}.json"
+        name = f"part_{i // chunk_size:03d}.json"
         p = OUT_DIR / name
         p.write_text(json.dumps(part, indent=2, ensure_ascii=False))
         parts.append(name)

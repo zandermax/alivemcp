@@ -9,8 +9,7 @@ class MidiNotesMixin:
     # ========================================================================
 
     def add_notes(self, track_index, clip_index, notes):
-        """
-        Add MIDI notes to a clip
+        """Add MIDI notes to a clip
 
         Args:
             track_index: Track index
@@ -20,7 +19,9 @@ class MidiNotesMixin:
                    - start: Start time in beats
                    - duration: Note duration in beats
                    - velocity: MIDI velocity (0-127)
-        """
+
+        See Also:
+            Wiki: docs/wiki/tools/add_notes.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -66,13 +67,14 @@ class MidiNotesMixin:
             return {"ok": False, "error": str(e)}
 
     def get_clip_notes(self, track_index, clip_index):
-        """
-        Get all MIDI notes from a clip
+        """Get all MIDI notes from a clip
 
         Args:
             track_index: Track index
             clip_index: Clip slot index
-        """
+
+        See Also:
+            Wiki: docs/wiki/tools/get_clip_notes.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -119,7 +121,10 @@ class MidiNotesMixin:
     def remove_notes(
         self, track_index, clip_index, pitch_from=0, pitch_to=127, time_from=0.0, time_to=999.0
     ):
-        """Remove MIDI notes from clip"""
+        """Remove MIDI notes from clip
+
+        See Also:
+            Wiki: docs/wiki/tools/remove_notes.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -148,7 +153,10 @@ class MidiNotesMixin:
     # ========================================================================
 
     def select_all_notes(self, track_index, clip_index):
-        """Select all notes in clip"""
+        """Select all notes in clip
+
+        See Also:
+            Wiki: docs/wiki/tools/select_all_notes.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -168,7 +176,10 @@ class MidiNotesMixin:
             return {"ok": False, "error": str(e)}
 
     def deselect_all_notes(self, track_index, clip_index):
-        """Deselect all notes in clip"""
+        """Deselect all notes in clip
+
+        See Also:
+            Wiki: docs/wiki/tools/deselect_all_notes.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -188,7 +199,10 @@ class MidiNotesMixin:
             return {"ok": False, "error": str(e)}
 
     def replace_selected_notes(self, track_index, clip_index, notes):
-        """Replace selected notes with new notes"""
+        """Replace selected notes with new notes
+
+        See Also:
+            Wiki: docs/wiki/tools/replace_selected_notes.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -220,7 +234,10 @@ class MidiNotesMixin:
     def get_notes_extended(
         self, track_index, clip_index, start_time, time_span, start_pitch, pitch_span
     ):
-        """Get notes with extended filtering options"""
+        """Get notes with extended filtering options
+
+        See Also:
+            Wiki: docs/wiki/tools/get_notes_extended.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}

@@ -14,7 +14,9 @@ class TracksDevicesMixin:
 
         Returns name, raw_value, display_value, min, max, is_quantized, value_items
         for every parameter on that device.
-        """
+
+        See Also:
+            Wiki: docs/wiki/tools/get_track_device_params.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -60,7 +62,9 @@ class TracksDevicesMixin:
         """Set a parameter value on a device on any track by index.
 
         Clamps value to min/max range.
-        """
+
+        See Also:
+            Wiki: docs/wiki/tools/set_track_device_param.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -93,7 +97,9 @@ class TracksDevicesMixin:
         (e.g. "4:1"). For continuous parameters, pass a number — it will be
         clamped to the parameter's min/max range.
         Matches the first parameter whose name equals param_name.
-        """
+
+        See Also:
+            Wiki: docs/wiki/tools/set_track_device_param_by_name.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -153,7 +159,9 @@ class TracksDevicesMixin:
         Lets the AI read the entire device chain in one round trip, which is
         important for mastering work where you want a full picture before
         touching anything.
-        """
+
+        See Also:
+            Wiki: docs/wiki/tools/get_track_chain_summary.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}

@@ -9,7 +9,10 @@ class ScenesMixin:
     # ========================================================================
 
     def create_scene(self, name=None):
-        """Create a new scene"""
+        """Create a new scene
+
+        See Also:
+            Wiki: docs/wiki/tools/create_scene.md"""
         try:
             scene_index = len(self.song.scenes)
             self.song.create_scene(scene_index)
@@ -27,7 +30,10 @@ class ScenesMixin:
             return {"ok": False, "error": str(e)}
 
     def delete_scene(self, scene_index):
-        """Delete scene by index"""
+        """Delete scene by index
+
+        See Also:
+            Wiki: docs/wiki/tools/delete_scene.md"""
         try:
             if scene_index < 0 or scene_index >= len(self.song.scenes):
                 return {"ok": False, "error": "Invalid scene index"}
@@ -38,7 +44,10 @@ class ScenesMixin:
             return {"ok": False, "error": str(e)}
 
     def duplicate_scene(self, scene_index):
-        """Duplicate scene"""
+        """Duplicate scene
+
+        See Also:
+            Wiki: docs/wiki/tools/duplicate_scene.md"""
         try:
             if scene_index < 0 or scene_index >= len(self.song.scenes):
                 return {"ok": False, "error": "Invalid scene index"}
@@ -49,7 +58,10 @@ class ScenesMixin:
             return {"ok": False, "error": str(e)}
 
     def launch_scene(self, scene_index):
-        """Launch a scene"""
+        """Launch a scene
+
+        See Also:
+            Wiki: docs/wiki/tools/launch_scene.md"""
         try:
             if scene_index < 0 or scene_index >= len(self.song.scenes):
                 return {"ok": False, "error": "Invalid scene index"}
@@ -60,7 +72,10 @@ class ScenesMixin:
             return {"ok": False, "error": str(e)}
 
     def rename_scene(self, scene_index, name):
-        """Rename scene"""
+        """Rename scene
+
+        See Also:
+            Wiki: docs/wiki/tools/rename_scene.md"""
         try:
             if scene_index < 0 or scene_index >= len(self.song.scenes):
                 return {"ok": False, "error": "Invalid scene index"}
@@ -71,7 +86,10 @@ class ScenesMixin:
             return {"ok": False, "error": str(e)}
 
     def get_scene_info(self, scene_index):
-        """Get scene information"""
+        """Get scene information
+
+        See Also:
+            Wiki: docs/wiki/tools/get_scene_info.md"""
         try:
             if scene_index < 0 or scene_index >= len(self.song.scenes):
                 return {"ok": False, "error": "Invalid scene index"}
@@ -95,7 +113,10 @@ class ScenesMixin:
     # ========================================================================
 
     def get_scene_color(self, scene_index):
-        """Get scene color index"""
+        """Get scene color index
+
+        See Also:
+            Wiki: docs/wiki/tools/get_scene_color.md"""
         try:
             scene = self.song.scenes[scene_index]
 
@@ -107,7 +128,10 @@ class ScenesMixin:
             return {"ok": False, "error": str(e)}
 
     def set_scene_color(self, scene_index, color_index):
-        """Set scene color index"""
+        """Set scene color index
+
+        See Also:
+            Wiki: docs/wiki/tools/set_scene_color.md"""
         try:
             scene = self.song.scenes[scene_index]
 

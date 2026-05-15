@@ -45,3 +45,6 @@ htmlcov/
 *.alc
 Backup/
 *.pyc.bak
+
+# Node
+node_modules/

@@ -11,8 +11,8 @@ import os
 import socket
 
 # Host and port for the ALiveMCP Remote Script. Allow override via environment for tests.
-HOST = os.environ.get('ALIVEMCP_HOST', '127.0.0.1')
-PORT = int(os.environ.get('ALIVEMCP_PORT', 9004))
+HOST = os.environ.get("ALIVEMCP_HOST", "127.0.0.1")
+PORT = int(os.environ.get("ALIVEMCP_PORT", 9004))
 # Backwards-friendly alias for code that expects an explicit name
 ALIVEMCP_PORT = PORT
 

@@ -9,7 +9,10 @@ class MidiCCMixin:
     # ========================================================================
 
     def send_midi_cc(self, track_index, cc_number, cc_value, channel=0):
-        """Send MIDI CC message to a track"""
+        """Send MIDI CC message to a track
+
+        See Also:
+            Wiki: docs/wiki/tools/send_midi_cc.md"""
         try:
             status_byte = 176 + int(channel)
             midi_bytes = (int(status_byte), int(cc_number), int(cc_value))
@@ -29,7 +32,10 @@ class MidiCCMixin:
             return {"ok": False, "error": str(e)}
 
     def send_program_change(self, track_index, program_number, channel=0):
-        """Send MIDI Program Change message to a track"""
+        """Send MIDI Program Change message to a track
+
+        See Also:
+            Wiki: docs/wiki/tools/send_program_change.md"""
         try:
             status_byte = 192 + int(channel)
             midi_bytes = (int(status_byte), int(program_number))

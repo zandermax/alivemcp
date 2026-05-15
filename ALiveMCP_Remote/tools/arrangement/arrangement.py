@@ -19,7 +19,10 @@ class ArrangementMixin(ArrangementBrowserMixin):
     # ========================================================================
 
     def get_project_root_folder(self):
-        """Get project root folder path"""
+        """Get project root folder path
+
+        See Also:
+            Wiki: docs/wiki/tools/get_project_root_folder.md"""
         try:
             if hasattr(self.song, "project_root_folder"):
                 return {
@@ -34,7 +37,10 @@ class ArrangementMixin(ArrangementBrowserMixin):
             return {"ok": False, "error": str(e)}
 
     def trigger_session_record(self, length=None):
-        """Trigger session record with optional fixed length"""
+        """Trigger session record with optional fixed length
+
+        See Also:
+            Wiki: docs/wiki/tools/trigger_session_record.md"""
         try:
             if length:
                 self.song.trigger_session_record(float(length))
@@ -45,21 +51,30 @@ class ArrangementMixin(ArrangementBrowserMixin):
             return {"ok": False, "error": str(e)}
 
     def get_can_jump_to_next_cue(self):
-        """Check if can jump to next cue point"""
+        """Check if can jump to next cue point
+
+        See Also:
+            Wiki: docs/wiki/tools/get_can_jump_to_next_cue.md"""
         try:
             return {"ok": True, "can_jump_to_next_cue": self.song.can_jump_to_next_cue}
         except Exception as e:
             return {"ok": False, "error": str(e)}
 
     def get_can_jump_to_prev_cue(self):
-        """Check if can jump to previous cue point"""
+        """Check if can jump to previous cue point
+
+        See Also:
+            Wiki: docs/wiki/tools/get_can_jump_to_prev_cue.md"""
         try:
             return {"ok": True, "can_jump_to_prev_cue": self.song.can_jump_to_prev_cue}
         except Exception as e:
             return {"ok": False, "error": str(e)}
 
     def jump_to_next_cue(self):
-        """Jump to next cue point"""
+        """Jump to next cue point
+
+        See Also:
+            Wiki: docs/wiki/tools/jump_to_next_cue.md"""
         try:
             if self.song.can_jump_to_next_cue:
                 self.song.jump_to_next_cue()
@@ -70,7 +85,10 @@ class ArrangementMixin(ArrangementBrowserMixin):
             return {"ok": False, "error": str(e)}
 
     def jump_to_prev_cue(self):
-        """Jump to previous cue point"""
+        """Jump to previous cue point
+
+        See Also:
+            Wiki: docs/wiki/tools/jump_to_prev_cue.md"""
         try:
             if self.song.can_jump_to_prev_cue:
                 self.song.jump_to_prev_cue()
@@ -85,7 +103,10 @@ class ArrangementMixin(ArrangementBrowserMixin):
     # ========================================================================
 
     def get_arrangement_clips(self, track_index):
-        """Get list of clips in arrangement view for a track"""
+        """Get list of clips in arrangement view for a track
+
+        See Also:
+            Wiki: docs/wiki/tools/get_arrangement_clips.md"""
         try:
             track = self.song.tracks[track_index]
 
@@ -107,7 +128,10 @@ class ArrangementMixin(ArrangementBrowserMixin):
             return {"ok": False, "error": str(e)}
 
     def duplicate_to_arrangement(self, track_index, clip_index):
-        """Duplicate session clip to arrangement view"""
+        """Duplicate session clip to arrangement view
+
+        See Also:
+            Wiki: docs/wiki/tools/duplicate_to_arrangement.md"""
         try:
             track = self.song.tracks[track_index]
             clip_slot = track.clip_slots[clip_index]
@@ -126,7 +150,10 @@ class ArrangementMixin(ArrangementBrowserMixin):
             return {"ok": False, "error": str(e)}
 
     def consolidate_clip(self, track_index, start_time, end_time):
-        """Consolidate arrangement clips in time range"""
+        """Consolidate arrangement clips in time range
+
+        See Also:
+            Wiki: docs/wiki/tools/consolidate_clip.md"""
         try:
             return {
                 "ok": True,

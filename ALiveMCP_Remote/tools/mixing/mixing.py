@@ -11,7 +11,10 @@ class MixingMixin(MixingGrooveMixin):
     # ========================================================================
 
     def set_track_send(self, track_index, send_index, value):
-        """Set track send level"""
+        """Set track send level
+
+        See Also:
+            Wiki: docs/wiki/tools/set_track_send.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -28,7 +31,10 @@ class MixingMixin(MixingGrooveMixin):
             return {"ok": False, "error": str(e)}
 
     def get_track_sends(self, track_index):
-        """Get all send levels for track"""
+        """Get all send levels for track
+
+        See Also:
+            Wiki: docs/wiki/tools/get_track_sends.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -54,7 +60,10 @@ class MixingMixin(MixingGrooveMixin):
     # ========================================================================
 
     def get_master_track_info(self):
-        """Get master track information"""
+        """Get master track information
+
+        See Also:
+            Wiki: docs/wiki/tools/get_master_track_info.md"""
         try:
             master = self.song.master_track
 
@@ -75,7 +84,10 @@ class MixingMixin(MixingGrooveMixin):
             return {"ok": False, "error": str(e)}
 
     def set_master_volume(self, volume):
-        """Set master track volume (0.0 to 1.0)"""
+        """Set master track volume (0.0 to 1.0)
+
+        See Also:
+            Wiki: docs/wiki/tools/set_master_volume.md"""
         try:
             master = self.song.master_track
             if hasattr(master, "mixer_device"):
@@ -87,7 +99,10 @@ class MixingMixin(MixingGrooveMixin):
             return {"ok": False, "error": str(e)}
 
     def set_master_pan(self, pan):
-        """Set master track pan (-1.0 to 1.0)"""
+        """Set master track pan (-1.0 to 1.0)
+
+        See Also:
+            Wiki: docs/wiki/tools/set_master_pan.md"""
         try:
             master = self.song.master_track
             if hasattr(master, "mixer_device"):
@@ -99,7 +114,10 @@ class MixingMixin(MixingGrooveMixin):
             return {"ok": False, "error": str(e)}
 
     def get_master_devices(self):
-        """Get all devices on master track"""
+        """Get all devices on master track
+
+        See Also:
+            Wiki: docs/wiki/tools/get_master_devices.md"""
         try:
             master = self.song.master_track
             devices = []
@@ -123,14 +141,20 @@ class MixingMixin(MixingGrooveMixin):
     # ========================================================================
 
     def get_return_track_count(self):
-        """Get number of return tracks"""
+        """Get number of return tracks
+
+        See Also:
+            Wiki: docs/wiki/tools/get_return_track_count.md"""
         try:
             return {"ok": True, "count": len(self.song.return_tracks)}
         except Exception as e:
             return {"ok": False, "error": str(e)}
 
     def get_return_track_info(self, return_index):
-        """Get return track information"""
+        """Get return track information
+
+        See Also:
+            Wiki: docs/wiki/tools/get_return_track_info.md"""
         try:
             if return_index < 0 or return_index >= len(self.song.return_tracks):
                 return {"ok": False, "error": "Invalid return track index"}
@@ -153,7 +177,10 @@ class MixingMixin(MixingGrooveMixin):
             return {"ok": False, "error": str(e)}
 
     def set_return_track_volume(self, return_index, volume):
-        """Set return track volume"""
+        """Set return track volume
+
+        See Also:
+            Wiki: docs/wiki/tools/set_return_track_volume.md"""
         try:
             if return_index < 0 or return_index >= len(self.song.return_tracks):
                 return {"ok": False, "error": "Invalid return track index"}
@@ -174,7 +201,10 @@ class MixingMixin(MixingGrooveMixin):
     # ========================================================================
 
     def get_crossfader_assignment(self, track_index):
-        """Get track crossfader assignment (0=None, 1=A, 2=B)"""
+        """Get track crossfader assignment (0=None, 1=A, 2=B)
+
+        See Also:
+            Wiki: docs/wiki/tools/get_crossfader_assignment.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -196,7 +226,10 @@ class MixingMixin(MixingGrooveMixin):
             return {"ok": False, "error": str(e)}
 
     def set_crossfader_assignment(self, track_index, assignment):
-        """Set track crossfader assignment (0=None, 1=A, 2=B)"""
+        """Set track crossfader assignment (0=None, 1=A, 2=B)
+
+        See Also:
+            Wiki: docs/wiki/tools/set_crossfader_assignment.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -216,7 +249,10 @@ class MixingMixin(MixingGrooveMixin):
             return {"ok": False, "error": str(e)}
 
     def get_crossfader_position(self):
-        """Get master crossfader position (-1.0 to 1.0)"""
+        """Get master crossfader position (-1.0 to 1.0)
+
+        See Also:
+            Wiki: docs/wiki/tools/get_crossfader_position.md"""
         try:
             master = self.song.master_track
             if hasattr(master, "mixer_device") and hasattr(master.mixer_device, "crossfader"):

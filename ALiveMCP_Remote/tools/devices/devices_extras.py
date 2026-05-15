@@ -14,7 +14,11 @@ class DevicesExtrasMixin:
     # ========================================================================
 
     def set_device_on_off(self, track_index, device_index, enabled):
-        """Turn device on or off"""
+        """Turn device on or off
+
+        See Also:
+            Wiki: docs/wiki/tools/set_device_on_off.md
+        """
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -33,7 +37,11 @@ class DevicesExtrasMixin:
             return {"ok": False, "error": str(e)}
 
     def get_device_parameters(self, track_index, device_index):
-        """Get all parameters for a device"""
+        """Get all parameters for a device
+
+        See Also:
+            Wiki: docs/wiki/tools/get_device_parameters.md
+        """
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -69,7 +77,11 @@ class DevicesExtrasMixin:
             return {"ok": False, "error": str(e)}
 
     def get_device_parameter_by_name(self, track_index, device_index, param_name):
-        """Get device parameter by name"""
+        """Get device parameter by name
+
+        See Also:
+            Wiki: docs/wiki/tools/get_device_parameter_by_name.md
+        """
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -99,8 +111,11 @@ class DevicesExtrasMixin:
         """Set device parameter by name.
 
         For quantized parameters, pass a string matching one of the value_items.
-        For continuous parameters, pass a number — clamped to min/max.
+            For continuous parameters, pass a number clamped to min/max.
         Matches the first parameter whose name equals param_name.
+
+        See Also:
+            Wiki: docs/wiki/tools/set_device_parameter_by_name.md
         """
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
@@ -154,7 +169,11 @@ class DevicesExtrasMixin:
             return {"ok": False, "error": str(e)}
 
     def delete_device(self, track_index, device_index):
-        """Delete device from track"""
+        """Delete device from track
+
+        See Also:
+            Wiki: docs/wiki/tools/delete_device.md
+        """
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -168,48 +187,20 @@ class DevicesExtrasMixin:
         except Exception as e:
             return {"ok": False, "error": str(e)}
 
-    def get_device_presets(self, track_index, device_index):
-        """Get available presets for device"""
-        try:
-            if track_index < 0 or track_index >= len(self.song.tracks):
-                return {"ok": False, "error": "Invalid track index"}
-
-            track = self.song.tracks[track_index]
-            if device_index < 0 or device_index >= len(track.devices):
-                return {"ok": False, "error": "Invalid device index"}
-
-            return {
-                "ok": True,
-                "message": "Device preset browsing requires browser API",
-                "device_index": device_index,
-            }
-        except Exception as e:
-            return {"ok": False, "error": str(e)}
-
-    def set_device_preset(self, track_index, device_index, preset_index):
-        """Load preset for device"""
-        try:
-            if track_index < 0 or track_index >= len(self.song.tracks):
-                return {"ok": False, "error": "Invalid track index"}
-
-            track = self.song.tracks[track_index]
-            if device_index < 0 or device_index >= len(track.devices):
-                return {"ok": False, "error": "Invalid device index"}
-
-            return {
-                "ok": True,
-                "message": "Device preset loading requires browser API",
-                "preset_index": preset_index,
-            }
-        except Exception as e:
-            return {"ok": False, "error": str(e)}
-
     def randomize_device_parameters(self, track_index, device_index):
-        """Randomize all device parameters (delegates to randomize_device)"""
+        """Randomize all device parameters (delegates to randomize_device)
+
+        See Also:
+            Wiki: docs/wiki/tools/randomize_device_parameters.md
+        """
         return self.randomize_device(track_index, device_index)
 
     def randomize_device(self, track_index, device_index):
-        """Randomize all parameters of a device"""
+        """Randomize all parameters of a device
+
+        See Also:
+            Wiki: docs/wiki/tools/randomize_device.md
+        """
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -236,26 +227,5 @@ class DevicesExtrasMixin:
                 "device_name": str(device.name),
                 "randomized_parameters": randomized_count,
             }
-        except Exception as e:
-            return {"ok": False, "error": str(e)}
-
-    # ========================================================================
-    # PLUGIN WINDOW CONTROL
-    # ========================================================================
-
-    def show_plugin_window(self, track_index, device_index):
-        """Show device/plugin window"""
-        try:
-            track = self.song.tracks[track_index]
-            device = track.devices[device_index]
-            self.c_instance.song().view.select_device(device)
-            return {"ok": True, "message": "Plugin window shown", "device_name": str(device.name)}
-        except Exception as e:
-            return {"ok": False, "error": str(e)}
-
-    def hide_plugin_window(self, track_index, device_index):
-        """Hide device/plugin window"""
-        try:
-            return {"ok": True, "message": "Plugin window hidden"}
         except Exception as e:
             return {"ok": False, "error": str(e)}

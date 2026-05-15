@@ -9,7 +9,10 @@ class TakeLanesMixin:
     # ========================================================================
 
     def get_take_lanes(self, track_index):
-        """Get all take lanes for a track (Live 12+)"""
+        """Get all take lanes for a track (Live 12+)
+
+        See Also:
+            Wiki: docs/wiki/tools/get_take_lanes.md"""
         try:
             track = self.song.tracks[track_index]
 
@@ -29,7 +32,10 @@ class TakeLanesMixin:
             return {"ok": False, "error": str(e)}
 
     def create_take_lane(self, track_index, name=None):
-        """Create new take lane on a track (Live 12+)"""
+        """Create new take lane on a track (Live 12+)
+
+        See Also:
+            Wiki: docs/wiki/tools/create_take_lane.md"""
         try:
             track = self.song.tracks[track_index]
 
@@ -49,7 +55,10 @@ class TakeLanesMixin:
             return {"ok": False, "error": str(e)}
 
     def get_take_lane_name(self, track_index, lane_index):
-        """Get take lane name (Live 12+)"""
+        """Get take lane name (Live 12+)
+
+        See Also:
+            Wiki: docs/wiki/tools/get_take_lane_name.md"""
         try:
             track = self.song.tracks[track_index]
 
@@ -67,7 +76,10 @@ class TakeLanesMixin:
             return {"ok": False, "error": str(e)}
 
     def set_take_lane_name(self, track_index, lane_index, name):
-        """Set take lane name (Live 12+)"""
+        """Set take lane name (Live 12+)
+
+        See Also:
+            Wiki: docs/wiki/tools/set_take_lane_name.md"""
         try:
             track = self.song.tracks[track_index]
 
@@ -84,7 +96,10 @@ class TakeLanesMixin:
             return {"ok": False, "error": str(e)}
 
     def create_audio_clip_in_lane(self, track_index, lane_index, length=4.0):
-        """Create audio clip in take lane (Live 12+)"""
+        """Create audio clip in take lane (Live 12+)
+
+        See Also:
+            Wiki: docs/wiki/tools/create_audio_clip_in_lane.md"""
         try:
             track = self.song.tracks[track_index]
 
@@ -105,7 +120,10 @@ class TakeLanesMixin:
             return {"ok": False, "error": str(e)}
 
     def create_midi_clip_in_lane(self, track_index, lane_index, length=4.0):
-        """Create MIDI clip in take lane (Live 12+)"""
+        """Create MIDI clip in take lane (Live 12+)
+
+        See Also:
+            Wiki: docs/wiki/tools/create_midi_clip_in_lane.md"""
         try:
             track = self.song.tracks[track_index]
 
@@ -126,7 +144,10 @@ class TakeLanesMixin:
             return {"ok": False, "error": str(e)}
 
     def get_clips_in_take_lane(self, track_index, lane_index):
-        """Get all clips in a take lane (Live 12+)"""
+        """Get all clips in a take lane (Live 12+)
+
+        See Also:
+            Wiki: docs/wiki/tools/get_clips_in_take_lane.md"""
         try:
             track = self.song.tracks[track_index]
 
@@ -150,7 +171,10 @@ class TakeLanesMixin:
             return {"ok": False, "error": str(e)}
 
     def delete_take_lane(self, track_index, lane_index):
-        """Delete a take lane (Live 12+)"""
+        """Delete a take lane (Live 12+)
+
+        See Also:
+            Wiki: docs/wiki/tools/delete_take_lane.md"""
         try:
             track = self.song.tracks[track_index]
 

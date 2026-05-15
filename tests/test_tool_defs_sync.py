@@ -1,5 +1,3 @@
-import json
-
 import mcp_server_tool_defs
 from ALiveMCP_Remote.tools.core import registry as registry_mod
 

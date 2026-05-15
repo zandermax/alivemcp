@@ -9,7 +9,10 @@ class TracksCoreMixin:
     # ========================================================================
 
     def create_midi_track(self, name=None):
-        """Create a new MIDI track"""
+        """Create a new MIDI track
+
+        See Also:
+            Wiki: docs/wiki/tools/create_midi_track.md"""
         try:
             track_index = len(self.song.tracks)
             self.song.create_midi_track(track_index)
@@ -27,7 +30,10 @@ class TracksCoreMixin:
             return {"ok": False, "error": str(e)}
 
     def create_audio_track(self, name=None):
-        """Create a new audio track"""
+        """Create a new audio track
+
+        See Also:
+            Wiki: docs/wiki/tools/create_audio_track.md"""
         try:
             track_index = len(self.song.tracks)
             self.song.create_audio_track(track_index)
@@ -45,7 +51,10 @@ class TracksCoreMixin:
             return {"ok": False, "error": str(e)}
 
     def create_return_track(self):
-        """Create a new return track"""
+        """Create a new return track
+
+        See Also:
+            Wiki: docs/wiki/tools/create_return_track.md"""
         try:
             self.song.create_return_track()
             return_index = len(self.song.return_tracks) - 1
@@ -54,7 +63,10 @@ class TracksCoreMixin:
             return {"ok": False, "error": str(e)}
 
     def delete_track(self, track_index):
-        """Delete track by index"""
+        """Delete track by index
+
+        See Also:
+            Wiki: docs/wiki/tools/delete_track.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -65,7 +77,10 @@ class TracksCoreMixin:
             return {"ok": False, "error": str(e)}
 
     def duplicate_track(self, track_index):
-        """Duplicate track"""
+        """Duplicate track
+
+        See Also:
+            Wiki: docs/wiki/tools/duplicate_track.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -76,7 +91,10 @@ class TracksCoreMixin:
             return {"ok": False, "error": str(e)}
 
     def rename_track(self, track_index, name):
-        """Rename track"""
+        """Rename track
+
+        See Also:
+            Wiki: docs/wiki/tools/rename_track.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -87,7 +105,10 @@ class TracksCoreMixin:
             return {"ok": False, "error": str(e)}
 
     def set_track_volume(self, track_index, volume):
-        """Set track volume (0.0 to 1.0)"""
+        """Set track volume (0.0 to 1.0)
+
+        See Also:
+            Wiki: docs/wiki/tools/set_track_volume.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -109,7 +130,10 @@ class TracksCoreMixin:
             return {"ok": False, "error": str(e)}
 
     def set_track_pan(self, track_index, pan):
-        """Set track pan (-1.0 to 1.0)"""
+        """Set track pan (-1.0 to 1.0)
+
+        See Also:
+            Wiki: docs/wiki/tools/set_track_pan.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -131,7 +155,10 @@ class TracksCoreMixin:
             return {"ok": False, "error": str(e)}
 
     def arm_track(self, track_index, armed=True):
-        """Arm or disarm track for recording"""
+        """Arm or disarm track for recording
+
+        See Also:
+            Wiki: docs/wiki/tools/arm_track.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -150,7 +177,10 @@ class TracksCoreMixin:
             return {"ok": False, "error": str(e)}
 
     def solo_track(self, track_index, solo=True):
-        """Solo or unsolo track"""
+        """Solo or unsolo track
+
+        See Also:
+            Wiki: docs/wiki/tools/solo_track.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -161,7 +191,10 @@ class TracksCoreMixin:
             return {"ok": False, "error": str(e)}
 
     def mute_track(self, track_index, mute=True):
-        """Mute or unmute track"""
+        """Mute or unmute track
+
+        See Also:
+            Wiki: docs/wiki/tools/mute_track.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -172,7 +205,10 @@ class TracksCoreMixin:
             return {"ok": False, "error": str(e)}
 
     def get_track_info(self, track_index):
-        """Get detailed track information"""
+        """Get detailed track information
+
+        See Also:
+            Wiki: docs/wiki/tools/get_track_info.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -198,7 +234,10 @@ class TracksCoreMixin:
             return {"ok": False, "error": str(e)}
 
     def get_track_index_by_name(self, name):
-        """Find a track's index by name (case-insensitive, partial match, first result)"""
+        """Find a track's index by name (case-insensitive, partial match, first result)
+
+        See Also:
+            Wiki: docs/wiki/tools/get_track_index_by_name.md"""
         try:
             needle = name.lower()
             for i, track in enumerate(self.song.tracks):
@@ -209,7 +248,10 @@ class TracksCoreMixin:
             return {"ok": False, "error": str(e)}
 
     def set_track_color(self, track_index, color_index):
-        """Set track color"""
+        """Set track color
+
+        See Also:
+            Wiki: docs/wiki/tools/set_track_color.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -224,7 +266,10 @@ class TracksCoreMixin:
             return {"ok": False, "error": str(e)}
 
     def get_track_color(self, track_index):
-        """Get track color"""
+        """Get track color
+
+        See Also:
+            Wiki: docs/wiki/tools/get_track_color.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}

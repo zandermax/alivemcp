@@ -14,10 +14,13 @@ from .tools.arrangement.arrangement_view import ArrangementViewMixin
 from .tools.arrangement.take_lanes import TakeLanesMixin
 from .tools.automation.automation import AutomationMixin
 from .tools.clips.clips import ClipsMixin
+from .tools.clips.clips_color import ClipsColorMixin
+from .tools.clips.clips_follow_actions import ClipsFollowActionsMixin
 from .tools.core.base import BaseMixin
 from .tools.core.builtin import BuiltinMixin
 from .tools.core.registry import AVAILABLE_TOOLS
 from .tools.devices.devices import DevicesMixin
+from .tools.devices.devices_ui import DevicesUIMixin
 from .tools.m4l.m4l import M4LMixin
 from .tools.midi.midi import MidiMixin
 from .tools.mixing.mixing import MixingMixin
@@ -36,8 +39,11 @@ class LiveAPITools(
     TracksMixin,
     TracksDevicesMixin,
     ClipsMixin,
+    ClipsColorMixin,
+    ClipsFollowActionsMixin,
     MidiMixin,
     DevicesMixin,
+    DevicesUIMixin,
     MixingMixin,
     MixingMasterDevicesMixin,
     ScenesMixin,

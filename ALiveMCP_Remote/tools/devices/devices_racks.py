@@ -12,7 +12,10 @@ class DevicesRacksMixin:
     # ========================================================================
 
     def get_device_chains(self, track_index, device_index):
-        """Get chains from a rack device"""
+        """Get chains from a rack device
+
+        See Also:
+            Wiki: docs/wiki/tools/get_device_chains.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -43,7 +46,10 @@ class DevicesRacksMixin:
             return {"ok": False, "error": str(e)}
 
     def get_chain_devices(self, track_index, device_index, chain_index):
-        """Get devices in a specific chain"""
+        """Get devices in a specific chain
+
+        See Also:
+            Wiki: docs/wiki/tools/get_chain_devices.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -83,7 +89,10 @@ class DevicesRacksMixin:
             return {"ok": False, "error": str(e)}
 
     def set_chain_mute(self, track_index, device_index, chain_index, mute):
-        """Mute/unmute a chain in a rack"""
+        """Mute/unmute a chain in a rack
+
+        See Also:
+            Wiki: docs/wiki/tools/set_chain_mute.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -111,7 +120,10 @@ class DevicesRacksMixin:
             return {"ok": False, "error": str(e)}
 
     def set_chain_solo(self, track_index, device_index, chain_index, solo):
-        """Solo/unsolo a chain in a rack"""
+        """Solo/unsolo a chain in a rack
+
+        See Also:
+            Wiki: docs/wiki/tools/set_chain_solo.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -143,7 +155,10 @@ class DevicesRacksMixin:
     # ========================================================================
 
     def get_device_class_name(self, track_index, device_index):
-        """Get device class name (e.g., 'OriginalSimpler', 'Compressor2')"""
+        """Get device class name (e.g., 'OriginalSimpler', 'Compressor2')
+
+        See Also:
+            Wiki: docs/wiki/tools/get_device_class_name.md"""
         try:
             track = self.song.tracks[track_index]
             device = track.devices[device_index]
@@ -156,7 +171,10 @@ class DevicesRacksMixin:
             return {"ok": False, "error": str(e)}
 
     def get_device_type(self, track_index, device_index):
-        """Get device type (audio_effect, instrument, midi_effect)"""
+        """Get device type (audio_effect, instrument, midi_effect)
+
+        See Also:
+            Wiki: docs/wiki/tools/get_device_type.md"""
         try:
             track = self.song.tracks[track_index]
             device = track.devices[device_index]

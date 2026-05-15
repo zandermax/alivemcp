@@ -3,7 +3,10 @@
 
 class DevicesRackContentsMixin:
     def get_rack_contents(self, track_index, device_index):
-        """Get full rack interior: chains, chain devices, and enriched parameters."""
+        """Get full rack interior: chains, chain devices, and enriched parameters.
+
+        See Also:
+            Wiki: docs/wiki/tools/get_rack_contents.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}

@@ -9,7 +9,11 @@ class M4LDevicesMixin:
     # ========================================================================
 
     def is_max_device(self, track_index, device_index):
-        """Check if device is a Max for Live device"""
+        """Check if device is a Max for Live device
+
+        See Also:
+            Wiki: docs/wiki/tools/is_max_device.md
+        """
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -36,7 +40,11 @@ class M4LDevicesMixin:
             return {"ok": False, "error": str(e)}
 
     def get_m4l_devices(self, track_index):
-        """Get all Max for Live devices on track"""
+        """Get all Max for Live devices on track
+
+        See Also:
+            Wiki: docs/wiki/tools/get_m4l_devices.md
+        """
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -79,7 +87,11 @@ class M4LDevicesMixin:
         return type_map.get(class_name, "unknown")
 
     def get_m4l_param_by_name(self, track_index, device_index, param_name):
-        """Get M4L device parameter value by name"""
+        """Get M4L device parameter value by name
+
+        See Also:
+            Wiki: docs/wiki/tools/get_m4l_param_by_name.md
+        """
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -107,7 +119,11 @@ class M4LDevicesMixin:
             return {"ok": False, "error": str(e)}
 
     def get_cv_tools_devices(self, track_index):
-        """Get all CV Tools devices on track (subset of M4L devices)"""
+        """Get all CV Tools devices on track (subset of M4L devices)
+
+        See Also:
+            Wiki: docs/wiki/tools/get_cv_tools_devices.md
+        """
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}

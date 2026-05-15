@@ -9,7 +9,10 @@ class AppPropertiesMixin:
     # ========================================================================
 
     def get_build_id(self):
-        """Get Ableton Live build identifier (Live 12+)"""
+        """Get Ableton Live build identifier (Live 12+)
+
+        See Also:
+            Wiki: docs/wiki/tools/get_build_id.md"""
         try:
             import Live
 
@@ -23,7 +26,10 @@ class AppPropertiesMixin:
             return {"ok": False, "error": str(e)}
 
     def get_variant(self):
-        """Get Ableton Live variant (Suite, Standard, Intro) (Live 12+)"""
+        """Get Ableton Live variant (Suite, Standard, Intro) (Live 12+)
+
+        See Also:
+            Wiki: docs/wiki/tools/get_variant.md"""
         try:
             import Live
 
@@ -37,7 +43,10 @@ class AppPropertiesMixin:
             return {"ok": False, "error": str(e)}
 
     def show_message_box(self, message, title="Message"):
-        """Show message box dialog to user (Live 12+)"""
+        """Show message box dialog to user (Live 12+)
+
+        See Also:
+            Wiki: docs/wiki/tools/show_message_box.md"""
         try:
             import Live
 
@@ -56,7 +65,10 @@ class AppPropertiesMixin:
             return {"ok": False, "error": str(e)}
 
     def get_application_version(self):
-        """Get full Ableton Live version information"""
+        """Get full Ableton Live version information
+
+        See Also:
+            Wiki: docs/wiki/tools/get_application_version.md"""
         try:
             import Live
 
@@ -84,7 +96,10 @@ class AppPropertiesMixin:
     # ========================================================================
 
     def get_clip_start_time(self, track_index, clip_index):
-        """Get clip start time (observable in Live 12+)"""
+        """Get clip start time (observable in Live 12+)
+
+        See Also:
+            Wiki: docs/wiki/tools/get_clip_start_time.md"""
         try:
             track = self.song.tracks[track_index]
             clip_slot = track.clip_slots[clip_index]
@@ -102,7 +117,10 @@ class AppPropertiesMixin:
             return {"ok": False, "error": str(e)}
 
     def set_clip_start_time(self, track_index, clip_index, start_time):
-        """Set clip start time"""
+        """Set clip start time
+
+        See Also:
+            Wiki: docs/wiki/tools/set_clip_start_time.md"""
         try:
             track = self.song.tracks[track_index]
             clip_slot = track.clip_slots[clip_index]
@@ -121,7 +139,10 @@ class AppPropertiesMixin:
             return {"ok": False, "error": str(e)}
 
     def get_track_is_foldable(self, track_index):
-        """Check if track can be folded (group tracks)"""
+        """Check if track can be folded (group tracks)
+
+        See Also:
+            Wiki: docs/wiki/tools/get_track_is_foldable.md"""
         try:
             track = self.song.tracks[track_index]
 
@@ -133,7 +154,10 @@ class AppPropertiesMixin:
             return {"ok": False, "error": str(e)}
 
     def get_track_is_frozen(self, track_index):
-        """Check if track is currently frozen"""
+        """Check if track is currently frozen
+
+        See Also:
+            Wiki: docs/wiki/tools/get_track_is_frozen.md"""
         try:
             track = self.song.tracks[track_index]
 
@@ -145,7 +169,10 @@ class AppPropertiesMixin:
             return {"ok": False, "error": str(e)}
 
     def get_scene_is_empty(self, scene_index):
-        """Check if scene has no clips"""
+        """Check if scene has no clips
+
+        See Also:
+            Wiki: docs/wiki/tools/get_scene_is_empty.md"""
         try:
             scene = self.song.scenes[scene_index]
 
@@ -163,7 +190,10 @@ class AppPropertiesMixin:
             return {"ok": False, "error": str(e)}
 
     def get_scene_tempo(self, scene_index):
-        """Get scene tempo override (if set)"""
+        """Get scene tempo override (if set)
+
+        See Also:
+            Wiki: docs/wiki/tools/get_scene_tempo.md"""
         try:
             scene = self.song.scenes[scene_index]
 
@@ -179,7 +209,10 @@ class AppPropertiesMixin:
             return {"ok": False, "error": str(e)}
 
     def get_arrangement_overdub(self):
-        """Get arrangement overdub state"""
+        """Get arrangement overdub state
+
+        See Also:
+            Wiki: docs/wiki/tools/get_arrangement_overdub.md"""
         try:
             if hasattr(self.song, "arrangement_overdub"):
                 return {"ok": True, "arrangement_overdub": bool(self.song.arrangement_overdub)}
@@ -189,7 +222,10 @@ class AppPropertiesMixin:
             return {"ok": False, "error": str(e)}
 
     def set_record_mode(self, mode):
-        """Set session/arrangement record mode (0=session, 1=arrangement)"""
+        """Set session/arrangement record mode (0=session, 1=arrangement)
+
+        See Also:
+            Wiki: docs/wiki/tools/set_record_mode.md"""
         try:
             if hasattr(self.song, "record_mode"):
                 self.song.record_mode = int(mode)
@@ -200,7 +236,10 @@ class AppPropertiesMixin:
             return {"ok": False, "error": str(e)}
 
     def get_signature_numerator(self):
-        """Get global time signature numerator"""
+        """Get global time signature numerator
+
+        See Also:
+            Wiki: docs/wiki/tools/get_signature_numerator.md"""
         try:
             if hasattr(self.song, "signature_numerator"):
                 return {"ok": True, "signature_numerator": int(self.song.signature_numerator)}
@@ -210,7 +249,10 @@ class AppPropertiesMixin:
             return {"ok": False, "error": str(e)}
 
     def get_signature_denominator(self):
-        """Get global time signature denominator"""
+        """Get global time signature denominator
+
+        See Also:
+            Wiki: docs/wiki/tools/get_signature_denominator.md"""
         try:
             if hasattr(self.song, "signature_denominator"):
                 return {"ok": True, "signature_denominator": int(self.song.signature_denominator)}

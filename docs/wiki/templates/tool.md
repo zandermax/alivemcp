@@ -1,4 +1,14 @@
 ---
+name: "{{TOOL_NAME}}"
+domain: "{{DOMAIN}}"
+summary: "One-line summary of what the tool does"
+schema:
+	type: object
+	properties: {}
+example_request: |
+	{ "action": "{{TOOL_NAME}}", "...": "..." }
+example_response: |
+	{ "ok": true, "...": "..." }
 status: draft
 live_versions: [11, 12]
 owners: []
@@ -61,10 +71,39 @@ Replace the placeholders with the tool-specific description, parameters, respons
 
 ---
 
+## Docstring and `See Also` guidance
+
+Every implementation must include a canonical docstring that points to the wiki page. Example:
+
+```python
+"""Set a track's volume level.
+
+Args:
+  track_id: Index of the target track.
+  value: Volume level from 0.0 (silent) to 1.0 (unity gain).
+
+Returns:
+  None
+
+Raises:
+  IndexError: If track_id is out of range.
+
+See Also:
+  Wiki: docs/wiki/tools/tracks/set_track_volume.md
+"""
+```
+
+Guidelines:
+
+- Include exactly one `**Example request:**` and one `**Example response:**`.
+- Authors must fill the `schema` frontmatter with a JSON Schema describing parameters when possible.
+- Use `example_request` and `example_response` YAML scalars for canonical examples.
+
+---
+
 ## Examples (canonical format)
 
 - Leave one blank line before `**Example request:**` and one blank line between the heading and the fenced code block.
-- There must be exactly one `**Example request:**` and one `**Example response:**` per tool page.
 - Use `json` fenced code blocks for both examples when possible.
 
 **Example request:**

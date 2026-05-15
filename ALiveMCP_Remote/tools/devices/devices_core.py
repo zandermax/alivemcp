@@ -9,7 +9,10 @@ class DevicesCoreMixin:
     # ========================================================================
 
     def add_device(self, track_index, device_name):
-        """Add device to track"""
+        """Add device to track
+
+        See Also:
+            Wiki: docs/wiki/tools/add_device.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -23,7 +26,10 @@ class DevicesCoreMixin:
             return {"ok": False, "error": str(e)}
 
     def get_track_devices(self, track_index):
-        """Get all devices on track"""
+        """Get all devices on track
+
+        See Also:
+            Wiki: docs/wiki/tools/get_track_devices.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -51,7 +57,10 @@ class DevicesCoreMixin:
             return {"ok": False, "error": str(e)}
 
     def set_device_param(self, track_index, device_index, param_index, value):
-        """Set device parameter value"""
+        """Set device parameter value
+
+        See Also:
+            Wiki: docs/wiki/tools/set_device_param.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}

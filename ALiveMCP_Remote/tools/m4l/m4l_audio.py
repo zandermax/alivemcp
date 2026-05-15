@@ -9,7 +9,11 @@ class M4LAudioMixin:
     # ========================================================================
 
     def get_clip_warp_mode(self, track_index, clip_index):
-        """Get audio clip warp mode"""
+        """Get audio clip warp mode
+
+        See Also:
+            Wiki: docs/wiki/tools/get_clip_warp_mode.md
+        """
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -47,7 +51,11 @@ class M4LAudioMixin:
             return {"ok": False, "error": str(e)}
 
     def set_clip_warp_mode(self, track_index, clip_index, warp_mode):
-        """Set audio clip warp mode (0-5: Beats, Tones, Texture, Re-Pitch, Complex, Complex Pro)"""
+        """Set audio clip warp mode (0-5: Beats, Tones, Texture, Re-Pitch, Complex, Complex Pro)
+
+        See Also:
+            Wiki: docs/wiki/tools/set_clip_warp_mode.md
+        """
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -73,7 +81,11 @@ class M4LAudioMixin:
             return {"ok": False, "error": str(e)}
 
     def get_clip_file_path(self, track_index, clip_index):
-        """Get audio clip file path"""
+        """Get audio clip file path
+
+        See Also:
+            Wiki: docs/wiki/tools/get_clip_file_path.md
+        """
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -101,7 +113,11 @@ class M4LAudioMixin:
             return {"ok": False, "error": str(e)}
 
     def set_clip_warping(self, track_index, clip_index, warping):
-        """Enable/disable warping for audio clip"""
+        """Enable/disable warping for audio clip
+
+        See Also:
+            Wiki: docs/wiki/tools/set_clip_warping.md
+        """
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -127,7 +143,11 @@ class M4LAudioMixin:
             return {"ok": False, "error": str(e)}
 
     def get_warp_markers(self, track_index, clip_index):
-        """Get warp markers from audio clip"""
+        """Get warp markers from audio clip
+
+        See Also:
+            Wiki: docs/wiki/tools/get_warp_markers.md
+        """
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -167,7 +187,10 @@ class M4LAudioMixin:
     # ========================================================================
 
     def get_sample_length(self, track_index, clip_index):
-        """Get audio sample length for a clip"""
+        """Get audio sample length for a clip
+
+        See Also:
+            Wiki: docs/wiki/tools/get_sample_length.md"""
         try:
             track = self.song.tracks[track_index]
             clip_slot = track.clip_slots[clip_index]
@@ -185,7 +208,10 @@ class M4LAudioMixin:
             return {"ok": False, "error": str(e)}
 
     def get_sample_playback_mode(self, track_index, device_index):
-        """Get Simpler/Sampler playback mode"""
+        """Get Simpler/Sampler playback mode
+
+        See Also:
+            Wiki: docs/wiki/tools/get_sample_playback_mode.md"""
         try:
             track = self.song.tracks[track_index]
             device = track.devices[device_index]
@@ -198,7 +224,10 @@ class M4LAudioMixin:
             return {"ok": False, "error": str(e)}
 
     def set_sample_playback_mode(self, track_index, device_index, mode):
-        """Set Simpler/Sampler playback mode"""
+        """Set Simpler/Sampler playback mode
+
+        See Also:
+            Wiki: docs/wiki/tools/set_sample_playback_mode.md"""
         try:
             track = self.song.tracks[track_index]
             device = track.devices[device_index]

@@ -9,7 +9,10 @@ class MixingMasterDevicesMixin:
     # ========================================================================
 
     def get_master_device_params(self, device_index):
-        """Get all enriched parameter info for a device on the master track"""
+        """Get all enriched parameter info for a device on the master track
+
+        See Also:
+            Wiki: docs/wiki/tools/get_master_device_params.md"""
         try:
             master = self.song.master_track
             if device_index < 0 or device_index >= len(master.devices):
@@ -50,7 +53,10 @@ class MixingMasterDevicesMixin:
             return {"ok": False, "error": str(e)}
 
     def set_master_device_param(self, device_index, param_index, value):
-        """Set a parameter value on a device on the master track by index"""
+        """Set a parameter value on a device on the master track by index
+
+        See Also:
+            Wiki: docs/wiki/tools/set_master_device_param.md"""
         try:
             master = self.song.master_track
             if device_index < 0 or device_index >= len(master.devices):
@@ -79,7 +85,9 @@ class MixingMasterDevicesMixin:
         (e.g. "4:1"). For continuous parameters, pass a number — it will be
         clamped to the parameter's min/max range.
         Matches the first parameter whose name equals param_name.
-        """
+
+        See Also:
+            Wiki: docs/wiki/tools/set_master_device_param_by_name.md"""
         try:
             master = self.song.master_track
             if device_index < 0 or device_index >= len(master.devices):
@@ -133,7 +141,9 @@ class MixingMasterDevicesMixin:
         """Get enriched info for a single master track device parameter by name.
 
         Matches the first parameter whose name equals param_name.
-        """
+
+        See Also:
+            Wiki: docs/wiki/tools/get_master_device_param_info.md"""
         try:
             master = self.song.master_track
             if device_index < 0 or device_index >= len(master.devices):
@@ -172,7 +182,10 @@ class MixingMasterDevicesMixin:
             return {"ok": False, "error": str(e)}
 
     def get_master_chain_summary(self):
-        """Get all devices on the master track with full enriched parameter lists"""
+        """Get all devices on the master track with full enriched parameter lists
+
+        See Also:
+            Wiki: docs/wiki/tools/get_master_chain_summary.md"""
         try:
             master = self.song.master_track
             devices = []

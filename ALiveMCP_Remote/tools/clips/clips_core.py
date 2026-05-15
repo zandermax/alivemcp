@@ -9,7 +9,10 @@ class ClipsCoreMixin:
     # ========================================================================
 
     def create_midi_clip(self, track_index, clip_index, length=4.0):
-        """Create a new MIDI clip"""
+        """Create a new MIDI clip
+
+        See Also:
+            Wiki: docs/wiki/tools/create_midi_clip.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -39,7 +42,10 @@ class ClipsCoreMixin:
             return {"ok": False, "error": str(e)}
 
     def delete_clip(self, track_index, clip_index):
-        """Delete clip"""
+        """Delete clip
+
+        See Also:
+            Wiki: docs/wiki/tools/delete_clip.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -58,7 +64,10 @@ class ClipsCoreMixin:
             return {"ok": False, "error": str(e)}
 
     def duplicate_clip(self, track_index, clip_index):
-        """Duplicate clip to the next empty slot on the same track"""
+        """Duplicate clip to the next empty slot on the same track
+
+        See Also:
+            Wiki: docs/wiki/tools/duplicate_clip.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -91,7 +100,10 @@ class ClipsCoreMixin:
             return {"ok": False, "error": str(e)}
 
     def launch_clip(self, track_index, clip_index):
-        """Launch clip"""
+        """Launch clip
+
+        See Also:
+            Wiki: docs/wiki/tools/launch_clip.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -110,7 +122,10 @@ class ClipsCoreMixin:
             return {"ok": False, "error": str(e)}
 
     def stop_clip(self, track_index, clip_index):
-        """Stop the clip in the specific slot"""
+        """Stop the clip in the specific slot
+
+        See Also:
+            Wiki: docs/wiki/tools/stop_clip.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -125,7 +140,10 @@ class ClipsCoreMixin:
             return {"ok": False, "error": str(e)}
 
     def stop_all_clips(self):
-        """Stop all playing clips"""
+        """Stop all playing clips
+
+        See Also:
+            Wiki: docs/wiki/tools/stop_all_clips.md"""
         try:
             self.song.stop_all_clips()
             return {"ok": True, "message": "All clips stopped"}
@@ -133,7 +151,10 @@ class ClipsCoreMixin:
             return {"ok": False, "error": str(e)}
 
     def get_clip_info(self, track_index, clip_index):
-        """Get clip information"""
+        """Get clip information
+
+        See Also:
+            Wiki: docs/wiki/tools/get_clip_info.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -163,7 +184,10 @@ class ClipsCoreMixin:
             return {"ok": False, "error": str(e)}
 
     def set_clip_name(self, track_index, clip_index, name):
-        """Set clip name"""
+        """Set clip name
+
+        See Also:
+            Wiki: docs/wiki/tools/set_clip_name.md"""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}

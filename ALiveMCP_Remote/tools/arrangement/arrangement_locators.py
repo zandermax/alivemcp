@@ -12,7 +12,10 @@ class ArrangementLocatorsMixin:
     # ========================================================================
 
     def create_locator(self, time_in_beats, name="Locator"):
-        """Create a locator/cue point at specified time"""
+        """Create a locator/cue point at specified time
+
+        See Also:
+            Wiki: docs/wiki/tools/create_locator.md"""
         try:
             if hasattr(self.song, "create_cue_point"):
                 self.song.create_cue_point(float(time_in_beats))
@@ -31,7 +34,10 @@ class ArrangementLocatorsMixin:
             return {"ok": False, "error": str(e)}
 
     def delete_locator(self, locator_index):
-        """Delete a locator/cue point"""
+        """Delete a locator/cue point
+
+        See Also:
+            Wiki: docs/wiki/tools/delete_locator.md"""
         try:
             if hasattr(self.song, "cue_points"):
                 if locator_index < 0 or locator_index >= len(self.song.cue_points):
@@ -49,7 +55,10 @@ class ArrangementLocatorsMixin:
             return {"ok": False, "error": str(e)}
 
     def get_locators(self):
-        """Get all locators/cue points"""
+        """Get all locators/cue points
+
+        See Also:
+            Wiki: docs/wiki/tools/get_locators.md"""
         try:
             if hasattr(self.song, "cue_points"):
                 locators = []
@@ -68,7 +77,10 @@ class ArrangementLocatorsMixin:
             return {"ok": False, "error": str(e)}
 
     def jump_by_amount(self, amount_in_beats):
-        """Jump playback position by specified amount (positive or negative)"""
+        """Jump playback position by specified amount (positive or negative)
+
+        See Also:
+            Wiki: docs/wiki/tools/jump_by_amount.md"""
         try:
             current_time = self.song.current_song_time
             new_time = float(current_time) + float(amount_in_beats)

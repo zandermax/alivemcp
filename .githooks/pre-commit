@@ -21,14 +21,20 @@ if [ -z "$STAGED" ]; then
     exit 0
 fi
 
+# Build an array of staged Python files (preserve whitespace safely)
+STAGED_PY=()
+while IFS= read -r f; do
+    STAGED_PY+=("$f")
+done <<< "$STAGED"
+
 echo "--- pre-commit: ruff lint (auto-fix) ---"
-$RUFF check --fix $STAGED
+$RUFF check --fix "${STAGED_PY[@]}"
 
 echo "--- pre-commit: ruff format ---"
-$RUFF format $STAGED
+$RUFF format "${STAGED_PY[@]}"
 
 # Re-stage any files that ruff modified
-for f in $STAGED; do
+for f in "${STAGED_PY[@]}"; do
     if ! git diff --quiet "$f" 2>/dev/null; then
         git add "$f"
         echo "  re-staged (auto-fixed): $f"
@@ -36,15 +42,46 @@ for f in $STAGED; do
 done
 
 # Fail if unfixable lint errors remain after auto-fix
-if ! $RUFF check $STAGED; then
+if ! $RUFF check "${STAGED_PY[@]}"; then
     echo ""
     echo "Lint errors remain that ruff could not fix automatically."
     exit 1
 fi
 
 echo "--- pre-commit: file length check ---"
-if ! python3 scripts/check_file_length.py $STAGED; then
+if ! python3 scripts/check_file_length.py "${STAGED_PY[@]}"; then
     exit 1
+fi
+
+# Collect staged Markdown files (if any) and run markdownlint via npx
+STAGED_MD=$(git diff --cached --name-only --diff-filter=d -- '*.md')
+
+if [ -n "$STAGED_MD" ]; then
+    if command -v npx >/dev/null 2>&1; then
+        echo "--- pre-commit: markdownlint (auto-fix) ---"
+        MD_FILES=()
+        while IFS= read -r f; do
+            MD_FILES+=("$f")
+        done <<< "$STAGED_MD"
+
+        npx --yes --prefix ../Music markdownlint-cli2 -c ./.markdownlint.json --fix "${MD_FILES[@]}" || true
+
+        for f in "${MD_FILES[@]}"; do
+            if ! git diff --quiet "$f" 2>/dev/null; then
+                git add "$f"
+                echo "  re-staged (auto-fixed): $f"
+            fi
+        done
+
+        echo "--- pre-commit: markdownlint check ---"
+        if ! npx --yes --prefix ../Music markdownlint-cli2 -c ./.markdownlint.json "${MD_FILES[@]}"; then
+            echo ""
+            echo "Markdown lint errors remain that markdownlint could not fix automatically."
+            exit 1
+        fi
+    else
+        echo "npx not found. Skipping markdownlint pre-commit checks; install Node.js to enable them."
+    fi
 fi
 
 echo "pre-commit checks passed."

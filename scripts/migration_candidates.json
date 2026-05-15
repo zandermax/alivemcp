@@ -1,0 +1,1164 @@
+{
+  "candidates": [
+    {
+      "path": "docs/wiki/tools/arrangement/show_arrangement_view.md",
+      "title": "show_arrangement_view",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/arrangement/consolidate_clip.md",
+      "title": "consolidate_clip",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/arrangement/get_take_lane_name.md",
+      "title": "get_take_lane_name",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/arrangement/get_can_jump_to_next_cue.md",
+      "title": "get_can_jump_to_next_cue",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/arrangement/browse_devices.md",
+      "title": "browse_devices",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/arrangement/get_browser_items.md",
+      "title": "get_browser_items",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/arrangement/get_locators.md",
+      "title": "get_locators",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/arrangement/set_take_lane_name.md",
+      "title": "set_take_lane_name",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/arrangement/get_arrangement_clips.md",
+      "title": "get_arrangement_clips",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/arrangement/scroll_view_to_time.md",
+      "title": "scroll_view_to_time",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/arrangement/trigger_session_record.md",
+      "title": "trigger_session_record",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/arrangement/create_audio_clip_in_lane.md",
+      "title": "create_audio_clip_in_lane",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/arrangement/get_clips_in_take_lane.md",
+      "title": "get_clips_in_take_lane",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/arrangement/jump_to_next_cue.md",
+      "title": "jump_to_next_cue",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/arrangement/set_loop_enabled.md",
+      "title": "set_loop_enabled",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/arrangement/get_project_root_folder.md",
+      "title": "get_project_root_folder",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/arrangement/show_clip_view.md",
+      "title": "show_clip_view",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/arrangement/duplicate_to_arrangement.md",
+      "title": "duplicate_to_arrangement",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/arrangement/get_take_lanes.md",
+      "title": "get_take_lanes",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/arrangement/create_take_lane.md",
+      "title": "create_take_lane",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/arrangement/focus_track.md",
+      "title": "focus_track",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/arrangement/get_can_jump_to_prev_cue.md",
+      "title": "get_can_jump_to_prev_cue",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/arrangement/get_loop_enabled.md",
+      "title": "get_loop_enabled",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/arrangement/load_device_from_browser.md",
+      "title": "load_device_from_browser",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/arrangement/delete_locator.md",
+      "title": "delete_locator",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/arrangement/jump_by_amount.md",
+      "title": "jump_by_amount",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/arrangement/create_locator.md",
+      "title": "create_locator",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/arrangement/create_midi_clip_in_lane.md",
+      "title": "create_midi_clip_in_lane",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/arrangement/jump_to_prev_cue.md",
+      "title": "jump_to_prev_cue",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/arrangement/delete_take_lane.md",
+      "title": "delete_take_lane",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/arrangement/browse_plugins.md",
+      "title": "browse_plugins",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/scenes/set_scene_color.md",
+      "title": "set_scene_color",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/scenes/get_scene_color.md",
+      "title": "get_scene_color",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/scenes/get_scene_info.md",
+      "title": "get_scene_info",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/scenes/launch_scene.md",
+      "title": "launch_scene",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/scenes/delete_scene.md",
+      "title": "delete_scene",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/scenes/create_scene.md",
+      "title": "create_scene",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/scenes/rename_scene.md",
+      "title": "rename_scene",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/scenes/duplicate_scene.md",
+      "title": "duplicate_scene",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/mixing/set_groove_amount.md",
+      "title": "set_groove_amount",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/mixing/set_track_send.md",
+      "title": "set_track_send",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/mixing/get_master_device_params.md",
+      "title": "get_master_device_params",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/mixing/get_groove_amount.md",
+      "title": "get_groove_amount",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/mixing/get_track_sends.md",
+      "title": "get_track_sends",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/mixing/set_clip_groove.md",
+      "title": "set_clip_groove",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/mixing/get_master_track_info.md",
+      "title": "get_master_track_info",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/mixing/get_return_track_info.md",
+      "title": "get_return_track_info",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/mixing/set_crossfader_assignment.md",
+      "title": "set_crossfader_assignment",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/mixing/get_master_devices.md",
+      "title": "get_master_devices",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/mixing/get_master_device_param_info.md",
+      "title": "get_master_device_param_info",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/mixing/get_return_track_count.md",
+      "title": "get_return_track_count",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/mixing/get_groove_pool_grooves.md",
+      "title": "get_groove_pool_grooves",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/mixing/set_master_pan.md",
+      "title": "set_master_pan",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/mixing/set_return_track_volume.md",
+      "title": "set_return_track_volume",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/mixing/get_crossfader_position.md",
+      "title": "get_crossfader_position",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/mixing/set_master_device_param.md",
+      "title": "set_master_device_param",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/mixing/set_master_volume.md",
+      "title": "set_master_volume",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/mixing/get_crossfader_assignment.md",
+      "title": "get_crossfader_assignment",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/mixing/set_master_device_param_by_name.md",
+      "title": "set_master_device_param_by_name",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/mixing/get_master_chain_summary.md",
+      "title": "get_master_chain_summary",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/mixing/set_clip_groove_amount.md",
+      "title": "set_clip_groove_amount",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/set_clip_pitch_fine.md",
+      "title": "set_clip_pitch_fine",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/stop_all_clips.md",
+      "title": "stop_all_clips",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/get_clip_file_path.md",
+      "title": "get_clip_file_path",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/get_clip_color.md",
+      "title": "get_clip_color",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/set_follow_action_time.md",
+      "title": "set_follow_action_time",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/get_clip_follow_action.md",
+      "title": "get_clip_follow_action",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/set_clip_end_marker.md",
+      "title": "set_clip_end_marker",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/set_clip_name.md",
+      "title": "set_clip_name",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/get_clip_notes.md",
+      "title": "get_clip_notes",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/get_warp_markers.md",
+      "title": "get_warp_markers",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/get_clip_fade_in.md",
+      "title": "get_clip_fade_in",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/quantize_clip_pitch.md",
+      "title": "quantize_clip_pitch",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/set_clip_warping.md",
+      "title": "set_clip_warping",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/set_clip_color.md",
+      "title": "set_clip_color",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/set_clip_ram_mode.md",
+      "title": "set_clip_ram_mode",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/get_clip_annotation.md",
+      "title": "get_clip_annotation",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/add_notes.md",
+      "title": "add_notes",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/set_clip_gain.md",
+      "title": "set_clip_gain",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/set_clip_fade_out.md",
+      "title": "set_clip_fade_out",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/set_clip_pitch_coarse.md",
+      "title": "set_clip_pitch_coarse",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/set_clip_annotation.md",
+      "title": "set_clip_annotation",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/get_clip_fade_out.md",
+      "title": "get_clip_fade_out",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/set_clip_follow_action.md",
+      "title": "set_clip_follow_action",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/duplicate_clip.md",
+      "title": "duplicate_clip",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/set_clip_loop_start.md",
+      "title": "set_clip_loop_start",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/get_clip_info.md",
+      "title": "get_clip_info",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/set_clip_signature_numerator.md",
+      "title": "set_clip_signature_numerator",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/set_clip_muted.md",
+      "title": "set_clip_muted",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/get_clip_ram_mode.md",
+      "title": "get_clip_ram_mode",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/quantize_clip.md",
+      "title": "quantize_clip",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/set_clip_fade_in.md",
+      "title": "set_clip_fade_in",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/set_clip_start_marker.md",
+      "title": "set_clip_start_marker",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/stop_clip.md",
+      "title": "stop_clip",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/create_midi_clip.md",
+      "title": "create_midi_clip",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/set_clip_warp_mode.md",
+      "title": "set_clip_warp_mode",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/delete_clip.md",
+      "title": "delete_clip",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/set_clip_looping.md",
+      "title": "set_clip_looping",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/set_clip_loop_end.md",
+      "title": "set_clip_loop_end",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/remove_notes.md",
+      "title": "remove_notes",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/get_clip_warp_mode.md",
+      "title": "get_clip_warp_mode",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/clips/launch_clip.md",
+      "title": "launch_clip",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/midi/replace_selected_notes.md",
+      "title": "replace_selected_notes",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/midi/get_clip_notes.md",
+      "title": "get_clip_notes",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/midi/get_notes_extended.md",
+      "title": "get_notes_extended",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/midi/send_program_change.md",
+      "title": "send_program_change",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/midi/send_midi_cc.md",
+      "title": "send_midi_cc",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/midi/select_all_notes.md",
+      "title": "select_all_notes",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/midi/deselect_all_notes.md",
+      "title": "deselect_all_notes",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/midi/remove_notes.md",
+      "title": "remove_notes",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/set_track_output_sub_routing.md",
+      "title": "set_track_output_sub_routing",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/ungroup_track.md",
+      "title": "ungroup_track",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/get_track_available_input_routing_types.md",
+      "title": "get_track_available_input_routing_types",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/create_group_track.md",
+      "title": "create_group_track",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/freeze_track.md",
+      "title": "freeze_track",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/unfreeze_track.md",
+      "title": "unfreeze_track",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/get_track_delay.md",
+      "title": "get_track_delay",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/set_track_delay.md",
+      "title": "set_track_delay",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/create_midi_track.md",
+      "title": "create_midi_track",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/create_return_track.md",
+      "title": "create_return_track",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/mute_track.md",
+      "title": "mute_track",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/set_track_annotation.md",
+      "title": "set_track_annotation",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/get_track_chain_summary.md",
+      "title": "get_track_chain_summary",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/get_track_is_grouped.md",
+      "title": "get_track_is_grouped",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/set_track_pan.md",
+      "title": "set_track_pan",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/set_track_current_monitoring_state.md",
+      "title": "set_track_current_monitoring_state",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/set_track_fold_state.md",
+      "title": "set_track_fold_state",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/solo_track.md",
+      "title": "solo_track",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/set_track_input_sub_routing.md",
+      "title": "set_track_input_sub_routing",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/create_audio_track.md",
+      "title": "create_audio_track",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/get_track_annotation.md",
+      "title": "get_track_annotation",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/group_tracks.md",
+      "title": "group_tracks",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/get_track_input_routing_type.md",
+      "title": "get_track_input_routing_type",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/get_track_output_routing.md",
+      "title": "get_track_output_routing",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/rename_track.md",
+      "title": "rename_track",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/get_track_available_output_routing_types.md",
+      "title": "get_track_available_output_routing_types",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/get_track_index_by_name.md",
+      "title": "get_track_index_by_name",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/flatten_track.md",
+      "title": "flatten_track",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/set_track_input_routing.md",
+      "title": "set_track_input_routing",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/get_track_color.md",
+      "title": "get_track_color",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/set_track_color.md",
+      "title": "set_track_color",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/set_track_device_param.md",
+      "title": "set_track_device_param",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/get_track_device_params.md",
+      "title": "get_track_device_params",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/delete_track.md",
+      "title": "delete_track",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/set_track_output_routing.md",
+      "title": "set_track_output_routing",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/arm_track.md",
+      "title": "arm_track",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/duplicate_track.md",
+      "title": "duplicate_track",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/set_track_volume.md",
+      "title": "set_track_volume",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/get_track_info.md",
+      "title": "get_track_info",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/tracks/set_track_device_param_by_name.md",
+      "title": "set_track_device_param_by_name",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/properties/get_signature_numerator.md",
+      "title": "get_signature_numerator",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/properties/get_track_is_frozen.md",
+      "title": "get_track_is_frozen",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/properties/get_application_version.md",
+      "title": "get_application_version",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/properties/set_record_mode.md",
+      "title": "set_record_mode",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/properties/get_signature_denominator.md",
+      "title": "get_signature_denominator",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/properties/show_message_box.md",
+      "title": "show_message_box",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/properties/get_build_id.md",
+      "title": "get_build_id",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/properties/get_arrangement_overdub.md",
+      "title": "get_arrangement_overdub",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/properties/get_scene_tempo.md",
+      "title": "get_scene_tempo",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/properties/get_clip_start_time.md",
+      "title": "get_clip_start_time",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/properties/get_variant.md",
+      "title": "get_variant",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/properties/get_track_is_foldable.md",
+      "title": "get_track_is_foldable",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/properties/get_scene_is_empty.md",
+      "title": "get_scene_is_empty",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/properties/set_clip_start_time.md",
+      "title": "set_clip_start_time",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/m4l/get_sample_length.md",
+      "title": "get_sample_length",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/m4l/get_m4l_param_by_name.md",
+      "title": "get_m4l_param_by_name",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/m4l/get_sample_playback_mode.md",
+      "title": "get_sample_playback_mode",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/m4l/set_sample_playback_mode.md",
+      "title": "set_sample_playback_mode",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/m4l/get_m4l_devices.md",
+      "title": "get_m4l_devices",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/m4l/is_max_device.md",
+      "title": "is_max_device",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/m4l/get_cv_tools_devices.md",
+      "title": "get_cv_tools_devices",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/automation/get_automation_envelope_values.md",
+      "title": "get_automation_envelope_values",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/automation/insert_automation_step.md",
+      "title": "insert_automation_step",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/automation/remove_automation_step.md",
+      "title": "remove_automation_step",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/automation/get_clip_automation_envelope.md",
+      "title": "get_clip_automation_envelope",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/automation/clear_automation_envelope.md",
+      "title": "clear_automation_envelope",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/automation/create_automation_envelope.md",
+      "title": "create_automation_envelope",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/devices/hide_plugin_window.md",
+      "title": "hide_plugin_window",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/devices/add_device.md",
+      "title": "add_device",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/devices/get_device_parameter_by_name.md",
+      "title": "get_device_parameter_by_name",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/devices/get_device_chains.md",
+      "title": "get_device_chains",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/devices/set_device_parameter_by_name.md",
+      "title": "set_device_parameter_by_name",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/devices/get_device_type.md",
+      "title": "get_device_type",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/devices/set_device_preset.md",
+      "title": "set_device_preset",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/devices/get_rack_contents.md",
+      "title": "get_rack_contents",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/devices/get_chain_devices.md",
+      "title": "get_chain_devices",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/devices/show_plugin_window.md",
+      "title": "show_plugin_window",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/devices/set_device_param.md",
+      "title": "set_device_param",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/devices/randomize_device_parameters.md",
+      "title": "randomize_device_parameters",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/devices/delete_device.md",
+      "title": "delete_device",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/devices/get_track_devices.md",
+      "title": "get_track_devices",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/devices/randomize_device.md",
+      "title": "randomize_device",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/devices/get_device_param_display_value.md",
+      "title": "get_device_param_display_value",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/devices/set_chain_solo.md",
+      "title": "set_chain_solo",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/devices/get_device_parameters.md",
+      "title": "get_device_parameters",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/devices/get_all_param_display_values.md",
+      "title": "get_all_param_display_values",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/devices/get_device_class_name.md",
+      "title": "get_device_class_name",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/devices/get_device_presets.md",
+      "title": "get_device_presets",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/devices/set_device_on_off.md",
+      "title": "set_device_on_off",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/devices/set_chain_mute.md",
+      "title": "set_chain_mute",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/session/capture_midi.md",
+      "title": "capture_midi",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/session/get_session_automation_record.md",
+      "title": "get_session_automation_record",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/session/redo.md",
+      "title": "redo",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/session/health_check.md",
+      "title": "health_check",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/session/set_metronome_volume.md",
+      "title": "set_metronome_volume",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/session/stop_recording.md",
+      "title": "stop_recording",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/session/get_current_time.md",
+      "title": "get_current_time",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/session/undo.md",
+      "title": "undo",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/session/set_metronome.md",
+      "title": "set_metronome",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/session/get_session_record.md",
+      "title": "get_session_record",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/session/set_punch_out.md",
+      "title": "set_punch_out",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/session/get_session_info.md",
+      "title": "get_session_info",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/session/continue_playing.md",
+      "title": "continue_playing",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/session/ping.md",
+      "title": "ping",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/session/set_back_to_arranger.md",
+      "title": "set_back_to_arranger",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/session/tap_tempo.md",
+      "title": "tap_tempo",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/session/set_tempo.md",
+      "title": "set_tempo",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/session/set_session_record.md",
+      "title": "set_session_record",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/session/nudge_up.md",
+      "title": "nudge_up",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/session/set_session_automation_record.md",
+      "title": "set_session_automation_record",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/session/jump_to_time.md",
+      "title": "jump_to_time",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/session/start_recording.md",
+      "title": "start_recording",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/session/set_arrangement_overdub.md",
+      "title": "set_arrangement_overdub",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/session/stop_playback.md",
+      "title": "stop_playback",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/session/set_punch_in.md",
+      "title": "set_punch_in",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/session/set_loop_start.md",
+      "title": "set_loop_start",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/session/nudge_down.md",
+      "title": "nudge_down",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/session/get_metronome_volume.md",
+      "title": "get_metronome_volume",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/session/set_loop_length.md",
+      "title": "set_loop_length",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/session/start_playback.md",
+      "title": "start_playback",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/session/set_time_signature.md",
+      "title": "set_time_signature",
+      "summary": ""
+    },
+    {
+      "path": "docs/wiki/tools/session/re_enable_automation.md",
+      "title": "re_enable_automation",
+      "summary": ""
+    }
+  ]
+}

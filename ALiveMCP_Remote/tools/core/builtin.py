@@ -41,7 +41,10 @@ class BuiltinMixin:
     """
 
     def ping(self):
-        """Return a pong response confirming the script is running."""
+        """Return a pong response confirming the script is running.
+
+        See Also:
+            Wiki: docs/wiki/tools/ping.md"""
         from ALiveMCP_Remote import __version__
 
         return {
@@ -52,7 +55,10 @@ class BuiltinMixin:
         }
 
     def health_check(self):
-        """Return health status including version, tool count, and queue size."""
+        """Return health status including version, tool count, and queue size.
+
+        See Also:
+            Wiki: docs/wiki/tools/health_check.md"""
         from ALiveMCP_Remote import __version__
 
         try:
