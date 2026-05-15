@@ -13,7 +13,15 @@ class M4LDevicesMixin:
 
         See Also:
             Wiki: docs/wiki/tools/is_max_device.md
-        """
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -44,7 +52,15 @@ class M4LDevicesMixin:
 
         See Also:
             Wiki: docs/wiki/tools/get_m4l_devices.md
-        """
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -91,7 +107,15 @@ class M4LDevicesMixin:
 
         See Also:
             Wiki: docs/wiki/tools/get_m4l_param_by_name.md
-        """
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -123,7 +147,15 @@ class M4LDevicesMixin:
 
         See Also:
             Wiki: docs/wiki/tools/get_cv_tools_devices.md
-        """
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}

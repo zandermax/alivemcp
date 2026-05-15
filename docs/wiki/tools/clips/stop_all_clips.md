@@ -1,3 +1,8 @@
+---
+name: "stop_all_clips"
+summary: ""
+---
+
 # stop_all_clips
 
 Stop All Clips
@@ -7,15 +12,17 @@ Stop all playing clips in the song.
 Parameters: None
 
 Returns:
+
 - `ok`: boolean
 - `message`: status string
-**Example request:**
+  **Example request:**
+
 ```json
-{"action": "stop_all_clips"}
+{ "action": "stop_all_clips" }
 ```
+
 **Example response:**
+
 ```json
-{"ok": true}
+{ "ok": true }
 ```
-
-

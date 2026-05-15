@@ -131,8 +131,13 @@ def main(argv):
     parser = argparse.ArgumentParser()
     parser.add_argument("--output-dir", default="mcp_tool_defs")
     parser.add_argument("--manifest", default="docs/tool_manifest.json")
+    parser.add_argument("--check", action="store_true", help="Alias for dry-run (no --apply).")
     parser.add_argument("--apply", action="store_true")
     args = parser.parse_args(argv)
+
+    if args.check and args.apply:
+        print("Cannot use --check with --apply", file=sys.stderr)
+        return 2
 
     repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     registry_path = os.path.join(repo_root, "ALiveMCP_Remote", "tools", "core", "registry.py")

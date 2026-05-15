@@ -1,0 +1,196 @@
+{
+  "candidates": [
+    {
+      "path": "docs/wiki/tools/session/re_enable_automation.md",
+      "title": "re_enable_automation",
+      "summary": "Re-enable automation for the song.",
+      "live_mapping": "- Calls `song.re_enable_automation()`."
+    },
+    {
+      "path": "docs/wiki/tools/session/set_time_signature.md",
+      "title": "set_time_signature",
+      "summary": "Set the session time signature.",
+      "live_mapping": "- Writes `song.signature_numerator` and `song.signature_denominator` after validation."
+    },
+    {
+      "path": "docs/wiki/tools/session/start_playback.md",
+      "title": "start_playback",
+      "summary": "Start Ableton playback.",
+      "live_mapping": "- Calls `song.start_playing()` when playback isn't already running."
+    },
+    {
+      "path": "docs/wiki/tools/session/set_loop_length.md",
+      "title": "set_loop_length",
+      "summary": "Set the song loop length (in beats).",
+      "live_mapping": "- Writes `song.loop_length = length`."
+    },
+    {
+      "path": "docs/wiki/tools/session/get_metronome_volume.md",
+      "title": "get_metronome_volume",
+      "summary": "Get the metronome volume when available.",
+      "live_mapping": "- Reads `song.metronome` when exposed as a volume value."
+    },
+    {
+      "path": "docs/wiki/tools/session/nudge_down.md",
+      "title": "nudge_down",
+      "summary": "Nudge playback position down.",
+      "live_mapping": "- Calls `song.nudge_down()`."
+    },
+    {
+      "path": "docs/wiki/tools/session/set_loop_start.md",
+      "title": "set_loop_start",
+      "summary": "Set the song loop start position (in beats).",
+      "live_mapping": "- Writes `song.loop_start = position`."
+    },
+    {
+      "path": "docs/wiki/tools/session/set_punch_in.md",
+      "title": "set_punch_in",
+      "summary": "Enable or disable punch-in recording.",
+      "live_mapping": "- Writes `song.punch_in = bool(enabled)`."
+    },
+    {
+      "path": "docs/wiki/tools/session/stop_playback.md",
+      "title": "stop_playback",
+      "summary": "Stop Ableton playback.",
+      "live_mapping": "- Calls `song.stop_playing()` when playback is running."
+    },
+    {
+      "path": "docs/wiki/tools/session/set_arrangement_overdub.md",
+      "title": "set_arrangement_overdub",
+      "summary": "Enable or disable arrangement overdub.",
+      "live_mapping": "- Writes `song.arrangement_overdub = bool(enabled)`."
+    },
+    {
+      "path": "docs/wiki/tools/session/start_recording.md",
+      "title": "start_recording",
+      "summary": "Start recording (sets `record_mode` and starts playback if needed).",
+      "live_mapping": "- Sets `song.record_mode = True` and calls `song.start_playing()` if not playing."
+    },
+    {
+      "path": "docs/wiki/tools/session/jump_to_time.md",
+      "title": "jump_to_time",
+      "summary": "Jump playback to a specific time (in beats).",
+      "live_mapping": "- Writes `song.current_song_time = time_in_beats`."
+    },
+    {
+      "path": "docs/wiki/tools/session/set_session_automation_record.md",
+      "title": "set_session_automation_record",
+      "summary": "Enable or disable session automation recording.",
+      "live_mapping": "- Writes `song.session_automation_record = bool(enabled)`."
+    },
+    {
+      "path": "docs/wiki/tools/session/nudge_up.md",
+      "title": "nudge_up",
+      "summary": "Nudge playback position up.",
+      "live_mapping": "- Calls `song.nudge_up()`."
+    },
+    {
+      "path": "docs/wiki/tools/session/set_session_record.md",
+      "title": "set_session_record",
+      "summary": "Enable or disable session record.",
+      "live_mapping": "- Writes `song.session_record = bool(enabled)`."
+    },
+    {
+      "path": "docs/wiki/tools/session/set_tempo.md",
+      "title": "set_tempo",
+      "summary": "Set the session tempo (BPM).",
+      "live_mapping": "- Writes `song.tempo = bpm` after validation."
+    },
+    {
+      "path": "docs/wiki/tools/session/tap_tempo.md",
+      "title": "tap_tempo",
+      "summary": "Tap tempo (one tap registers a tempo change in the host).",
+      "live_mapping": "- Calls `song.tap_tempo()`."
+    },
+    {
+      "path": "docs/wiki/tools/session/set_back_to_arranger.md",
+      "title": "set_back_to_arranger",
+      "summary": "Enable or disable \"back to arranger\" behavior.",
+      "live_mapping": "- Writes `song.back_to_arranger = bool(enabled)`."
+    },
+    {
+      "path": "docs/wiki/tools/session/ping.md",
+      "title": "ping",
+      "summary": "Lightweight health ping; responds to verify the MCP server is reachable.",
+      "live_mapping": "No Live API calls — returns a simple `ok` JSON payload for connectivity checks."
+    },
+    {
+      "path": "docs/wiki/tools/session/continue_playing.md",
+      "title": "continue_playing",
+      "summary": "Continue playback from current position.",
+      "live_mapping": "- Calls `song.continue_playing()`."
+    },
+    {
+      "path": "docs/wiki/tools/session/get_session_info.md",
+      "title": "get_session_info",
+      "summary": "Return session-level state (playback, tempo, time signature, loop, counts, recording state, metronome, nudge).",
+      "live_mapping": "- Reads multiple `song` properties such as `is_playing`, `tempo`, `signature_numerator`, `current_song_time`, `loop_start`, `loop_length`, `num_tracks`, `num_scenes`, `record_mode`, `metronome`, `nudge_up`, `nudge_down`."
+    },
+    {
+      "path": "docs/wiki/tools/session/set_punch_out.md",
+      "title": "set_punch_out",
+      "summary": "Enable or disable punch-out recording.",
+      "live_mapping": "- Writes `song.punch_out = bool(enabled)`."
+    },
+    {
+      "path": "docs/wiki/tools/session/get_session_record.md",
+      "title": "get_session_record",
+      "summary": "Get whether session record is enabled.",
+      "live_mapping": "- Reads `song.session_record`."
+    },
+    {
+      "path": "docs/wiki/tools/session/set_metronome.md",
+      "title": "set_metronome",
+      "summary": "Enable or disable the metronome.",
+      "live_mapping": "- Writes `song.metronome = bool(enabled)`."
+    },
+    {
+      "path": "docs/wiki/tools/session/undo.md",
+      "title": "undo",
+      "summary": "Undo the last action in the host.",
+      "live_mapping": "- Calls `song.undo()`."
+    },
+    {
+      "path": "docs/wiki/tools/session/get_current_time.md",
+      "title": "get_current_time",
+      "summary": "Get current playback position and whether the host is playing.",
+      "live_mapping": "- Reads `song.current_song_time` and `song.is_playing`."
+    },
+    {
+      "path": "docs/wiki/tools/session/stop_recording.md",
+      "title": "stop_recording",
+      "summary": "Stop recording (clears `record_mode`).",
+      "live_mapping": "- Sets `song.record_mode = False`."
+    },
+    {
+      "path": "docs/wiki/tools/session/set_metronome_volume.md",
+      "title": "set_metronome_volume",
+      "summary": "Set the metronome volume (0.0–1.0) when available.",
+      "live_mapping": "- Writes `song.metronome = volume` when the host exposes metronome volume."
+    },
+    {
+      "path": "docs/wiki/tools/session/health_check.md",
+      "title": "health_check",
+      "summary": "Performs a lightweight diagnostic check of the MCP service and returns version/uptime info.",
+      "live_mapping": "No Live API calls; returns diagnostic info such as server version and uptime. Useful for monitoring."
+    },
+    {
+      "path": "docs/wiki/tools/session/redo.md",
+      "title": "redo",
+      "summary": "Redo the last undone action in the host.",
+      "live_mapping": "- Calls `song.redo()`."
+    },
+    {
+      "path": "docs/wiki/tools/session/get_session_automation_record.md",
+      "title": "get_session_automation_record",
+      "summary": "Get whether session automation recording is enabled.",
+      "live_mapping": "- Reads `song.session_automation_record`."
+    },
+    {
+      "path": "docs/wiki/tools/session/capture_midi.md",
+      "title": "capture_midi",
+      "summary": "Capture MIDI from the most recently played notes.",
+      "live_mapping": "- Calls `song.capture_midi()`; behavior depends on host capabilities."
+    }
+  ]
+}

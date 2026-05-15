@@ -88,12 +88,70 @@ def fix_missing_see_also(missing_see_also, files_by_symbol):
                     continue
                 new_literal = '"""' + new_doc + '"""'
                 new_src = src.replace(seg, new_literal, 1)
-                bak = path + ".bak"
+                # write backup into repo-local patches dir instead of side-by-side
+                bak_dir = Path(__file__).resolve().parent / "docstring_stubs_patches"
+                os.makedirs(str(bak_dir), exist_ok=True)
+                bak = str(bak_dir / (os.path.basename(path) + ".bak"))
                 open(bak, "w", encoding="utf-8").write(src)
                 open(path, "w", encoding="utf-8").write(new_src)
                 modified = True
         if modified:
             print("Updated docstring for", name, "in", path)
+
+
+def fix_missing_sections(missing_map, files_by_symbol):
+    """Insert minimal TODO sections for missing Args/Returns/Raises.
+
+    `missing_map` is a dict: {symbol_name: [err_strings]} where err_strings
+    include values like "missing Args:", "missing Returns:", "missing Raises:".
+    Creates a `.bak` backup for each modified file.
+    """
+    for name, errs in missing_map.items():
+        path = files_by_symbol.get(name)
+        if not path:
+            continue
+        try:
+            src = open(path, encoding="utf-8").read()
+            tree = ast.parse(src, path)
+        except Exception:
+            continue
+        modified = False
+        for node in ast.walk(tree):
+            if isinstance(node, ast.FunctionDef) and node.name == name:
+                if not node.body:
+                    continue
+                first = node.body[0]
+                if not (
+                    isinstance(first, ast.Expr)
+                    and isinstance(first.value, ast.Constant)
+                    and isinstance(first.value.value, str)
+                ):
+                    continue
+                old_doc = ast.get_docstring(node) or ""
+                additions = []
+                if "missing Args:" in errs:
+                    additions.append("Args:\n    TODO: describe parameters.")
+                if "missing Returns:" in errs:
+                    additions.append("Returns:\n    TODO: describe return value.")
+                if "missing Raises:" in errs:
+                    additions.append("Raises:\n    TODO: exceptions raised.")
+                if not additions:
+                    continue
+                new_doc = (old_doc + "\n\n" + "\n\n".join(additions)).strip()
+                seg = ast.get_source_segment(src, first)
+                if not seg:
+                    continue
+                new_literal = '"""' + new_doc + '"""'
+                new_src = src.replace(seg, new_literal, 1)
+                # write backup into repo-local patches dir instead of side-by-side
+                bak_dir = Path(__file__).resolve().parent / "docstring_stubs_patches"
+                os.makedirs(str(bak_dir), exist_ok=True)
+                bak = str(bak_dir / (os.path.basename(path) + ".bak"))
+                open(bak, "w", encoding="utf-8").write(src)
+                open(path, "w", encoding="utf-8").write(new_src)
+                modified = True
+        if modified:
+            print("Inserted docstring stubs for", name, "in", path)
 
 
 # Additional helpers used by alternative docstring-checker variants

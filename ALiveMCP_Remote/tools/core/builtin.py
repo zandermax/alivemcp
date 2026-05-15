@@ -44,7 +44,16 @@ class BuiltinMixin:
         """Return a pong response confirming the script is running.
 
         See Also:
-            Wiki: docs/wiki/tools/ping.md"""
+            Wiki: docs/wiki/tools/ping.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         from ALiveMCP_Remote import __version__
 
         return {
@@ -58,7 +67,16 @@ class BuiltinMixin:
         """Return health status including version, tool count, and queue size.
 
         See Also:
-            Wiki: docs/wiki/tools/health_check.md"""
+            Wiki: docs/wiki/tools/health_check.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         from ALiveMCP_Remote import __version__
 
         try:

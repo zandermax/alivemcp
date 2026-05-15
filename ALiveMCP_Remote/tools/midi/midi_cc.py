@@ -12,7 +12,16 @@ class MidiCCMixin:
         """Send MIDI CC message to a track
 
         See Also:
-            Wiki: docs/wiki/tools/send_midi_cc.md"""
+            Wiki: docs/wiki/tools/send_midi_cc.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             status_byte = 176 + int(channel)
             midi_bytes = (int(status_byte), int(cc_number), int(cc_value))
@@ -35,7 +44,16 @@ class MidiCCMixin:
         """Send MIDI Program Change message to a track
 
         See Also:
-            Wiki: docs/wiki/tools/send_program_change.md"""
+            Wiki: docs/wiki/tools/send_program_change.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             status_byte = 192 + int(channel)
             midi_bytes = (int(status_byte), int(program_number))

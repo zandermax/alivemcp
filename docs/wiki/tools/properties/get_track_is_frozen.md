@@ -1,3 +1,8 @@
+---
+name: "get_track_is_frozen"
+summary: ""
+---
+
 # get_track_is_frozen
 
 Get Track Is Frozen
@@ -5,18 +10,21 @@ Get Track Is Frozen
 Check whether a track is currently frozen.
 
 Parameters:
+
 - `track_index` (int)
 
 Returns:
+
 - `ok`: boolean
 - `is_frozen`: boolean (when available)
-**Example request:**
+  **Example request:**
+
 ```json
-{"action": "get_track_is_frozen", "track_index": 1}
+{ "action": "get_track_is_frozen", "track_index": 1 }
 ```
+
 **Example response:**
+
 ```json
-{"ok": true}
+{ "ok": true }
 ```
-
-

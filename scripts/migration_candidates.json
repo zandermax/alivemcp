@@ -3,1162 +3,1394 @@
     {
       "path": "docs/wiki/tools/arrangement/show_arrangement_view.md",
       "title": "show_arrangement_view",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Uses `Live.Application.get_application().view.show_view(\\\"Arranger\\\")` when view control exists.\""
     },
     {
       "path": "docs/wiki/tools/arrangement/consolidate_clip.md",
       "title": "consolidate_clip",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Current implementation returns a confirmation message; full consolidation uses host APIs where available.\""
     },
     {
       "path": "docs/wiki/tools/arrangement/get_take_lane_name.md",
       "title": "get_take_lane_name",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Reads `track.take_lanes[lane_index].name` when available.\""
     },
     {
       "path": "docs/wiki/tools/arrangement/get_can_jump_to_next_cue.md",
       "title": "get_can_jump_to_next_cue",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Reads `song.can_jump_to_next_cue`.\""
     },
     {
       "path": "docs/wiki/tools/arrangement/browse_devices.md",
       "title": "browse_devices",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Returns a set of device type category names (instrument, audio effect, etc.) \u2014 browser enumeration is limited via LiveAPI.\""
     },
     {
       "path": "docs/wiki/tools/arrangement/get_browser_items.md",
       "title": "get_browser_items",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Returns a set of available categories and a message noting limitations.\""
     },
     {
       "path": "docs/wiki/tools/arrangement/get_locators.md",
       "title": "get_locators",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Iterates `song.cue_points` and returns index, time, name for each.\""
     },
     {
       "path": "docs/wiki/tools/arrangement/set_take_lane_name.md",
       "title": "set_take_lane_name",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Writes `track.take_lanes[lane_index].name = name` when supported.\""
     },
     {
       "path": "docs/wiki/tools/arrangement/get_arrangement_clips.md",
       "title": "get_arrangement_clips",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Iterates `track.arrangement_clips` returning name, start_time, end_time, length.\""
     },
     {
       "path": "docs/wiki/tools/arrangement/scroll_view_to_time.md",
       "title": "scroll_view_to_time",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Attempts to use view APIs; implementation may be limited by host.\""
     },
     {
       "path": "docs/wiki/tools/arrangement/trigger_session_record.md",
       "title": "trigger_session_record",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `song.trigger_session_record()` with or without a length argument.\""
     },
     {
       "path": "docs/wiki/tools/arrangement/create_audio_clip_in_lane.md",
       "title": "create_audio_clip_in_lane",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `lane.create_audio_clip(length)` when supported.\""
     },
     {
       "path": "docs/wiki/tools/arrangement/get_clips_in_take_lane.md",
       "title": "get_clips_in_take_lane",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Iterates `lane.clips` and returns basic metadata (name, length, is_midi).\""
     },
     {
       "path": "docs/wiki/tools/arrangement/jump_to_next_cue.md",
       "title": "jump_to_next_cue",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `song.jump_to_next_cue()` when `song.can_jump_to_next_cue` is True.\""
     },
     {
       "path": "docs/wiki/tools/arrangement/set_loop_enabled.md",
       "title": "set_loop_enabled",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Writes `song.loop = bool(enabled)`.\""
     },
     {
       "path": "docs/wiki/tools/arrangement/get_project_root_folder.md",
       "title": "get_project_root_folder",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Reads `song.project_root_folder` when the host exposes it.\""
     },
     {
       "path": "docs/wiki/tools/arrangement/show_clip_view.md",
       "title": "show_clip_view",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Uses `Live.Application.get_application().view.show_view(\\\"Session\\\")` when view control exists.\""
     },
     {
       "path": "docs/wiki/tools/arrangement/duplicate_to_arrangement.md",
       "title": "duplicate_to_arrangement",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `clip.duplicate_loop()` on the session clip when available.\""
     },
     {
       "path": "docs/wiki/tools/arrangement/get_take_lanes.md",
       "title": "get_take_lanes",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Iterates `track.take_lanes` when available and returns index/name.\""
     },
     {
       "path": "docs/wiki/tools/arrangement/create_take_lane.md",
       "title": "create_take_lane",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `track.create_take_lane()` and optionally sets its `name`.\""
     },
     {
       "path": "docs/wiki/tools/arrangement/focus_track.md",
       "title": "focus_track",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Sets `song.view.selected_track = track` when view selection is supported.\""
     },
     {
       "path": "docs/wiki/tools/arrangement/get_can_jump_to_prev_cue.md",
       "title": "get_can_jump_to_prev_cue",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Reads `song.can_jump_to_prev_cue`.\""
     },
     {
       "path": "docs/wiki/tools/arrangement/get_loop_enabled.md",
       "title": "get_loop_enabled",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Reads `song.loop`, `song.loop_start`, and `song.loop_length`.\""
     },
     {
       "path": "docs/wiki/tools/arrangement/load_device_from_browser.md",
       "title": "load_device_from_browser",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Delegates to `add_device(track_index, device_name)`; actual loading depends on host browser APIs.\""
     },
     {
       "path": "docs/wiki/tools/arrangement/delete_locator.md",
       "title": "delete_locator",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `cue_point.delete()` when `song.cue_points` and `cue_point.delete` are available.\""
     },
     {
       "path": "docs/wiki/tools/arrangement/jump_by_amount.md",
       "title": "jump_by_amount",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Reads `song.current_song_time` and writes a new time after adding the amount.\""
     },
     {
       "path": "docs/wiki/tools/arrangement/create_locator.md",
       "title": "create_locator",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `song.create_cue_point(time)` when supported by host.\""
     },
     {
       "path": "docs/wiki/tools/arrangement/create_midi_clip_in_lane.md",
       "title": "create_midi_clip_in_lane",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `lane.create_midi_clip(length)` when supported.\""
     },
     {
       "path": "docs/wiki/tools/arrangement/jump_to_prev_cue.md",
       "title": "jump_to_prev_cue",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `song.jump_to_prev_cue()` when `song.can_jump_to_prev_cue` is True.\""
     },
     {
       "path": "docs/wiki/tools/arrangement/delete_take_lane.md",
       "title": "delete_take_lane",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `track.delete_take_lane(lane_index)` when supported.\""
     },
     {
       "path": "docs/wiki/tools/arrangement/browse_plugins.md",
       "title": "browse_plugins",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Returns a message noting plugin browsing limitations; host may not expose full lists.\""
     },
     {
       "path": "docs/wiki/tools/scenes/set_scene_color.md",
       "title": "set_scene_color",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- If `hasattr(scene, \\\"color\\\")`, sets `scene.color = int(color_index)` and returns the updated color.\""
     },
     {
       "path": "docs/wiki/tools/scenes/get_scene_color.md",
       "title": "get_scene_color",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Reads `scene.color` if `hasattr(scene, \\\"color\\\")` and returns it as an integer.\""
     },
     {
       "path": "docs/wiki/tools/scenes/get_scene_info.md",
       "title": "get_scene_info",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Validates index bounds and reads `scene.name`, `scene.color` (if available), `scene.tempo` (if available), and `scene.time_signature_numerator` (if available).\""
     },
     {
       "path": "docs/wiki/tools/scenes/launch_scene.md",
       "title": "launch_scene",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Validates index bounds and calls `self.song.scenes[scene_index].fire()`.\""
     },
     {
       "path": "docs/wiki/tools/scenes/delete_scene.md",
       "title": "delete_scene",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Validates index bounds and calls `self.song.delete_scene(scene_index)`.\""
     },
     {
       "path": "docs/wiki/tools/scenes/create_scene.md",
       "title": "create_scene",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `self.song.create_scene(scene_index)` where `scene_index = len(self.song.scenes)`, then sets `song.scenes[scene_index].name` if provided.\""
     },
     {
       "path": "docs/wiki/tools/scenes/rename_scene.md",
       "title": "rename_scene",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Validates index bounds and sets `self.song.scenes[scene_index].name = str(name)`.\""
     },
     {
       "path": "docs/wiki/tools/scenes/duplicate_scene.md",
       "title": "duplicate_scene",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Validates index bounds and calls `self.song.duplicate_scene(scene_index)`. Returns the expected new index (`scene_index + 1`).\""
     },
     {
       "path": "docs/wiki/tools/mixing/set_groove_amount.md",
       "title": "set_groove_amount",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Writes `song.groove_amount = amount` when available.\""
     },
     {
       "path": "docs/wiki/tools/mixing/set_track_send.md",
       "title": "set_track_send",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Writes `track.mixer_device.sends[send_index].value = value` on the Live Object Model.\""
     },
     {
       "path": "docs/wiki/tools/mixing/get_master_device_params.md",
       "title": "get_master_device_params",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/mixing/get_groove_amount.md",
       "title": "get_groove_amount",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Reads `song.groove_amount` when available.\""
     },
     {
       "path": "docs/wiki/tools/mixing/get_track_sends.md",
       "title": "get_track_sends",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Iterates `track.mixer_device.sends` returning `index`, `value`, and `name` when available.\""
     },
     {
       "path": "docs/wiki/tools/mixing/set_clip_groove.md",
       "title": "set_clip_groove",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Sets `clip.groove = song.groove_pool[groove_index]` when the clip and groove pool are available.\""
     },
     {
       "path": "docs/wiki/tools/mixing/get_master_track_info.md",
       "title": "get_master_track_info",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Reads `song.master_track` fields and `master.mixer_device` properties when available.\""
     },
     {
       "path": "docs/wiki/tools/mixing/get_return_track_info.md",
       "title": "get_return_track_info",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Reads `song.return_tracks[return_index]` and returns mixer/device properties.\""
     },
     {
       "path": "docs/wiki/tools/mixing/set_crossfader_assignment.md",
       "title": "set_crossfader_assignment",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Writes `track.mixer_device.crossfade_assign = assignment` when supported.\""
     },
     {
       "path": "docs/wiki/tools/mixing/get_master_devices.md",
       "title": "get_master_devices",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Iterates `song.master_track.devices` and returns `name`, `class_name`, and `is_active`.\""
     },
     {
       "path": "docs/wiki/tools/mixing/get_master_device_param_info.md",
       "title": "get_master_device_param_info",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/mixing/get_return_track_count.md",
       "title": "get_return_track_count",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Returns `len(song.return_tracks)`.\""
     },
     {
       "path": "docs/wiki/tools/mixing/get_groove_pool_grooves.md",
       "title": "get_groove_pool_grooves",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Iterates `song.groove_pool` and returns `index`, `name`, and common groove amounts when available.\""
     },
     {
       "path": "docs/wiki/tools/mixing/set_master_pan.md",
       "title": "set_master_pan",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Writes `song.master_track.mixer_device.panning.value = pan` when available.\""
     },
     {
       "path": "docs/wiki/tools/mixing/set_return_track_volume.md",
       "title": "set_return_track_volume",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Writes `song.return_tracks[return_index].mixer_device.volume.value = volume`.\""
     },
     {
       "path": "docs/wiki/tools/mixing/get_crossfader_position.md",
       "title": "get_crossfader_position",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Reads `song.master_track.mixer_device.crossfader.value` when supported.\""
     },
     {
       "path": "docs/wiki/tools/mixing/set_master_device_param.md",
       "title": "set_master_device_param",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/mixing/set_master_volume.md",
       "title": "set_master_volume",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Writes `song.master_track.mixer_device.volume.value = volume` when available.\""
     },
     {
       "path": "docs/wiki/tools/mixing/get_crossfader_assignment.md",
       "title": "get_crossfader_assignment",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Reads `track.mixer_device.crossfade_assign` when available and returns both numeric and friendly assignment name.\""
     },
     {
       "path": "docs/wiki/tools/mixing/set_master_device_param_by_name.md",
       "title": "set_master_device_param_by_name",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/mixing/get_master_chain_summary.md",
       "title": "get_master_chain_summary",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/mixing/set_clip_groove_amount.md",
       "title": "set_clip_groove_amount",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Writes `clip.groove_amount = amount` when `clip` exposes `groove_amount`.\""
     },
     {
       "path": "docs/wiki/tools/clips/set_clip_pitch_fine.md",
       "title": "set_clip_pitch_fine",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/clips/stop_all_clips.md",
       "title": "stop_all_clips",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/clips/get_clip_file_path.md",
       "title": "get_clip_file_path",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"Reads `clip.file_path` or the closest Live API property and returns the absolute path to the source audio file.\""
     },
     {
       "path": "docs/wiki/tools/clips/get_clip_color.md",
       "title": "get_clip_color",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/clips/set_follow_action_time.md",
       "title": "set_follow_action_time",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/clips/get_clip_follow_action.md",
       "title": "get_clip_follow_action",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/clips/set_clip_end_marker.md",
       "title": "set_clip_end_marker",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/clips/set_clip_name.md",
       "title": "set_clip_name",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Sets `clip_slot.clip.name = name` on the Live Object Model.\""
     },
     {
       "path": "docs/wiki/tools/clips/get_clip_notes.md",
       "title": "get_clip_notes",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `clip.get_notes(0, 0, clip.length, 128)` and returns tuples as note dicts.\""
     },
     {
       "path": "docs/wiki/tools/clips/get_warp_markers.md",
       "title": "get_warp_markers",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"Reads the clip's warp marker information and returns a structured list of marker positions.\""
     },
     {
       "path": "docs/wiki/tools/clips/get_clip_fade_in.md",
       "title": "get_clip_fade_in",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/clips/quantize_clip_pitch.md",
       "title": "quantize_clip_pitch",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/clips/set_clip_warping.md",
       "title": "set_clip_warping",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"Sets `clip.warping` (or the appropriate Live API property). If `warp_markers` provided, updates the clip's warp markers accordingly.\""
     },
     {
       "path": "docs/wiki/tools/clips/set_clip_color.md",
       "title": "set_clip_color",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/clips/set_clip_ram_mode.md",
       "title": "set_clip_ram_mode",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/clips/get_clip_annotation.md",
       "title": "get_clip_annotation",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/clips/add_notes.md",
       "title": "add_notes",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Uses `clip.set_notes(((pitch, start, duration, velocity, muted),))` for each note on the Live clip object.\""
     },
     {
       "path": "docs/wiki/tools/clips/set_clip_gain.md",
       "title": "set_clip_gain",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/clips/set_clip_fade_out.md",
       "title": "set_clip_fade_out",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/clips/set_clip_pitch_coarse.md",
       "title": "set_clip_pitch_coarse",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/clips/set_clip_annotation.md",
       "title": "set_clip_annotation",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/clips/get_clip_fade_out.md",
       "title": "get_clip_fade_out",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/clips/set_clip_follow_action.md",
       "title": "set_clip_follow_action",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/clips/duplicate_clip.md",
       "title": "duplicate_clip",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Uses `clip_slot.duplicate_clip_to(dest_slot)` where `dest_slot` is the next empty `track.clip_slots` entry.\""
     },
     {
       "path": "docs/wiki/tools/clips/set_clip_loop_start.md",
       "title": "set_clip_loop_start",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/clips/get_clip_info.md",
       "title": "get_clip_info",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Reads properties from `clip = track.clip_slots[clip_index].clip`, including `clip.name`, `clip.length`, `clip.loop_start`, `clip.loop_end`, `clip.is_midi_clip`, `clip.is_audio_clip`, `clip.is_playing`, `clip.muted`, and `clip.color`.\""
     },
     {
       "path": "docs/wiki/tools/clips/set_clip_signature_numerator.md",
       "title": "set_clip_signature_numerator",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/clips/set_clip_muted.md",
       "title": "set_clip_muted",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/clips/get_clip_ram_mode.md",
       "title": "get_clip_ram_mode",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/clips/quantize_clip.md",
       "title": "quantize_clip",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/clips/set_clip_fade_in.md",
       "title": "set_clip_fade_in",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/clips/set_clip_start_marker.md",
       "title": "set_clip_start_marker",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/clips/stop_clip.md",
       "title": "stop_clip",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Uses `track.clip_slots[clip_index].stop()` to stop the clip.\""
     },
     {
       "path": "docs/wiki/tools/clips/create_midi_clip.md",
       "title": "create_midi_clip",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Uses `track.clip_slots[clip_index].create_clip(length)` on the Live Object Model. - Main-thread only.\""
     },
     {
       "path": "docs/wiki/tools/clips/set_clip_warp_mode.md",
       "title": "set_clip_warp_mode",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"Writes `clip.warp_mode = warp_mode` or uses the appropriate Live API setter to change the clip's warp mode.\""
     },
     {
       "path": "docs/wiki/tools/clips/delete_clip.md",
       "title": "delete_clip",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `clip_slot.delete_clip()` on the Live Object Model.\""
     },
     {
       "path": "docs/wiki/tools/clips/set_clip_looping.md",
       "title": "set_clip_looping",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/clips/set_clip_loop_end.md",
       "title": "set_clip_loop_end",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/clips/remove_notes.md",
       "title": "remove_notes",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `clip.remove_notes(time_from, pitch_from, time_span, pitch_span)` on the Live clip object.\""
     },
     {
       "path": "docs/wiki/tools/clips/get_clip_warp_mode.md",
       "title": "get_clip_warp_mode",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"Reads `clip.warp_mode` or equivalent Live API property for an audio clip and returns a string describing the mode (e.g., \u2018beats\u2019, \u2018textures\u2019, etc.).\""
     },
     {
       "path": "docs/wiki/tools/clips/launch_clip.md",
       "title": "launch_clip",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `clip_slot.fire()` on the Live Object Model to launch the clip.\""
     },
     {
       "path": "docs/wiki/tools/midi/replace_selected_notes.md",
       "title": "replace_selected_notes",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Builds a tuple of note tuples and calls `clip.replace_selected_notes(tuple(note_tuples))`.\""
     },
     {
       "path": "docs/wiki/tools/midi/get_clip_notes.md",
       "title": "get_clip_notes",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Validates indices and `track.has_midi_input`. - Calls `clip.get_notes(0, 0, clip.length, 128)` and returns structured note objects.\""
     },
     {
       "path": "docs/wiki/tools/midi/get_notes_extended.md",
       "title": "get_notes_extended",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `clip.get_notes_extended(from_time=..., from_pitch=..., time_span=..., pitch_span=...)` and returns structured notes.\""
     },
     {
       "path": "docs/wiki/tools/midi/send_program_change.md",
       "title": "send_program_change",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `self.song.send_midi((status_byte, program_number))` where `status_byte = 192 + channel`.\""
     },
     {
       "path": "docs/wiki/tools/midi/send_midi_cc.md",
       "title": "send_midi_cc",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `self.song.send_midi((status_byte, cc_number, cc_value))` where `status_byte = 176 + channel`. - Requires `song.send_midi` to be available on the host.\""
     },
     {
       "path": "docs/wiki/tools/midi/select_all_notes.md",
       "title": "select_all_notes",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `clip.select_all_notes()` after validating clip presence and type.\""
     },
     {
       "path": "docs/wiki/tools/midi/deselect_all_notes.md",
       "title": "deselect_all_notes",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `clip.deselect_all_notes()`.\""
     },
     {
       "path": "docs/wiki/tools/midi/remove_notes.md",
       "title": "remove_notes",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `clip.remove_notes(time_from, pitch_from, time_to - time_from, pitch_to - pitch_from)` after validation.\""
     },
     {
       "path": "docs/wiki/tools/tracks/set_track_output_sub_routing.md",
       "title": "set_track_output_sub_routing",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- If `track.output_sub_routing` is present, attempts to set it or returns a message describing limitations.\""
     },
     {
       "path": "docs/wiki/tools/tracks/ungroup_track.md",
       "title": "ungroup_track",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Validates index and verifies `track.is_foldable`; returns a message indicating ungroup requested; may require manual steps.\""
     },
     {
       "path": "docs/wiki/tools/tracks/get_track_available_input_routing_types.md",
       "title": "get_track_available_input_routing_types",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- If `track.available_input_routing_types` is present, collects `routing.display_name` for each available routing.\""
     },
     {
       "path": "docs/wiki/tools/tracks/create_group_track.md",
       "title": "create_group_track",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `self.song.create_group_track(track_index)` where `track_index = len(self.song.tracks)`, and sets `name` if provided.\""
     },
     {
       "path": "docs/wiki/tools/tracks/freeze_track.md",
       "title": "freeze_track",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- If `track.freeze_available` and `track.freeze_state` are present, sets `track.freeze_state = 1`.\""
     },
     {
       "path": "docs/wiki/tools/tracks/unfreeze_track.md",
       "title": "unfreeze_track",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- If `track.freeze_state` is present, sets `track.freeze_state = 0`.\""
     },
     {
       "path": "docs/wiki/tools/tracks/get_track_delay.md",
       "title": "get_track_delay",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- If `track.delay` exists, returns `float(track.delay)`.\""
     },
     {
       "path": "docs/wiki/tools/tracks/set_track_delay.md",
       "title": "set_track_delay",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- If `track.delay` exists, sets `track.delay = float(delay_samples)` and returns the updated value.\""
     },
     {
       "path": "docs/wiki/tools/tracks/create_midi_track.md",
       "title": "create_midi_track",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `song.create_midi_track(index)` and sets `song.tracks[index].name` if provided.\""
     },
     {
       "path": "docs/wiki/tools/tracks/create_return_track.md",
       "title": "create_return_track",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `song.create_return_track()`; returns the new return track index.\""
     },
     {
       "path": "docs/wiki/tools/tracks/mute_track.md",
       "title": "mute_track",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Sets `song.tracks[track_index].mute = mute`.\""
     },
     {
       "path": "docs/wiki/tools/tracks/set_track_annotation.md",
       "title": "set_track_annotation",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- If `track.annotation` exists, sets `track.annotation = str(annotation_text)` and returns the updated annotation.\""
     },
     {
       "path": "docs/wiki/tools/tracks/get_track_chain_summary.md",
       "title": "get_track_chain_summary",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Iterates devices and their parameters, returning `index`, `name`, `class_name`, `is_active` and full enriched `parameters` arrays.\""
     },
     {
       "path": "docs/wiki/tools/tracks/get_track_is_grouped.md",
       "title": "get_track_is_grouped",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Uses `hasattr(track, \\\"group_track\\\")` and `hasattr(track, \\\"is_foldable\\\")` to determine grouping and foldability; returns `group_track_index` when available.\""
     },
     {
       "path": "docs/wiki/tools/tracks/set_track_pan.md",
       "title": "set_track_pan",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Writes `track.mixer_device.panning.value = pan`.\""
     },
     {
       "path": "docs/wiki/tools/tracks/set_track_current_monitoring_state.md",
       "title": "set_track_current_monitoring_state",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- If `track.can_be_armed`, sets `track.current_monitoring_state = int(state)` and returns the new state.\""
     },
     {
       "path": "docs/wiki/tools/tracks/set_track_fold_state.md",
       "title": "set_track_fold_state",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- If `track.is_foldable`, sets `track.fold_state = bool(folded)`.\""
     },
     {
       "path": "docs/wiki/tools/tracks/solo_track.md",
       "title": "solo_track",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Sets `song.tracks[track_index].solo = solo`.\""
     },
     {
       "path": "docs/wiki/tools/tracks/set_track_input_sub_routing.md",
       "title": "set_track_input_sub_routing",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- If `track.input_sub_routing` is present, attempts to set it or returns a message describing limitations.\""
     },
     {
       "path": "docs/wiki/tools/tracks/create_audio_track.md",
       "title": "create_audio_track",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `song.create_audio_track(index)` and sets `song.tracks[index].name` if provided.\""
     },
     {
       "path": "docs/wiki/tools/tracks/get_track_annotation.md",
       "title": "get_track_annotation",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- If `track.annotation` exists, returns it as a string.\""
     },
     {
       "path": "docs/wiki/tools/tracks/group_tracks.md",
       "title": "group_tracks",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Validates indices and calls `self.song.create_group_track(end_index + 1)` to create a group track covering the range.\""
     },
     {
       "path": "docs/wiki/tools/tracks/get_track_input_routing_type.md",
       "title": "get_track_input_routing_type",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- If `track.input_routing_type` exists, returns its `display_name` or string representation.\""
     },
     {
       "path": "docs/wiki/tools/tracks/get_track_output_routing.md",
       "title": "get_track_output_routing",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Reads `track.output_routing_type` and `track.output_routing_channel` when present and returns display names or string values.\""
     },
     {
       "path": "docs/wiki/tools/tracks/rename_track.md",
       "title": "rename_track",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Sets `song.tracks[track_index].name = name`.\""
     },
     {
       "path": "docs/wiki/tools/tracks/get_track_available_output_routing_types.md",
       "title": "get_track_available_output_routing_types",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- If `track.available_output_routing_types` is present, collects `routing.display_name` for each available routing.\""
     },
     {
       "path": "docs/wiki/tools/tracks/get_track_index_by_name.md",
       "title": "get_track_index_by_name",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Iterates `self.song.tracks` and returns the first index where `needle in track.name.lower()`.\""
     },
     {
       "path": "docs/wiki/tools/tracks/flatten_track.md",
       "title": "flatten_track",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- If `track.flatten` exists, calls `track.flatten()`.\""
     },
     {
       "path": "docs/wiki/tools/tracks/set_track_input_routing.md",
       "title": "set_track_input_routing",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Validates index; returns a message indicating routing change requested. Actual routing options depend on host capabilities.\""
     },
     {
       "path": "docs/wiki/tools/tracks/get_track_color.md",
       "title": "get_track_color",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Reads `track.color_index` or `track.color` depending on Live's object model.\""
     },
     {
       "path": "docs/wiki/tools/tracks/set_track_color.md",
       "title": "set_track_color",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Sets `track.color = color_index` when `track` supports `color`.\""
     },
     {
       "path": "docs/wiki/tools/tracks/set_track_device_param.md",
       "title": "set_track_device_param",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Validates indices, clamps `value` to `param.min`/`param.max`, and sets `param.value`.\""
     },
     {
       "path": "docs/wiki/tools/tracks/get_track_device_params.md",
       "title": "get_track_device_params",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Iterates `device.parameters` and returns `index`, `name`, `raw_value`, `display_value`, `min`, `max`, `is_quantized`, and `value_items` for each parameter.\""
     },
     {
       "path": "docs/wiki/tools/tracks/delete_track.md",
       "title": "delete_track",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `song.delete_track(track_index)` on the Live Object Model.\""
     },
     {
       "path": "docs/wiki/tools/tracks/set_track_output_routing.md",
       "title": "set_track_output_routing",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Validates index and returns a message; actual routing depends on host implementation.\""
     },
     {
       "path": "docs/wiki/tools/tracks/arm_track.md",
       "title": "arm_track",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Sets `track.arm = armed` if `track.can_be_armed`.\""
     },
     {
       "path": "docs/wiki/tools/tracks/duplicate_track.md",
       "title": "duplicate_track",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `song.duplicate_track(track_index)` which creates a copy next to the source.\""
     },
     {
       "path": "docs/wiki/tools/tracks/set_track_volume.md",
       "title": "set_track_volume",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Writes `track.mixer_device.volume.value = volume`.\""
     },
     {
       "path": "docs/wiki/tools/tracks/get_track_info.md",
       "title": "get_track_info",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Reads many `track` properties including `name`, `color`, `is_foldable`, `mute`, `solo`, `arm`, `has_midi_input`, `has_audio_input`, `mixer_device.volume.value`, `mixer_device.panning.value`, number of devices and clips.\""
     },
     {
       "path": "docs/wiki/tools/tracks/set_track_device_param_by_name.md",
       "title": "set_track_device_param_by_name",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Finds the first parameter matching `param_name`. If `value` is string and parameter is quantized, looks up index in `param.value_items`. Otherwise clamps numeric values to `param.min`/`param.max` and sets `param.value`.\""
     },
     {
       "path": "docs/wiki/tools/properties/get_signature_numerator.md",
       "title": "get_signature_numerator",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/properties/get_track_is_frozen.md",
       "title": "get_track_is_frozen",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/properties/get_application_version.md",
       "title": "get_application_version",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/properties/set_record_mode.md",
       "title": "set_record_mode",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/properties/get_signature_denominator.md",
       "title": "get_signature_denominator",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/properties/show_message_box.md",
       "title": "show_message_box",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/properties/get_build_id.md",
       "title": "get_build_id",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/properties/get_arrangement_overdub.md",
       "title": "get_arrangement_overdub",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/properties/get_scene_tempo.md",
       "title": "get_scene_tempo",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/properties/get_clip_start_time.md",
       "title": "get_clip_start_time",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/properties/get_variant.md",
       "title": "get_variant",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/properties/get_track_is_foldable.md",
       "title": "get_track_is_foldable",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/properties/get_scene_is_empty.md",
       "title": "get_scene_is_empty",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/properties/set_clip_start_time.md",
       "title": "set_clip_start_time",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/m4l/get_sample_length.md",
       "title": "get_sample_length",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"Queries the device sample or Simpler API to retrieve sample length.\""
     },
     {
       "path": "docs/wiki/tools/m4l/get_m4l_param_by_name.md",
       "title": "get_m4l_param_by_name",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/m4l/get_sample_playback_mode.md",
       "title": "get_sample_playback_mode",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"Reads the device parameter describing playback mode and returns a normalized string.\""
     },
     {
       "path": "docs/wiki/tools/m4l/set_sample_playback_mode.md",
       "title": "set_sample_playback_mode",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"Writes the appropriate device parameter to change playback mode.\""
     },
     {
       "path": "docs/wiki/tools/m4l/get_m4l_devices.md",
       "title": "get_m4l_devices",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/m4l/is_max_device.md",
       "title": "is_max_device",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/m4l/get_cv_tools_devices.md",
       "title": "get_cv_tools_devices",
-      "summary": ""
+      "summary": "",
+      "live_mapping": null
     },
     {
       "path": "docs/wiki/tools/automation/get_automation_envelope_values.md",
       "title": "get_automation_envelope_values",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `clip.automation_envelope(param)` and inspects the envelope; current implementation returns high-level metadata and points callers to `insert_step`/`remove_step` for edits.\""
     },
     {
       "path": "docs/wiki/tools/automation/insert_automation_step.md",
       "title": "insert_automation_step",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Retrieves `clip.automation_envelope(param)` and calls `envelope.insert_step(time, value)` when available.\""
     },
     {
       "path": "docs/wiki/tools/automation/remove_automation_step.md",
       "title": "remove_automation_step",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Uses `clip.automation_envelope(param).remove_step(time)` when supported.\""
     },
     {
       "path": "docs/wiki/tools/automation/get_clip_automation_envelope.md",
       "title": "get_clip_automation_envelope",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Uses `clip.automation_envelope(param)` to obtain the envelope object when available.\""
     },
     {
       "path": "docs/wiki/tools/automation/clear_automation_envelope.md",
       "title": "clear_automation_envelope",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Uses `clip.clear_envelope(param)` when supported to clear envelope data.\""
     },
     {
       "path": "docs/wiki/tools/automation/create_automation_envelope.md",
       "title": "create_automation_envelope",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `clip.create_automation_envelope(param)` when supported by the host.\""
     },
     {
       "path": "docs/wiki/tools/devices/hide_plugin_window.md",
       "title": "hide_plugin_window",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Currently returns success; explicit hiding of plugin windows is not implemented.\""
     },
     {
       "path": "docs/wiki/tools/devices/add_device.md",
       "title": "add_device",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Currently returns a request acknowledgement; adding devices via the Live browser requires the browser API and is not fully implemented.\""
     },
     {
       "path": "docs/wiki/tools/devices/get_device_parameter_by_name.md",
       "title": "get_device_parameter_by_name",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Iterates `device.parameters` and returns the first matching parameter by `str(param.name)`.\""
     },
     {
       "path": "docs/wiki/tools/devices/get_device_chains.md",
       "title": "get_device_chains",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Checks `device.chains` and returns per-chain metadata: `index`, `name`, `mute`, `solo`, and `num_devices`.\""
     },
     {
       "path": "docs/wiki/tools/devices/set_device_parameter_by_name.md",
       "title": "set_device_parameter_by_name",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Finds parameter by name; if `value` is a string it looks up `param.value_items` and sets the parameter index; otherwise clamps numeric value to `param.min`/`param.max` and writes `param.value`.\""
     },
     {
       "path": "docs/wiki/tools/devices/get_device_type.md",
       "title": "get_device_type",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Reads `device.type` and returns the integer value representing the device category.\""
     },
     {
       "path": "docs/wiki/tools/devices/set_device_preset.md",
       "title": "set_device_preset",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Acknowledges preset load intent; actual preset loading requires the Live browser API.\""
     },
     {
       "path": "docs/wiki/tools/devices/get_rack_contents.md",
       "title": "get_rack_contents",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Uses `device.chains` and `chain.devices` to build a nested representation of rack contents.\""
     },
     {
       "path": "docs/wiki/tools/devices/get_chain_devices.md",
       "title": "get_chain_devices",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Reads `device.chains[chain_index].devices` and returns `name`, `class_name`, and `is_active` for each device.\""
     },
     {
       "path": "docs/wiki/tools/devices/show_plugin_window.md",
       "title": "show_plugin_window",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `c_instance.song().view.select_device(device)` to focus the device in Live's UI.\""
     },
     {
       "path": "docs/wiki/tools/devices/set_device_param.md",
       "title": "set_device_param",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Writes `device.parameters[param_index].value = value` after validation.\""
     },
     {
       "path": "docs/wiki/tools/devices/randomize_device_parameters.md",
       "title": "randomize_device_parameters",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Iterates `device.parameters` and assigns random values within `param.min` and `param.max` for enabled, non-quantized parameters.\""
     },
     {
       "path": "docs/wiki/tools/devices/delete_device.md",
       "title": "delete_device",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `track.delete_device(device_index)` to remove the device.\""
     },
     {
       "path": "docs/wiki/tools/devices/get_track_devices.md",
       "title": "get_track_devices",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Iterates `song.tracks[track_index].devices` and reads `device.name`, `device.class_name`, `device.is_active`, and `len(device.parameters)`.\""
     },
     {
       "path": "docs/wiki/tools/devices/randomize_device.md",
       "title": "randomize_device",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Randomizes enabled, non-quantized parameters using uniform random sampling between `param.min` and `param.max`.\""
     },
     {
       "path": "docs/wiki/tools/devices/get_device_param_display_value.md",
       "title": "get_device_param_display_value",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Reads `param.display_value` (Live 12+) when available, falls back to `str(param)` and returns `raw_value`.\""
     },
     {
       "path": "docs/wiki/tools/devices/set_chain_solo.md",
       "title": "set_chain_solo",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Sets `chain.solo = solo` when `chain` exposes a `solo` attribute.\""
     },
     {
       "path": "docs/wiki/tools/devices/get_device_parameters.md",
       "title": "get_device_parameters",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Iterates `device.parameters` and returns `index`, `name`, `value`, `min`, `max`, `is_quantized`, and `is_enabled` where available.\""
     },
     {
       "path": "docs/wiki/tools/devices/get_all_param_display_values.md",
       "title": "get_all_param_display_values",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Iterates `device.parameters`, collects `index`, `name`, `raw_value`, `display_value`, `min`, `max`, `is_quantized`, and `value_items`.\""
     },
     {
       "path": "docs/wiki/tools/devices/get_device_class_name.md",
       "title": "get_device_class_name",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Reads `device.class_name` and returns it as a string when available.\""
     },
     {
       "path": "docs/wiki/tools/devices/get_device_presets.md",
       "title": "get_device_presets",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Currently acknowledges the request; enumerating presets requires the Live browser API.\""
     },
     {
       "path": "docs/wiki/tools/devices/set_device_on_off.md",
       "title": "set_device_on_off",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Sets `device.is_active = enabled` when the `is_active` attribute exists.\""
     },
     {
       "path": "docs/wiki/tools/devices/set_chain_mute.md",
       "title": "set_chain_mute",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Sets `chain.mute = mute` when `chain` exposes a `mute` attribute.\""
     },
     {
       "path": "docs/wiki/tools/session/capture_midi.md",
       "title": "capture_midi",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `song.capture_midi()`; behavior depends on host capabilities.\""
     },
     {
       "path": "docs/wiki/tools/session/get_session_automation_record.md",
       "title": "get_session_automation_record",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Reads `song.session_automation_record`.\""
     },
     {
       "path": "docs/wiki/tools/session/redo.md",
       "title": "redo",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `song.redo()`.\""
     },
     {
       "path": "docs/wiki/tools/session/health_check.md",
       "title": "health_check",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"No Live API calls; returns diagnostic info such as server version and uptime. Useful for monitoring.\""
     },
     {
       "path": "docs/wiki/tools/session/set_metronome_volume.md",
       "title": "set_metronome_volume",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Writes `song.metronome = volume` when the host exposes metronome volume.\""
     },
     {
       "path": "docs/wiki/tools/session/stop_recording.md",
       "title": "stop_recording",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Sets `song.record_mode = False`.\""
     },
     {
       "path": "docs/wiki/tools/session/get_current_time.md",
       "title": "get_current_time",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Reads `song.current_song_time` and `song.is_playing`.\""
     },
     {
       "path": "docs/wiki/tools/session/undo.md",
       "title": "undo",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `song.undo()`.\""
     },
     {
       "path": "docs/wiki/tools/session/set_metronome.md",
       "title": "set_metronome",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Writes `song.metronome = bool(enabled)`.\""
     },
     {
       "path": "docs/wiki/tools/session/get_session_record.md",
       "title": "get_session_record",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Reads `song.session_record`.\""
     },
     {
       "path": "docs/wiki/tools/session/set_punch_out.md",
       "title": "set_punch_out",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Writes `song.punch_out = bool(enabled)`.\""
     },
     {
       "path": "docs/wiki/tools/session/get_session_info.md",
       "title": "get_session_info",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Reads multiple `song` properties such as `is_playing`, `tempo`, `signature_numerator`, `current_song_time`, `loop_start`, `loop_length`, `num_tracks`, `num_scenes`, `record_mode`, `metronome`, `nudge_up`, `nudge_down`.\""
     },
     {
       "path": "docs/wiki/tools/session/continue_playing.md",
       "title": "continue_playing",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `song.continue_playing()`.\""
     },
     {
       "path": "docs/wiki/tools/session/ping.md",
       "title": "ping",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"No Live API calls \u2014 returns a simple `ok` JSON payload for connectivity checks.\""
     },
     {
       "path": "docs/wiki/tools/session/set_back_to_arranger.md",
       "title": "set_back_to_arranger",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Writes `song.back_to_arranger = bool(enabled)`.\""
     },
     {
       "path": "docs/wiki/tools/session/tap_tempo.md",
       "title": "tap_tempo",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `song.tap_tempo()`.\""
     },
     {
       "path": "docs/wiki/tools/session/set_tempo.md",
       "title": "set_tempo",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Writes `song.tempo = bpm` after validation.\""
     },
     {
       "path": "docs/wiki/tools/session/set_session_record.md",
       "title": "set_session_record",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Writes `song.session_record = bool(enabled)`.\""
     },
     {
       "path": "docs/wiki/tools/session/nudge_up.md",
       "title": "nudge_up",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `song.nudge_up()`.\""
     },
     {
       "path": "docs/wiki/tools/session/set_session_automation_record.md",
       "title": "set_session_automation_record",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Writes `song.session_automation_record = bool(enabled)`.\""
     },
     {
       "path": "docs/wiki/tools/session/jump_to_time.md",
       "title": "jump_to_time",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Writes `song.current_song_time = time_in_beats`.\""
     },
     {
       "path": "docs/wiki/tools/session/start_recording.md",
       "title": "start_recording",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Sets `song.record_mode = True` and calls `song.start_playing()` if not playing.\""
     },
     {
       "path": "docs/wiki/tools/session/set_arrangement_overdub.md",
       "title": "set_arrangement_overdub",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Writes `song.arrangement_overdub = bool(enabled)`.\""
     },
     {
       "path": "docs/wiki/tools/session/stop_playback.md",
       "title": "stop_playback",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `song.stop_playing()` when playback is running.\""
     },
     {
       "path": "docs/wiki/tools/session/set_punch_in.md",
       "title": "set_punch_in",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Writes `song.punch_in = bool(enabled)`.\""
     },
     {
       "path": "docs/wiki/tools/session/set_loop_start.md",
       "title": "set_loop_start",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Writes `song.loop_start = position`.\""
     },
     {
       "path": "docs/wiki/tools/session/nudge_down.md",
       "title": "nudge_down",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `song.nudge_down()`.\""
     },
     {
       "path": "docs/wiki/tools/session/get_metronome_volume.md",
       "title": "get_metronome_volume",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Reads `song.metronome` when exposed as a volume value.\""
     },
     {
       "path": "docs/wiki/tools/session/set_loop_length.md",
       "title": "set_loop_length",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Writes `song.loop_length = length`.\""
     },
     {
       "path": "docs/wiki/tools/session/start_playback.md",
       "title": "start_playback",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `song.start_playing()` when playback isn't already running.\""
     },
     {
       "path": "docs/wiki/tools/session/set_time_signature.md",
       "title": "set_time_signature",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Writes `song.signature_numerator` and `song.signature_denominator` after validation.\""
     },
     {
       "path": "docs/wiki/tools/session/re_enable_automation.md",
       "title": "re_enable_automation",
-      "summary": ""
+      "summary": "",
+      "live_mapping": "\"- Calls `song.re_enable_automation()`.\""
     }
   ]
 }

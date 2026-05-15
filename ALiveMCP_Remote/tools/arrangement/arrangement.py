@@ -22,7 +22,16 @@ class ArrangementMixin(ArrangementBrowserMixin):
         """Get project root folder path
 
         See Also:
-            Wiki: docs/wiki/tools/get_project_root_folder.md"""
+            Wiki: docs/wiki/tools/get_project_root_folder.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if hasattr(self.song, "project_root_folder"):
                 return {
@@ -40,7 +49,16 @@ class ArrangementMixin(ArrangementBrowserMixin):
         """Trigger session record with optional fixed length
 
         See Also:
-            Wiki: docs/wiki/tools/trigger_session_record.md"""
+            Wiki: docs/wiki/tools/trigger_session_record.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if length:
                 self.song.trigger_session_record(float(length))
@@ -54,7 +72,16 @@ class ArrangementMixin(ArrangementBrowserMixin):
         """Check if can jump to next cue point
 
         See Also:
-            Wiki: docs/wiki/tools/get_can_jump_to_next_cue.md"""
+            Wiki: docs/wiki/tools/get_can_jump_to_next_cue.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             return {"ok": True, "can_jump_to_next_cue": self.song.can_jump_to_next_cue}
         except Exception as e:
@@ -64,7 +91,16 @@ class ArrangementMixin(ArrangementBrowserMixin):
         """Check if can jump to previous cue point
 
         See Also:
-            Wiki: docs/wiki/tools/get_can_jump_to_prev_cue.md"""
+            Wiki: docs/wiki/tools/get_can_jump_to_prev_cue.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             return {"ok": True, "can_jump_to_prev_cue": self.song.can_jump_to_prev_cue}
         except Exception as e:
@@ -74,7 +110,16 @@ class ArrangementMixin(ArrangementBrowserMixin):
         """Jump to next cue point
 
         See Also:
-            Wiki: docs/wiki/tools/jump_to_next_cue.md"""
+            Wiki: docs/wiki/tools/jump_to_next_cue.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if self.song.can_jump_to_next_cue:
                 self.song.jump_to_next_cue()
@@ -88,7 +133,16 @@ class ArrangementMixin(ArrangementBrowserMixin):
         """Jump to previous cue point
 
         See Also:
-            Wiki: docs/wiki/tools/jump_to_prev_cue.md"""
+            Wiki: docs/wiki/tools/jump_to_prev_cue.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if self.song.can_jump_to_prev_cue:
                 self.song.jump_to_prev_cue()
@@ -106,7 +160,16 @@ class ArrangementMixin(ArrangementBrowserMixin):
         """Get list of clips in arrangement view for a track
 
         See Also:
-            Wiki: docs/wiki/tools/get_arrangement_clips.md"""
+            Wiki: docs/wiki/tools/get_arrangement_clips.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             track = self.song.tracks[track_index]
 
@@ -131,7 +194,16 @@ class ArrangementMixin(ArrangementBrowserMixin):
         """Duplicate session clip to arrangement view
 
         See Also:
-            Wiki: docs/wiki/tools/duplicate_to_arrangement.md"""
+            Wiki: docs/wiki/tools/duplicate_to_arrangement.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             track = self.song.tracks[track_index]
             clip_slot = track.clip_slots[clip_index]
@@ -153,7 +225,16 @@ class ArrangementMixin(ArrangementBrowserMixin):
         """Consolidate arrangement clips in time range
 
         See Also:
-            Wiki: docs/wiki/tools/consolidate_clip.md"""
+            Wiki: docs/wiki/tools/consolidate_clip.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             return {
                 "ok": True,

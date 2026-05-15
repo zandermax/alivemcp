@@ -1,3 +1,9 @@
+---
+name: "get_clip_info"
+summary: ""
+Live mapping: "- Reads properties from `clip = track.clip_slots[clip_index].clip`, including `clip.name`, `clip.length`, `clip.loop_start`, `clip.loop_end`, `clip.is_midi_clip`, `clip.is_audio_clip`, `clip.is_playing`, `clip.muted`, and `clip.color`."
+---
+
 # get_clip_info
 
 **Domain:** clips
@@ -5,16 +11,21 @@
 **Summary:** Retrieve information about a clip (name, length, looping, type, playback state, color).
 
 **Parameters:**
+
 - `track_index` (int)
 - `clip_index` (int)
 
 **Live mapping:**
+
 - Reads properties from `clip = track.clip_slots[clip_index].clip`, including `clip.name`, `clip.length`, `clip.loop_start`, `clip.loop_end`, `clip.is_midi_clip`, `clip.is_audio_clip`, `clip.is_playing`, `clip.muted`, and `clip.color`.
-**Example request:**
+  **Example request:**
+
 ```json
-{"action": "get_clip_info", "track_index": 1, "clip_index": 0}
+{ "action": "get_clip_info", "track_index": 1, "clip_index": 0 }
 ```
+
 **Example response:**
+
 ```json
 {
   "ok": true,
@@ -31,8 +42,10 @@
 ```
 
 **Notes:**
+
 - Returns an error if the slot has no clip.
 
 **See also:**
+
 - [set_clip_name](tools/clips/set_clip_name.md)
 - [get_clip_notes](tools/clips/get_clip_notes.md)

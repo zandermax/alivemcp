@@ -1,3 +1,9 @@
+---
+name: "get_metronome_volume"
+summary: ""
+Live mapping: "- Reads `song.metronome` when exposed as a volume value."
+---
+
 # get_metronome_volume
 
 **Domain:** session
@@ -5,9 +11,11 @@
 **Summary:** Get the metronome volume when available.
 
 **Parameters:**
+
 - none
 
 **Live mapping:**
+
 - Reads `song.metronome` when exposed as a volume value.
 
 **Example request:**

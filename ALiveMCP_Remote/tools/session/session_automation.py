@@ -15,7 +15,16 @@ class SessionAutomationMixin:
         """Jump playback to specific time in beats
 
         See Also:
-            Wiki: docs/wiki/tools/jump_to_time.md"""
+            Wiki: docs/wiki/tools/jump_to_time.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             self.song.current_song_time = float(time_in_beats)
             return {"ok": True, "time": float(self.song.current_song_time)}
@@ -26,7 +35,16 @@ class SessionAutomationMixin:
         """Get current playback position in beats
 
         See Also:
-            Wiki: docs/wiki/tools/get_current_time.md"""
+            Wiki: docs/wiki/tools/get_current_time.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             return {
                 "ok": True,
@@ -40,7 +58,16 @@ class SessionAutomationMixin:
         """Enable/disable arrangement overdub
 
         See Also:
-            Wiki: docs/wiki/tools/set_arrangement_overdub.md"""
+            Wiki: docs/wiki/tools/set_arrangement_overdub.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             self.song.arrangement_overdub = bool(enabled)
             return {"ok": True, "arrangement_overdub": self.song.arrangement_overdub}
@@ -51,7 +78,16 @@ class SessionAutomationMixin:
         """Enable/disable back to arrangement
 
         See Also:
-            Wiki: docs/wiki/tools/set_back_to_arranger.md"""
+            Wiki: docs/wiki/tools/set_back_to_arranger.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             self.song.back_to_arranger = bool(enabled)
             return {"ok": True, "back_to_arranger": self.song.back_to_arranger}
@@ -62,7 +98,16 @@ class SessionAutomationMixin:
         """Enable/disable punch in recording
 
         See Also:
-            Wiki: docs/wiki/tools/set_punch_in.md"""
+            Wiki: docs/wiki/tools/set_punch_in.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             self.song.punch_in = bool(enabled)
             return {"ok": True, "punch_in": self.song.punch_in}
@@ -73,7 +118,16 @@ class SessionAutomationMixin:
         """Enable/disable punch out recording
 
         See Also:
-            Wiki: docs/wiki/tools/set_punch_out.md"""
+            Wiki: docs/wiki/tools/set_punch_out.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             self.song.punch_out = bool(enabled)
             return {"ok": True, "punch_out": self.song.punch_out}
@@ -84,7 +138,16 @@ class SessionAutomationMixin:
         """Nudge playback position up
 
         See Also:
-            Wiki: docs/wiki/tools/nudge_up.md"""
+            Wiki: docs/wiki/tools/nudge_up.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             self.song.nudge_up()
             return {"ok": True, "message": "Nudged up"}
@@ -95,7 +158,16 @@ class SessionAutomationMixin:
         """Nudge playback position down
 
         See Also:
-            Wiki: docs/wiki/tools/nudge_down.md"""
+            Wiki: docs/wiki/tools/nudge_down.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             self.song.nudge_down()
             return {"ok": True, "message": "Nudged down"}
@@ -110,7 +182,16 @@ class SessionAutomationMixin:
         """Re-enable all automation
 
         See Also:
-            Wiki: docs/wiki/tools/re_enable_automation.md"""
+            Wiki: docs/wiki/tools/re_enable_automation.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             self.song.re_enable_automation()
             return {"ok": True, "message": "Automation re-enabled"}
@@ -121,7 +202,16 @@ class SessionAutomationMixin:
         """Get session automation recording state
 
         See Also:
-            Wiki: docs/wiki/tools/get_session_automation_record.md"""
+            Wiki: docs/wiki/tools/get_session_automation_record.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             return {"ok": True, "session_automation_record": self.song.session_automation_record}
         except Exception as e:
@@ -131,7 +221,16 @@ class SessionAutomationMixin:
         """Enable/disable session automation recording
 
         See Also:
-            Wiki: docs/wiki/tools/set_session_automation_record.md"""
+            Wiki: docs/wiki/tools/set_session_automation_record.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             self.song.session_automation_record = bool(enabled)
             return {"ok": True, "session_automation_record": self.song.session_automation_record}
@@ -142,7 +241,16 @@ class SessionAutomationMixin:
         """Get session record state
 
         See Also:
-            Wiki: docs/wiki/tools/get_session_record.md"""
+            Wiki: docs/wiki/tools/get_session_record.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             return {"ok": True, "session_record": self.song.session_record}
         except Exception as e:
@@ -152,7 +260,16 @@ class SessionAutomationMixin:
         """Enable/disable session recording
 
         See Also:
-            Wiki: docs/wiki/tools/set_session_record.md"""
+            Wiki: docs/wiki/tools/set_session_record.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             self.song.session_record = bool(enabled)
             return {"ok": True, "session_record": self.song.session_record}
@@ -163,7 +280,16 @@ class SessionAutomationMixin:
         """Capture MIDI from the last played notes
 
         See Also:
-            Wiki: docs/wiki/tools/capture_midi.md"""
+            Wiki: docs/wiki/tools/capture_midi.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             self.song.capture_midi()
             return {"ok": True, "message": "MIDI captured"}

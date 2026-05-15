@@ -33,6 +33,43 @@ def extract_title_and_summary(path):
     return title, summary
 
 
+def extract_live_mapping(path):
+    try:
+        s = open(path, encoding="utf-8").read()
+    except Exception:
+        return None
+    lines = s.splitlines()
+    for i, line in enumerate(lines):
+        stripped = line.strip()
+        # bolded inline section like "**Live mapping:** ..."
+        if stripped.lower().startswith("**live mapping:**"):
+            rest = stripped[len("**live mapping:**") :].strip()
+            if rest:
+                return rest
+            # collect following paragraph lines
+            mapping_lines = []
+            for j in range(i + 1, len(lines)):
+                lj = lines[j].strip()
+                if not lj or lj.startswith("#") or lj.startswith("**") or lj.startswith("##"):
+                    break
+                mapping_lines.append(lj)
+            return " ".join(mapping_lines).strip() or None
+        # heading-style: "Live mapping:" or "## Live mapping:"
+        if "live mapping:" in stripped.lower():
+            pos = stripped.lower().find("live mapping:")
+            rest = stripped[pos + len("live mapping:") :].strip()
+            if rest:
+                return rest
+            mapping_lines = []
+            for j in range(i + 1, len(lines)):
+                lj = lines[j].strip()
+                if not lj or lj.startswith("#") or lj.startswith("**") or lj.startswith("##"):
+                    break
+                mapping_lines.append(lj)
+            return " ".join(mapping_lines).strip() or None
+    return None
+
+
 def main(argv):
     parser = argparse.ArgumentParser()
     parser.add_argument("--apply", action="store_true")
@@ -53,16 +90,27 @@ def main(argv):
             path = os.path.join(root, fn)
             rel = os.path.relpath(path, repo_root)
             title, summary = extract_title_and_summary(path)
+            live_map = extract_live_mapping(path)
             candidates.append(
-                {"path": rel, "title": title or os.path.splitext(fn)[0], "summary": summary}
+                {
+                    "path": rel,
+                    "title": title or os.path.splitext(fn)[0],
+                    "summary": summary,
+                    "live_mapping": live_map,
+                }
             )
             if args.apply:
                 # insert a minimal frontmatter if missing
                 s = open(path, encoding="utf-8").read()
                 if not s.lstrip().startswith("---"):
-                    fm = '---\nname: "{}"\nsummary: "{}"\n---\n\n'.format(
-                        (title or fn).replace('"', '"'), summary.replace('"', '"')
-                    )
+                    # build frontmatter lines, include Live mapping when present
+                    fm_lines = ["---"]
+                    fm_lines.append('name: "{}"'.format((title or fn).replace('"', '\\"')))
+                    fm_lines.append('summary: "{}"'.format(summary.replace('"', '\\"')))
+                    if live_map:
+                        fm_lines.append('Live mapping: "{}"'.format(live_map.replace('"', '\\"')))
+                    fm_lines.append("---")
+                    fm = "\n".join(fm_lines) + "\n\n"
                     open(path, "w", encoding="utf-8").write(fm + s)
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump({"candidates": candidates}, f, indent=2)

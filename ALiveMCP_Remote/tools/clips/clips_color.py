@@ -8,7 +8,16 @@ class ClipsColorMixin:
         """Get clip color
 
         See Also:
-            Wiki: docs/wiki/tools/get_clip_color.md"""
+            Wiki: docs/wiki/tools/get_clip_color.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -36,7 +45,16 @@ class ClipsColorMixin:
         """Set clip color
 
         See Also:
-            Wiki: docs/wiki/tools/set_clip_color.md"""
+            Wiki: docs/wiki/tools/set_clip_color.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}

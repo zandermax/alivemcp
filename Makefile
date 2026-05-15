@@ -1,6 +1,7 @@
 .PHONY: help install-dev lint lint-fix format format-check test test-cov check-length mock ui
 
 VENV ?= .venv
+PYTHON ?= python3
 
 help:
 	@echo "Usage: make <target>"
@@ -25,7 +26,7 @@ help:
 	@echo ""
 
 
-install-dev:
+install-dev: venv
 	$(VENV)/bin/python -m pip install -r requirements-dev.txt
 
 venv:
@@ -49,21 +50,21 @@ format-check:
 	ruff format --check .
 
 test:
-	pytest
+	if [ -x "$(VENV)/bin/pytest" ]; then $(VENV)/bin/pytest; else pytest; fi
 
 test-cov:
-	pytest --cov=ALiveMCP_Remote --cov-report=term-missing
+	if [ -x "$(VENV)/bin/pytest" ]; then $(VENV)/bin/pytest --cov=ALiveMCP_Remote --cov-report=term-missing; else pytest --cov=ALiveMCP_Remote --cov-report=term-missing; fi
 
 validate-manifest:
 	python3 scripts/generate_tool_manifest.py
 	python3 scripts/validate_tool_manifest.py
-	pytest -q tests/test_tool_manifest_parity.py
+	if [ -x "$(VENV)/bin/pytest" ]; then $(VENV)/bin/pytest -q tests/test_tool_manifest_parity.py; else pytest -q tests/test_tool_manifest_parity.py; fi
 
 generate-manifest:
 	python3 scripts/generate_tool_manifest.py
 
 check-length:
-	python scripts/check_file_length.py
+	$(PYTHON) scripts/check_file_length.py
 
 mock:
 	python3 examples/mock_server.py
@@ -72,7 +73,18 @@ ui:
 	uvicorn examples.ui.server:app --port 8080
 
 all:
-	install-dev lint lint-md format-check test check-length
+	$(MAKE) venv
+	$(MAKE) install-dev
+	$(MAKE) lint
+	$(MAKE) lint-md
+	$(MAKE) format-check
+	$(MAKE) check-length
+	$(MAKE) test
+	$(MAKE) generate-from-wiki
+	$(MAKE) generate-manifest
+	$(MAKE) validate-manifest
+	$(MAKE) validate-wiki
+	$(MAKE) validate-docstrings
 
 # Wiki parity targets
 generate-from-wiki:

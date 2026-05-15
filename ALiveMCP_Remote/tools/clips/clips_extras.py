@@ -12,7 +12,16 @@ class ClipsExtrasMixin:
         """Get clip annotation text
 
         See Also:
-            Wiki: docs/wiki/tools/get_clip_annotation.md"""
+            Wiki: docs/wiki/tools/get_clip_annotation.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             track = self.song.tracks[track_index]
             clip_slot = track.clip_slots[clip_index]
@@ -33,7 +42,16 @@ class ClipsExtrasMixin:
         """Set clip annotation text
 
         See Also:
-            Wiki: docs/wiki/tools/set_clip_annotation.md"""
+            Wiki: docs/wiki/tools/set_clip_annotation.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             track = self.song.tracks[track_index]
             clip_slot = track.clip_slots[clip_index]
@@ -59,7 +77,16 @@ class ClipsExtrasMixin:
         """Get clip fade in time
 
         See Also:
-            Wiki: docs/wiki/tools/get_clip_fade_in.md"""
+            Wiki: docs/wiki/tools/get_clip_fade_in.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             track = self.song.tracks[track_index]
             clip_slot = track.clip_slots[clip_index]
@@ -80,7 +107,16 @@ class ClipsExtrasMixin:
         """Set clip fade in time
 
         See Also:
-            Wiki: docs/wiki/tools/set_clip_fade_in.md"""
+            Wiki: docs/wiki/tools/set_clip_fade_in.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             track = self.song.tracks[track_index]
             clip_slot = track.clip_slots[clip_index]
@@ -102,7 +138,16 @@ class ClipsExtrasMixin:
         """Get clip fade out time
 
         See Also:
-            Wiki: docs/wiki/tools/get_clip_fade_out.md"""
+            Wiki: docs/wiki/tools/get_clip_fade_out.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             track = self.song.tracks[track_index]
             clip_slot = track.clip_slots[clip_index]
@@ -123,7 +168,16 @@ class ClipsExtrasMixin:
         """Set clip fade out time
 
         See Also:
-            Wiki: docs/wiki/tools/set_clip_fade_out.md"""
+            Wiki: docs/wiki/tools/set_clip_fade_out.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             track = self.song.tracks[track_index]
             clip_slot = track.clip_slots[clip_index]
@@ -149,7 +203,16 @@ class ClipsExtrasMixin:
         """Get clip RAM mode setting
 
         See Also:
-            Wiki: docs/wiki/tools/get_clip_ram_mode.md"""
+            Wiki: docs/wiki/tools/get_clip_ram_mode.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             track = self.song.tracks[track_index]
             clip_slot = track.clip_slots[clip_index]
@@ -170,7 +233,16 @@ class ClipsExtrasMixin:
         """Set clip RAM mode (load into RAM vs stream from disk)
 
         See Also:
-            Wiki: docs/wiki/tools/set_clip_ram_mode.md"""
+            Wiki: docs/wiki/tools/set_clip_ram_mode.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             track = self.song.tracks[track_index]
             clip_slot = track.clip_slots[clip_index]

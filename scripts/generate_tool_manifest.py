@@ -11,7 +11,7 @@ import json
 import os
 import re
 import sys
-from datetime import datetime
+from datetime import datetime, timezone
 
 BASE = os.path.dirname(os.path.dirname(__file__))
 REGISTRY_PY = os.path.join(BASE, "ALiveMCP_Remote", "tools", "core", "registry.py")
@@ -96,7 +96,7 @@ def build_manifest(registry_tools, raw_defs):
             os.path.relpath(REGISTRY_PY, BASE),
             os.path.relpath(MCP_DEFS_PY, BASE),
         ],
-        "generated_at": datetime.datetime.now(datetime.timezone.utc).isoformat() + "Z",
+        "generated_at": datetime.now(timezone.utc).isoformat() + "Z",
         "tool_count": len(tools),
         "tools": tools,
     }

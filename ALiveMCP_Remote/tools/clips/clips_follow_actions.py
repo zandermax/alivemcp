@@ -8,7 +8,16 @@ class ClipsFollowActionsMixin:
         """Get clip follow action settings
 
         See Also:
-            Wiki: docs/wiki/tools/get_clip_follow_action.md"""
+            Wiki: docs/wiki/tools/get_clip_follow_action.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -66,7 +75,16 @@ class ClipsFollowActionsMixin:
         """Set clip follow action (0-8: Stop, Play Again, Previous, Next, First, Last, Any, Other, Jump)
 
         See Also:
-            Wiki: docs/wiki/tools/set_clip_follow_action.md"""
+            Wiki: docs/wiki/tools/set_clip_follow_action.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -111,7 +129,16 @@ class ClipsFollowActionsMixin:
         """Set follow action time in bars
 
         See Also:
-            Wiki: docs/wiki/tools/set_follow_action_time.md"""
+            Wiki: docs/wiki/tools/set_follow_action_time.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}

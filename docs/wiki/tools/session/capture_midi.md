@@ -1,3 +1,9 @@
+---
+name: "capture_midi"
+summary: ""
+Live mapping: "- Calls `song.capture_midi()`; behavior depends on host capabilities."
+---
+
 # capture_midi
 
 **Domain:** session
@@ -5,15 +11,20 @@
 **Summary:** Capture MIDI from the most recently played notes.
 
 **Parameters:**
+
 - none
 
 **Live mapping:**
+
 - Calls `song.capture_midi()`; behavior depends on host capabilities.
-**Example request:**
+  **Example request:**
+
 ```json
-{"action":"capture_midi"}
+{ "action": "capture_midi" }
 ```
+
 **Example response:**
+
 ```json
-{"ok": true, "message": "MIDI captured"}
+{ "ok": true, "message": "MIDI captured" }
 ```

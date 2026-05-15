@@ -12,7 +12,16 @@ class AutomationMixin:
         """Get automation envelope for a device parameter in a clip
 
         See Also:
-            Wiki: docs/wiki/tools/get_clip_automation_envelope.md"""
+            Wiki: docs/wiki/tools/get_clip_automation_envelope.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             track = self.song.tracks[track_index]
             clip_slot = track.clip_slots[clip_index]
@@ -53,7 +62,16 @@ class AutomationMixin:
         """Create automation envelope for a device parameter
 
         See Also:
-            Wiki: docs/wiki/tools/create_automation_envelope.md"""
+            Wiki: docs/wiki/tools/create_automation_envelope.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             track = self.song.tracks[track_index]
             clip_slot = track.clip_slots[clip_index]
@@ -85,7 +103,16 @@ class AutomationMixin:
         """Clear automation envelope for a device parameter
 
         See Also:
-            Wiki: docs/wiki/tools/clear_automation_envelope.md"""
+            Wiki: docs/wiki/tools/clear_automation_envelope.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             track = self.song.tracks[track_index]
             clip_slot = track.clip_slots[clip_index]
@@ -118,7 +145,16 @@ class AutomationMixin:
         """Insert automation step/breakpoint at specific time
 
         See Also:
-            Wiki: docs/wiki/tools/insert_automation_step.md"""
+            Wiki: docs/wiki/tools/insert_automation_step.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             track = self.song.tracks[track_index]
             clip_slot = track.clip_slots[clip_index]
@@ -154,7 +190,16 @@ class AutomationMixin:
         """Remove automation step/breakpoint at specific time
 
         See Also:
-            Wiki: docs/wiki/tools/remove_automation_step.md"""
+            Wiki: docs/wiki/tools/remove_automation_step.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             track = self.song.tracks[track_index]
             clip_slot = track.clip_slots[clip_index]
@@ -189,7 +234,16 @@ class AutomationMixin:
         """Get all automation envelope values for a parameter
 
         See Also:
-            Wiki: docs/wiki/tools/get_automation_envelope_values.md"""
+            Wiki: docs/wiki/tools/get_automation_envelope_values.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             track = self.song.tracks[track_index]
             clip_slot = track.clip_slots[clip_index]

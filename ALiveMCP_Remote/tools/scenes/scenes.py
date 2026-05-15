@@ -12,7 +12,16 @@ class ScenesMixin:
         """Create a new scene
 
         See Also:
-            Wiki: docs/wiki/tools/create_scene.md"""
+            Wiki: docs/wiki/tools/create_scene.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             scene_index = len(self.song.scenes)
             self.song.create_scene(scene_index)
@@ -33,7 +42,16 @@ class ScenesMixin:
         """Delete scene by index
 
         See Also:
-            Wiki: docs/wiki/tools/delete_scene.md"""
+            Wiki: docs/wiki/tools/delete_scene.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if scene_index < 0 or scene_index >= len(self.song.scenes):
                 return {"ok": False, "error": "Invalid scene index"}
@@ -47,7 +65,16 @@ class ScenesMixin:
         """Duplicate scene
 
         See Also:
-            Wiki: docs/wiki/tools/duplicate_scene.md"""
+            Wiki: docs/wiki/tools/duplicate_scene.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if scene_index < 0 or scene_index >= len(self.song.scenes):
                 return {"ok": False, "error": "Invalid scene index"}
@@ -61,7 +88,16 @@ class ScenesMixin:
         """Launch a scene
 
         See Also:
-            Wiki: docs/wiki/tools/launch_scene.md"""
+            Wiki: docs/wiki/tools/launch_scene.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if scene_index < 0 or scene_index >= len(self.song.scenes):
                 return {"ok": False, "error": "Invalid scene index"}
@@ -75,7 +111,16 @@ class ScenesMixin:
         """Rename scene
 
         See Also:
-            Wiki: docs/wiki/tools/rename_scene.md"""
+            Wiki: docs/wiki/tools/rename_scene.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if scene_index < 0 or scene_index >= len(self.song.scenes):
                 return {"ok": False, "error": "Invalid scene index"}
@@ -89,7 +134,16 @@ class ScenesMixin:
         """Get scene information
 
         See Also:
-            Wiki: docs/wiki/tools/get_scene_info.md"""
+            Wiki: docs/wiki/tools/get_scene_info.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if scene_index < 0 or scene_index >= len(self.song.scenes):
                 return {"ok": False, "error": "Invalid scene index"}
@@ -116,7 +170,16 @@ class ScenesMixin:
         """Get scene color index
 
         See Also:
-            Wiki: docs/wiki/tools/get_scene_color.md"""
+            Wiki: docs/wiki/tools/get_scene_color.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             scene = self.song.scenes[scene_index]
 
@@ -131,7 +194,16 @@ class ScenesMixin:
         """Set scene color index
 
         See Also:
-            Wiki: docs/wiki/tools/set_scene_color.md"""
+            Wiki: docs/wiki/tools/set_scene_color.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             scene = self.song.scenes[scene_index]
 

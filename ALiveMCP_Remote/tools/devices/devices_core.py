@@ -12,7 +12,16 @@ class DevicesCoreMixin:
         """Add device to track
 
         See Also:
-            Wiki: docs/wiki/tools/add_device.md"""
+            Wiki: docs/wiki/tools/add_device.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -29,7 +38,16 @@ class DevicesCoreMixin:
         """Get all devices on track
 
         See Also:
-            Wiki: docs/wiki/tools/get_track_devices.md"""
+            Wiki: docs/wiki/tools/get_track_devices.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
@@ -60,7 +78,16 @@ class DevicesCoreMixin:
         """Set device parameter value
 
         See Also:
-            Wiki: docs/wiki/tools/set_device_param.md"""
+            Wiki: docs/wiki/tools/set_device_param.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}

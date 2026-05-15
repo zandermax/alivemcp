@@ -1,3 +1,9 @@
+---
+name: "ping"
+summary: ""
+Live mapping: "No Live API calls — returns a simple `ok` JSON payload for connectivity checks."
+---
+
 # ping
 
 **Domain:** session
@@ -8,13 +14,17 @@
 
 **Live mapping:** No Live API calls — returns a simple `ok` JSON payload for connectivity checks.
 **Example request:**
+
 ```json
-{"action": "ping"}
+{ "action": "ping" }
 ```
+
 **Example response:**
+
 ```json
-{"ok": true, "message": "pong"}
+{ "ok": true, "message": "pong" }
 ```
 
 **See also:**
+
 - [health_check](tools/session/health_check.md)

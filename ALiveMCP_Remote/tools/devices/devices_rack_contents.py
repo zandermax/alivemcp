@@ -6,7 +6,16 @@ class DevicesRackContentsMixin:
         """Get full rack interior: chains, chain devices, and enriched parameters.
 
         See Also:
-            Wiki: docs/wiki/tools/get_rack_contents.md"""
+            Wiki: docs/wiki/tools/get_rack_contents.md
+
+        Args:
+            TODO: describe parameters.
+
+        Returns:
+            TODO: describe return value.
+
+        Raises:
+            TODO: exceptions raised."""
         try:
             if track_index < 0 or track_index >= len(self.song.tracks):
                 return {"ok": False, "error": "Invalid track index"}
