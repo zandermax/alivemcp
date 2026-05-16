@@ -97,3 +97,10 @@ validate-wiki:
 
 validate-docstrings:
 	python3 scripts/docstring_checker.py --check
+
+
+docs-check:
+	# Generate the canonical manifest, then ensure API reference matches it and wiki parity holds.
+	python3 scripts/generate_tool_manifest.py
+	python3 scripts/generate_api_reference.py --check
+	python3 scripts/validate_wiki_parity.py --check

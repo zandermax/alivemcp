@@ -8,10 +8,10 @@ import json
 import sys
 from pathlib import Path
 
-import scripts.wiki_parity_lib as wpl
-
 repo_root = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(repo_root))
+
+import scripts.wiki_parity_lib as wpl  # noqa: E402
 
 registry_path = repo_root / "ALiveMCP_Remote" / "tools" / "core" / "registry.py"
 tools_root = repo_root / "ALiveMCP_Remote" / "tools"
