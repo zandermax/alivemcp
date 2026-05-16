@@ -48,4 +48,4 @@ Live mapping: "- Reads properties from `clip = track.clip_slots[clip_index].clip
 **See also:**
 
 - [set_clip_name](tools/clips/set_clip_name.md)
-- [get_clip_notes](tools/clips/get_clip_notes.md)
+- [get_clip_notes](tools/midi/get_clip_notes.md)

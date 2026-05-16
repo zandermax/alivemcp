@@ -32,18 +32,36 @@ def extract_available_tools(registry_path: Path):
             for target in node.targets:
                 if getattr(target, "id", None) == "AVAILABLE_TOOLS":
                     val = node.value
+                    # Prefer literal_eval for robustness across Python versions
                     if isinstance(val, (ast.List, ast.Tuple)):
-                        items = []
-                        for elt in val.elts:
-                            if isinstance(elt, ast.Str):
-                                items.append(elt.s)
-                            elif (
-                                hasattr(ast, "Constant")
-                                and isinstance(elt, ast.Constant)
-                                and isinstance(elt.value, str)
-                            ):
-                                items.append(elt.value)
-                        return items
+                        try:
+                            evaluated = ast.literal_eval(val)
+                            if isinstance(evaluated, (list, tuple)):
+                                return [str(x) for x in evaluated]
+                        except Exception:
+                            # Fallback: inspect AST nodes without referencing ast.Str directly
+                            items = []
+                            StrNode = getattr(ast, "Str", None)
+                            ConstNode = getattr(ast, "Constant", None)
+                            for elt in val.elts:
+                                if StrNode is not None and isinstance(elt, StrNode):
+                                    items.append(getattr(elt, "s", ""))
+                                elif (
+                                    ConstNode is not None
+                                    and isinstance(elt, ConstNode)
+                                    and isinstance(getattr(elt, "value", None), str)
+                                ):
+                                    items.append(elt.value)
+                                else:
+                                    # last-ditch: try common attributes
+                                    v = getattr(elt, "s", None)
+                                    if isinstance(v, str):
+                                        items.append(v)
+                                    else:
+                                        v2 = getattr(elt, "value", None)
+                                        if isinstance(v2, str):
+                                            items.append(v2)
+                            return items
     raise RuntimeError(f"AVAILABLE_TOOLS variable not found in {registry_path}")
 
 
@@ -74,10 +92,15 @@ def slugify(name: str) -> str:
 
 
 def make_stub(tool_name: str, defs_map: dict, out_dir: Path, write: bool):
+    slug = slugify(tool_name)
+    # If an existing page exists anywhere in the wiki, prefer it and don't overwrite
+    for p in out_dir.glob(f"tools/**/{slug}.md"):
+        return str(p)
+
     meta = defs_map.get(tool_name, {})
     domain = meta.get("domain") or meta.get("module") or "general"
     target_dir = out_dir / "tools" / domain
-    target_file = target_dir / (slugify(tool_name) + ".md")
+    target_file = target_dir / (slug + ".md")
     if write:
         target_dir.mkdir(parents=True, exist_ok=True)
     if target_file.exists() and write:
@@ -152,8 +175,17 @@ def main(args):
     defs = load_tool_defs(TOOL_DEFS)
     grouped = {}
     for t in tools:
-        meta = defs.get(t, {}) if defs else {}
-        domain = meta.get("domain") or meta.get("module") or "general"
+        # Prefer existing file location when present
+        slug = slugify(t)
+        existing = None
+        for p in OUT_DIR.glob(f"tools/**/{slug}.md"):
+            existing = p
+            break
+        if existing:
+            domain = existing.parent.name
+        else:
+            meta = defs.get(t, {}) if defs else {}
+            domain = meta.get("domain") or meta.get("module") or "general"
         grouped.setdefault(domain, []).append(t)
         if write:
             make_stub(t, defs, OUT_DIR, write=True)

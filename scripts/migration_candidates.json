@@ -415,7 +415,7 @@
       "live_mapping": "\"- Sets `clip_slot.clip.name = name` on the Live Object Model.\""
     },
     {
-      "path": "docs/wiki/tools/clips/get_clip_notes.md",
+      "path": "docs/wiki/tools/midi/get_clip_notes.md",
       "title": "get_clip_notes",
       "summary": "",
       "live_mapping": "\"- Calls `clip.get_notes(0, 0, clip.length, 128)` and returns tuples as note dicts.\""
@@ -595,7 +595,7 @@
       "live_mapping": null
     },
     {
-      "path": "docs/wiki/tools/clips/remove_notes.md",
+      "path": "docs/wiki/tools/midi/remove_notes.md",
       "title": "remove_notes",
       "summary": "",
       "live_mapping": "\"- Calls `clip.remove_notes(time_from, pitch_from, time_span, pitch_span)` on the Live clip object.\""

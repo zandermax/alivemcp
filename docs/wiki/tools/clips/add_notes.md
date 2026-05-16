@@ -48,5 +48,5 @@ Live mapping: "- Uses `clip.set_notes(((pitch, start, duration, velocity, muted)
 
 **See also:**
 
-- [get_clip_notes](tools/clips/get_clip_notes.md)
-- [remove_notes](tools/clips/remove_notes.md)
+- [get_clip_notes](tools/midi/get_clip_notes.md)
+- [remove_notes](tools/midi/remove_notes.md)

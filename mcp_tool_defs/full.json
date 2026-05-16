@@ -1,1382 +1,4351 @@
 [
-  {
-    "defined_in": "ALiveMCP_Remote/tools/core/builtin.py",
-    "docstring": "Return a pong response confirming the script is running.\n\nSee Also:\n    Wiki: docs/wiki/tools/ping.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "ping",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/core/builtin.py",
-    "docstring": "Return health status including version, tool count, and queue size.\n\nSee Also:\n    Wiki: docs/wiki/tools/health_check.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "health_check",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/session/session_playback.py",
-    "docstring": "Start Ableton playback\n\nSee Also:\n    Wiki: docs/wiki/tools/start_playback.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "start_playback",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/session/session_playback.py",
-    "docstring": "Stop Ableton playback\n\nSee Also:\n    Wiki: docs/wiki/tools/stop_playback.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "stop_playback",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/session/session_playback.py",
-    "docstring": "Start recording\n\nSee Also:\n    Wiki: docs/wiki/tools/start_recording.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "start_recording",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/session/session_playback.py",
-    "docstring": "Stop recording\n\nSee Also:\n    Wiki: docs/wiki/tools/stop_recording.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "stop_recording",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/session/session_playback.py",
-    "docstring": "Continue playback from current position\n\nSee Also:\n    Wiki: docs/wiki/tools/continue_playing.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "continue_playing",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/session/session_playback.py",
-    "docstring": "Get current session state information\n\nSee Also:\n    Wiki: docs/wiki/tools/get_session_info.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_session_info",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/session/session_tempo.py",
-    "docstring": "Set session tempo\n\nSee Also:\n    Wiki: docs/wiki/tools/set_tempo.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_tempo",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/session/session_tempo.py",
-    "docstring": "Set time signature\n\nSee Also:\n    Wiki: docs/wiki/tools/set_time_signature.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_time_signature",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/session/session_tempo.py",
-    "docstring": "Set loop start position in beats\n\nSee Also:\n    Wiki: docs/wiki/tools/set_loop_start.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_loop_start",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/session/session_tempo.py",
-    "docstring": "Set loop length in beats\n\nSee Also:\n    Wiki: docs/wiki/tools/set_loop_length.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_loop_length",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/session/session_tempo.py",
-    "docstring": "Enable or disable metronome\n\nSee Also:\n    Wiki: docs/wiki/tools/set_metronome.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_metronome",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/session/session_tempo.py",
-    "docstring": "Tap tempo\n\nSee Also:\n    Wiki: docs/wiki/tools/tap_tempo.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "tap_tempo",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/session/session_playback.py",
-    "docstring": "Undo last action\n\nSee Also:\n    Wiki: docs/wiki/tools/undo.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "undo",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/session/session_playback.py",
-    "docstring": "Redo last undone action\n\nSee Also:\n    Wiki: docs/wiki/tools/redo.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "redo",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/session/session_automation.py",
-    "docstring": "Jump playback to specific time in beats\n\nSee Also:\n    Wiki: docs/wiki/tools/jump_to_time.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "jump_to_time",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/session/session_automation.py",
-    "docstring": "Get current playback position in beats\n\nSee Also:\n    Wiki: docs/wiki/tools/get_current_time.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_current_time",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/session/session_automation.py",
-    "docstring": "Enable/disable arrangement overdub\n\nSee Also:\n    Wiki: docs/wiki/tools/set_arrangement_overdub.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_arrangement_overdub",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/session/session_automation.py",
-    "docstring": "Enable/disable back to arrangement\n\nSee Also:\n    Wiki: docs/wiki/tools/set_back_to_arranger.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_back_to_arranger",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/session/session_automation.py",
-    "docstring": "Enable/disable punch in recording\n\nSee Also:\n    Wiki: docs/wiki/tools/set_punch_in.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_punch_in",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/session/session_automation.py",
-    "docstring": "Enable/disable punch out recording\n\nSee Also:\n    Wiki: docs/wiki/tools/set_punch_out.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_punch_out",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/session/session_automation.py",
-    "docstring": "Nudge playback position up\n\nSee Also:\n    Wiki: docs/wiki/tools/nudge_up.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "nudge_up",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/session/session_automation.py",
-    "docstring": "Nudge playback position down\n\nSee Also:\n    Wiki: docs/wiki/tools/nudge_down.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "nudge_down",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/session/session_automation.py",
-    "docstring": "Re-enable all automation\n\nSee Also:\n    Wiki: docs/wiki/tools/re_enable_automation.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "re_enable_automation",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/session/session_automation.py",
-    "docstring": "Get session automation recording state\n\nSee Also:\n    Wiki: docs/wiki/tools/get_session_automation_record.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_session_automation_record",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/session/session_automation.py",
-    "docstring": "Enable/disable session automation recording\n\nSee Also:\n    Wiki: docs/wiki/tools/set_session_automation_record.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_session_automation_record",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/session/session_automation.py",
-    "docstring": "Get session record state\n\nSee Also:\n    Wiki: docs/wiki/tools/get_session_record.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_session_record",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/session/session_automation.py",
-    "docstring": "Enable/disable session recording\n\nSee Also:\n    Wiki: docs/wiki/tools/set_session_record.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_session_record",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/session/session_automation.py",
-    "docstring": "Capture MIDI from the last played notes\n\nSee Also:\n    Wiki: docs/wiki/tools/capture_midi.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "capture_midi",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_info.py",
-    "docstring": "Find a track's index by name (case-insensitive, partial match, first result)\n\nSee Also:\n    Wiki: docs/wiki/tools/get_track_index_by_name.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_track_index_by_name",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_management.py",
-    "docstring": "Create a new MIDI track\n\nSee Also:\n    Wiki: docs/wiki/tools/create_midi_track.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "create_midi_track",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_management.py",
-    "docstring": "Create a new audio track\n\nSee Also:\n    Wiki: docs/wiki/tools/create_audio_track.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "create_audio_track",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_management.py",
-    "docstring": "Create a new return track\n\nSee Also:\n    Wiki: docs/wiki/tools/create_return_track.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "create_return_track",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_management.py",
-    "docstring": "Delete track by index\n\nSee Also:\n    Wiki: docs/wiki/tools/delete_track.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "delete_track",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_management.py",
-    "docstring": "Duplicate track\n\nSee Also:\n    Wiki: docs/wiki/tools/duplicate_track.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "duplicate_track",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_management.py",
-    "docstring": "Rename track\n\nSee Also:\n    Wiki: docs/wiki/tools/rename_track.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "rename_track",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_properties.py",
-    "docstring": "Set track volume (0.0 to 1.0)\n\nSee Also:\n    Wiki: docs/wiki/tools/set_track_volume.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_track_volume",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_properties.py",
-    "docstring": "Set track pan (-1.0 to 1.0)\n\nSee Also:\n    Wiki: docs/wiki/tools/set_track_pan.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_track_pan",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_properties.py",
-    "docstring": "Arm or disarm track for recording\n\nSee Also:\n    Wiki: docs/wiki/tools/arm_track.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "arm_track",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_properties.py",
-    "docstring": "Solo or unsolo track\n\nSee Also:\n    Wiki: docs/wiki/tools/solo_track.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "solo_track",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_properties.py",
-    "docstring": "Mute or unmute track\n\nSee Also:\n    Wiki: docs/wiki/tools/mute_track.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "mute_track",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_info.py",
-    "docstring": "Get detailed track information\n\nSee Also:\n    Wiki: docs/wiki/tools/get_track_info.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_track_info",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_properties.py",
-    "docstring": "Set track color\n\nSee Also:\n    Wiki: docs/wiki/tools/set_track_color.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_track_color",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_fold.py",
-    "docstring": "Fold or unfold a group track\n\nSee Also:\n    Wiki: docs/wiki/tools/set_track_fold_state.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_track_fold_state",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_routing_core.py",
-    "docstring": "Set track input routing\n\nSee Also:\n    Wiki: docs/wiki/tools/set_track_input_routing.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_track_input_routing",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_routing_core.py",
-    "docstring": "Set track output routing\n\nSee Also:\n    Wiki: docs/wiki/tools/set_track_output_routing.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_track_output_routing",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/mixing/mixing_sends.py",
-    "docstring": "Set track send level\n\nSee Also:\n    Wiki: docs/wiki/tools/set_track_send.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_track_send",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/mixing/mixing_sends.py",
-    "docstring": "Get all send levels for track\n\nSee Also:\n    Wiki: docs/wiki/tools/get_track_sends.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_track_sends",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/clips/clips_core.py",
-    "docstring": "Create a new MIDI clip\n\nSee Also:\n    Wiki: docs/wiki/tools/create_midi_clip.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "create_midi_clip",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/clips/clips_core.py",
-    "docstring": "Delete clip\n\nSee Also:\n    Wiki: docs/wiki/tools/delete_clip.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "delete_clip",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/clips/clips_core.py",
-    "docstring": "Duplicate clip to the next empty slot on the same track\n\nSee Also:\n    Wiki: docs/wiki/tools/duplicate_clip.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "duplicate_clip",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/clips/clips_core.py",
-    "docstring": "Launch clip\n\nSee Also:\n    Wiki: docs/wiki/tools/launch_clip.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "launch_clip",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/clips/clips_core.py",
-    "docstring": "Stop the clip in the specific slot\n\nSee Also:\n    Wiki: docs/wiki/tools/stop_clip.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "stop_clip",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/clips/clips_core.py",
-    "docstring": "Stop all playing clips\n\nSee Also:\n    Wiki: docs/wiki/tools/stop_all_clips.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "stop_all_clips",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/clips/clips_core.py",
-    "docstring": "Get clip information\n\nSee Also:\n    Wiki: docs/wiki/tools/get_clip_info.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_clip_info",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/clips/clips_core.py",
-    "docstring": "Set clip name\n\nSee Also:\n    Wiki: docs/wiki/tools/set_clip_name.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_clip_name",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/clips/clips_looping.py",
-    "docstring": "Enable/disable clip looping\n\nSee Also:\n    Wiki: docs/wiki/tools/set_clip_looping.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_clip_looping",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/clips/clips_looping.py",
-    "docstring": "Set clip loop start position\n\nSee Also:\n    Wiki: docs/wiki/tools/set_clip_loop_start.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_clip_loop_start",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/clips/clips_looping.py",
-    "docstring": "Set clip loop end position\n\nSee Also:\n    Wiki: docs/wiki/tools/set_clip_loop_end.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_clip_loop_end",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/clips/clips_markers.py",
-    "docstring": "Set clip start marker\n\nSee Also:\n    Wiki: docs/wiki/tools/set_clip_start_marker.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_clip_start_marker",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/clips/clips_markers.py",
-    "docstring": "Set clip end marker\n\nSee Also:\n    Wiki: docs/wiki/tools/set_clip_end_marker.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_clip_end_marker",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/clips/clips_misc.py",
-    "docstring": "Mute or unmute clip\n\nSee Also:\n    Wiki: docs/wiki/tools/set_clip_muted.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_clip_muted",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/clips/clips_misc.py",
-    "docstring": "Set clip gain/volume\n\nSee Also:\n    Wiki: docs/wiki/tools/set_clip_gain.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_clip_gain",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/clips/clips_misc.py",
-    "docstring": "Transpose clip by semitones\n\nSee Also:\n    Wiki: docs/wiki/tools/set_clip_pitch_coarse.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_clip_pitch_coarse",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/clips/clips_misc.py",
-    "docstring": "Fine-tune clip pitch in cents\n\nSee Also:\n    Wiki: docs/wiki/tools/set_clip_pitch_fine.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_clip_pitch_fine",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/clips/clips_misc.py",
-    "docstring": "Set clip time signature numerator\n\nSee Also:\n    Wiki: docs/wiki/tools/set_clip_signature_numerator.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_clip_signature_numerator",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/midi/midi_notes_operations.py",
-    "docstring": "Add MIDI notes to a clip\n\nSee Also:\n    Wiki: docs/wiki/tools/add_notes.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "add_notes",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/midi/midi_notes_operations.py",
-    "docstring": "Get all MIDI notes from a clip\n\nSee Also:\n    Wiki: docs/wiki/tools/get_clip_notes.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_clip_notes",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/midi/midi_notes_operations.py",
-    "docstring": "Remove MIDI notes from clip\n\nSee Also:\n    Wiki: docs/wiki/tools/remove_notes.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "remove_notes",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/midi/midi_notes_selection.py",
-    "docstring": "Select all notes in clip\n\nSee Also:\n    Wiki: docs/wiki/tools/select_all_notes.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "select_all_notes",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/midi/midi_notes_selection.py",
-    "docstring": "Deselect all notes in clip\n\nSee Also:\n    Wiki: docs/wiki/tools/deselect_all_notes.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "deselect_all_notes",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/midi/midi_notes_selection.py",
-    "docstring": "Replace selected notes with new notes\n\nSee Also:\n    Wiki: docs/wiki/tools/replace_selected_notes.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "replace_selected_notes",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/midi/midi_notes_queries.py",
-    "docstring": "Get notes with extended filtering options\n\nSee Also:\n    Wiki: docs/wiki/tools/get_notes_extended.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_notes_extended",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/devices/devices_core.py",
-    "docstring": "Add device to track\n\nSee Also:\n    Wiki: docs/wiki/tools/add_device.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "add_device",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/devices/devices_core.py",
-    "docstring": "Get all devices on track\n\nSee Also:\n    Wiki: docs/wiki/tools/get_track_devices.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_track_devices",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/devices/devices_core.py",
-    "docstring": "Set device parameter value\n\nSee Also:\n    Wiki: docs/wiki/tools/set_device_param.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_device_param",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/devices/devices_extras.py",
-    "docstring": "Turn device on or off\n\nSee Also:\n    Wiki: docs/wiki/tools/set_device_on_off.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_device_on_off",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/devices/devices_extras.py",
-    "docstring": "Get all parameters for a device\n\nSee Also:\n    Wiki: docs/wiki/tools/get_device_parameters.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_device_parameters",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/devices/devices_extras.py",
-    "docstring": "Get device parameter by name\n\nSee Also:\n    Wiki: docs/wiki/tools/get_device_parameter_by_name.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_device_parameter_by_name",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/devices/devices_extras.py",
-    "docstring": "Set device parameter by name.\n\nFor quantized parameters, pass a string matching one of the value_items.\n    For continuous parameters, pass a number clamped to min/max.\nMatches the first parameter whose name equals param_name.\n\nSee Also:\n    Wiki: docs/wiki/tools/set_device_parameter_by_name.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_device_parameter_by_name",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/devices/devices_extras.py",
-    "docstring": "Delete device from track\n\nSee Also:\n    Wiki: docs/wiki/tools/delete_device.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "delete_device",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/devices/devices_ui.py",
-    "docstring": "Get available presets for device\n\nSee Also:\n    Wiki: docs/wiki/tools/get_device_presets.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_device_presets",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/devices/devices_ui.py",
-    "docstring": "Load preset for device\n\nSee Also:\n    Wiki: docs/wiki/tools/set_device_preset.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_device_preset",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/devices/devices_extras.py",
-    "docstring": "Randomize all device parameters (delegates to randomize_device)\n\nSee Also:\n    Wiki: docs/wiki/tools/randomize_device_parameters.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "randomize_device_parameters",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/scenes/scenes.py",
-    "docstring": "Create a new scene\n\nSee Also:\n    Wiki: docs/wiki/tools/create_scene.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "create_scene",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/scenes/scenes.py",
-    "docstring": "Delete scene by index\n\nSee Also:\n    Wiki: docs/wiki/tools/delete_scene.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "delete_scene",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/scenes/scenes.py",
-    "docstring": "Duplicate scene\n\nSee Also:\n    Wiki: docs/wiki/tools/duplicate_scene.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "duplicate_scene",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/scenes/scenes.py",
-    "docstring": "Launch a scene\n\nSee Also:\n    Wiki: docs/wiki/tools/launch_scene.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "launch_scene",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/scenes/scenes.py",
-    "docstring": "Rename scene\n\nSee Also:\n    Wiki: docs/wiki/tools/rename_scene.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "rename_scene",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/scenes/scenes.py",
-    "docstring": "Get scene information\n\nSee Also:\n    Wiki: docs/wiki/tools/get_scene_info.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_scene_info",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/mixing/mixing_groove.py",
-    "docstring": "Set clip groove amount (0.0-1.0)\n\nSee Also:\n    Wiki: docs/wiki/tools/set_clip_groove_amount.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_clip_groove_amount",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/clips/clips_quantize.py",
-    "docstring": "Quantize MIDI clip to grid\n\nSee Also:\n    Wiki: docs/wiki/tools/quantize_clip.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "quantize_clip",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/clips/clips_quantize.py",
-    "docstring": "Quantize MIDI clip pitch\n\nSee Also:\n    Wiki: docs/wiki/tools/quantize_clip_pitch.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "quantize_clip_pitch",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/mixing/mixing_groove.py",
-    "docstring": "Get song groove amount\n\nSee Also:\n    Wiki: docs/wiki/tools/get_groove_amount.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_groove_amount",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/mixing/mixing_groove.py",
-    "docstring": "Set song groove amount (0.0-1.0)\n\nSee Also:\n    Wiki: docs/wiki/tools/set_groove_amount.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_groove_amount",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_monitoring.py",
-    "docstring": "Set track monitoring state (0=In, 1=Auto, 2=Off)\n\nSee Also:\n    Wiki: docs/wiki/tools/set_track_current_monitoring_state.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_track_current_monitoring_state",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_routing_core.py",
-    "docstring": "Get available input routing types for track\n\nSee Also:\n    Wiki: docs/wiki/tools/get_track_available_input_routing_types.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_track_available_input_routing_types",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_routing_core.py",
-    "docstring": "Get available output routing types for track\n\nSee Also:\n    Wiki: docs/wiki/tools/get_track_available_output_routing_types.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_track_available_output_routing_types",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_routing_core.py",
-    "docstring": "Get current input routing type for track\n\nSee Also:\n    Wiki: docs/wiki/tools/get_track_input_routing_type.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_track_input_routing_type",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/arrangement/arrangement.py",
-    "docstring": "Get project root folder path\n\nSee Also:\n    Wiki: docs/wiki/tools/get_project_root_folder.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_project_root_folder",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/arrangement/arrangement.py",
-    "docstring": "Trigger session record with optional fixed length\n\nSee Also:\n    Wiki: docs/wiki/tools/trigger_session_record.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "trigger_session_record",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/arrangement/arrangement.py",
-    "docstring": "Check if can jump to next cue point\n\nSee Also:\n    Wiki: docs/wiki/tools/get_can_jump_to_next_cue.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_can_jump_to_next_cue",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/arrangement/arrangement.py",
-    "docstring": "Check if can jump to previous cue point\n\nSee Also:\n    Wiki: docs/wiki/tools/get_can_jump_to_prev_cue.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_can_jump_to_prev_cue",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/arrangement/arrangement.py",
-    "docstring": "Jump to next cue point\n\nSee Also:\n    Wiki: docs/wiki/tools/jump_to_next_cue.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "jump_to_next_cue",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/arrangement/arrangement.py",
-    "docstring": "Jump to previous cue point\n\nSee Also:\n    Wiki: docs/wiki/tools/jump_to_prev_cue.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "jump_to_prev_cue",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/arrangement/arrangement_browser.py",
-    "docstring": "Get list of available devices from browser\n\nSee Also:\n    Wiki: docs/wiki/tools/browse_devices.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "browse_devices",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/arrangement/arrangement_browser.py",
-    "docstring": "Browse available plugins (VST, AU, etc.)\n\nSee Also:\n    Wiki: docs/wiki/tools/browse_plugins.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "browse_plugins",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/arrangement/arrangement_browser.py",
-    "docstring": "Load a device from browser onto track (alias for add_device)\n\nSee Also:\n    Wiki: docs/wiki/tools/load_device_from_browser.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "load_device_from_browser",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/arrangement/arrangement_browser.py",
-    "docstring": "Get browser items by category\n\nSee Also:\n    Wiki: docs/wiki/tools/get_browser_items.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_browser_items",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/arrangement/arrangement_view.py",
-    "docstring": "Enable or disable song loop\n\nSee Also:\n    Wiki: docs/wiki/tools/set_loop_enabled.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_loop_enabled",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/arrangement/arrangement_view.py",
-    "docstring": "Get current loop enabled state\n\nSee Also:\n    Wiki: docs/wiki/tools/get_loop_enabled.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_loop_enabled",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/arrangement/arrangement_locators.py",
-    "docstring": "Create a locator/cue point at specified time\n\nSee Also:\n    Wiki: docs/wiki/tools/create_locator.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "create_locator",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/arrangement/arrangement_locators.py",
-    "docstring": "Delete a locator/cue point\n\nSee Also:\n    Wiki: docs/wiki/tools/delete_locator.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "delete_locator",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/arrangement/arrangement_locators.py",
-    "docstring": "Get all locators/cue points\n\nSee Also:\n    Wiki: docs/wiki/tools/get_locators.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_locators",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/arrangement/arrangement_locators.py",
-    "docstring": "Jump playback position by specified amount (positive or negative)\n\nSee Also:\n    Wiki: docs/wiki/tools/jump_by_amount.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "jump_by_amount",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/clips/clips_color.py",
-    "docstring": "Set clip color\n\nSee Also:\n    Wiki: docs/wiki/tools/set_clip_color.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_clip_color",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_routing_core.py",
-    "docstring": "Get track output routing configuration\n\nSee Also:\n    Wiki: docs/wiki/tools/get_track_output_routing.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_track_output_routing",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_routing_core.py",
-    "docstring": "Set track input sub-routing\n\nSee Also:\n    Wiki: docs/wiki/tools/set_track_input_sub_routing.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_track_input_sub_routing",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_routing_core.py",
-    "docstring": "Set track output sub-routing\n\nSee Also:\n    Wiki: docs/wiki/tools/set_track_output_sub_routing.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_track_output_sub_routing",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/devices/devices_extras.py",
-    "docstring": "Randomize all parameters of a device\n\nSee Also:\n    Wiki: docs/wiki/tools/randomize_device.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "randomize_device",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/m4l/m4l_devices.py",
-    "docstring": "Check if device is a Max for Live device\n\nSee Also:\n    Wiki: docs/wiki/tools/is_max_device.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "is_max_device",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/m4l/m4l_devices.py",
-    "docstring": "Get all Max for Live devices on track\n\nSee Also:\n    Wiki: docs/wiki/tools/get_m4l_devices.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_m4l_devices",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/m4l/m4l_devices.py",
-    "docstring": "Get M4L device parameter value by name\n\nSee Also:\n    Wiki: docs/wiki/tools/get_m4l_param_by_name.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_m4l_param_by_name",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/m4l/m4l_devices.py",
-    "docstring": "Get all CV Tools devices on track (subset of M4L devices)\n\nSee Also:\n    Wiki: docs/wiki/tools/get_cv_tools_devices.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_cv_tools_devices",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/mixing/mixing_master.py",
-    "docstring": "Get master track information\n\nSee Also:\n    Wiki: docs/wiki/tools/get_master_track_info.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_master_track_info",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/mixing/mixing_master.py",
-    "docstring": "Set master track volume (0.0 to 1.0)\n\nSee Also:\n    Wiki: docs/wiki/tools/set_master_volume.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_master_volume",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/mixing/mixing_master.py",
-    "docstring": "Set master track pan (-1.0 to 1.0)\n\nSee Also:\n    Wiki: docs/wiki/tools/set_master_pan.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_master_pan",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/mixing/mixing_master.py",
-    "docstring": "Get all devices on master track\n\nSee Also:\n    Wiki: docs/wiki/tools/get_master_devices.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_master_devices",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/mixing/mixing_master_devices.py",
-    "docstring": "Get all enriched parameter info for a device on the master track\n\nSee Also:\n    Wiki: docs/wiki/tools/get_master_device_params.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_master_device_params",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/mixing/mixing_master_devices.py",
-    "docstring": "Set a parameter value on a device on the master track by index\n\nSee Also:\n    Wiki: docs/wiki/tools/set_master_device_param.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_master_device_param",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/mixing/mixing_master_devices.py",
-    "docstring": "Set a master track device parameter by name.\n\nFor quantized parameters, pass a string matching one of the value_items\n(e.g. \"4:1\"). For continuous parameters, pass a number \u2014 it will be\nclamped to the parameter's min/max range.\nMatches the first parameter whose name equals param_name.\n\nSee Also:\n    Wiki: docs/wiki/tools/set_master_device_param_by_name.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_master_device_param_by_name",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/mixing/mixing_master_devices.py",
-    "docstring": "Get enriched info for a single master track device parameter by name.\n\nMatches the first parameter whose name equals param_name.\n\nSee Also:\n    Wiki: docs/wiki/tools/get_master_device_param_info.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_master_device_param_info",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/mixing/mixing_master_devices.py",
-    "docstring": "Get all devices on the master track with full enriched parameter lists\n\nSee Also:\n    Wiki: docs/wiki/tools/get_master_chain_summary.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_master_chain_summary",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_devices.py",
-    "docstring": "Get all enriched parameter info for a device on any track.\n\nReturns name, raw_value, display_value, min, max, is_quantized, value_items\nfor every parameter on that device.\n\nSee Also:\n    Wiki: docs/wiki/tools/get_track_device_params.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_track_device_params",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_devices.py",
-    "docstring": "Set a parameter value on a device on any track by index.\n\nClamps value to min/max range.\n\nSee Also:\n    Wiki: docs/wiki/tools/set_track_device_param.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_track_device_param",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_devices.py",
-    "docstring": "Set a track device parameter by name.\n\nFor quantized parameters, pass a string matching one of the value_items\n(e.g. \"4:1\"). For continuous parameters, pass a number \u2014 it will be\nclamped to the parameter's min/max range.\nMatches the first parameter whose name equals param_name.\n\nSee Also:\n    Wiki: docs/wiki/tools/set_track_device_param_by_name.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_track_device_param_by_name",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_devices.py",
-    "docstring": "Get all devices on any track with full enriched parameter lists.\n\nLets the AI read the entire device chain in one round trip, which is\nimportant for mastering work where you want a full picture before\ntouching anything.\n\nSee Also:\n    Wiki: docs/wiki/tools/get_track_chain_summary.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_track_chain_summary",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/mixing/mixing_return.py",
-    "docstring": "Get number of return tracks\n\nSee Also:\n    Wiki: docs/wiki/tools/get_return_track_count.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_return_track_count",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/mixing/mixing_return.py",
-    "docstring": "Get return track information\n\nSee Also:\n    Wiki: docs/wiki/tools/get_return_track_info.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_return_track_info",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/mixing/mixing_return.py",
-    "docstring": "Set return track volume\n\nSee Also:\n    Wiki: docs/wiki/tools/set_return_track_volume.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_return_track_volume",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/m4l/m4l_clip_warp.py",
-    "docstring": "Get audio clip warp mode\n\nSee Also:\n    Wiki: docs/wiki/tools/get_clip_warp_mode.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_clip_warp_mode",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/m4l/m4l_clip_warp.py",
-    "docstring": "Set audio clip warp mode (0-5)\n\nSee Also:\n    Wiki: docs/wiki/tools/set_clip_warp_mode.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_clip_warp_mode",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/m4l/m4l_file.py",
-    "docstring": "Get audio clip file path\n\nSee Also:\n    Wiki: docs/wiki/tools/get_clip_file_path.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_clip_file_path",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/m4l/m4l_clip_warp.py",
-    "docstring": "Enable/disable warping for audio clip\n\nSee Also:\n    Wiki: docs/wiki/tools/set_clip_warping.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_clip_warping",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/m4l/m4l_clip_warp.py",
-    "docstring": "Get warp markers from audio clip\n\nSee Also:\n    Wiki: docs/wiki/tools/get_warp_markers.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_warp_markers",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/clips/clips_follow_actions.py",
-    "docstring": "Get clip follow action settings\n\nSee Also:\n    Wiki: docs/wiki/tools/get_clip_follow_action.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_clip_follow_action",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/clips/clips_follow_actions.py",
-    "docstring": "Set clip follow action (0-8: Stop, Play Again, Previous, Next, First, Last, Any, Other, Jump)\n\nSee Also:\n    Wiki: docs/wiki/tools/set_clip_follow_action.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_clip_follow_action",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/clips/clips_follow_actions.py",
-    "docstring": "Set follow action time in bars\n\nSee Also:\n    Wiki: docs/wiki/tools/set_follow_action_time.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_follow_action_time",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/mixing/mixing_crossfader.py",
-    "docstring": "Get track crossfader assignment (0=None, 1=A, 2=B)\n\nSee Also:\n    Wiki: docs/wiki/tools/get_crossfader_assignment.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_crossfader_assignment",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/mixing/mixing_crossfader.py",
-    "docstring": "Set track crossfader assignment (0=None, 1=A, 2=B)\n\nSee Also:\n    Wiki: docs/wiki/tools/set_crossfader_assignment.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_crossfader_assignment",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/mixing/mixing_crossfader.py",
-    "docstring": "Get master crossfader position (-1.0 to 1.0)\n\nSee Also:\n    Wiki: docs/wiki/tools/get_crossfader_position.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_crossfader_position",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_group.py",
-    "docstring": "Create a new group track\n\nSee Also:\n    Wiki: docs/wiki/tools/create_group_track.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "create_group_track",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_group.py",
-    "docstring": "Group tracks from start_index to end_index (inclusive)\n\nSee Also:\n    Wiki: docs/wiki/tools/group_tracks.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "group_tracks",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_group.py",
-    "docstring": "Check if track is part of a group\n\nSee Also:\n    Wiki: docs/wiki/tools/get_track_is_grouped.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_track_is_grouped",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_group.py",
-    "docstring": "Ungroup a group track\n\nSee Also:\n    Wiki: docs/wiki/tools/ungroup_track.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "ungroup_track",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/arrangement/arrangement_view.py",
-    "docstring": "Show clip/session view\n\nSee Also:\n    Wiki: docs/wiki/tools/show_clip_view.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "show_clip_view",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/arrangement/arrangement_view.py",
-    "docstring": "Show arrangement view\n\nSee Also:\n    Wiki: docs/wiki/tools/show_arrangement_view.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "show_arrangement_view",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/arrangement/arrangement_view.py",
-    "docstring": "Focus/highlight a specific track in the view\n\nSee Also:\n    Wiki: docs/wiki/tools/focus_track.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "focus_track",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/arrangement/arrangement_view.py",
-    "docstring": "Scroll arrangement view to specific time\n\nSee Also:\n    Wiki: docs/wiki/tools/scroll_view_to_time.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "scroll_view_to_time",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/clips/clips_color.py",
-    "docstring": "Get clip color\n\nSee Also:\n    Wiki: docs/wiki/tools/get_clip_color.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_clip_color",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_info.py",
-    "docstring": "Get track color\n\nSee Also:\n    Wiki: docs/wiki/tools/get_track_color.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_track_color",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/mixing/mixing_groove.py",
-    "docstring": "Get list of grooves in groove pool\n\nSee Also:\n    Wiki: docs/wiki/tools/get_groove_pool_grooves.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_groove_pool_grooves",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/mixing/mixing_groove.py",
-    "docstring": "Set groove for clip\n\nSee Also:\n    Wiki: docs/wiki/tools/set_clip_groove.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_clip_groove",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/devices/devices_racks.py",
-    "docstring": "Get chains from a rack device\n\nSee Also:\n    Wiki: docs/wiki/tools/get_device_chains.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_device_chains",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/devices/devices_racks.py",
-    "docstring": "Get devices in a specific chain\n\nSee Also:\n    Wiki: docs/wiki/tools/get_chain_devices.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_chain_devices",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/devices/devices_rack_contents.py",
-    "docstring": "Get full rack interior: chains, chain devices, and enriched parameters.\n\nSee Also:\n    Wiki: docs/wiki/tools/get_rack_contents.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_rack_contents",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/devices/devices_racks.py",
-    "docstring": "Mute/unmute a chain in a rack\n\nSee Also:\n    Wiki: docs/wiki/tools/set_chain_mute.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_chain_mute",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/devices/devices_racks.py",
-    "docstring": "Solo/unsolo a chain in a rack\n\nSee Also:\n    Wiki: docs/wiki/tools/set_chain_solo.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_chain_solo",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/automation/automation.py",
-    "docstring": "Get automation envelope for a device parameter in a clip\n\nSee Also:\n    Wiki: docs/wiki/tools/get_clip_automation_envelope.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_clip_automation_envelope",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/automation/automation.py",
-    "docstring": "Create automation envelope for a device parameter\n\nSee Also:\n    Wiki: docs/wiki/tools/create_automation_envelope.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "create_automation_envelope",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/automation/automation.py",
-    "docstring": "Clear automation envelope for a device parameter\n\nSee Also:\n    Wiki: docs/wiki/tools/clear_automation_envelope.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "clear_automation_envelope",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/automation/automation.py",
-    "docstring": "Insert automation step/breakpoint at specific time\n\nSee Also:\n    Wiki: docs/wiki/tools/insert_automation_step.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "insert_automation_step",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/automation/automation.py",
-    "docstring": "Remove automation step/breakpoint at specific time\n\nSee Also:\n    Wiki: docs/wiki/tools/remove_automation_step.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "remove_automation_step",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/automation/automation.py",
-    "docstring": "Get all automation envelope values for a parameter\n\nSee Also:\n    Wiki: docs/wiki/tools/get_automation_envelope_values.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_automation_envelope_values",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_freeze.py",
-    "docstring": "Freeze a track to reduce CPU usage\n\nSee Also:\n    Wiki: docs/wiki/tools/freeze_track.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "freeze_track",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_freeze.py",
-    "docstring": "Unfreeze a frozen track\n\nSee Also:\n    Wiki: docs/wiki/tools/unfreeze_track.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "unfreeze_track",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_freeze.py",
-    "docstring": "Flatten a frozen track (converts to audio)\n\nSee Also:\n    Wiki: docs/wiki/tools/flatten_track.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "flatten_track",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/clips/clips_extras.py",
-    "docstring": "Get clip fade in time\n\nSee Also:\n    Wiki: docs/wiki/tools/get_clip_fade_in.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_clip_fade_in",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/clips/clips_extras.py",
-    "docstring": "Set clip fade in time\n\nSee Also:\n    Wiki: docs/wiki/tools/set_clip_fade_in.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_clip_fade_in",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/clips/clips_extras.py",
-    "docstring": "Get clip fade out time\n\nSee Also:\n    Wiki: docs/wiki/tools/get_clip_fade_out.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_clip_fade_out",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/clips/clips_extras.py",
-    "docstring": "Set clip fade out time\n\nSee Also:\n    Wiki: docs/wiki/tools/set_clip_fade_out.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_clip_fade_out",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/scenes/scenes.py",
-    "docstring": "Get scene color index\n\nSee Also:\n    Wiki: docs/wiki/tools/get_scene_color.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_scene_color",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/scenes/scenes.py",
-    "docstring": "Set scene color index\n\nSee Also:\n    Wiki: docs/wiki/tools/set_scene_color.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_scene_color",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_annotations.py",
-    "docstring": "Get track annotation text\n\nSee Also:\n    Wiki: docs/wiki/tools/get_track_annotation.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_track_annotation",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_annotations.py",
-    "docstring": "Set track annotation text\n\nSee Also:\n    Wiki: docs/wiki/tools/set_track_annotation.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_track_annotation",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/clips/clips_extras.py",
-    "docstring": "Get clip annotation text\n\nSee Also:\n    Wiki: docs/wiki/tools/get_clip_annotation.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_clip_annotation",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/clips/clips_extras.py",
-    "docstring": "Set clip annotation text\n\nSee Also:\n    Wiki: docs/wiki/tools/set_clip_annotation.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_clip_annotation",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_delay.py",
-    "docstring": "Get track delay compensation in samples\n\nSee Also:\n    Wiki: docs/wiki/tools/get_track_delay.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_track_delay",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/tracks/tracks_delay.py",
-    "docstring": "Set track delay compensation in samples\n\nSee Also:\n    Wiki: docs/wiki/tools/set_track_delay.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_track_delay",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/arrangement/arrangement.py",
-    "docstring": "Get list of clips in arrangement view for a track\n\nSee Also:\n    Wiki: docs/wiki/tools/get_arrangement_clips.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_arrangement_clips",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/arrangement/arrangement.py",
-    "docstring": "Duplicate session clip to arrangement view\n\nSee Also:\n    Wiki: docs/wiki/tools/duplicate_to_arrangement.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "duplicate_to_arrangement",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/arrangement/arrangement.py",
-    "docstring": "Consolidate arrangement clips in time range\n\nSee Also:\n    Wiki: docs/wiki/tools/consolidate_clip.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "consolidate_clip",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/devices/devices_ui.py",
-    "docstring": "Show device/plugin window\n\nSee Also:\n    Wiki: docs/wiki/tools/show_plugin_window.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "show_plugin_window",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/devices/devices_ui.py",
-    "docstring": "Hide device/plugin window\n\nSee Also:\n    Wiki: docs/wiki/tools/hide_plugin_window.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "hide_plugin_window",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/session/session_metronome.py",
-    "docstring": "Get metronome volume\n\nSee Also:\n    Wiki: docs/wiki/tools/get_metronome_volume.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_metronome_volume",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/session/session_transport.py",
-    "docstring": "Set metronome volume (0.0 to 1.0)\n\nSee Also:\n    Wiki: docs/wiki/tools/set_metronome_volume.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_metronome_volume",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/midi/midi_cc.py",
-    "docstring": "Send MIDI CC message to a track\n\nSee Also:\n    Wiki: docs/wiki/tools/send_midi_cc.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "send_midi_cc",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/midi/midi_cc.py",
-    "docstring": "Send MIDI Program Change message to a track\n\nSee Also:\n    Wiki: docs/wiki/tools/send_program_change.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "send_program_change",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/m4l/m4l_sample.py",
-    "docstring": "Get audio sample length for a clip\n\nSee Also:\n    Wiki: docs/wiki/tools/get_sample_length.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_sample_length",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/m4l/m4l_sample.py",
-    "docstring": "Get Simpler/Sampler playback mode\n\nSee Also:\n    Wiki: docs/wiki/tools/get_sample_playback_mode.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_sample_playback_mode",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/m4l/m4l_sample.py",
-    "docstring": "Set Simpler/Sampler playback mode\n\nSee Also:\n    Wiki: docs/wiki/tools/set_sample_playback_mode.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_sample_playback_mode",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/clips/clips_extras.py",
-    "docstring": "Get clip RAM mode setting\n\nSee Also:\n    Wiki: docs/wiki/tools/get_clip_ram_mode.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_clip_ram_mode",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/clips/clips_extras.py",
-    "docstring": "Set clip RAM mode (load into RAM vs stream from disk)\n\nSee Also:\n    Wiki: docs/wiki/tools/set_clip_ram_mode.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_clip_ram_mode",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/devices/devices_racks.py",
-    "docstring": "Get device class name (e.g., 'OriginalSimpler', 'Compressor2')\n\nSee Also:\n    Wiki: docs/wiki/tools/get_device_class_name.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_device_class_name",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/devices/devices_racks.py",
-    "docstring": "Get device type (audio_effect, instrument, midi_effect)\n\nSee Also:\n    Wiki: docs/wiki/tools/get_device_type.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_device_type",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/arrangement/take_lanes.py",
-    "docstring": "Get all take lanes for a track (Live 12+)\n\nSee Also:\n    Wiki: docs/wiki/tools/get_take_lanes.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_take_lanes",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/arrangement/take_lanes.py",
-    "docstring": "Create new take lane on a track (Live 12+)\n\nSee Also:\n    Wiki: docs/wiki/tools/create_take_lane.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "create_take_lane",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/arrangement/take_lanes.py",
-    "docstring": "Get take lane name (Live 12+)\n\nSee Also:\n    Wiki: docs/wiki/tools/get_take_lane_name.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_take_lane_name",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/arrangement/take_lanes.py",
-    "docstring": "Set take lane name (Live 12+)\n\nSee Also:\n    Wiki: docs/wiki/tools/set_take_lane_name.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_take_lane_name",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/arrangement/take_lanes.py",
-    "docstring": "Create audio clip in take lane (Live 12+)\n\nSee Also:\n    Wiki: docs/wiki/tools/create_audio_clip_in_lane.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "create_audio_clip_in_lane",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/arrangement/take_lanes.py",
-    "docstring": "Create MIDI clip in take lane (Live 12+)\n\nSee Also:\n    Wiki: docs/wiki/tools/create_midi_clip_in_lane.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "create_midi_clip_in_lane",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/arrangement/take_lanes.py",
-    "docstring": "Get all clips in a take lane (Live 12+)\n\nSee Also:\n    Wiki: docs/wiki/tools/get_clips_in_take_lane.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_clips_in_take_lane",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/arrangement/take_lanes.py",
-    "docstring": "Delete a take lane (Live 12+)\n\nSee Also:\n    Wiki: docs/wiki/tools/delete_take_lane.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "delete_take_lane",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/properties/app_info.py",
-    "docstring": "Get Ableton Live build identifier (Live 12+)\n\nSee Also:\n    Wiki: docs/wiki/tools/get_build_id.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_build_id",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/properties/app_info.py",
-    "docstring": "Get Ableton Live variant (Suite, Standard, Intro) (Live 12+)\n\nSee Also:\n    Wiki: docs/wiki/tools/get_variant.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_variant",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/properties/app_info.py",
-    "docstring": "Show message box dialog to user (Live 12+)\n\nSee Also:\n    Wiki: docs/wiki/tools/show_message_box.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "show_message_box",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/properties/app_info.py",
-    "docstring": "Get full Ableton Live version information\n\nSee Also:\n    Wiki: docs/wiki/tools/get_application_version.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_application_version",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/devices/devices_display.py",
-    "docstring": "Get device parameter value as displayed in UI (Live 12+)\n\nSee Also:\n    Wiki: docs/wiki/tools/get_device_param_display_value.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_device_param_display_value",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/devices/devices_display.py",
-    "docstring": "Get all enriched parameter info for a device on a regular track\n\nSee Also:\n    Wiki: docs/wiki/tools/get_all_param_display_values.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_all_param_display_values",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/properties/app_misc_properties.py",
-    "docstring": "Get clip start time (observable in Live 12+)\n\nSee Also:\n    Wiki: docs/wiki/tools/get_clip_start_time.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_clip_start_time",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/properties/app_misc_properties.py",
-    "docstring": "Set clip start time\n\nSee Also:\n    Wiki: docs/wiki/tools/set_clip_start_time.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_clip_start_time",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/properties/app_misc_properties.py",
-    "docstring": "Check if track can be folded (group tracks)\n\nSee Also:\n    Wiki: docs/wiki/tools/get_track_is_foldable.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_track_is_foldable",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/properties/app_misc_properties.py",
-    "docstring": "Check if track is currently frozen\n\nSee Also:\n    Wiki: docs/wiki/tools/get_track_is_frozen.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_track_is_frozen",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/properties/app_misc_properties.py",
-    "docstring": "Check if scene has no clips\n\nSee Also:\n    Wiki: docs/wiki/tools/get_scene_is_empty.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_scene_is_empty",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/properties/app_misc_properties.py",
-    "docstring": "Get scene tempo override (if set)\n\nSee Also:\n    Wiki: docs/wiki/tools/get_scene_tempo.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_scene_tempo",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/properties/app_misc_properties.py",
-    "docstring": "Get arrangement overdub state\n\nSee Also:\n    Wiki: docs/wiki/tools/get_arrangement_overdub.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_arrangement_overdub",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/properties/app_misc_properties.py",
-    "docstring": "Set session/arrangement record mode (0=session, 1=arrangement)\n\nSee Also:\n    Wiki: docs/wiki/tools/set_record_mode.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "set_record_mode",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/properties/app_misc_properties.py",
-    "docstring": "Get global time signature numerator\n\nSee Also:\n    Wiki: docs/wiki/tools/get_signature_numerator.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_signature_numerator",
-    "wiki_frontmatter": null
-  },
-  {
-    "defined_in": "ALiveMCP_Remote/tools/properties/app_misc_properties.py",
-    "docstring": "Get global time signature denominator\n\nSee Also:\n    Wiki: docs/wiki/tools/get_signature_denominator.md\n\nArgs:\n    TODO: describe parameters.\n\nReturns:\n    TODO: describe return value.\n\nRaises:\n    TODO: exceptions raised.",
-    "name": "get_signature_denominator",
-    "wiki_frontmatter": null
-  }
+  [
+    "add_device",
+    "Request adding a device to a track by name.",
+    {
+      "properties": {
+        "device_name": {
+          "description": "Device name to add",
+          "type": "string"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_name"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "add_notes",
+    "Add MIDI notes to a clip. Each note: {pitch (0-127), start (beats), duration (beats), velocity (0-127)}.",
+    {
+      "properties": {
+        "notes": {
+          "description": "List of notes with pitch (0-127), start (beats), duration (beats), velocity (0-127)",
+          "items": {
+            "properties": {
+              "duration": {
+                "description": "Duration in beats (> 0)",
+                "type": "number"
+              },
+              "pitch": {
+                "description": "MIDI note 0–127",
+                "type": "integer"
+              },
+              "start": {
+                "description": "Start time in beats",
+                "type": "number"
+              },
+              "velocity": {
+                "description": "Velocity 0–127",
+                "type": "integer"
+              }
+            },
+            "required": [
+              "pitch",
+              "start",
+              "duration",
+              "velocity"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "scene_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "scene_index",
+        "notes"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "arm_track",
+    "Arm or disarm a track for recording.",
+    {
+      "properties": {
+        "armed": {
+          "description": "True to arm (default true)",
+          "type": "boolean"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "browse_devices",
+    "List Ableton device categories available in the browser.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "browse_plugins",
+    "Get plugin browsing status.",
+    {
+      "properties": {
+        "plugin_type": {
+          "description": "Plugin type (default 'vst')",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  ],
+  [
+    "capture_midi",
+    "Capture the last-played MIDI notes into a clip.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "clear_automation_envelope",
+    "Clear (delete) the automation envelope for a device parameter in a clip.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "device_index": {
+          "description": "0-based device index",
+          "type": "integer"
+        },
+        "param_index": {
+          "description": "0-based parameter index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "device_index",
+        "param_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "consolidate_clip",
+    "Initiate consolidation of arrangement clips in a time range.",
+    {
+      "properties": {
+        "end_time": {
+          "description": "End time in beats",
+          "type": "number"
+        },
+        "start_time": {
+          "description": "Start time in beats",
+          "type": "number"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "start_time",
+        "end_time"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "continue_playing",
+    "Continue playback from the current position.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "create_audio_clip_in_lane",
+    "Create an audio clip inside a take lane. Requires Live 12+.",
+    {
+      "properties": {
+        "lane_index": {
+          "description": "0-based lane index",
+          "type": "integer"
+        },
+        "length": {
+          "description": "Clip length in beats (default 4.0)",
+          "type": "number"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "lane_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "create_audio_track",
+    "Create a new audio track at the end of the track list.",
+    {
+      "properties": {
+        "name": {
+          "description": "Optional track name",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  ],
+  [
+    "create_automation_envelope",
+    "Create an automation envelope for a device parameter in a clip.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "device_index": {
+          "description": "0-based device index",
+          "type": "integer"
+        },
+        "param_index": {
+          "description": "0-based parameter index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "device_index",
+        "param_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "create_group_track",
+    "Create a new empty group track.",
+    {
+      "properties": {
+        "name": {
+          "description": "Optional group name",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  ],
+  [
+    "create_locator",
+    "Create a cue point (locator) at a specific time.",
+    {
+      "properties": {
+        "name": {
+          "description": "Locator name (default 'Locator')",
+          "type": "string"
+        },
+        "time_in_beats": {
+          "description": "Position in beats",
+          "type": "number"
+        }
+      },
+      "required": [
+        "time_in_beats"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "create_midi_clip",
+    "Create a new empty MIDI clip in a Session view slot. The slot must be empty.",
+    {
+      "properties": {
+        "length": {
+          "description": "Clip length in beats (default 4.0)",
+          "type": "number"
+        },
+        "scene_index": {
+          "description": "0-based scene (row) index — slot must be empty",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based MIDI track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "scene_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "create_midi_clip_in_lane",
+    "Create a MIDI clip inside a take lane. Requires Live 12+.",
+    {
+      "properties": {
+        "lane_index": {
+          "description": "0-based lane index",
+          "type": "integer"
+        },
+        "length": {
+          "description": "Clip length in beats (default 4.0)",
+          "type": "number"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "lane_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "create_midi_track",
+    "Create a new MIDI track at the end of the track list.",
+    {
+      "properties": {
+        "name": {
+          "description": "Optional track name",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  ],
+  [
+    "create_return_track",
+    "Create a new return track.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "create_scene",
+    "Create a new scene at the end of the scene list.",
+    {
+      "properties": {
+        "name": {
+          "description": "Optional scene name",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  ],
+  [
+    "create_take_lane",
+    "Create a new take lane on a track. Requires Live 12+.",
+    {
+      "properties": {
+        "name": {
+          "description": "Optional lane name",
+          "type": "string"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "delete_clip",
+    "Delete the clip in a session slot.",
+    {
+      "properties": {
+        "scene_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "scene_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "delete_device",
+    "Delete a device from a track.",
+    {
+      "properties": {
+        "device_index": {
+          "description": "0-based device index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "delete_locator",
+    "Delete a cue point by index.",
+    {
+      "properties": {
+        "locator_index": {
+          "description": "0-based locator index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "locator_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "delete_scene",
+    "Delete a scene by index.",
+    {
+      "properties": {
+        "scene_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "scene_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "delete_take_lane",
+    "Delete a take lane. Requires Live 12+.",
+    {
+      "properties": {
+        "lane_index": {
+          "description": "0-based lane index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "lane_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "delete_track",
+    "Delete a track by index.",
+    {
+      "properties": {
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "deselect_all_notes",
+    "Deselect all notes in a MIDI clip.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "duplicate_clip",
+    "Duplicate the clip in a slot.",
+    {
+      "properties": {
+        "scene_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "scene_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "duplicate_scene",
+    "Duplicate a scene; copy inserted immediately after the original.",
+    {
+      "properties": {
+        "scene_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "scene_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "duplicate_to_arrangement",
+    "Duplicate a session clip to the arrangement view at the current playback position.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "duplicate_track",
+    "Duplicate a track; copy inserted immediately after the original.",
+    {
+      "properties": {
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "flatten_track",
+    "Flatten a frozen track to audio. Track must be frozen first.",
+    {
+      "properties": {
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "focus_track",
+    "Select and focus a track in the current view.",
+    {
+      "properties": {
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "freeze_track",
+    "Freeze a track to reduce CPU usage.",
+    {
+      "properties": {
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_all_param_display_values",
+    "Get display values for all parameters of a device.",
+    {
+      "properties": {
+        "device_index": {
+          "description": "0-based device index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_application_version",
+    "Get full Ableton Live version information.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "get_arrangement_clips",
+    "Get all clips in the arrangement view for a track.",
+    {
+      "properties": {
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_arrangement_overdub",
+    "Get the current arrangement overdub state.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "get_automation_envelope_values",
+    "Check whether an automation envelope has any breakpoints.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "device_index": {
+          "description": "0-based device index",
+          "type": "integer"
+        },
+        "param_index": {
+          "description": "0-based parameter index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "device_index",
+        "param_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_browser_items",
+    "Get browser items for a category: devices, plugins, instruments, audio_effects, midi_effects.",
+    {
+      "properties": {
+        "category": {
+          "description": "Category name (default 'devices')",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  ],
+  [
+    "get_build_id",
+    "Get the Ableton Live build identifier. Requires Live 12+.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "get_can_jump_to_next_cue",
+    "Check whether there is a next cue point to jump to.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "get_can_jump_to_prev_cue",
+    "Check whether there is a previous cue point to jump to.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "get_chain_devices",
+    "Get all devices within a specific rack chain.",
+    {
+      "properties": {
+        "chain_index": {
+          "description": "0-based chain index",
+          "type": "integer"
+        },
+        "device_index": {
+          "description": "0-based rack device index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index",
+        "chain_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_clip_annotation",
+    "Get annotation text for a clip.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_clip_automation_envelope",
+    "Check whether an automation envelope exists for a device parameter in a clip.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "device_index": {
+          "description": "0-based device index",
+          "type": "integer"
+        },
+        "param_index": {
+          "description": "0-based parameter index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "device_index",
+        "param_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_clip_color",
+    "Get the color of a clip.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_clip_fade_in",
+    "Get the fade-in time for an audio clip.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_clip_fade_out",
+    "Get the fade-out time for an audio clip.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_clip_file_path",
+    "Get the file path of the audio sample for an audio clip.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_clip_follow_action",
+    "Get the follow action for a clip. Codes: 0=Stop, 1=Play Again, 2=Previous, 3=Next, 4=First, 5=Last, 6=Any, 7=Other, 8=Jump.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_clip_info",
+    "Get information about a clip (name, length, loop, MIDI/audio type, playing state, color).",
+    {
+      "properties": {
+        "scene_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "scene_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_clip_notes",
+    "Get all MIDI notes from a clip.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_clip_ram_mode",
+    "Check whether an audio clip is loaded into RAM.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_clip_start_time",
+    "Get the start time property of a clip in the arrangement.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_clip_warp_mode",
+    "Get the warp mode for an audio clip. 0=Beats, 1=Tones, 2=Texture, 3=Re-Pitch, 4=Complex, 5=Complex Pro.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_clips_in_take_lane",
+    "Get all clips inside a take lane. Requires Live 12+.",
+    {
+      "properties": {
+        "lane_index": {
+          "description": "0-based lane index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "lane_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_crossfader_assignment",
+    "Get a track's crossfader assignment: 0=None, 1=A, 2=B.",
+    {
+      "properties": {
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_crossfader_position",
+    "Get the master crossfader position (-1.0 to 1.0).",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "get_current_time",
+    "Get the current playback position and playing state.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "get_cv_tools_devices",
+    "List all CV Tools devices on a track (filtered by name containing 'CV').",
+    {
+      "properties": {
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_device_chains",
+    "Get the chains of an instrument/effect rack device.",
+    {
+      "properties": {
+        "device_index": {
+          "description": "0-based rack device index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_device_class_name",
+    "Get the internal class name of a device (e.g. 'OriginalSimpler', 'Compressor2').",
+    {
+      "properties": {
+        "device_index": {
+          "description": "0-based device index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_device_param_display_value",
+    "Get a parameter's value as displayed in the Live UI (e.g. '128 Hz'). Falls back to string on older Live.",
+    {
+      "properties": {
+        "device_index": {
+          "description": "0-based device index",
+          "type": "integer"
+        },
+        "param_index": {
+          "description": "0-based parameter index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index",
+        "param_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_device_parameter_by_name",
+    "Find a device parameter by name.",
+    {
+      "properties": {
+        "device_index": {
+          "description": "0-based device index",
+          "type": "integer"
+        },
+        "param_name": {
+          "description": "Parameter name",
+          "type": "string"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index",
+        "param_name"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_device_parameters",
+    "Get all parameters for a device.",
+    {
+      "properties": {
+        "device_index": {
+          "description": "0-based device index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_device_presets",
+    "Get available presets for a device.",
+    {
+      "properties": {
+        "device_index": {
+          "description": "0-based device index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_device_type",
+    "Get the device type: 0=audio_effect, 1=instrument, 2=midi_effect.",
+    {
+      "properties": {
+        "device_index": {
+          "description": "0-based device index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_groove_amount",
+    "Get the global song groove amount.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "get_groove_pool_grooves",
+    "List all grooves in the groove pool.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "get_locators",
+    "Get all cue points.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "get_loop_enabled",
+    "Get the current arrangement loop state and bounds.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "get_m4l_devices",
+    "List all Max for Live devices on a track.",
+    {
+      "properties": {
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_m4l_param_by_name",
+    "Get a device parameter value by name.",
+    {
+      "properties": {
+        "device_index": {
+          "description": "0-based device index",
+          "type": "integer"
+        },
+        "param_name": {
+          "description": "Parameter name",
+          "type": "string"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index",
+        "param_name"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_master_chain_summary",
+    "Get all devices on the master track with full enriched parameter lists in a single call — avoids multiple round-trips for mastering work.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "get_master_device_param_info",
+    "Get enriched info for a single master track device parameter by name. Faster than get_master_device_params when you only need one parameter.",
+    {
+      "properties": {
+        "device_index": {
+          "description": "0-based device index on master track",
+          "type": "integer"
+        },
+        "param_name": {
+          "description": "Parameter name (first match)",
+          "type": "string"
+        }
+      },
+      "required": [
+        "device_index",
+        "param_name"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_master_device_params",
+    "Get all enriched parameter info for a device on the master track (name, raw_value, display_value, min, max, is_quantized, value_items).",
+    {
+      "properties": {
+        "device_index": {
+          "description": "0-based device index on master track",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "device_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_master_devices",
+    "Get all devices on the master track.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "get_master_track_info",
+    "Get master track information (name, volume, pan, devices).",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "get_metronome_volume",
+    "Get the metronome volume.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "get_notes_extended",
+    "Get MIDI notes filtered by time and pitch range.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "pitch_span": {
+          "description": "Number of pitches to include",
+          "type": "integer"
+        },
+        "start_pitch": {
+          "description": "Lowest pitch to include",
+          "type": "integer"
+        },
+        "start_time": {
+          "description": "Filter start time in beats",
+          "type": "number"
+        },
+        "time_span": {
+          "description": "Duration of filter window in beats",
+          "type": "number"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "start_time",
+        "time_span",
+        "start_pitch",
+        "pitch_span"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_project_root_folder",
+    "Get the project root folder path.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "get_rack_contents",
+    "Get full rack interior: all chains, chain devices, and enriched device parameters in one call.",
+    {
+      "properties": {
+        "device_index": {
+          "description": "0-based rack device index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_return_track_count",
+    "Get the number of return tracks.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "get_return_track_info",
+    "Get information about a return track.",
+    {
+      "properties": {
+        "return_index": {
+          "description": "0-based return track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "return_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_sample_length",
+    "Get the raw sample length of an audio clip.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_sample_playback_mode",
+    "Get the playback mode of a Simpler or Sampler device.",
+    {
+      "properties": {
+        "device_index": {
+          "description": "0-based device index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_scene_color",
+    "Get a scene's color index.",
+    {
+      "properties": {
+        "scene_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "scene_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_scene_info",
+    "Get information about a scene (name, color, tempo, time signature).",
+    {
+      "properties": {
+        "scene_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "scene_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_scene_is_empty",
+    "Check whether a scene has no clips across all tracks.",
+    {
+      "properties": {
+        "scene_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "scene_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_scene_tempo",
+    "Get the tempo override set on a scene, if any.",
+    {
+      "properties": {
+        "scene_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "scene_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_session_automation_record",
+    "Get whether session automation recording is enabled.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "get_session_info",
+    "Get a full snapshot of the session state (tempo, tracks, scenes, playback status).",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "get_session_record",
+    "Get the session record state.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "get_signature_denominator",
+    "Get the global time signature denominator.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "get_signature_numerator",
+    "Get the global time signature numerator.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "get_take_lane_name",
+    "Get the name of a specific take lane. Requires Live 12+.",
+    {
+      "properties": {
+        "lane_index": {
+          "description": "0-based lane index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "lane_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_take_lanes",
+    "Get all take lanes on a track. Requires Live 12+.",
+    {
+      "properties": {
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_track_annotation",
+    "Get the annotation text for a track.",
+    {
+      "properties": {
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_track_available_input_routing_types",
+    "List available input routing type names for a track.",
+    {
+      "properties": {
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_track_available_output_routing_types",
+    "List available output routing type names for a track.",
+    {
+      "properties": {
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_track_chain_summary",
+    "Get all devices on any track with full enriched parameter lists in a single call — lets the AI read the entire device chain in one round trip.",
+    {
+      "properties": {
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_track_color",
+    "Get the color of a track.",
+    {
+      "properties": {
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_track_delay",
+    "Get a track's delay compensation value in samples.",
+    {
+      "properties": {
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_track_device_params",
+    "Get all enriched parameter info for a device on any track (name, raw_value, display_value, min, max, is_quantized, value_items).",
+    {
+      "properties": {
+        "device_index": {
+          "description": "0-based device index on that track",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_track_devices",
+    "Get all devices on a track.",
+    {
+      "properties": {
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_track_index_by_name",
+    "Find a track's index by name. Case-insensitive, partial match, returns first result.",
+    {
+      "properties": {
+        "name": {
+          "description": "Track name or partial name to search for",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_track_info",
+    "Get detailed information about a track (name, volume, pan, devices, clips, etc.).",
+    {
+      "properties": {
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_track_input_routing_type",
+    "Get the current input routing type for a track.",
+    {
+      "properties": {
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_track_is_foldable",
+    "Check whether a track is foldable (i.e. is a group track).",
+    {
+      "properties": {
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_track_is_frozen",
+    "Check whether a track is currently frozen.",
+    {
+      "properties": {
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_track_is_grouped",
+    "Check whether a track is a member of a group.",
+    {
+      "properties": {
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_track_output_routing",
+    "Get the current output routing configuration for a track.",
+    {
+      "properties": {
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_track_sends",
+    "Get all send levels for a track.",
+    {
+      "properties": {
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "get_variant",
+    "Get the Ableton Live edition (e.g. 'Suite', 'Standard', 'Intro'). Requires Live 12+.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "get_warp_markers",
+    "Get all warp markers from an audio clip.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "group_tracks",
+    "Group a range of tracks together.",
+    {
+      "properties": {
+        "end_index": {
+          "description": "Last track to group (inclusive)",
+          "type": "integer"
+        },
+        "start_index": {
+          "description": "First track to group",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "start_index",
+        "end_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "health_check",
+    "Get health status: Ableton version, queue depth, tool count.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "hide_plugin_window",
+    "Hide the editor window for a device/plugin.",
+    {
+      "properties": {
+        "device_index": {
+          "description": "0-based device index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "insert_automation_step",
+    "Insert an automation breakpoint at a specific time and value.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "device_index": {
+          "description": "0-based device index",
+          "type": "integer"
+        },
+        "param_index": {
+          "description": "0-based parameter index",
+          "type": "integer"
+        },
+        "time": {
+          "description": "Time in beats",
+          "type": "number"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        },
+        "value": {
+          "description": "Automation value",
+          "type": "number"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "device_index",
+        "param_index",
+        "time",
+        "value"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "is_max_device",
+    "Check whether a device is a Max for Live device.",
+    {
+      "properties": {
+        "device_index": {
+          "description": "0-based device index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "jump_by_amount",
+    "Move the playback position by a relative offset in beats (negative to go backward).",
+    {
+      "properties": {
+        "amount_in_beats": {
+          "description": "Offset in beats",
+          "type": "number"
+        }
+      },
+      "required": [
+        "amount_in_beats"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "jump_to_next_cue",
+    "Jump playback to the next cue point.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "jump_to_prev_cue",
+    "Jump playback to the previous cue point.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "jump_to_time",
+    "Move the playback position to a specific beat.",
+    {
+      "properties": {
+        "time_in_beats": {
+          "description": "Target position in beats",
+          "type": "number"
+        }
+      },
+      "required": [
+        "time_in_beats"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "launch_clip",
+    "Launch (fire) a clip.",
+    {
+      "properties": {
+        "scene_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "scene_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "launch_scene",
+    "Launch (fire) all clips in a scene.",
+    {
+      "properties": {
+        "scene_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "scene_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "load_device_from_browser",
+    "Load a device from the browser onto a track by name.",
+    {
+      "properties": {
+        "device_name": {
+          "description": "Device name",
+          "type": "string"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_name"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "mute_track",
+    "Mute or unmute a track.",
+    {
+      "properties": {
+        "mute": {
+          "description": "True to mute (default true)",
+          "type": "boolean"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "nudge_down",
+    "Nudge the playback position down.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "nudge_up",
+    "Nudge the playback position up.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "ping",
+    "Check that the ALiveMCP Remote Script is running in Ableton.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "quantize_clip",
+    "Quantize a MIDI clip to a grid value (e.g. 0.25 for 16th notes).",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "quantize_to": {
+          "description": "Grid size in beats (e.g. 0.25 for 16th notes)",
+          "type": "number"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "quantize_to"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "quantize_clip_pitch",
+    "Quantize MIDI clip pitch to a target pitch.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "pitch": {
+          "description": "Target pitch MIDI note (default 60)",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "randomize_device",
+    "Randomize all enabled, non-quantized parameters of a device (richer response).",
+    {
+      "properties": {
+        "device_index": {
+          "description": "0-based device index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "randomize_device_parameters",
+    "Randomize all non-quantized parameters of a device.",
+    {
+      "properties": {
+        "device_index": {
+          "description": "0-based device index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "re_enable_automation",
+    "Re-enable all overridden automation.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "redo",
+    "Redo the last undone action in Ableton.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "remove_automation_step",
+    "Remove an automation breakpoint at a specific time.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "device_index": {
+          "description": "0-based device index",
+          "type": "integer"
+        },
+        "param_index": {
+          "description": "0-based parameter index",
+          "type": "integer"
+        },
+        "time": {
+          "description": "Time in beats of breakpoint to remove",
+          "type": "number"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "device_index",
+        "param_index",
+        "time"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "remove_notes",
+    "Remove MIDI notes from a clip within a pitch and time range.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "pitch_from": {
+          "description": "Lowest pitch to remove (default 0)",
+          "type": "integer"
+        },
+        "pitch_to": {
+          "description": "Highest pitch to remove (default 127)",
+          "type": "integer"
+        },
+        "time_from": {
+          "description": "Start time in beats (default 0.0)",
+          "type": "number"
+        },
+        "time_to": {
+          "description": "End time in beats (default 999.0)",
+          "type": "number"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "rename_scene",
+    "Rename a scene.",
+    {
+      "properties": {
+        "name": {
+          "description": "New scene name",
+          "type": "string"
+        },
+        "scene_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "scene_index",
+        "name"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "rename_track",
+    "Rename a track.",
+    {
+      "properties": {
+        "name": {
+          "description": "New name",
+          "type": "string"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "name"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "replace_selected_notes",
+    "Replace the currently selected notes with new notes.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "notes": {
+          "description": "Replacement notes with pitch, start, duration, velocity, optional muted",
+          "items": {
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "notes"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "scroll_view_to_time",
+    "Request the arrangement view to scroll to a specific time.",
+    {
+      "properties": {
+        "time_in_beats": {
+          "description": "Time in beats",
+          "type": "number"
+        }
+      },
+      "required": [
+        "time_in_beats"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "select_all_notes",
+    "Select all notes in a MIDI clip.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "send_midi_cc",
+    "Send a MIDI Control Change message.",
+    {
+      "properties": {
+        "cc_number": {
+          "description": "CC number 0–127",
+          "type": "integer"
+        },
+        "cc_value": {
+          "description": "CC value 0–127",
+          "type": "integer"
+        },
+        "channel": {
+          "description": "MIDI channel 0-based (default 0 = ch 1)",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "Track index (required but unused for routing)",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "cc_number",
+        "cc_value"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "send_program_change",
+    "Send a MIDI Program Change message.",
+    {
+      "properties": {
+        "channel": {
+          "description": "MIDI channel 0-based (default 0)",
+          "type": "integer"
+        },
+        "program_number": {
+          "description": "Program number 0–127",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "Track index (required but unused for routing)",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "program_number"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_arrangement_overdub",
+    "Enable or disable arrangement overdub.",
+    {
+      "properties": {
+        "enabled": {
+          "description": "True to enable overdub",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "enabled"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_back_to_arranger",
+    "Enable or disable Back to Arrangement mode.",
+    {
+      "properties": {
+        "enabled": {
+          "description": "True to enable",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "enabled"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_chain_mute",
+    "Mute or unmute a rack chain.",
+    {
+      "properties": {
+        "chain_index": {
+          "description": "0-based chain index",
+          "type": "integer"
+        },
+        "device_index": {
+          "description": "0-based rack device index",
+          "type": "integer"
+        },
+        "mute": {
+          "description": "True to mute",
+          "type": "boolean"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index",
+        "chain_index",
+        "mute"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_chain_solo",
+    "Solo or unsolo a rack chain.",
+    {
+      "properties": {
+        "chain_index": {
+          "description": "0-based chain index",
+          "type": "integer"
+        },
+        "device_index": {
+          "description": "0-based rack device index",
+          "type": "integer"
+        },
+        "solo": {
+          "description": "True to solo",
+          "type": "boolean"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index",
+        "chain_index",
+        "solo"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_clip_annotation",
+    "Set annotation text for a clip.",
+    {
+      "properties": {
+        "annotation_text": {
+          "description": "Annotation text",
+          "type": "string"
+        },
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "annotation_text"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_clip_color",
+    "Set a clip's color using an Ableton color index.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "color_index": {
+          "description": "Ableton color index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "color_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_clip_end_marker",
+    "Set the end marker (playback end point) of a clip in beats.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "end_marker": {
+          "description": "Position in beats",
+          "type": "number"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "end_marker"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_clip_fade_in",
+    "Set the fade-in time for an audio clip.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "fade_time": {
+          "description": "Fade time",
+          "type": "number"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "fade_time"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_clip_fade_out",
+    "Set the fade-out time for an audio clip.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "fade_time": {
+          "description": "Fade time",
+          "type": "number"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "fade_time"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_clip_follow_action",
+    "Set follow actions for a clip. Codes: 0=Stop, 1=Play Again, 2=Previous, 3=Next, 4=First, 5=Last, 6=Any, 7=Other, 8=Jump.",
+    {
+      "properties": {
+        "action_A": {
+          "description": "Follow action A code (0–8)",
+          "type": "integer"
+        },
+        "action_B": {
+          "description": "Follow action B code (0–8)",
+          "type": "integer"
+        },
+        "chance_A": {
+          "description": "Probability for action A, 0.0–1.0 (default 1.0)",
+          "type": "number"
+        },
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "action_A",
+        "action_B"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_clip_gain",
+    "Set clip gain (audio clips only).",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "gain": {
+          "description": "Gain value",
+          "type": "number"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "gain"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_clip_groove",
+    "Assign a groove pool groove to a clip.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "groove_index": {
+          "description": "Index into groove pool",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "groove_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_clip_groove_amount",
+    "Set groove amount for a clip (0.0 to 1.0).",
+    {
+      "properties": {
+        "amount": {
+          "description": "Groove amount 0.0–1.0",
+          "type": "number"
+        },
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "amount"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_clip_loop_end",
+    "Set the loop end position within a clip in beats.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "loop_end": {
+          "description": "Position in beats",
+          "type": "number"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "loop_end"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_clip_loop_start",
+    "Set the loop start position within a clip in beats.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "loop_start": {
+          "description": "Position in beats",
+          "type": "number"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "loop_start"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_clip_looping",
+    "Enable or disable looping for a clip.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "looping": {
+          "description": "True to loop",
+          "type": "boolean"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "looping"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_clip_muted",
+    "Mute or unmute a clip.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "muted": {
+          "description": "True to mute",
+          "type": "boolean"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "muted"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_clip_name",
+    "Rename a clip.",
+    {
+      "properties": {
+        "name": {
+          "description": "New clip name",
+          "type": "string"
+        },
+        "scene_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "scene_index",
+        "name"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_clip_pitch_coarse",
+    "Transpose a clip by semitones.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "semitones": {
+          "description": "Semitones to transpose",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "semitones"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_clip_pitch_fine",
+    "Fine-tune a clip's pitch in cents.",
+    {
+      "properties": {
+        "cents": {
+          "description": "Cents to adjust",
+          "type": "integer"
+        },
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "cents"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_clip_ram_mode",
+    "Control whether an audio clip streams from disk or loads into RAM.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "ram_mode": {
+          "description": "True to load into RAM",
+          "type": "boolean"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "ram_mode"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_clip_signature_numerator",
+    "Set a clip's local time signature numerator.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "numerator": {
+          "description": "Time signature numerator",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "numerator"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_clip_start_marker",
+    "Set the start marker (playback start point) of a clip in beats.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "start_marker": {
+          "description": "Position in beats",
+          "type": "number"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "start_marker"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_clip_start_time",
+    "Set the start time of a clip.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "start_time": {
+          "description": "Start time in beats",
+          "type": "number"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "start_time"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_clip_warp_mode",
+    "Set the warp mode for an audio clip. 0=Beats, 1=Tones, 2=Texture, 3=Re-Pitch, 4=Complex, 5=Complex Pro.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        },
+        "warp_mode": {
+          "description": "Warp mode 0–5",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "warp_mode"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_clip_warping",
+    "Enable or disable warping for an audio clip.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        },
+        "warping": {
+          "description": "True to enable warping",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "warping"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_crossfader_assignment",
+    "Set a track's crossfader assignment: 0=None, 1=A, 2=B.",
+    {
+      "properties": {
+        "assignment": {
+          "description": "0=None, 1=A, 2=B",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "assignment"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_device_on_off",
+    "Enable or disable a device.",
+    {
+      "properties": {
+        "device_index": {
+          "description": "0-based device index",
+          "type": "integer"
+        },
+        "enabled": {
+          "description": "True to enable",
+          "type": "boolean"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index",
+        "enabled"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_device_param",
+    "Set a device parameter by index.",
+    {
+      "properties": {
+        "device_index": {
+          "description": "0-based device index",
+          "type": "integer"
+        },
+        "param_index": {
+          "description": "0-based parameter index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        },
+        "value": {
+          "description": "Parameter value",
+          "type": "number"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index",
+        "param_index",
+        "value"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_device_parameter_by_name",
+    "Set a device parameter by name.",
+    {
+      "properties": {
+        "device_index": {
+          "description": "0-based device index",
+          "type": "integer"
+        },
+        "param_name": {
+          "description": "Parameter name",
+          "type": "string"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        },
+        "value": {
+          "description": "New value",
+          "type": "number"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index",
+        "param_name",
+        "value"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_device_preset",
+    "Load a preset for a device by index.",
+    {
+      "properties": {
+        "device_index": {
+          "description": "0-based device index",
+          "type": "integer"
+        },
+        "preset_index": {
+          "description": "0-based preset index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index",
+        "preset_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_follow_action_time",
+    "Set the time before the follow action triggers, in bars.",
+    {
+      "properties": {
+        "clip_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "time_in_bars": {
+          "description": "Time in bars",
+          "type": "number"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "clip_index",
+        "time_in_bars"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_groove_amount",
+    "Set the global song groove amount (0.0 to 1.0).",
+    {
+      "properties": {
+        "amount": {
+          "description": "Groove amount 0.0–1.0",
+          "type": "number"
+        }
+      },
+      "required": [
+        "amount"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_loop_enabled",
+    "Enable or disable the arrangement loop.",
+    {
+      "properties": {
+        "enabled": {
+          "description": "True to enable loop",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "enabled"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_loop_length",
+    "Set arrangement loop length in beats.",
+    {
+      "properties": {
+        "length": {
+          "description": "Length in beats",
+          "type": "number"
+        }
+      },
+      "required": [
+        "length"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_loop_start",
+    "Set arrangement loop start position in beats.",
+    {
+      "properties": {
+        "position": {
+          "description": "Position in beats",
+          "type": "number"
+        }
+      },
+      "required": [
+        "position"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_master_device_param",
+    "Set a master track device parameter by index. Value is clamped to the parameter's min/max.",
+    {
+      "properties": {
+        "device_index": {
+          "description": "0-based device index on master track",
+          "type": "integer"
+        },
+        "param_index": {
+          "description": "0-based parameter index",
+          "type": "integer"
+        },
+        "value": {
+          "description": "New parameter value (clamped to min/max)",
+          "type": "number"
+        }
+      },
+      "required": [
+        "device_index",
+        "param_index",
+        "value"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_master_device_param_by_name",
+    "Set a master track device parameter by name. For quantized params pass a string from value_items (e.g. '4:1'). For continuous params pass a number (clamped to min/max). Matches first parameter with that name.",
+    {
+      "properties": {
+        "device_index": {
+          "description": "0-based device index on master track",
+          "type": "integer"
+        },
+        "param_name": {
+          "description": "Parameter name (first match)",
+          "type": "string"
+        },
+        "value": {
+          "description": "Display string for quantized params, or numeric string for continuous",
+          "type": "string"
+        }
+      },
+      "required": [
+        "device_index",
+        "param_name",
+        "value"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_master_pan",
+    "Set master track pan (-1.0 to 1.0).",
+    {
+      "properties": {
+        "pan": {
+          "description": "Pan -1.0 to 1.0",
+          "type": "number"
+        }
+      },
+      "required": [
+        "pan"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_master_volume",
+    "Set master track volume (0.0 to 1.0).",
+    {
+      "properties": {
+        "volume": {
+          "description": "Volume 0.0–1.0",
+          "type": "number"
+        }
+      },
+      "required": [
+        "volume"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_metronome",
+    "Enable or disable the metronome.",
+    {
+      "properties": {
+        "enabled": {
+          "description": "True to enable",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "enabled"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_metronome_volume",
+    "Set the metronome volume (0.0 to 1.0).",
+    {
+      "properties": {
+        "volume": {
+          "description": "Volume 0.0–1.0",
+          "type": "number"
+        }
+      },
+      "required": [
+        "volume"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_punch_in",
+    "Enable or disable punch-in recording.",
+    {
+      "properties": {
+        "enabled": {
+          "description": "True to enable punch-in",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "enabled"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_punch_out",
+    "Enable or disable punch-out recording.",
+    {
+      "properties": {
+        "enabled": {
+          "description": "True to enable punch-out",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "enabled"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_record_mode",
+    "Set session or arrangement record mode: 0=session, 1=arrangement.",
+    {
+      "properties": {
+        "mode": {
+          "description": "0=session, 1=arrangement",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "mode"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_return_track_volume",
+    "Set a return track's volume (0.0 to 1.0).",
+    {
+      "properties": {
+        "return_index": {
+          "description": "0-based return track index",
+          "type": "integer"
+        },
+        "volume": {
+          "description": "Volume 0.0–1.0",
+          "type": "number"
+        }
+      },
+      "required": [
+        "return_index",
+        "volume"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_sample_playback_mode",
+    "Set the playback mode of a Simpler or Sampler device.",
+    {
+      "properties": {
+        "device_index": {
+          "description": "0-based device index",
+          "type": "integer"
+        },
+        "mode": {
+          "description": "Playback mode",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index",
+        "mode"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_scene_color",
+    "Set a scene's color.",
+    {
+      "properties": {
+        "color_index": {
+          "description": "Ableton color index",
+          "type": "integer"
+        },
+        "scene_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "scene_index",
+        "color_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_session_automation_record",
+    "Enable or disable session automation recording.",
+    {
+      "properties": {
+        "enabled": {
+          "description": "True to enable",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "enabled"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_session_record",
+    "Enable or disable session recording.",
+    {
+      "properties": {
+        "enabled": {
+          "description": "True to enable",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "enabled"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_take_lane_name",
+    "Set the name of a take lane. Requires Live 12+.",
+    {
+      "properties": {
+        "lane_index": {
+          "description": "0-based lane index",
+          "type": "integer"
+        },
+        "name": {
+          "description": "New lane name",
+          "type": "string"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "lane_index",
+        "name"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_tempo",
+    "Set the session tempo. Valid range: 20–999 BPM.",
+    {
+      "properties": {
+        "bpm": {
+          "description": "Tempo in BPM (20–999)",
+          "type": "number"
+        }
+      },
+      "required": [
+        "bpm"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_time_signature",
+    "Set the session time signature.",
+    {
+      "properties": {
+        "denominator": {
+          "description": "Denominator: 1, 2, 4, 8, or 16",
+          "type": "integer"
+        },
+        "numerator": {
+          "description": "Numerator (1–99)",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "numerator",
+        "denominator"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_track_annotation",
+    "Set the annotation text for a track.",
+    {
+      "properties": {
+        "annotation_text": {
+          "description": "Annotation text",
+          "type": "string"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "annotation_text"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_track_color",
+    "Set a track's color using an Ableton color index.",
+    {
+      "properties": {
+        "color_index": {
+          "description": "Ableton color index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "color_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_track_current_monitoring_state",
+    "Set track monitoring state: 0=In, 1=Auto, 2=Off.",
+    {
+      "properties": {
+        "state": {
+          "description": "0=In, 1=Auto, 2=Off",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "state"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_track_delay",
+    "Set a track's delay compensation in samples.",
+    {
+      "properties": {
+        "delay_samples": {
+          "description": "Delay in samples",
+          "type": "number"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "delay_samples"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_track_device_param",
+    "Set a track device parameter by index. Value is clamped to the parameter's min/max.",
+    {
+      "properties": {
+        "device_index": {
+          "description": "0-based device index on that track",
+          "type": "integer"
+        },
+        "param_index": {
+          "description": "0-based parameter index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        },
+        "value": {
+          "description": "New parameter value (clamped to min/max)",
+          "type": "number"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index",
+        "param_index",
+        "value"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_track_device_param_by_name",
+    "Set a track device parameter by name. For quantized params pass a string from value_items (e.g. '4:1'). For continuous params pass a number (clamped to min/max). Matches first parameter with that name.",
+    {
+      "properties": {
+        "device_index": {
+          "description": "0-based device index on that track",
+          "type": "integer"
+        },
+        "param_name": {
+          "description": "Parameter name (first match)",
+          "type": "string"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        },
+        "value": {
+          "description": "Display string for quantized params, or numeric string for continuous",
+          "type": "string"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index",
+        "param_name",
+        "value"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_track_fold_state",
+    "Fold or unfold a group track.",
+    {
+      "properties": {
+        "folded": {
+          "description": "True to fold",
+          "type": "boolean"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "folded"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_track_input_routing",
+    "Set a track's input routing type.",
+    {
+      "properties": {
+        "routing_channel": {
+          "description": "Channel index (default 0)",
+          "type": "integer"
+        },
+        "routing_type_name": {
+          "description": "Routing type name",
+          "type": "string"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "routing_type_name"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_track_input_sub_routing",
+    "Set a track's input sub-routing channel.",
+    {
+      "properties": {
+        "sub_routing": {
+          "description": "Sub-routing channel name",
+          "type": "string"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "sub_routing"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_track_output_routing",
+    "Set a track's output routing type.",
+    {
+      "properties": {
+        "routing_type_name": {
+          "description": "Routing type name",
+          "type": "string"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "routing_type_name"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_track_output_sub_routing",
+    "Set a track's output sub-routing channel.",
+    {
+      "properties": {
+        "sub_routing": {
+          "description": "Sub-routing channel name",
+          "type": "string"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "sub_routing"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_track_pan",
+    "Set a track's panning (-1.0 full left to 1.0 full right).",
+    {
+      "properties": {
+        "pan": {
+          "description": "Pan -1.0 to 1.0",
+          "type": "number"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "pan"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_track_send",
+    "Set a send level for a track (0.0 to 1.0).",
+    {
+      "properties": {
+        "send_index": {
+          "description": "0-based return track index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        },
+        "value": {
+          "description": "Send level 0.0–1.0",
+          "type": "number"
+        }
+      },
+      "required": [
+        "track_index",
+        "send_index",
+        "value"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "set_track_volume",
+    "Set a track's volume (0.0 to 1.0).",
+    {
+      "properties": {
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        },
+        "volume": {
+          "description": "Volume 0.0–1.0",
+          "type": "number"
+        }
+      },
+      "required": [
+        "track_index",
+        "volume"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "show_arrangement_view",
+    "Switch to the Arrangement view.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "show_clip_view",
+    "Switch to the Session view.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "show_message_box",
+    "Show a message dialog box to the user in Ableton. Requires Live 12+.",
+    {
+      "properties": {
+        "message": {
+          "description": "Message text",
+          "type": "string"
+        },
+        "title": {
+          "description": "Dialog title (default 'Message')",
+          "type": "string"
+        }
+      },
+      "required": [
+        "message"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "show_plugin_window",
+    "Show the editor window for a device/plugin.",
+    {
+      "properties": {
+        "device_index": {
+          "description": "0-based device index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "device_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "solo_track",
+    "Solo or unsolo a track.",
+    {
+      "properties": {
+        "solo": {
+          "description": "True to solo (default true)",
+          "type": "boolean"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "start_playback",
+    "Start Ableton playback (no-op if already playing).",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "start_recording",
+    "Enable record mode and start playback.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "stop_all_clips",
+    "Stop all playing clips across all tracks.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "stop_clip",
+    "Stop clips on a track (all clips on the track are stopped).",
+    {
+      "properties": {
+        "scene_index": {
+          "description": "0-based scene index",
+          "type": "integer"
+        },
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index",
+        "scene_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "stop_playback",
+    "Stop Ableton playback (no-op if not playing).",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "stop_recording",
+    "Disable record mode (does not stop playback).",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "tap_tempo",
+    "Send a tap-tempo pulse.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "trigger_session_record",
+    "Trigger session recording with an optional fixed length in beats.",
+    {
+      "properties": {
+        "length": {
+          "description": "Recording length in beats; omit for open-ended",
+          "type": "number"
+        }
+      },
+      "type": "object"
+    }
+  ],
+  [
+    "undo",
+    "Undo the last action in Ableton.",
+    {
+      "properties": {},
+      "type": "object"
+    }
+  ],
+  [
+    "unfreeze_track",
+    "Unfreeze a frozen track.",
+    {
+      "properties": {
+        "track_index": {
+          "description": "0-based track index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "track_index"
+      ],
+      "type": "object"
+    }
+  ],
+  [
+    "ungroup_track",
+    "Ungroup a group track.",
+    {
+      "properties": {
+        "group_track_index": {
+          "description": "Index of the group track",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "group_track_index"
+      ],
+      "type": "object"
+    }
+  ]
 ]
