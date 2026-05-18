@@ -1,6 +1,6 @@
 # Cleanup planning — per-step index
 
-This directory contains commit-sized plans extracted from `planning/cleanup.instructions.md`.
+This directory contains commit-sized plans extracted from `cleanup.instructions.md`. See that file for full details.
 
 Files (ordered)
 - 00-policy-redundant-artifacts.md

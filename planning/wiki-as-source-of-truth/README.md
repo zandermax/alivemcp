@@ -1,5 +1,8 @@
 # Wiki-as-SoT planning — per-step index
 
+
+See `wiki-as-a-source-of-truth.instructions.md` for plan details. The plan is broken into discrete steps, by filename below.
+
 Files
 - 01-generate-from-wiki.md
 - 02-migrate-wiki-frontmatter.md
