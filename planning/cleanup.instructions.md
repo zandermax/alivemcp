@@ -3,7 +3,16 @@
 This document catalogues known technical debt and structural issues for planning purposes.
 Items are grouped by priority tier. Address code debt before reorganization.
 
+## Policy — redundant generated artifacts
+
+When something **could be generated from a canonical source** or is a **duplicate** of that source, **remove it** from the repository rather than keeping a second committed copy.
+
+After removal, **refactor all references**: links in READMEs, imports in tests/scripts, Makefile targets, agent docs, and any prose that pointed at the old path must target the **single source of truth** (e.g. wiki pages, `registry.py`, `mcp_tool_defs/`, or code under `ALiveMCP_Remote/tools/`).
+
+**Do not** replace one stale generated file with another long-lived duplicate layer. Prefer deletion + refactors; use one-off build output only in scratch directories or release packaging if truly needed, not as a permanently tracked twin.
+
 ---
+
 
 ## Priority 1 — Critical / Correctness
 
@@ -51,7 +60,9 @@ In `mcp_server_tool_defs.py`, if `mcp_tool_defs/index.json` or any part file is 
 
 Note: `maint/verify_docs_tools.py` (checks `docs/wiki/tools/`) exits 0 — wiki pages are in sync. Only the monolithic `API_REFERENCE.md` is stale.
 
-**Fix:** Add the 10 missing `### \`tool_name\``sections to`docs/API_REFERENCE.md`, or regenerate it from wiki sources.
+**Fix:** **Delete** `docs/API_REFERENCE.md` per the policy above; point humans and links to `docs/wiki/INDEX.md` and `docs/wiki/tools/`. Refactor any external or in-repo references (README, CONTRIBUTING, deep links) to the wiki paths. Do not replace it with another committed generated monolith unless a consumer absolutely cannot use the wiki — then generate **only** at release into a non-tracked artifact, not as a permanent second doc.
+
+*(Historical note: ten tools were missing from the monolith vs registry; wiki is already complete — removing the monolith resolves the drift.)*
 
 ### 2.2 Public tool-count inconsistency
 
@@ -64,7 +75,7 @@ Three sources disagree on the number of tools:
 | `pyproject.toml` description                                      | **220** |
 | `CLAUDE.md`                                                       | **232** |
 
-**Fix:** Align all user-facing documentation to 230 (the actual count). Update `README.md` and `pyproject.toml` description. Consider generating this number from the registry to prevent future drift.
+**Fix:** Align prose to the real count (230). Prefer **no hardcoded number**: derive for display from `mcp_tool_defs/index.json` `count` or `len(AVAILABLE_TOOLS)` in any script or doc that needs it, so the string cannot drift.
 
 ### 2.3 `liveapi_tools.py` class docstring incomplete
 
@@ -100,7 +111,7 @@ New mixins added to `liveapi_tools.py` will not be covered by the guard.
 
 Many tool methods have machine-generated docstubs with `TODO: describe parameters. / Returns / Raises` sections. `make validate-docstrings` exists but is not verified to fail on these stubs.
 
-**Fix:** Check whether `validate-docstrings` rejects TODO stubs; if not, update the checker or the CI target to block on unfilled stubs.
+**Fix:** Check whether `validate-docstrings` rejects TODO stubs; if not, tighten the checker or Makefile target so unfilled stubs fail `make validate-docstrings`.
 
 ---
 
@@ -138,7 +149,7 @@ Tools return `{"ok": False, "error": str(e)}`. The top-level dispatcher (`_proce
 
 ---
 
-## Priority 5 — Tooling / CI Gaps
+## Priority 5 — Tooling / local validation gaps
 
 ### 5.1 `examples/mock_server.py` at 424 lines, explicitly excluded
 
@@ -148,29 +159,139 @@ The pre-commit hook excludes `examples/` from the 300-line check. `mock_server.p
 
 ### 5.2 `check-version-bump` only runs on pre-push
 
-The version bump check is a pre-push hook, not a CI step. It can be skipped silently with `--no-verify` or when pushing via tooling.
+The version bump check is a pre-push hook. It can be skipped with `--no-verify`. No remote automation — rely on habit, `make all` before release, or strengthen local hooks if needed.
 
-**Note:** Evaluate whether this check should also be a CI gate (Makefile `all:` target).
+### 5.3 Make validation the single local gate
 
-### 5.3 Makefile `all:` dependencies not verified in CI
+`make all` chains `generate-from-wiki`, `generate-manifest`, `validate-manifest`, `validate-wiki`, `validate-docstrings`, `check-length`, etc. That is the intended pre-merge checklist — not GitHub Actions.
 
-`make all` chains validators (`validate-manifest`, `validate-wiki`, `validate-docstrings`, `check-length`). Confirm these are wired to whatever CI system is used; the repo has no `.github/workflows/` visible — document or add CI config.
+**Fix:** Document in `README.md` / `CONTRIBUTING.md` that contributors run `make all` (or the subset they touch). Optionally fold extra checks into `Makefile` (see §6.7) so one command covers everything.
+
+### 5.4 Remove GitHub Actions (if rejecting CI)
+
+The repo currently ships **one workflow**: `.github/workflows/check-wiki-parity.yml` (wiki parity + docstring checks). If the project standard is **no CI**, delete that file and scrub docs that mention it (`GITHUB_SETUP.md`, `CONTRIBUTING.md`, or any prose that says “the workflow runs …”).
+
+**Leave alone (not CI):** `.github/ISSUE_TEMPLATE/*`, `.github/PULL_REQUEST_TEMPLATE.md` — those are templates only; remove only if you want zero `.github/` footprint.
 
 ---
 
-## Priority 6 — Reorganization (after debt is addressed)
+## Priority 6 — Documentation / Tool Surface Consolidation
 
-Reorganization should happen after Priorities 1–5 are stable.
+This is a dedicated area of structural debt worth planning as a standalone pass. There are currently **7 overlapping surfaces** that describe available tools, several with diverging data. The goal is **one authoritative source per concern**; remove duplicate or regenerable files and point consumers at those sources (see **Policy — redundant generated artifacts** at the top of this document).
 
-### 6.1 `API_REFERENCE.md` vs wiki regeneration strategy
+See also: `planning/wiki-as-source-of-truth.instructions.md` — an existing plan that defines the intended hierarchy. The items below reflect what remains unimplemented or misaligned with that plan.
 
-There are two documentation surfaces: the monolithic `docs/API_REFERENCE.md` and the `docs/wiki/tools/` per-tool pages. Keeping both in sync manually is fragile. Consider designating the wiki pages as the source of truth and generating `API_REFERENCE.md` from them automatically (a script already partially exists in `maint/`).
+### 6.1 Current surface inventory
 
-### 6.2 Result helper refactor scope
+| Surface | What it contains | How maintained | Primary consumer |
+|---------|-----------------|----------------|-----------------|
+| `registry.py` (`AVAILABLE_TOOLS`) | Names only | Hand-edited | Runtime dispatch |
+| `mcp_tool_defs/part_*.json` | Name + description + JSON schema | Committed generated data | `mcp_server.py` (MCP protocol) |
+| `docs/tool_manifest.json` | Name + schema + parity | Generated — **candidate to remove** if tests use registry + `mcp_tool_defs` (§6.5) | Agents / tests |
+| `docs/wiki/tools/*.md` | Full narrative, params, examples, Live mapping | Hand-authored | Humans + `generate_from_wiki.py` |
+| `docs/wiki/TOOLS_INDEX.md` | Flat name list (pending **delete** §6.4) | Redundant | Humans |
+| `docs/wiki/INDEX.md` | Navigable hub, taxonomy, links | Mixed (partial generation) | Humans |
+| `docs/API_REFERENCE.md` | Monolithic (pending **delete** §6.3) | Refactor links → wiki |
+
+**The problem:** `API_REFERENCE.md` and `TOOLS_INDEX.md` are hand-maintained duplicates of information that exists in better form elsewhere. Two generator scripts (`generate_from_wiki.py --apply` and `generate_tool_manifest.py`) both write `docs/tool_manifest.json` with different schemas — the final output is order-dependent in `make all`. The tool count "232" appears in 7+ prose files but the actual count is 230.
+
+### 6.2 Proposed source-of-truth hierarchy
+
+Following the model in `wiki-as-source-of-truth.instructions.md`:
+
+```
+PRIMARY:    ALiveMCP_Remote/tools/ (implementations + docstrings)
+            registry.py (AVAILABLE_TOOLS — authoritative name list)
+            docs/wiki/tools/*.md (Live mapping frontmatter — human enrichment)
+
+RUNTIME / MACHINE:  mcp_tool_defs/part_*.json + index.json  →  mcp_server_tool_defs.TOOL_DEFS
+                    (single JSON pipeline; drop duplicate bundled outputs — e.g. omit committed
+                     `full.json` if it is strictly derivable from parts + index)
+
+AGENTS / TESTS:     Prefer reading registry + mcp_tool_defs in code; remove committed
+                    `docs/tool_manifest.json` if parity tests can assert the same facts without it.
+
+HUMAN DOCS:         docs/wiki/ only — no parallel monolithic API_REFERENCE in-repo.
+
+VALIDATED:          registry == wiki == mcp_tool_defs  (pytest + `make all`; manifest optional if removed)
+```
+
+### 6.3 `docs/API_REFERENCE.md` — **remove** (preferred)
+
+The monolith duplicates `docs/wiki/tools/`, lags by 10 tools, and still says "232 tools".
+
+**Fix:** Delete `docs/API_REFERENCE.md`. Refactor every reference (README, CONTRIBUTING, `GITHUB_SETUP.md`, bookmarks, planning text in §6.9) to `docs/wiki/INDEX.md` and per-tool pages under `docs/wiki/tools/`. Do not keep a regenerated copy in git unless an external publication pipeline requires it — publish from wiki sources there instead. Wiki is the human source of truth; **no** parallel monolith in-repo.
+
+---
+
+### 6.4 `docs/wiki/TOOLS_INDEX.md` — **remove** (preferred)
+
+Flat name list redundant with `registry.py` sectioning and `docs/wiki/INDEX.md`.
+
+**Fix:** Delete the file. Update any links to it → `docs/wiki/INDEX.md` or the registry. Do not replace with a second auto-generated committed index unless navigation truly needs it; if it does, generate **only** in `make docs` output dir or fold headings into `INDEX.md` generation from one script.
+
+---
+
+### 6.5 `docs/tool_manifest.json` and script collision — collapse to one output or drop manifest
+
+`generate_from_wiki.py --apply` and `generate_tool_manifest.py` both touch `docs/tool_manifest.json` with incompatible shapes; order in `make all` masks the bug.
+
+**Fix (in order):**
+
+1. **If parity tests can compare** `registry.py` + `mcp_tool_defs` **directly** — remove committed `docs/tool_manifest.json`, refactor `tests/test_tool_manifest_parity.py` (and related) to use those sources. Then delete `generate_tool_manifest.py` or narrow it to emit **non-tracked** build output only.
+2. **If tests still need a merged view** — exactly **one** script writes `docs/tool_manifest.json`; remove the other script's write path entirely; intermediate wiki-only JSON should go to a **different temp/output filename** or only exist in memory during the pipeline.
+
+Do not leave two generators fighting for one path.
+
+### 6.6 `mcp_tool_defs` — one generator; drop redundant `full.json` if derivable
+
+`scripts/generate_tool_defs_chunked.py` refreshes `mcp_tool_defs/part_*.json`, `index.json`, and `full.json`. It is **not wired into any Makefile target** and references the old `TOOL_DEFS_JSON` embedded blob. `generate_from_wiki.py --apply` may also write `full.json`.
+
+**Fix:**
+
+- Pick **one** owner for `mcp_tool_defs/`.
+- If `full.json` is strictly derivable from `index.json` + `part_*.json`, **remove** it from version control and build it in Makefile/dev when needed — or keep only parts + index as authoritative and update any consumer that still reads `full.json`.
+- Add `make generate-tool-defs` (or fold into `generate-from-wiki`) for the chosen path.
+- Update `docs/IMPACT_MAP_TOOL_SURFACE.md` (still describes embedded `TOOL_DEFS_JSON`).
+
+### 6.7 Fold `maint/verify_docs_tools.py` + `validate-manifest` into the Makefile gate
+
+`maint/verify_docs_tools.py` (registry ↔ wiki basename set) and **`make validate-manifest`** are easy to forget because they are not part of the same default chain as `validate-wiki`.
+
+**Fix:** Call both from one documented path — e.g. extend `make validate-wiki` or `make all` to run `python3 maint/verify_docs_tools.py` after other checks, and document the combined command in `CONTRIBUTING.md`. No remote runners — local only.
+
+If `.github/workflows/check-wiki-parity.yml` is deleted (§5.4), nothing replaces it automatically; the Makefile + docs become the contract.
+
+### 6.8 Resolve duplicate wiki pages
+
+`docs/wiki/tools/clips/get_clip_notes.md` and `docs/wiki/tools/midi/get_clip_notes.md` are duplicates (same for `remove_notes`). `maint/verify_docs_tools.py` uses basenames so only one "counts". The second page is redundant.
+
+**Fix:** Pick the canonical domain location (likely `midi/` for note operations, `clips/` for clip-level ops — or whichever matches the registry organization). Delete the duplicate and add a redirect note or cross-link in the kept page.
+
+### 6.9 Fix "232" count in prose across all docs
+
+The following files still say "232 tools" or "220 tools" when the actual count is 230:
+
+- `README.md`
+- `CLAUDE.md`
+- `docs/API_REFERENCE.md`
+- `docs/INSTALLATION.md`
+- `CONTRIBUTING.md`
+- `docs/ARCHITECTURE.md`
+- `GITHUB_SETUP.md`
+- `pyproject.toml` description field
+
+**Fix:** Do a single pass: remove hardcoded counts from prose where possible; where a sentence must cite a number, derive it from `mcp_tool_defs/index.json` or registry in the generator script that emits that doc — **or** after deleting `docs/API_REFERENCE.md`, drop that file from this list.
+
+---
+
+## Priority 7 — Reorganization (after Priorities 1–6 are stable)
+
+### 7.1 Result helper refactor scope
 
 If §4.2 result builders are adopted, a systematic migration across all 230 tool methods is a large but mechanical refactor. Plan as a standalone pass after helpers are settled.
 
-### 6.3 Feature-gate audit for Live 12
+### 7.2 Feature-gate audit for Live 12
 
 Take Lanes and other Live 12 features are guarded inline across multiple files. A dedicated audit to catalog all version gates (and remove deprecated Live 11 fallbacks if support is dropped) would reduce ongoing maintenance cost.
 
@@ -183,7 +304,7 @@ Take Lanes and other Live 12 features are guarded inline across multiple files. 
 | `Makefile`                           | Broken `check-length` target (§1.1)                              |
 | `mcp_server_tool_defs.py`            | Silent TOOL_DEFS failure (§1.2)                                  |
 | `mcp_server.py`                      | Hardcoded version (§1.3), no test coverage (§3.2)                |
-| `docs/API_REFERENCE.md`              | 10 missing tools (§2.1)                                          |
+| `docs/API_REFERENCE.md`              | Remove §6.3; was missing 10 tools §2.1                           |
 | `README.md`                          | Tool count drift (§2.2)                                          |
 | `pyproject.toml`                     | Count in description (§2.2), ruff target (§4.3), dep pins (§4.4) |
 | `ALiveMCP_Remote/liveapi_tools.py`   | Stale class docstring (§2.3)                                     |
@@ -191,3 +312,10 @@ Take Lanes and other Live 12 features are guarded inline across multiple files. 
 | `ALiveMCP_Remote/__init__.py`        | Error shape / dispatch (§4.1)                                    |
 | `ALiveMCP_Remote/tools/core/base.py` | Candidate for result helpers (§4.2)                              |
 | `examples/mock_server.py`            | 424 lines, hook-excluded (§5.1)                                  |
+| `docs/wiki/TOOLS_INDEX.md`           | Remove §6.4                                                      |
+| `docs/tool_manifest.json`            | Collapse or remove §6.5                                          |
+| `scripts/generate_tool_defs_chunked.py` | Not in Makefile, stale TOOL_DEFS_JSON refs (§6.6)             |
+| `docs/wiki/tools/clips/get_clip_notes.md` | Duplicate wiki page (§6.8)                                |
+| `docs/wiki/tools/midi/remove_notes.md` | Duplicate wiki page (§6.8)                                   |
+| `docs/IMPACT_MAP_TOOL_SURFACE.md`    | Stale TOOL_DEFS_JSON rollback story (§6.6)                       |
+| `.github/workflows/check-wiki-parity.yml` | Remove if no CI; scrub docs (§5.4); fold checks into Makefile (§6.7) |

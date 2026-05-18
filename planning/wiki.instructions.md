@@ -65,7 +65,7 @@ This document is the working plan for creating a project wiki that is compatible
 
 - Add per-tool YAML frontmatter fields: `status`, `live_versions`, `owners`, `tags`, `last_updated`.
 - Add `docs/wiki/CONTRIBUTING.md` describing how to regenerate docs and run `maint/verify_docs_tools.py`.
-- Add a CI workflow that runs `maint/verify_docs_tools.py`, fails on docs/registry drift, and optionally regenerates stubs.
+- Add a **local** verification step: document `python maint/verify_docs_tools.py` and/or fold it into `make all` so parity drift fails before merge (see `planning/cleanup.instructions.md` §6.7). No GitHub Actions.
 - Implement automated extraction of the **Live mapping** from `ALiveMCP_Remote/tools/` implementations and include it in generated pages.
 - Add `FOSSIL.md` with Fossil-specific publish/import notes and any export tips.
 - Run review & QA: cross-check examples, links, run tests (where present), and the docs verifier.
@@ -79,13 +79,13 @@ Created as part of the project wiki planning. Update tasks in the TODO tracker (
 
 The original plan is a solid baseline but the following items still need to be done to make the wiki maintainable and automatable:
 
-- CI verification & enforcement: add a job that runs `python maint/verify_docs_tools.py` and fails builds on parity drift.
+- Local verification: run `python maint/verify_docs_tools.py` and related Makefile targets before merge; fix parity drift manually—no remote job.
 - Generator script: implement `scripts/generate_wiki_index.py` to read `ALiveMCP_Remote/tools/core/registry.py` and `mcp_tool_defs/index.json` and emit `docs/wiki/INDEX.md` plus per-tool stubs.
 - Per-page metadata: add YAML frontmatter to every `docs/wiki/tools/...` page (see example below) so automation and search can rely on structured fields.
 - Automated Live mapping extraction: synthesize the `Live mapping` field from the tool implementations to avoid manual errors.
 - CONTRIBUTING and maintainer workflow: `docs/wiki/CONTRIBUTING.md` should document how to regenerate, verify, and submit docs changes.
 - Fossil integration: add `FOSSIL.md` describing any Fossil-specific considerations and how to import/export the repo wiki.
-- Decide CI behaviour: choose whether CI should auto-commit/regenerate stubs, open a PR, or simply fail and require a manual update.
+- Maintainer workflow: document `make all`, `maint/verify_docs_tools.py`, and when to regenerate stubs—**no** automated CI enforcement for docs.
 - Provide one fully-populated example page (e.g., a `clips/create_midi_clip.md`) as a canonical example for contributors.
 
 ## Per-tool frontmatter example
@@ -102,7 +102,7 @@ last_updated: 2026-05-14
 
 ---
 
-Embedding these fields enables CI checks, search indexing, and simple filtering when generating indexes or site outputs.
+Embedding these fields enables automated checks (local / Makefile) and simple filtering when generating indexes or site outputs.
 
 ---
 

@@ -11,8 +11,9 @@
 ## Goals
 
 - Prevent divergence between documentation and runtime tooling.
-- Make the parity checks runnable locally and in CI (`--check` modes that fail fast).
+- Make the parity checks runnable locally (`make all`, `--check` modes that fail fast).
 - Make migration and authoring low-friction (best-effort tools + human review).
+- **Removal-first:** prefer deleting duplicate or regenerable docs/JSON in git and pointing consumers at the canonical tree (`docs/wiki/`, `registry.py`, `mcp_tool_defs/`) rather than committing another generated layer — see `planning/cleanup.instructions.md` policy block.
 
 ## Scope
 
@@ -26,7 +27,7 @@
 - `scripts/validate_wiki_parity.py` — strict verifier that treats `ALiveMCP_Remote/tools/` as authoritative: registry ↔ implementations ↔ wiki parity (exit non-zero on mismatch); report JSON + human summary.
 - `scripts/docstring_checker.py` — parse Python source under `ALiveMCP_Remote/tools/` and ensure each exported tool method has the required docstring structure and a `See Also` wiki link; provide `--fix` mode to insert TODO stubs (opt-in only).
 - Updates to `docs/wiki/templates/tool.md` to require YAML frontmatter fields and to show the docstring `See Also` example.
-- Makefile targets and CI job(s) that run the above scripts in `--check` mode by default.
+- Makefile targets that run the above scripts in `--check` mode by default (pre-merge gate on the developer machine).
 
 ## Docstring standard (required for each tool method)
 
@@ -95,14 +96,14 @@
     - For each exported tool method (by name), ensure docstring exists and matches the template (basic structural checks: has `Args:`, `Returns:`, `Raises:`, and `See Also` with the wiki path).
     - Provide `--fix` mode to insert a TODO docstring stub when safe (recommended only for small, non-destructive edits).
 
- Phase 5 — Tests, Makefile, CI
+ Phase 5 — Tests, Makefile, local verification
  8. Add Makefile targets:
     - `generate-from-wiki` -> run `scripts/generate_from_wiki.py` (write outputs).
     - `validate-wiki` -> run `scripts/validate_wiki_parity.py`.
     - `validate-docstrings` -> run `scripts/docstring_checker.py`.
-    - Update `validate-manifest` (if needed) to include `validate-wiki` in CI checks.
+    - Chain these under `make all` together with `validate-manifest` so one command runs the full doc/registry gate.
 
- 1. Add CI jobs (name: `check-wiki-parity`) that run `generate_from_wiki.py --check` and `validate_wiki_parity.py`.
+ 9. Do **not** rely on GitHub Actions for this repo; remove `.github/workflows/check-wiki-parity.yml` if present (see `planning/cleanup.instructions.md` §5.4). Prefer pre-push hooks or documented `make all` in `CONTRIBUTING.md`.
 
  Phase 6 — Rollout
  10. Run validator locally; fix mismatches; open a PR with frontmatter edits and generated artifacts. IMPORTANT: the tooling may write generated artifacts when run with `--apply`, but **commits must be made manually by maintainers** — do not auto-commit, stage, or push changes from these scripts or agents.
@@ -121,7 +122,7 @@
  python3 scripts/generate_from_wiki.py --output-dir mcp_tool_defs --manifest docs/tool_manifest.json --apply
  ```
 
-- Check mode (CI/pre-commit):
+- Check mode (local pre-merge / pre-push):
 
  ```bash
  python3 scripts/generate_from_wiki.py --check
@@ -134,7 +135,7 @@
 - Every `AVAILABLE_TOOLS` entry has a matching wiki page under `docs/wiki/tools/`.
 - Every wiki page corresponds to an implemented tool exported in `mcp_tool_defs/index.json` or `ALiveMCP_Remote` code.
 - All implemented tools contain the required docstring linking to their wiki page.
-- `generate_from_wiki.py --check` and `validate_wiki_parity.py` run in CI and fail on divergence.
+- `generate_from_wiki.py --check` and `validate_wiki_parity.py` are part of the local gate (`make all` / pytest) and fail on divergence.
 
 ## Notes & Risks
 
